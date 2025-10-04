@@ -207,14 +207,6 @@
       font-weight:500;
     }
     
-    .book-rating{
-      display:flex;
-      align-items:center;
-      gap:4px;
-      font-size:12px;
-      color:var(--warning);
-    }
-    
     .book-actions{
       display:flex;
       gap:8px;
@@ -327,7 +319,6 @@
           <option value="oldest">الأقدم أولاً</option>
           <option value="title">حسب العنوان</option>
           <option value="author">حسب المؤلف</option>
-          <option value="rating">حسب التقييم</option>
         </select>
       </div>
     </header>
@@ -340,14 +331,6 @@
       <div class="stat-card">
         <div class="stat-value" id="totalAuthors">0</div>
         <div class="stat-label">المؤلفين</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="totalCategories">0</div>
-        <div class="stat-label">التصنيفات</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="avgRating">0.0</div>
-        <div class="stat-label">متوسط التقييم</div>
       </div>
     </div>
 
@@ -362,7 +345,6 @@
     </div>
 
     <div class="books-grid" id="booksGrid">
-      <!-- Books will be dynamically added here -->
       <div class="empty-state">
         <div class="empty-state-icon">📚</div>
         <h3>لا توجد كتب متاحة حالياً</h3>
@@ -372,61 +354,76 @@
   </div>
 
   <script>
-    // Sample book data structure - you can replace this with your actual data
     const sampleBooks = [
       {
         id: 1,
-        title: "إنترنت الأشياء: المفاهيم والتطبيقات",
-        author: "د. أحمد محمد",
-        description: "كتاب شامل يغطي مفاهيم إنترنت الأشياء الأساسية والتطبيقات العملية في مختلف المجالات الصناعية والمنزلية.",
+        title: "Real-Time IoT Imaging with Deep Neural Networks",
+        author: "Nicolas Modrzyk",
+        description: "An in-depth study of applying deep neural networks for real-time image processing and analysis in Internet of Things (IoT) systems.",
+        category: "iot",
+        cover: "images/book2.jpg",
+        pages: 241,
+        publishedYear: 2023,
+        language: "English",
+        downloadLink: "https://drive.google.com/file/d/1lmMVYar75JC0oA_9gYicBcj17fj_3Uhs/view?usp=drive_link"
+      },
+      {
+        id: 2,
+        title: "Applied Learning Algorithms for Intelligent IoT",
+        author: "Pethuru Raj Chelliah, Usha Sakthivel, Susila Nagarajan",
+        description: "A comprehensive guide exploring how intelligent algorithms enhance data processing, decision-making, and automation in modern Internet of Things (IoT) applications.",
+        category: "iot",
+        cover: "images/book1.jpg",
+        pages: 370,
+        publishedYear: 2023,
+        language: "English",
+        downloadLink: "https://drive.google.com/file/d/14mVpFApVXjAY61XqqN3DoFCGlhTEMSEY/view?usp=drive_link"
+      },
+      {
+        id: 3,
+        title:"IoT Sensor-Based Activity Recognition",
+        author: "Md Atiqur Rahman Ahad ,Anindya Das Antar,Masud Ahmed",
+        description: "A detailed exploration of using IoT sensor data and machine learning techniques to recognize and analyze human activities in real time.",
+        category: "iot",
+        cover: "images/book1.jpg",
+        publishedYear: 2023,
+        pages:"214" ,
+        language: "English",
+        downloadLink:"https://drive.google.com/file/d/1JKD5Ci7X_3yYwrecodF6NG-IAn-oOzi2/view?usp=drive_link"
+      }
+      /*
+      {
+        id: 1,
+        title:"",
+        author: "",
+        description: "",
         category: "iot",
         rating: 4.5,
         cover: "images/book1.jpg",
         publishedYear: 2023,
-        pages: 350,
-        language: "العربية",
-        downloadLink: "https://drive.google.com/file/d/1abc123def456ghi789jkl/view?usp=drive_link"
-      },
-      {
-        id: 2,
-        title :"Real-Time IoT Imaging with Deep Neural Networks",
-        author: "Nicolas Modrzyk",
-        description: "دليل شامل لبرمجة الأنظمة المدمجة باستخدام لغات البرمجة المختلفة وتقنيات التحسين.",
-        category: "iot",
-        rating: 4.8,
-        cover: "images/book2.jpg",
-        publishedYear: 2023,
-        pages: 241,
-        language: "العربية",
-        downloadLink: "https://drive.google.com/file/d/1lmMVYar75JC0oA_9gYicBcj17fj_3Uhs/view?usp=drive_link"
-      }
+        pages:"" ,
+        language: "English",
+        downloadLink:""
+      }*/
     ];
 
     let currentBooks = [...sampleBooks];
     let currentCategory = 'all';
 
-    // Initialize the page
     function init() {
       updateStats();
       renderBooks();
       setupEventListeners();
     }
 
-    // Update statistics
     function updateStats() {
       const totalBooks = currentBooks.length;
       const totalAuthors = new Set(currentBooks.map(book => book.author)).size;
-      const totalCategories = new Set(currentBooks.map(book => book.category)).size;
-      const avgRating = totalBooks > 0 ? 
-        (currentBooks.reduce((sum, book) => sum + book.rating, 0) / totalBooks).toFixed(1) : 0;
 
       document.getElementById('totalBooks').textContent = totalBooks;
       document.getElementById('totalAuthors').textContent = totalAuthors;
-      document.getElementById('totalCategories').textContent = totalCategories;
-      document.getElementById('avgRating').textContent = avgRating;
     }
 
-    // Render books
     function renderBooks() {
       const booksGrid = document.getElementById('booksGrid');
       
@@ -444,19 +441,15 @@
       booksGrid.innerHTML = currentBooks.map(book => `
         <div class="book-card" data-book-id="${book.id}">
           <div class="book-cover">
-            ${book.cover.startsWith('http') || book.cover.includes('\\') || book.cover.includes('/') ? 
-              `<img src="${book.cover}" alt="${book.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-               <div style="display:none; align-items:center; justify-content:center; width:100%; height:100%; font-size:48px; color:var(--accent);">📚</div>` : 
-              book.cover}
+            ${book.cover ? 
+              `<img src="${book.cover}" alt="${book.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='📚';">` : 
+              '📚'}
           </div>
           <h3 class="book-title">${book.title}</h3>
           <p class="book-author">${book.author}</p>
           <p class="book-description">${book.description}</p>
           <div class="book-meta">
             <span class="book-category">${getCategoryName(book.category)}</span>
-            <div class="book-rating">
-              ⭐ ${book.rating}
-            </div>
           </div>
           <div class="book-actions">
             <button class="btn btn-primary" onclick="viewBook(${book.id})">عرض الكتاب</button>
@@ -466,7 +459,6 @@
       `).join('');
     }
 
-    // Get category name in Arabic
     function getCategoryName(category) {
       const categories = {
         'iot': 'إنترنت الأشياء',
@@ -479,17 +471,14 @@
       return categories[category] || category;
     }
 
-    // Filter books by category
     function filterByCategory(category) {
       currentCategory = category;
       
-      // Update active category button
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       document.querySelector(`[data-category="${category}"]`).classList.add('active');
       
-      // Filter books
       if (category === 'all') {
         currentBooks = [...sampleBooks];
       } else {
@@ -500,7 +489,6 @@
       renderBooks();
     }
 
-    // Search books
     function searchBooks(query) {
       const filteredBooks = sampleBooks.filter(book => 
         book.title.toLowerCase().includes(query.toLowerCase()) ||
@@ -513,7 +501,6 @@
       renderBooks();
     }
 
-    // Sort books
     function sortBooks(sortBy) {
       switch(sortBy) {
         case 'newest':
@@ -528,16 +515,11 @@
         case 'author':
           currentBooks.sort((a, b) => a.author.localeCompare(b.author, 'ar'));
           break;
-        case 'rating':
-          currentBooks.sort((a, b) => b.rating - a.rating);
-          break;
       }
       renderBooks();
     }
 
-    // Setup event listeners
     function setupEventListeners() {
-      // Search input
       document.getElementById('searchInput').addEventListener('input', (e) => {
         if (e.target.value.trim() === '') {
           filterByCategory(currentCategory);
@@ -546,12 +528,10 @@
         }
       });
 
-      // Sort select
       document.getElementById('sortSelect').addEventListener('change', (e) => {
         sortBooks(e.target.value);
       });
 
-      // Category buttons
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           filterByCategory(btn.dataset.category);
@@ -559,10 +539,11 @@
       });
     }
 
-    // Book actions
     function viewBook(bookId) {
       const book = sampleBooks.find(b => b.id === bookId);
-      alert(`عرض كتاب: ${book.title}\nالمؤلف: ${book.author}\nالتقييم: ${book.rating} ⭐`);
+      if (book && book.downloadLink) {
+        window.open(book.downloadLink, '_blank');
+      }
     }
 
     function downloadBook(bookId) {
@@ -574,7 +555,6 @@
       }
     }
 
-    // Initialize when page loads
     document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
