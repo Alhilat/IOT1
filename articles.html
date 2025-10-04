@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>المقالات التقنية - IoT Web</title>
+  <title>الفيديوهات التعليمية - IoT Web</title>
   <style>
     :root{
       --bg-dark:#0a0e1a;
@@ -167,6 +167,13 @@
       border-radius:8px;
     }
     
+    .article-image iframe{
+      width:100%;
+      height:100%;
+      border-radius:8px;
+      border:none;
+    }
+    
     .article-category{
       position:absolute;
       top:12px;
@@ -207,7 +214,7 @@
       justify-content:space-between;
       align-items:center;
       margin-bottom:16px;
-      font-size:12px;
+      font-size:14px;
       color:var(--text-secondary);
     }
     
@@ -235,22 +242,6 @@
       display:flex;
       align-items:center;
       gap:4px;
-    }
-    
-    .article-tags{
-      display:flex;
-      gap:6px;
-      margin-bottom:16px;
-      flex-wrap:wrap;
-    }
-    
-    .tag{
-      background:rgba(255,255,255,0.05);
-      color:var(--text-secondary);
-      padding:2px 8px;
-      border-radius:10px;
-      font-size:11px;
-      border:1px solid var(--border);
     }
     
     .article-actions{
@@ -380,8 +371,8 @@
     <header>
       <div class="header-content">
         <div>
-          <h1>المقالات التقنية</h1>
-          <p class="subtitle">أحدث المقالات والتقارير التقنية في مجال إنترنت الأشياء والذكاء الاصطناعي</p>
+          <h1>الفيديوهات التعليمية</h1>
+          <p class="subtitle">مجموعة شاملة من الفيديوهات التعليمية في مجال إنترنت الأشياء والذكاء الاصطناعي</p>
         </div>
         <div class="nav-links">
           <a href="index.html" class="nav-link">الرئيسية</a>
@@ -391,26 +382,24 @@
       </div>
       
       <div class="controls">
-        <input type="text" placeholder="ابحث في المقالات..." id="searchInput">
+        <input type="text" placeholder="ابحث في الفيديوهات..." id="searchInput">
         <select id="sortSelect">
           <option value="newest">الأحدث أولاً</option>
           <option value="oldest">الأقدم أولاً</option>
           <option value="title">حسب العنوان</option>
-          <option value="author">حسب الكاتب</option>
-          <option value="views">حسب المشاهدات</option>
-          <option value="reading-time">حسب وقت القراءة</option>
+          <option value="author">حسب المقدم</option>
         </select>
       </div>
     </header>
 
     <div class="stats">
       <div class="stat-card">
-        <div class="stat-value" id="totalArticles">0</div>
-        <div class="stat-label">إجمالي المقالات</div>
+        <div class="stat-value" id="totalVideos">0</div>
+        <div class="stat-label">إجمالي الفيديوهات</div>
       </div>
       <div class="stat-card">
         <div class="stat-value" id="totalAuthors">0</div>
-        <div class="stat-label">الكتاب</div>
+        <div class="stat-label">المقدمين</div>
       </div>
     </div>
 
@@ -422,164 +411,135 @@
       <button class="category-btn" data-category="hardware">الهاردوير</button>
       <button class="category-btn" data-category="security">الأمان</button>
       <button class="category-btn" data-category="tutorials">دروس</button>
-      <button class="category-btn" data-category="news">أخبار</button>
+      <button class="category-btn" data-category="reviews">مراجعات</button>
     </div>
 
     <div class="articles-grid" id="articlesGrid">
-      <!-- Articles will be dynamically added here -->
+      <!-- Videos will be dynamically added here -->
       <div class="empty-state">
-        <div class="empty-state-icon">📄</div>
-        <h3>لا توجد مقالات متاحة حالياً</h3>
-        <p>سيتم إضافة المقالات قريباً. تحقق مرة أخرى لاحقاً!</p>
+        <div class="empty-state-icon">🎥</div>
+        <h3>لا توجد فيديوهات متاحة حالياً</h3>
+        <p>سيتم إضافة الفيديوهات قريباً. تحقق مرة أخرى لاحقاً!</p>
       </div>
     </div>
   </div>
 
   <script>
-     // Sample article data structure - you can replace this with your actual data
-     const sampleArticles = [
-       {
-         id: 1,
-         title: "مستقبل إنترنت الأشياء والمدن الذكية",
-         excerpt: "استكشاف كيف يغير إنترنت الأشياء وجه الصناعة الحديثة ويحسن من كفاءة العمليات الإنتاجية...",
-         author: "الدكتور عبدالله خنفور",
-         tags: ["إنترنت الأشياء", "الصناعة", "التكنولوجيا"],
+    // Sample video data structure
+    const sampleVideos = [
+      {
+        id: 1,
+        title: "مستقبل إنترنت الأشياء والمدن الذكية",
+        excerpt: "فيديو شامل يشرح كيف يغير إنترنت الأشياء وجه الصناعة الحديثة ويحسن من كفاءة العمليات الإنتاجية",
+        author: "الدكتور عبدالله خنفور",
+        category: "iot",
+        image: "https://youtu.be/_467SAsVJqk?si=Evjtvsuf1VEO-xrS",
+        //featured: true,
+        link: "https://youtu.be/_467SAsVJqk?si=Evjtvsuf1VEO-xrS"
+      },
+      {
+        id: 2,
+        title: "كيف يبحث الهكر؟",
+        excerpt: "طرق البحث بالمتصفح للحصول على ادق النتائج",
+        author: "Raed xa",
+        category: "security",
+        image: "https://youtu.be/WgNbzuuvikI?si=i6mDluz_020LtF3h",
+        link:"https://youtu.be/WgNbzuuvikI?si=i6mDluz_020LtF3h",
+      },
+      
 
-         authorAvatar: "👨‍💼",
-         category: "iot",
-         
-         image: "🏭",
-         featured: true,
-         content: "مقطع فيديو يشرح مفاهيم إنترنت الأشياء والمدن الذكية",
-         link: "https://youtu.be/_467SAsVJqk?si=Evjtvsuf1VEO-xrS"
-       },
-       {
-         id: 2,
-         title: "أساسيات الذكاء الاصطناعي للمبتدئين",
-         excerpt: "دليل شامل لفهم مفاهيم الذكاء الاصطناعي الأساسية وتطبيقاتها في الحياة اليومية...",
-         author: "م. سارة أحمد",
-         authorAvatar: "👩‍💻",
-         category: "ai",
-         tags: ["الذكاء الاصطناعي", "تعلم الآلة", "مبتدئين"],
-         publishDate: "2024-01-10",
-         readingTime: 12,
-         views: 2100,
-         likes: 78,
-         comments: 23,
-         image: "🤖",
-         featured: false,
-         content: "المحتوى الكامل للمقال...",
-         link: "article-2.html"
-       },
-       {
-         id: 3,
-         title: "أفضل ممارسات أمان الشبكات",
-         excerpt: "نصائح وإرشادات مهمة لحماية شبكاتك من التهديدات السيبرانية والهجمات الإلكترونية...",
-         author: "أ. محمد علي",
-         authorAvatar: "👨‍🔬",
-         category: "security",
-         tags: ["الأمان", "الشبكات", "الحماية"],
-         publishDate: "2024-01-08",
-         readingTime: 6,
-         views: 890,
-         likes: 32,
-         comments: 8,
-         image: "🔒",
-         featured: false,
-         content: "المحتوى الكامل للمقال...",
-         link: "article-3.html"
-       }
-     ];
+      {
+        id: 7,
+        title: "How to Host a Website on GitHub Pages Free ",
+        excerpt:"upload your website to get link and try it ",
+        author: "IdeaSpot",
+        category: "programming",
+        image: "https://youtu.be/e5AwNU3Y2es?si=CW07NWcNwz4_H5FQ",
+        link: "https://youtu.be/e5AwNU3Y2es?si=CW07NWcNwz4_H5FQ"
+      }
+      
+      
+      /*,
 
-    let currentArticles = [...sampleArticles];
+      {
+        id: 7,
+        title: "",
+        excerpt:"",
+        author: " ",
+        category: "",
+        image: "",
+        link: ""
+      }
+        --------------------------------------------------
+        const categories = {
+        'iot': 'إنترنت الأشياء',
+        'ai': 'الذكاء الاصطناعي',
+        'programming': 'البرمجة',
+        'hardware': 'الهاردوير',
+        'security': 'الأمان',
+        'tutorials': 'دروس',
+        'reviews': 'مراجعات'
+      };*/
+    ];
+
+    let currentVideos = [...sampleVideos];
     let currentCategory = 'all';
 
     // Initialize the page
     function init() {
       updateStats();
-      renderArticles();
+      renderVideos();
       setupEventListeners();
     }
 
-     // Update statistics
-     function updateStats() {
-       const totalArticles = currentArticles.length;
-       const totalAuthors = new Set(currentArticles.map(article => article.author)).size;
+    // Update statistics
+    function updateStats() {
+      const totalVideos = currentVideos ? currentVideos.length : 0;
+      const totalAuthors = currentVideos && currentVideos.length > 0 
+        ? new Set(currentVideos.map(video => video.author)).size 
+        : 0;
 
-       document.getElementById('totalArticles').textContent = totalArticles;
-       document.getElementById('totalAuthors').textContent = totalAuthors;
-     }
+      document.getElementById('totalVideos').textContent = totalVideos;
+      document.getElementById('totalAuthors').textContent = totalAuthors;
+    }
 
-    // Render articles
-    function renderArticles() {
+    // Render videos
+   function renderVideos() {
       const articlesGrid = document.getElementById('articlesGrid');
       
-      if (currentArticles.length === 0) {
+      if (!currentVideos || currentVideos.length === 0) {
         articlesGrid.innerHTML = `
           <div class="empty-state">
-            <div class="empty-state-icon">📄</div>
-            <h3>لا توجد مقالات متاحة حالياً</h3>
-            <p>سيتم إضافة المقالات قريباً. تحقق مرة أخرى لاحقاً!</p>
+            <div class="empty-state-icon">🎥</div>
+            <h3>لا توجد فيديوهات متاحة حالياً</h3>
+            <p>سيتم إضافة الفيديوهات قريباً. تحقق مرة أخرى لاحقاً!</p>
           </div>
         `;
         return;
       }
 
-       articlesGrid.innerHTML = currentArticles.map(article => `
-         <div class="article-card ${article.featured ? 'featured-article' : ''}" data-article-id="${article.id}" onclick="readArticle(${article.id})">
-           ${article.featured ? '<div class="featured-badge">مقال مميز</div>' : ''}
-           <div class="article-image">
-             ${article.image}
-             <div class="article-category">${getCategoryName(article.category)}</div>
-           </div>
-           <h3 class="article-title">${article.title}</h3>
-           <p class="article-excerpt">${article.excerpt}</p>
-           <div class="article-meta">
-             <div class="article-author">
-               <span>${article.authorAvatar || '👤'}</span>
-               <span>${article.author}</span>
-             </div>
-             ${article.publishDate ? `
-             <div class="article-date">
-               <span>📅</span>
-               <span>${formatDate(article.publishDate)}</span>
-             </div>
-             ` : ''}
-           </div>
-           ${article.views || article.likes || article.comments || article.readingTime ? `
-           <div class="article-stats">
-             ${article.views ? `
-             <div class="stat-item">
-               <span>👁️</span>
-               <span>${article.views.toLocaleString()}</span>
-             </div>
-             ` : ''}
-             ${article.likes ? `
-             <div class="stat-item">
-               <span>❤️</span>
-               <span>${article.likes}</span>
-             </div>
-             ` : ''}
-             ${article.comments ? `
-             <div class="stat-item">
-               <span>💬</span>
-               <span>${article.comments}</span>
-             </div>
-             ` : ''}
-             ${article.readingTime ? `
-             <div class="reading-time">${article.readingTime} دقيقة قراءة</div>
-             ` : ''}
-           </div>
-           ` : ''}
-           <div class="article-tags">
-             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-           </div>
-           <div class="article-actions" onclick="event.stopPropagation()">
-             <button class="btn btn-primary" onclick="readArticle(${article.id})">اقرأ المقال</button>
-             <button class="btn btn-secondary" onclick="shareArticle(${article.id})">مشاركة</button>
-           </div>
-         </div>
-       `).join('');
+      articlesGrid.innerHTML = currentVideos.map(video => `
+        <div class="article-card ${video.featured ? 'featured-article' : ''}" data-video-id="${video.id}" onclick="watchVideo(${video.id})">
+          ${video.featured ? '<div class="featured-badge">فيديو مميز</div>' : ''}
+          <div class="article-image">
+            ${video.image.includes('youtube.com') || video.image.includes('youtu.be') ? 
+              `<iframe src="${getYouTubeEmbedUrl(video.image)}" frameborder="0" allowfullscreen></iframe>` : 
+              video.image}
+            <div class="article-category">${getCategoryName(video.category)}</div>
+          </div>
+          <h3 class="article-title">${video.title}</h3>
+          <p class="article-excerpt">${video.excerpt}</p>
+          <div class="article-meta">
+            <div class="article-author">
+              <span>${video.author}</span>
+            </div>
+          </div>
+          <div class="article-actions" onclick="event.stopPropagation()">
+            <button class="btn btn-primary" onclick="watchVideo(${video.id})">شاهد الفيديو</button>
+            <button class="btn btn-secondary" onclick="shareVideo(${video.id})">مشاركة</button>
+          </div>
+        </div>
+      `).join('');
     }
 
     // Get category name in Arabic
@@ -591,18 +551,28 @@
         'hardware': 'الهاردوير',
         'security': 'الأمان',
         'tutorials': 'دروس',
-        'news': 'أخبار'
+        'reviews': 'مراجعات'
       };
       return categories[category] || category;
     }
 
-    // Format date
-    function formatDate(dateString) {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('ar-SA');
+    // Convert YouTube URL to embed URL
+    function getYouTubeEmbedUrl(url) {
+      let videoId = '';
+      
+      // Extract video ID from different YouTube URL formats
+      if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1].split('?')[0];
+      } else if (url.includes('youtube.com/watch?v=')) {
+        videoId = url.split('v=')[1].split('&')[0];
+      } else if (url.includes('youtube.com/embed/')) {
+        videoId = url.split('embed/')[1].split('?')[0];
+      }
+      
+      return `https://www.youtube.com/embed/${videoId}`;
     }
 
-    // Filter articles by category
+    // Filter videos by category
     function filterByCategory(category) {
       currentCategory = category;
       
@@ -612,54 +582,47 @@
       });
       document.querySelector(`[data-category="${category}"]`).classList.add('active');
       
-      // Filter articles
+      // Filter videos
       if (category === 'all') {
-        currentArticles = [...sampleArticles];
+        currentVideos = [...sampleVideos];
       } else {
-        currentArticles = sampleArticles.filter(article => article.category === category);
+        currentVideos = sampleVideos.filter(video => video.category === category);
       }
       
       updateStats();
-      renderArticles();
+      renderVideos();
     }
 
-    // Search articles
-    function searchArticles(query) {
-      const filteredArticles = sampleArticles.filter(article => 
-        article.title.toLowerCase().includes(query.toLowerCase()) ||
-        article.excerpt.toLowerCase().includes(query.toLowerCase()) ||
-        article.author.toLowerCase().includes(query.toLowerCase()) ||
-        article.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+    // Search videos
+    function searchVideos(query) {
+      const filteredVideos = sampleVideos.filter(video => 
+        video && video.title && video.title.toLowerCase().includes(query.toLowerCase()) ||
+        video && video.excerpt && video.excerpt.toLowerCase().includes(query.toLowerCase()) ||
+        video && video.author && video.author.toLowerCase().includes(query.toLowerCase())
       );
       
-      currentArticles = filteredArticles;
+      currentVideos = filteredVideos.length > 0 ? filteredVideos : [];
       updateStats();
-      renderArticles();
+      renderVideos();
     }
 
-    // Sort articles
-    function sortArticles(sortBy) {
+    // Sort videos
+    function sortVideos(sortBy) {
       switch(sortBy) {
         case 'newest':
-          currentArticles.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          currentVideos.sort((a, b) => b.id - a.id);
           break;
         case 'oldest':
-          currentArticles.sort((a, b) => new Date(a.publishDate) - new Date(b.publishDate));
+          currentVideos.sort((a, b) => a.id - b.id);
           break;
         case 'title':
-          currentArticles.sort((a, b) => a.title.localeCompare(b.title, 'ar'));
+          currentVideos.sort((a, b) => a.title.localeCompare(b.title, 'ar'));
           break;
         case 'author':
-          currentArticles.sort((a, b) => a.author.localeCompare(b.author, 'ar'));
-          break;
-        case 'views':
-          currentArticles.sort((a, b) => b.views - a.views);
-          break;
-        case 'reading-time':
-          currentArticles.sort((a, b) => a.readingTime - b.readingTime);
+          currentVideos.sort((a, b) => a.author.localeCompare(b.author, 'ar'));
           break;
       }
-      renderArticles();
+      renderVideos();
     }
 
     // Setup event listeners
@@ -669,13 +632,13 @@
         if (e.target.value.trim() === '') {
           filterByCategory(currentCategory);
         } else {
-          searchArticles(e.target.value);
+          searchVideos(e.target.value);
         }
       });
 
       // Sort select
       document.getElementById('sortSelect').addEventListener('change', (e) => {
-        sortArticles(e.target.value);
+        sortVideos(e.target.value);
       });
 
       // Category buttons
@@ -686,32 +649,32 @@
       });
     }
 
-     // Article actions
-     function readArticle(articleId) {
-       const article = sampleArticles.find(a => a.id === articleId);
-       if (article && article.link) {
-         window.open(article.link, '_blank');
-       } else {
-         alert(`قراءة المقال: ${article.title}\nالمؤلف: ${article.author}\nوقت القراءة: ${article.readingTime} دقيقة`);
-       }
-     }
+    // Video actions
+    function watchVideo(videoId) {
+      const video = sampleVideos.find(v => v.id === videoId);
+      if (video && video.link && video.link !== '#') {
+        window.open(video.link, '_blank');
+      } else {
+        alert(`مشاهدة الفيديو: ${video.title}\nالمقدم: ${video.author}`);
+      }
+    }
 
-     function shareArticle(articleId) {
-       const article = sampleArticles.find(a => a.id === articleId);
-       if (navigator.share) {
-         navigator.share({
-           title: article.title,
-           text: article.excerpt,
-           url: article.link || window.location.href
-         });
-       } else if (article.link) {
-         navigator.clipboard.writeText(article.link).then(() => {
-           alert('تم نسخ رابط المقال إلى الحافظة!');
-         });
-       } else {
-         alert(`مشاركة المقال: ${article.title}\nسيتم نسخ الرابط إلى الحافظة...`);
-       }
-     }
+    function shareVideo(videoId) {
+      const video = sampleVideos.find(v => v.id === videoId);
+      if (navigator.share && video.link && video.link !== '#') {
+        navigator.share({
+          title: video.title,
+          text: video.excerpt,
+          url: video.link
+        });
+      } else if (video.link && video.link !== '#') {
+        navigator.clipboard.writeText(video.link).then(() => {
+          alert('تم نسخ رابط الفيديو إلى الحافظة!');
+        });
+      } else {
+        alert(`مشاركة الفيديو: ${video.title}`);
+      }
+    }
 
     // Initialize when page loads
     document.addEventListener('DOMContentLoaded', init);
