@@ -238,26 +238,23 @@
       color:var(--text-primary);
     }
     .video-player {
-  position:static;
-  top:0ch;
-  left:0ch;
-  width: 70wh;
-  height: 70vh;
-  background: #000;
-  display:inline-flexbox;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-} 
+      position:relative;
+      width:100%;
+      height:0;
+      padding-bottom:56.25%;
+      background:#000;
+      border-radius:12px;
+      overflow:hidden;
+    } 
     .video-player iframe {
-content: normal;
-  width: 82vw;
-  height:68vh;
-  border:#0891b2;
-  border-radius: 20px;
-}
-
-
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:none;
+      border-radius:12px;
+    }
     
     .empty-state{
       text-align:center;
@@ -303,201 +300,188 @@ content: normal;
   <script>
     // قاعدة بيانات الفيديوهات لكل مقرر
     const courseVideos = {
-
-//oop
-      "CS 122": 
-      [
-  {
-    "link": "https://www.youtube.com/watch?v=mNvJipMTKSM",
-    "title": "#00 [JAVA] - Introduction"
-  },
-  {
-    "link": "https://www.youtube.com/watch?v=wJKgqYj4mtU",
-    "title": "#01 [JAVA] - Installing the Java Development Tools (JDK, Apache NetBeans IDE)"
-  },
-  {
-    "link": "https://www.youtube.com/watch?v=vtHwpyk5v08",
-    "title": "#02 [JAVA] - Escape Sequences and Comments"
-  },
-  {
-    "link": "https://youtu.be/mY8yxPP9_AE?si=o5XM_FxG0gemdUfP",
-    "title": "#03 [JAVA] - Data Types"
-  },
-  {
-    "link": "https://youtu.be/r-msBvRW56g?si=FFF-gxB9xraKJti_",
-    "title": "#04 [JAVA] - Arithmetic Operators"
-  },
-  {
-    "link": "https://youtu.be/XN2nusxpvPE?si=EL54GMztRlH01p3Y",
-    "title": "#05 [JAVA] - Arithmetic Operators (Prefix & Postfix)"
-  },
-  {
-    "link": "https://youtu.be/kilmBWdI0NE?si=9QUFeu3lVknTOrW2",
-    "title": "#06 [JAVA] - Java User Input (Scanner), Printf methods"
-  },
-  {
-    "link": "https://youtu.be/EDhPw1OI-KY?si=MT203gg570b5xuI-",
-    "title": "#07 [JAVA] - Selection Statement ( if / if-else )"
-  },
-  {
-    "link": "https://youtu.be/SNJFgGXmmRQ?si=9PLW1ZLoe9uoSpP_",
-    "title": "#08 [JAVA] - Selection Statement (Exercises, Ternary Operator, Instanceof)"
-  },
-  {
-    "link": "https://youtu.be/x-NRDz7RvtU?si=6zAihZlW4ebaN-fE",
-    "title": "#09 [JAVA] - Selection Statement (Switch Statements)"
-  },
-     
-
-     
-{
-    link: "https://youtu.be/YECkwn988-Q?si=qAClXEKeQkWaQS3X",
-    title: "#010 [JAVA] - Repetition Control Statement (While Loop)",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/cUehdvQTH6c?si=26OduC4x8SVHCfc4",
-    title: "#011 [JAVA] - Sentinel and Flag-Controlled While Loops",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/ZRRCM0HvIn4?si=KR7Bi_7LP3JDjjKB",
-    title: "#012 [JAVA] - Repetition Control Statement (Do-While Loop)",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/BnTI67QhuuU?si=b5CiyxFLak3J9DC2",
-    title: "#013 [JAVA] - Repetition Control Statement (For Loop)",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/WSf_V9s_Cf4?si=Qi4RzrjZHq-9GiqH",
-    title: "#014 [JAVA] - Questions and Exercises in Loops",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/tFkMZFSruhI?si=ksK5FJEFGW2-cphL",
-    title: "#015 [JAVA] - Branching Statements ( Break/Continue )",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/b8EO1O6XDKM?si=kmhpgb3DPK5eYSmf",
-    title: "#016 [JAVA] - Repetition Control Statement (Nested Loops)",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/HqCSeKHXrhQ?si=6AVdCW_lcdLqrUbV",
-    title: "#017 [JAVA] - Branching Statements (Labeled Break / Labeled Continue)",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/izzJtoZnbHY?si=S0EUh576wdLla8L7",
-    title: "#018 [JAVA] - Method / Function Part 1",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/UJ-MVRviD28?si=W3v1W7Tox3kPkrui",
-    title: "#019 [JAVA] - Method / Function Part 2 (Examples)",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/Gxb4oZ5XIkY?si=o2sDOvPNKlJEAl8d",
-    title: "#020 [JAVA] - Built in Method / Function",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/FaaM6uVbuJM?si=dFLCduwUMgXIE0JL",
-    title: "#030 [JAVA] - Introduction to Object-Oriented Programming",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/JIPwPCkYoLY?si=bQHjx_msQBSVwbo-",
-    title: "#031 [JAVA] - Classes and Objects",
-    desc: ""
-}
-,
-     
-{
-    link: "https://youtu.be/7iMtBSktIKw?si=hyhNljKzq7p2OSaC",
-    title: "#032 [JAVA] - Questions and Exercises - Classes and Objects",
-    desc: "مادة الميد الى هنا "
-},   
-{
-    link: "",
-    title: "",
-    desc: ""
-}
-      ],
-      //------------------------------
-
-      "IOT 222": [
+      "CS 122": [
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "مقدمة في Arduino",
-          desc: "البدء مع Arduino وتعلم الأساسيات"
+          "link": "https://www.youtube.com/watch?v=mNvJipMTKSM",
+          "title": "#00 [JAVA] - Introduction",
+          "desc": ""
         },
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "البرمجة بلغة C للأنظمة المدمجة",
-          desc: "تعلم برمجة C للمتحكمات الدقيقة"
+          "link": "https://www.youtube.com/watch?v=wJKgqYj4mtU",
+          "title": "#01 [JAVA] - Installing the Java Development Tools (JDK, Apache NetBeans IDE)",
+          "desc": ""
         },
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "المدخلات والمخرجات الرقمية",
-          desc: "التعامل مع الـ Digital I/O"
+          "link": "https://www.youtube.com/watch?v=vtHwpyk5v08",
+          "title": "#02 [JAVA] - Escape Sequences and Comments",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/mY8yxPP9_AE?si=o5XM_FxG0gemdUfP",
+          "title": "#03 [JAVA] - Data Types",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/r-msBvRW56g?si=FFF-gxB9xraKJti_",
+          "title": "#04 [JAVA] - Arithmetic Operators",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/XN2nusxpvPE?si=EL54GMztRlH01p3Y",
+          "title": "#05 [JAVA] - Arithmetic Operators (Prefix & Postfix)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/kilmBWdI0NE?si=9QUFeu3lVknTOrW2",
+          "title": "#06 [JAVA] - Java User Input (Scanner), Printf methods",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/EDhPw1OI-KY?si=MT203gg570b5xuI-",
+          "title": "#07 [JAVA] - Selection Statement ( if / if-else )",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/SNJFgGXmmRQ?si=9PLW1ZLoe9uoSpP_",
+          "title": "#08 [JAVA] - Selection Statement (Exercises, Ternary Operator, Instanceof)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/x-NRDz7RvtU?si=6zAihZlW4ebaN-fE",
+          "title": "#09 [JAVA] - Selection Statement (Switch Statements)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/YECkwn988-Q?si=qAClXEKeQkWaQS3X",
+          "title": "#010 [JAVA] - Repetition Control Statement (While Loop)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/cUehdvQTH6c?si=26OduC4x8SVHCfc4",
+          "title": "#011 [JAVA] - Sentinel and Flag-Controlled While Loops",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/ZRRCM0HvIn4?si=KR7Bi_7LP3JDjjKB",
+          "title": "#012 [JAVA] - Repetition Control Statement (Do-While Loop)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/BnTI67QhuuU?si=b5CiyxFLak3J9DC2",
+          "title": "#013 [JAVA] - Repetition Control Statement (For Loop)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/WSf_V9s_Cf4?si=Qi4RzrjZHq-9GiqH",
+          "title": "#014 [JAVA] - Questions and Exercises in Loops",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/tFkMZFSruhI?si=ksK5FJEFGW2-cphL",
+          "title": "#015 [JAVA] - Branching Statements ( Break/Continue )",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/b8EO1O6XDKM?si=kmhpgb3DPK5eYSmf",
+          "title": "#016 [JAVA] - Repetition Control Statement (Nested Loops)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/HqCSeKHXrhQ?si=6AVdCW_lcdLqrUbV",
+          "title": "#017 [JAVA] - Branching Statements (Labeled Break / Labeled Continue)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/izzJtoZnbHY?si=S0EUh576wdLla8L7",
+          "title": "#018 [JAVA] - Method / Function Part 1",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/UJ-MVRviD28?si=W3v1W7Tox3kPkrui",
+          "title": "#019 [JAVA] - Method / Function Part 2 (Examples)",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/Gxb4oZ5XIkY?si=o2sDOvPNKlJEAl8d",
+          "title": "#020 [JAVA] - Built in Method / Function",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/FaaM6uVbuJM?si=dFLCduwUMgXIE0JL",
+          "title": "#030 [JAVA] - Introduction to Object-Oriented Programming",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/JIPwPCkYoLY?si=bQHjx_msQBSVwbo-",
+          "title": "#031 [JAVA] - Classes and Objects",
+          "desc": ""
+        },
+        {
+          "link": "https://youtu.be/7iMtBSktIKw?si=hyhNljKzq7p2OSaC",
+          "title": "#032 [JAVA] - Questions and Exercises - Classes and Objects",
+          "desc": "مادة الميد الى هنا "
         }
       ],
+      //=========================================================================
+//design embeded systems
+      "IOT 222": [
+      {
+          "link": "https://youtu.be/yHoRxeWSgPY?si=0mcQffgQfKV7nsd1",
+          "title":"Lesson01 Arduino Introduction (ARABIC)",
+          "desc": ""
+},
+{
+          "link": "https://youtu.be/-szP-Kfq_FI?si=-aB58I6SbgNIehWo",
+          "title":"Lesson02 Arduino Setup (ARABIC)",
+          "desc": "wokwi الدكتور بستخدم محاكي  "
+},
+{
+          "link": "https://youtu.be/ftvbFbn8H5k?si=bJE3GGakxC4X6g0q",
+          "title":"",
+          "desc": ""
+},
+{
+          "link": "https://youtu.be/ftvbFbn8H5k?si=Tpe8MOnTG4B7YE5E",
+          "title":"Lesson03 Arduino: LED Flashing, variables and datatypes",
+          "desc": ""
+},
+{
+          "link": "https://drive.google.com/file/d/19x1mICZk1E_bSsx2jkfX0e9A-mFeD8_w/view?usp=drive_link",
+          "title":"sorry",
+          "desc": ""
+}
+
+      ],
+//c++
       "CS 103": [
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "أساسيات البرمجة بلغة C++",
-          desc: "المفاهيم الأساسية للبرمجة"
+          "link": "",
+          "title": "",
+          "desc": ""
         },
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "المصفوفات والحلقات التكرارية",
-          desc: "التعامل مع Arrays و Loops"
+          "link": "",
+          "title": "",
+          "desc": ""
         }
+       
       ],
+
       "IOT 244": [
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "مقدمة في قواعد البيانات",
-          desc: "المفاهيم الأساسية لقواعد البيانات"
+          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "title": "مقدمة في قواعد البيانات",
+          "desc": "المفاهيم الأساسية لقواعد البيانات"
         },
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "Entity Relationship Model",
-          desc: "تصميم نماذج الكيانات والعلاقات"
+          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "title": "Entity Relationship Model",
+          "desc": "تصميم نماذج الكيانات والعلاقات"
         },
         {
-          link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "SQL Language أساسيات",
-          desc: "تعلم لغة الاستعلام SQL"
+          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "title": "SQL Language أساسيات",
+          "desc": "تعلم لغة الاستعلام SQL"
         }
       ]
     };
@@ -517,23 +501,32 @@ content: normal;
     const videos = courseVideos[courseCode] || [];
 
     function extractVideoId(url) {
-      // استخراج معرف الفيديو من الرابط
+      if (!url) return null;
+      
+      // استخراج معرف الفيديو من جميع تنسيقات YouTube
       const patterns = [
-        /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/,
-        /youtube\.com\/embed\/([^&\s]+)/,
-        /youtube\.com\/v\/([^&\s]+)/
+        /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/, // youtube.com/watch?v=
+        /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/, // youtu.be/
+        /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/, // youtube.com/embed/
+        /(?:youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/, // youtube.com/v/
+        /[?&]v=([a-zA-Z0-9_-]{11})/, // أي رابط يحتوي على ?v= أو &v=
+        /\/([a-zA-Z0-9_-]{11})(?:\?|&|$)/ // أي رابط ينتهي بمعرف 11 حرف
       ];
       
       for (const pattern of patterns) {
         const match = url.match(pattern);
-        if (match) return match[1];
+        if (match && match[1]) return match[1];
       }
       return null;
     }
 
     function getYoutubeThumbnail(url) {
       const videoId = extractVideoId(url);
-      return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
+      if (!videoId) {
+        // إذا لم نستطع استخراج المعرّف، نعرض صورة افتراضية
+        return 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720"%3E%3Crect fill="%23131a2b" width="1280" height="720"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="60" fill="%239ca3af"%3E📹 YouTube Video%3C/text%3E%3C/svg%3E';
+      }
+      return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
     }
 
     function renderVideos(filteredVideos) {
