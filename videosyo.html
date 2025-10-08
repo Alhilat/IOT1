@@ -300,6 +300,7 @@
   <script>
     // قاعدة بيانات الفيديوهات لكل مقرر
     const courseVideos = {
+//oop
       "CS 122": [
         {
           "link": "https://www.youtube.com/watch?v=mNvJipMTKSM",
@@ -466,9 +467,9 @@
         }
        
       ],
-
+//digital logic
      "IOT 231": [
-  { "link": "https://youtu.be/ExxgXlYy9k0?si=-L7-iZo8Gsr6BUQO", "title": "Digital system", "desc": "" },
+  { "link": "https://youtu.be/ExxgXlYy9k0?si=-L7-iZo8Gsr6BUQO", "title": "Digital system", "desc": "انتبه لصوت الموسيقى بداية الفيديو" },
   { "link": "https://youtu.be/VLcG44Fu0hs?si=yj70FoHO0tU-M065", "title": "conversion between systems", "desc": "" },
   { "link": "https://youtu.be/iLf9PLaMgzo?si=UDIY5g5Pdt-cfKTJ", "title": "Addition and Subtraction", "desc": "" },
   { "link": "https://youtu.be/EgPMCFYBpQM?si=qRRgV_6uW-DEJUsj", "title": "Logic Gates", "desc": "" },
@@ -585,15 +586,20 @@
       }
       
       modalTitle.textContent = title;
-      player.innerHTML = `
-        <iframe 
-          src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      `;
       
+      // Show modal first
       modal.style.display = 'flex';
+      
+      // Delay iframe creation slightly to ensure modal is visible
+      setTimeout(() => {
+        player.innerHTML = `
+          <iframe 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        `;
+      }, 100);
     }
 
     function closeVideo() {
