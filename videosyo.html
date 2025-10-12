@@ -238,23 +238,23 @@
       color:var(--text-primary);
     }
     .video-player {
-  position:relative;
-  width:100%;
-  padding-bottom:45.25%;
-  background:#000;
-  border-radius:12px;
-  overflow:hidden;
-} 
+      position:relative;
+      width:100%;
+      padding-bottom:45.25%;
+      background:#000;
+      border-radius:12px;
+      overflow:hidden;
+    } 
 
-.video-player iframe {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  border:none;
-  border-radius:12px;
-}
+    .video-player iframe {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:none;
+      border-radius:12px;
+    }
     
     .empty-state{
       text-align:center;
@@ -298,337 +298,41 @@
   </div>
 
   <script>
-    // قاعدة بيانات الفيديوهات لكل مقرر
-    const courseVideos = {
-//oop
-      "CS 122": [
-        {
-          "link": "https://www.youtube.com/watch?v=mNvJipMTKSM",
-          "title": "#00 [JAVA] - Introduction",
-          "desc": ""
-        },
-        {
-          "link": "https://www.youtube.com/watch?v=wJKgqYj4mtU",
-          "title": "#01 [JAVA] - Installing the Java Development Tools (JDK, Apache NetBeans IDE)",
-          "desc": ""
-        },
-        {
-          "link": "https://www.youtube.com/watch?v=vtHwpyk5v08",
-          "title": "#02 [JAVA] - Escape Sequences and Comments",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/mY8yxPP9_AE?si=o5XM_FxG0gemdUfP",
-          "title": "#03 [JAVA] - Data Types",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/r-msBvRW56g?si=FFF-gxB9xraKJti_",
-          "title": "#04 [JAVA] - Arithmetic Operators",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/XN2nusxpvPE?si=EL54GMztRlH01p3Y",
-          "title": "#05 [JAVA] - Arithmetic Operators (Prefix & Postfix)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/kilmBWdI0NE?si=9QUFeu3lVknTOrW2",
-          "title": "#06 [JAVA] - Java User Input (Scanner), Printf methods",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/EDhPw1OI-KY?si=MT203gg570b5xuI-",
-          "title": "#07 [JAVA] - Selection Statement ( if / if-else )",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/SNJFgGXmmRQ?si=9PLW1ZLoe9uoSpP_",
-          "title": "#08 [JAVA] - Selection Statement (Exercises, Ternary Operator, Instanceof)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/x-NRDz7RvtU?si=6zAihZlW4ebaN-fE",
-          "title": "#09 [JAVA] - Selection Statement (Switch Statements)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/YECkwn988-Q?si=qAClXEKeQkWaQS3X",
-          "title": "#010 [JAVA] - Repetition Control Statement (While Loop)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/cUehdvQTH6c?si=26OduC4x8SVHCfc4","title": "#011 [JAVA] - Sentinel and Flag-Controlled While Loops",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/ZRRCM0HvIn4?si=KR7Bi_7LP3JDjjKB",
-          "title": "#012 [JAVA] - Repetition Control Statement (Do-While Loop)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/BnTI67QhuuU?si=b5CiyxFLak3J9DC2",
-          "title": "#013 [JAVA] - Repetition Control Statement (For Loop)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/WSf_V9s_Cf4?si=Qi4RzrjZHq-9GiqH",
-          "title": "#014 [JAVA] - Questions and Exercises in Loops",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/tFkMZFSruhI?si=ksK5FJEFGW2-cphL",
-          "title": "#015 [JAVA] - Branching Statements ( Break/Continue )",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/b8EO1O6XDKM?si=kmhpgb3DPK5eYSmf",
-          "title": "#016 [JAVA] - Repetition Control Statement (Nested Loops)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/HqCSeKHXrhQ?si=6AVdCW_lcdLqrUbV",
-          "title": "#017 [JAVA] - Branching Statements (Labeled Break / Labeled Continue)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/izzJtoZnbHY?si=S0EUh576wdLla8L7",
-          "title": "#018 [JAVA] - Method / Function Part 1",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/UJ-MVRviD28?si=W3v1W7Tox3kPkrui",
-          "title": "#019 [JAVA] - Method / Function Part 2 (Examples)",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/Gxb4oZ5XIkY?si=o2sDOvPNKlJEAl8d",
-          "title": "#020 [JAVA] - Built in Method / Function",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/FaaM6uVbuJM?si=dFLCduwUMgXIE0JL",
-          "title": "#030 [JAVA] - Introduction to Object-Oriented Programming",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/JIPwPCkYoLY?si=bQHjx_msQBSVwbo-",
-          "title": "#031 [JAVA] - Classes and Objects",
-          "desc": ""
-        },
-        {
-          "link": "https://youtu.be/7iMtBSktIKw?si=hyhNljKzq7p2OSaC",
-          "title": "#032 [JAVA] - Questions and Exercises - Classes and Objects",
-          "desc": "مادة الميد الى هنا "
-        }
-      ],
-      //=========================================================================
-//design embeded systems
-      "IOT 222": [
-      {
-          "link": "https://youtu.be/yHoRxeWSgPY?si=0mcQffgQfKV7nsd1",
-          "title":"Lesson01 Arduino Introduction (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/-szP-Kfq_FI?si=-aB58I6SbgNIehWo",
-          "title":"Lesson02 Arduino Setup (ARABIC)",
-          "desc": "wokwi الدكتور بستخدم محاكي  "
-},
-{
-          "link": "https://youtu.be/ftvbFbn8H5k?si=bJE3GGakxC4X6g0q",
-          "title":"",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/ftvbFbn8H5k?si=Tpe8MOnTG4B7YE5E",
-          "title":"Lesson03 Arduino: LED Flashing, variables and datatypes",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/dXu3J4mB8pg?si=4ZpXvAtmNyPyOdb8",
-          "title":"Lesson04 Arduino: running Light and comments (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/gunLCNisLrk?si=Q--2MoAy4BvEs4sD",
-          "title":"Lesson05 Arduino: PWM Fading LED (ARABIC)",
-          "desc": ""
-},
+    // This function will contain all the logic that depends on the video data.
+    function initializeApp(courseVideos) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const courseCode = urlParams.get('code') || '';
+      const courseName = urlParams.get('name') || '';
 
-{
-          "link": "https://youtu.be/JpgY_ia3NCo?si=vHZPyHXDghydGQD0",
-          "title":"Lesson07 Arduino: digitalread and pushbutton (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/7lxRYPOU0i4?si=gavkhXeytWdsEGxq",
-          "title":"Lesson08 Arduino: If statement and If else statement (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/k5iQeuU6BC4?si=zeeyj8Bv4lCK-7j0",
-          "title":"Lesson09 Arduino: for loop, while loop (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/d6Z3qkxQvoE?si=w-qfTx387fyTmtx9",
-          "title":"Lesson10 Arduino: analogRead, analog pins (ARABIC)",
-          "desc": ""
-},
+      document.getElementById('pageTitle').textContent = `فيديوهات ${courseCode}`;
+      document.getElementById('courseInfo').innerHTML = `
+        <strong>${courseCode}</strong> — ${courseName}
+      `;
 
-{
-          "link": "https://youtu.be/VtFORy63EhE?si=KzhH5v7Pwg67OGCy",
-          "title":"Lesson11 Arduino: Potentiometer and Serial port (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/RO-phIansS8?si=mC701dSUfPvJ2H1E",
-          "title":"Lesson12 Arduino: Temperature sensor (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/t78ZZeYhsdw?si=y2X2loVkrwVBlSCR",
-          "title":"Lesson14 Arduino: Servo Motor(ARABIC",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/wUi1MpZGHQE?si=QTF2coBp--N2q2dw",
-          "title":"Lesson16 Arduino: LCD Display (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/H3fqn4G5gTQ?si=Z17GuSWfiVAQXq5n",
-          "title":"Lesson18 Arduino: switch case and Serial read (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/Lqnp2QjBA1s?si=ALLP4_amj5AxHfZl",
-          "title":"Lesson21 Arduino: Arrays (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/KebQK-TmQfA?si=_mBzW83LpmDn4n4m",
-          "title":"Lesson22 Arduino: IR Remote Control (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/Xn6uw0UkJs8?si=SBpHe72UpNwHmIpg",
-          "title":"HC-SR04 Ultrasonic Sensor and servo motor",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/NQUoa2cw4IA?si=f0ta_snw_JqZ0iIT",
-          "title":"Heart Pulse Sensor using Arduino",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/gv8gU1D28Vo?si=ibJNoWFopaDM67lL",
-          "title":"Arduino Three pin LED (Visual Output Bi color LED",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/tp88LAO_9Bc?si=KvrYgdZ6yoa-UGeM",
-          "title":"Lesson29 Arduino: Stepper Motor with ULN2003 driver (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/xLztyGDsWUk?si=TT4a12ypxR7-KbvW",
-          "title":"Lesson31 Arduino: String objects (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/pqbNVjR279A?si=H58Xe-LXETaOFKki",
-          "title":"Lesson34 Arduino: Usage of random numbers (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/ATs3akc9ENo?si=daOiWnUnG4-sKIrm",
-          "title":"esson36 Arduino: The map function (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/QqzOh0-ZauQ?si=ujKoh8xl1u_Ff2LU",
-          "title":"Lesson37 Arduino: min and max (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/EF5_km11kdA?si=L6SIcq-dcJJv62MX",
-          "title":"Lesson40 Arduino: Float Data Type (ARABIC)",
-          "desc": ""
-},
-{
-          "link": "https://youtu.be/QmJ7voR8O3w?si=n8DEAPojxQ1CKmGS",
-          "title":"Lesson44 Arduino: I2C-connect 2 Arduino(ARABIC)",
-          "desc": ""
-}
+      const videos = courseVideos[courseCode] || [];
 
-      ],
-//c++
-      "CS 103": [
-        {
-          "link": "",
-          "title": "",
-          "desc": ""
-        },
-        {
-          "link": "",
-          "title": "",
-          "desc": ""
-        }
-       
-      ],
-//digital logic
-     "IOT 231": [
-  { "link": "https://youtu.be/ExxgXlYy9k0?si=-L7-iZo8Gsr6BUQO", "title": "Digital system", "desc": "انتبه لصوت الموسيقى بداية الفيديو" },
-  { "link": "https://youtu.be/VLcG44Fu0hs?si=yj70FoHO0tU-M065", "title": "conversion between systems", "desc": "" },
-  { "link": "https://youtu.be/iLf9PLaMgzo?si=UDIY5g5Pdt-cfKTJ", "title": "Addition and Subtraction", "desc": "" },
-  { "link": "https://youtu.be/EgPMCFYBpQM?si=qRRgV_6uW-DEJUsj", "title": "Logic Gates", "desc": "" },
-  { "link": "https://youtu.be/9hm6qyTnHXc?si=xsSIgvgeSGPA2HLM", "title": "Logic circuit (1)", "desc": "" },
-  { "link": "https://youtu.be/DCKTQxNm7r8?si=n8sv8tlgBBHArEc2", "title": "Logic circuit (2)", "desc": "" },
-  { "link": "https://youtu.be/S9TGX5yaRf8?si=bJIRlOTQXTa5JSpm", "title": "Simplification techniques", "desc": "" },
-  { "link": "https://youtu.be/ujv-lydf6d0?si=cWj1QZ8wH-6SStn6", "title": "Sum of products (SOP) || Product of sum (POS)", "desc": "الي هنا ماده المد" },
-  { "link": "https://youtu.be/Ktua5GolHlk?si=6898Qgv8tmWWahV9", "title": "K-Maps", "desc": "" },
-  { "link": "https://youtu.be/0JR8vxQbKpc?si=V324GE-B-fajqkoE", "title": "Grouping in k-Maps", "desc": "" },
-  { "link": "https://youtu.be/rXOohckZcOM?si=vqJ50LL59ijWRov8", "title": "Adder & subtracter (1)", "desc": "" },
-  { "link": "https://youtu.be/LF_W7vJCnkE?si=OrNatdSQzJS4Z_VF", "title": "Adder & subtracter (2)", "desc": "" },
-  { "link": "https://youtu.be/LCEmfq_69TY?si=3Ss1jvWTkvnnRH_N", "title": "Decoders (1)", "desc": "" },
-  { "link": "https://youtu.be/lMTbN_hu17A?si=9YtDYIe3TW0Atv4f", "title": "Decoders (2)", "desc": "" },
-  { "link": "https://youtu.be/Vt37UfHgzsk?si=HbBUO_aS2UZN2oFa", "title": "Encoders & Extra Examples", "desc": "" },
-  { "link": "https://youtu.be/-Vdv2SY8yC0?si=GBJWUuc7wcZA07Ex", "title": "Multiplexer", "desc": "" },
-  { "link": "https://youtu.be/F2AFfDU7jkM?si=KBikinShsRA95NVC", "title": "DeMultiplexer", "desc": "" },
-  { "link": "https://youtu.be/Qee7pSmRjo8?si=AcfnOxEftPhIdf0i", "title": "Memory elements (Latch)", "desc": "" },
-  { "link": "https://youtu.be/0rqBIhr-mUI?si=PTBsNZL_uzEI3K7R", "title": "Memory elements (flip-flop)", "desc": "الي هنا ماده الفاينل" }
-],
-    };
-
-    // استخراج معلومات المقرر من URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const courseCode = urlParams.get('code') || '';
-    const courseName = urlParams.get('name') || '';
-
-    // تحديث عنوان الصفحة
-    document.getElementById('pageTitle').textContent = `فيديوهات ${courseCode}`;
-    document.getElementById('courseInfo').innerHTML = `
-      <strong>${courseCode}</strong> — ${courseName}
-    `;
-
-    // الحصول على الفيديوهات الخاصة بالمقرر
-    const videos = courseVideos[courseCode] || [];
+      document.getElementById('searchVideo').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = videos.filter(v => 
+          v.title.toLowerCase().includes(query) || 
+          v.desc.toLowerCase().includes(query)
+        );
+        renderVideos(filtered);
+      });
+      
+      renderVideos(videos);
+    }
 
     function extractVideoId(url) {
       if (!url) return null;
-      
-      // استخراج معرف الفيديو من جميع تنسيقات YouTube
       const patterns = [
-        /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/, // youtube.com/watch?v=
-        /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/, // youtu.be/
-        /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/, // youtube.com/embed/
-        /(?:youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/, // youtube.com/v/
-        /[?&]v=([a-zA-Z0-9_-]{11})/, // أي رابط يحتوي على ?v= أو &v=
-        /\/([a-zA-Z0-9_-]{11})(?:\?|&|$)/ // أي رابط ينتهي بمعرف 11 حرف
+        /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/,
+        /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+        /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+        /(?:youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,
+        /[?&]v=([a-zA-Z0-9_-]{11})/,
+        /\/([a-zA-Z0-9_-]{11})(?:\?|&|$)/
       ];
-      
       for (const pattern of patterns) {
         const match = url.match(pattern);
         if (match && match[1]) return match[1];
@@ -639,7 +343,6 @@
     function getYoutubeThumbnail(url) {
       const videoId = extractVideoId(url);
       if (!videoId) {
-        // إذا لم نستطع استخراج المعرّف، نعرض صورة افتراضية
         return 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720"%3E%3Crect fill="%23131a2b" width="1280" height="720"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="60" fill="%239ca3af"%3E📹 YouTube Video%3C/text%3E%3C/svg%3E';
       }
       return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
@@ -647,8 +350,7 @@
 
     function renderVideos(filteredVideos) {
       const grid = document.getElementById('videosGrid');
-      
-      if (!filteredVideos.length) {
+      if (!filteredVideos || !filteredVideos.length) {
         grid.innerHTML = `
           <div class="empty-state" style="grid-column:1/-1">
             <div class="empty-icon">📹</div>
@@ -658,14 +360,11 @@
         `;
         return;
       }
-
       grid.innerHTML = filteredVideos.map(video => `
         <div class="video-card" onclick='openVideo(${JSON.stringify(video.link)}, ${JSON.stringify(video.title)})'>
           <div class="video-thumbnail">
             <img src="${getYoutubeThumbnail(video.link)}" alt="${escapeHtml(video.title)}">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
+            <div class="play-overlay"><div class="play-icon">▶</div></div>
           </div>
           <div class="video-info">
             <div class="video-title">${escapeHtml(video.title)}</div>
@@ -676,13 +375,7 @@
     }
 
     function escapeHtml(text) {
-      return String(text).replace(/[&<>"']/g, (m) => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      }[m]));
+      return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#39;'}[m]));
     }
 
     function openVideo(videoLink, title) {
@@ -690,55 +383,47 @@
       const player = document.getElementById('videoPlayer');
       const modalTitle = document.getElementById('modalTitle');
       const videoId = extractVideoId(videoLink);
-      
       if (!videoId) {
         alert('رابط الفيديو غير صحيح');
         return;
       }
-      
       modalTitle.textContent = title;
-      
-      // Show modal first
       modal.style.display = 'flex';
-      
-      // Delay iframe creation slightly to ensure modal is visible
       setTimeout(() => {
-        player.innerHTML = `
-          <iframe 
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        `;
+        player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
       }, 100);
     }
 
     function closeVideo() {
       const modal = document.getElementById('videoModal');
       const player = document.getElementById('videoPlayer');
-      
       player.innerHTML = '';
       modal.style.display = 'none';
     }
 
-    // البحث في الفيديوهات
-    document.getElementById('searchVideo').addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      const filtered = videos.filter(v => 
-        v.title.toLowerCase().includes(query) || 
-        v.desc.toLowerCase().includes(query)
-      );
-      renderVideos(filtered);
-    });
-
-    // إغلاق المودال
     document.getElementById('closeModal').addEventListener('click', closeVideo);
     document.getElementById('videoModal').addEventListener('click', (e) => {
       if (e.target.id === 'videoModal') closeVideo();
     });
 
-    // عرض الفيديوهات عند تحميل الصفحة
-    renderVideos(videos);
+    // Fetch the data from the JSON file when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('videos.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+          // Once data is loaded, run the main app logic
+          initializeApp(data);
+        })
+        .catch(error => {
+          console.error('Error loading video data:', error);
+          document.getElementById('videosGrid').innerHTML = '<p style="color:red; text-align:center; grid-column:1/-1;">فشل تحميل قائمة الفيديوهات. الرجاء التأكد من أنك تستخدم خادم محلي.</p>';
+        });
+    });
   </script>
 </body>
 </html>
