@@ -213,11 +213,6 @@
       "desc": "wokwi الدكتور بستخدم محاكي  "
     },
     {
-      "link": "https://youtu.be/ftvbFbn8H5k?si=bJE3GGakxC4X6g0q",
-      "title": "",
-      "desc": ""
-    },
-    {
       "link": "https://youtu.be/ftvbFbn8H5k?si=Tpe8MOnTG4B7YE5E",
       "title": "Lesson03 Arduino: LED Flashing, variables and datatypes",
       "desc": ""
@@ -446,5 +441,6 @@
       "title": "Memory elements (flip-flop)",
       "desc": "الي هنا ماده الفاينل"
     }
-  ]
+  ],
+  "IOT 2311": []
 }
