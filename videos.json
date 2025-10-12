@@ -442,5 +442,166 @@
       "desc": "الي هنا ماده الفاينل"
     }
   ],
-  "IOT 2311": []
+  "IOT 2311": [
+    {
+      "link": "https://youtu.be/QK432s--YMw?si=01rTDK1I5IobwcZe",
+      "title": "الانظمة العدديه Number System\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/Rdefs4TbfX0?si=AY55Zl1qcfA5BJlS",
+      "title": "طريقة تحويل اى نظام الى النظام العشرى\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/F_S95dj8MHg?si=NOJmX4Ld_QUF8hCL",
+      "title": "طريقة تحويل النظام العشرى إلى أى نظام (ثنائى - ثمانى - سداسى عشر)\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/StFN8Jyv2K0?si=teE9yUyT339Lq45C",
+      "title": "AND Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/PJK45p0FExI?si=jt_PXqyhpN87qDDR",
+      "title": "OR Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/EhQk5QnDB60?si=myEo5tISQcJGLTDd",
+      "title": "NOT Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/XtKtrSjkBfI?si=YTDNO3wQOFixs4FI",
+      "title": "NAND Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/VfO5Oeu7_Zs?si=lVbuENuGZQrV50gX",
+      "title": "NOR Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/MUCtSxfitvg?si=GeiW60-xoCY36wrW",
+      "title": "XOR Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/izJK3gXnp48?si=YJ6DMiFdhRjE6TfK",
+      "title": "XNOR Gate\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/p0VNHN3Gcqs?si=v8riICPO7li61RaM",
+      "title": "طريقة استنتاج الدائرة المنطقية و جدول الحقيقه من المعادله المنطقية\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/ZSl05DtrAlE?si=0mc89eVkEpNcrrZR",
+      "title": "طريقة استنتاج المعادله المنطقية و جدول الحقيقه من الدائرة المنطقية\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/LXGvlMvy8UI?si=kB9PLuePVW1HS6VR",
+      "title": "Time diagram in asynchronous circuit\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/ThrkBmhM9oE?si=SywZqkEtXsqgIuom",
+      "title": "رسم اى دائره منطقيه باستخدام بوابات NAND gate فقط\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/LZSWubnKeMI?si=8z7it3RbiCbPvso6",
+      "title": "رسم اى دائره منطقيه باستخدام بوابات NOR gate فقط\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/5b1F5rJOwgs?si=PdnRweJlK_RMVttf",
+      "title": "شرح جبر بول Boolean Algebra\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/0ixwCu2YT4E?si=Ear51Ii5zJIOOBRK",
+      "title": "قانون دي مورجان De Morgan 's Law\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/3sRQc2BirtY?si=k6kGWJow72KOLIlL",
+      "title": "قاعدة العفريت فى جبر بول\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/Whp653qHwck?si=eYeEqKeCa9us5ibp",
+      "title": "حل مسالة على قوانين جبر بول\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/9F4j7zx4lnU?si=XlmDUDiMHyVNEsgH",
+      "title": "الصور المختلفة للتعبيرات البولينيه SOP - POS\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/FZRV2vauJpc?si=6ci-gZUjbR34WHik",
+      "title": "تحويلات الصور المختلفة للتعبيرات البولينيه SOP - POS\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/JvM5OlGPK_s?si=OIrHA24XVQND5Hk-",
+      "title": "Minterms and Maxterms in Boolean Algebra\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/RO5alU6PpSU?si=QHi6_3Ts0PmAiZZs",
+      "title": "Introduction to Karnaugh Maps - Combinational Logic Circuits, Functions, & Truth Tables\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/wkzOMmlj5s0?si=fXYBeY3NrwS7f0RP",
+      "title": "شرح دائرة الجامع النصفي Half Adder\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/hF7ja__Zf6U?si=rDuF-mP0BvmoXUJT",
+      "title": "شرح دائرة الجامع الكامل Full Adder\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/NIZ81gV34ck?si=WC47Adkbi9WUGI2u",
+      "title": "تصميم جامع كامل باستخدام 2 جامع نصفى\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/Tf_LLwp8W_s?si=-1vi5Qg0Dpy_8AdN",
+      "title": "One Bit Comparator\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/XBJJp6_fvBE?si=ufKnssoewSedOgjL",
+      "title": "Two Bit Comparator\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/EHRcDfs-rI0?si=n54GYbxpYN-FjvXm",
+      "title": "Multiplexer\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/LNdoDjFcoYs?si=BYk2C1gmiRWao_kj",
+      "title": "Demultiplexer\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/4s4OSTX9x2I?si=ZYIGzlW-d9taRKh1",
+      "title": "فاك الشفره Decoder\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/D9h8juiWAto?si=6fYbqkMd1kLpsXwT",
+      "title": "المشفر Encoder\n",
+      "desc": ""
+    }
+  ]
 }
