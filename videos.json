@@ -333,18 +333,7 @@
       "desc": ""
     }
   ],
-  "CS 103": [
-    {
-      "link": "",
-      "title": "",
-      "desc": ""
-    },
-    {
-      "link": "",
-      "title": "",
-      "desc": ""
-    }
-  ],
+
   "IOT 231": [
     {
       "link": "https://youtu.be/ExxgXlYy9k0?si=-L7-iZo8Gsr6BUQO",
@@ -602,6 +591,306 @@
       "link": "https://youtu.be/D9h8juiWAto?si=6fYbqkMd1kLpsXwT",
       "title": "المشفر Encoder\n",
       "desc": ""
+    }
+  ],
+  "IOT 211": [
+    {
+      "link": "https://youtu.be/_b1wo2QKqGw?si=zbult3lLTk0Qt2m0",
+      "title": "01 - | Java - Data Structures For Beginners | - | Why To Learn Data Structures? |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/SlQmNU76goU?si=qYiCmJfXIrwFu6IZ",
+      "title": "02 - | Java - Data Structures For Beginners | - | Array as a Data Structure |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/bfBC-TbZ0_M?si=Hsr_3RdJQe6uHYPR",
+      "title": "06 - | Java - Data Structures For Beginners | - | Stacks - with Arrays |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/mAwEmz2Vuc4?si=HW-iL7_psgjQA9Wj",
+      "title": "08 - | Java - Data Structures For Beginners | - | Queues - Array based implementation |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/oZgoPGNdScE?si=IKi4Ry3Da9bGE8ru",
+      "title": "03 - | Java - Data Structures For Beginners | - | Single Linked Lists - Part 01 |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/2TbkZwF00Fc?si=71AoWlUDXxb9VYPd",
+      "title": "04 - | Java - Data Structures For Beginners | - | Single Linked Lists - Part 02 |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/kZZz41F2FIw?si=K8vO0IpIv0T8myp-",
+      "title": "05 - | Java - Data Structures For Beginners | - | Doubly Linked List |\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/McifeJjrvpI?si=lImYVKsHHkRN1kSU",
+      "title": "#1- Introduction to Algorithms - مقدمة فالخوارزميات\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/8QDFAK8Y5Ts?si=8x6Jy6dr6aNVC30P",
+      "title": "#2- Algorithm Time Complexity - مقدمه\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/Day3_mw1F-Y?si=Ad2QeyJ0lcW6HUGi",
+      "title": "#2.1- Time Complexity Analysis: Frequency Count | بالعربي\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/w7gYfHx8Z1Q?si=6SbJMpP6Pnr-nRKj",
+      "title": "#2.2- Time Complexity Analysis: Example [ Log2(n) ] | بالعربي\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/oV6YzMr1PBY?si=-YBgDLA_yxmHd2lP",
+      "title": "#2.3- Asymptotic Notation | بالعربي\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/nrSVRPYy76c?si=wtPVqaH2EbDrMXCA",
+      "title": "#2.4- شرح مفهوم الـ Big O - Notation\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/7DE2Jeyz4Y4?si=tr6QxP65dz-Jlo15",
+      "title": "#022 [JAVA] - Recursion/Recursive Methods Part 1\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/7Gg8bbshTIw?si=V4P8SGzCqMx4C7tU",
+      "title": "22- شرح مفهوم الـ Tree Data Structure ومصطلحاتها بشكل مبسط\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/1BfVu4hmSmE?si=Xbpqg5LvlocrJyTg",
+      "title": "24- شرح الـ Binary Search Tree\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/eCYygGwEPOA?si=Xf7KzsuhizR9aTcD",
+      "title": "15 - Divide and Conquer strategy طرق حل المشاكل : استراتيجية فرق تسد[Data Structures & Algorithms]\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/_pqn_YJbxt4?si=XB0QcnkX3u8sVuAp",
+      "title": "47- Merge Sort Algorithm part 1 الشرح النظرى للمفهوم(Arabic) بالعربى[Data Structures & Algorithms]\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/x3Y26ATPZv8?si=cy6mjZyYuIbTyZll",
+      "title": "51- Quick Sort Algorithm part 1 الشرح النظرى للمفهوم(Arabic) بالعربى[Data Structures & Algorithms]\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/lp5MPQYFLyM?si=JiwMVQJaB_4ED8Mg",
+      "title": "41- Sorting Algorithms: Selection Sort part1(Arabic)خوارزميات الترتيب [Data Structures & Algorithms]\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/x3Y26ATPZv8?si=fLTDukjwm9ej3vq0",
+      "title": "51- Quick Sort Algorithm part 1 الشرح النظرى للمفهوم(Arabic) بالعربى[Data Structures & Algorithms]\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/pNWCCHFw7og?si=TErKtfPabFkyCXBq",
+      "title": "#034 [Data Structures] - Breadth First Search Algorithm (BFS)\n",
+      "desc": ""
+    },
+    {
+      "link": "https://youtu.be/vAvPkrLbczg?si=azlts8yc_x3LRkZh",
+      "title": "#035 [Data Structures] - Depth First Search Algorithm (DFS)\n",
+      "desc": ""
+    }
+  ]
+  ,
+ "CS 103":[
+    {
+      "title": "introduction",
+      "link": "https://youtu.be/z1FdInL8sjg?si=uSI4YhEIQLEgCaFY",
+      "desc": ""
+    },
+    {
+      "title": "c++ first project",
+      "link": "https://youtu.be/xo1R1nYM4aw?si=MLE_lTD47DojV5XT",
+      "desc": ""
+    },
+    {
+      "title": "Escape Sequence ",
+      "link": "https://youtu.be/pw7rTydaSYs?si=NbLu6_V_PjOeo4s9",
+      "desc": ""
+    },
+    {
+      "title": "Variables vs data type",
+      "link": "https://youtu.be/FBjOHTuOIqo?si=lNAPyBKkOrjDq9HE",
+      "desc": ""
+    },
+    {
+      "title": "priorities&Calculation c++",
+      "link": "https://youtu.be/0rYYaXlEiAY?si=SKCgj5hoY3a42xjo",
+      "desc": ""
+    },
+    {
+      "title": "Basic Arithmatic&casting",
+      "link": "https://youtu.be/UpBYeNTwgbs?si=7GfrQDZLR-0GzB-q",
+      "desc": ""
+    },
+    {
+      "title": "Postfix & Prefix",
+      "link": "https://youtu.be/6XjgNR5Cw48?si=9JJ00EH2kln4K1J-",
+      "desc": ""
+    },
+    {
+      "title": "Variable scope (Local&Global)",
+      "link": "https://youtu.be/Pkl5iFCNNs4?si=UdXik48du93-qd1H",
+      "desc": ""
+    },
+    {
+      "title": "Selection Statement(if-if else-if else if)",
+      "link": "https://youtu.be/F56Bo4I0GhA?si=HE4DwCfZ9aLdx9_t",
+      "desc": ""
+    },
+    {
+      "title": "Oparators(AND,OR,NOT)",
+      "link": "https://youtu.be/taov2H_-nlU?si=Jxb0YSAfFVdkNYIN",
+      "desc": ""
+    },
+    {
+      "title": "Switch Statment",
+      "link": "https://youtu.be/-MTeqw7gZf0?si=3xNg9eae2qWUzc0l",
+      "desc": ""
+    },
+    {
+      "title": "Do while loop /while loop",
+      "link": "https://youtu.be/YjiSuzc2pAM?si=iJ7MksW0p8DKhgpJ",
+      "desc": ""
+    },
+    {
+      "title": "For loop",
+      "link": "https://youtu.be/cgpgpGuXIZk?si=xonevawbRgPeuLxD",
+      "desc": ""
+    },
+    {
+      "title": "Examples of loop break",
+      "link": "https://youtu.be/z6RiKl9-eao?si=LqSkgzyawLC5Ky4U",
+      "desc": ""
+    },
+    {
+      "title": "Nested loop",
+      "link": "https://youtu.be/uFI22C5DFnU?si=m1HP-p-TpIGRTCKd",
+      "desc": ""
+    },
+    {
+      "title": "Function part 1",
+      "link": "https://youtu.be/9CeQHw1J2Xs?si=8LD9AevR6cgWSYQV",
+      "desc": ""
+    },
+    {
+      "title": "Function part 2",
+      "link": "https://youtu.be/pRVrMNd694I?si=afbnQoAYK7D2RaoN",
+      "desc": ""
+    },
+    {
+      "title": "Function part 3 (built in)",
+      "link": "https://youtu.be/QjKUXcig4is?si=YVaFPqbAB5H345MI",
+      "desc": ""
+    },
+    {
+      "title": "Function part 3(Random)",
+      "link": "https://youtu.be/Noi-WtvDKSo?si=IIXxNZvuKaZlo7K1",
+      "desc": ""
+    },
+    {
+      "title": "Function part 5(Call by Refrence vs call by value)",
+      "link": "https://youtu.be/Rt_LkJ04d7k?si=eHfPxe3Qqn8tSQZO",
+      "desc": ""
+    },
+    {
+      "title": "Function part 6(Recursion 1)",
+      "link": "https://youtu.be/MMY077l9awA?si=tkzmIP5JOzUOovN-",
+      "desc": ""
+    },
+    {
+      "title": "Function part 7(Recursion 2)",
+      "link": "https://youtu.be/38v5dv7LNJU?si=_1BWRs-5M7PTT9CA",
+      "desc": ""
+    },
+    {
+      "title": "Function part 8(Overloading)",
+      "link": "https://youtu.be/4nNjlbYe4A8?si=hs3S-JAsuPxu8b0h",
+      "desc": ""
+    },
+    {
+      "title": "Function part 9(Default arguments)",
+      "link": "https://youtu.be/7p78-PgRfU4?si=dkUwZbl9DJjM_7XU",
+      "desc": ""
+    },
+    {
+      "title": "Function part 10(inline)",
+      "link": "https://youtu.be/mj2TO_-pWJU?si=HFZ-D9ccCHMyfDGO",
+      "desc": ""
+    },
+    {
+      "title": "Static variable",
+      "link": "https://youtu.be/XuZ0OCXGu1s?si=o1Ekm8vaxPs_aQJ3",
+      "desc": ""
+    },
+    {
+      "title": "Aliasing & constant variable",
+      "link": "https://youtu.be/2t7vesORTJY?si=WVAFgwEdmo-zVvw5",
+      "desc": ""
+    },
+    {
+      "title": "one Dimienional Array part 1",
+      "link": "https://youtu.be/eEdRb_7nD08?si=3KjI0TsmOQGlJyTx",
+      "desc": ""
+    },
+    {
+      "title": "one Dimienional Array part 2",
+      "link": "https://youtu.be/4394gle-Juk?si=5_B-xzwhqWuqrxMl",
+      "desc": ""
+    },
+    {
+      "title": "one Dimienional Array part 3 passing Array to function",
+      "link": "https://youtu.be/t3tOvocy9xw?si=4cZnxzqaivLmkt2t",
+      "desc": ""
+    },
+    {
+      "title": "one Dimienional Array part 4 character",
+      "link": "https://youtu.be/vIRZCZyx2hA?si=2yv4g1kLYfOCeREZ",
+      "desc": ""
+    },
+    {
+      "title": "Two Dimienional Array",
+      "link": "https://youtu.be/TmU8_LvroSI?si=HLhy-g4unHawWIWE",
+      "desc": ""
+    },
+    {
+      "title": "pointer",
+      "link": "https://youtu.be/f7I4cnJ5KJo?si=ISRG4MIYQUXGM_Dg",
+      "desc": ""
+    },
+    {
+      "title": "pointer (Array vs passing pointer )",
+      "link": "https://youtu.be/ibSjFL607QA?si=JyRXiM2SdFbPrr60",
+      "desc": ""
+    },
+    {
+      "title": "struct data Structures",
+      "link": "https://youtu.be/1oB0Tz3ITjY?si=kn6BzbYCIfwHtgq0",
+      "desc": "ممكن يكون داخل وممكن لا "
+    },
+    {
+      "title": "String",
+      "link": "https://youtu.be/HOB-Ey3tEqY?si=nFdckNvfJmukfpBq",
+      "desc": "ممكن يكون داخل وممكن لا"
     }
   ]
 }
