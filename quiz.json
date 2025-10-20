@@ -1,0 +1,66 @@
+{
+  "quizzes": {
+    "IOT321": [
+      {
+        "question": "What is an embedded system?",
+        "options": [
+          "A server running cloud apps",
+          " A combination of hardware and software for a specific function ",
+          " A gaming console",
+          "A regular laptop"
+        ],
+        "answer_index": 1
+      },
+      {
+        "question": "Which of the following is an example of an embedded system?",
+        "options": [
+          " Desktop PC ",
+          "Microwave oven",
+          " Gaming laptop",
+          "Cloud server"
+        ],
+        "answer_index": 1
+      },
+      {
+        "question": "What distinguishes an embedded system from a general-purpose computer?",
+        "options": [
+          "Embedded systems are faster",
+          "Embedded systems perform one task efficiently ",
+          "Embedded systems run multiple programs",
+          " Embedded systems have higher memory \n"
+        ],
+        "answer_index": 1
+      },
+      {
+        "question": "Why are processors often used instead of custom hardware in embedded \nsystems?",
+        "options": [
+          " Less flexible ",
+          "Cheaper and allows software updates ",
+          "Consumes more power",
+          " Occupies more space "
+        ],
+        "answer_index": 1
+      },
+      {
+        "question": "What is a real-time system?",
+        "options": [
+          " A system that stores large data",
+          " A system with strict timing constraints ",
+          "A system focused on internet speed",
+          "A system with cloud backup "
+        ],
+        "answer_index": 1
+      },
+      {
+        "question": "What happens if a deadline is missed in a hard real-time system?",
+        "options": [
+          "Slight delay",
+          " Warning message ",
+          "Catastrophic failure",
+          " Automatic reboot"
+        ],
+        "answer_index": 2
+      }
+    ]
+  }
+}

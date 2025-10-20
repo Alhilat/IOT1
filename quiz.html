@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course Quiz</title>
+  <style>
+    :root{
+      --bg-dark:#0a0e1a;
+      --bg-medium:#0f1724;
+      --card-bg:#131a2b;
+      --card-hover:#182033;
+      --text-primary:#e8f0f8;
+      --text-secondary:#9ca3af;
+      --accent:#06b6d4;
+      --accent-hover:#0891b2;
+      --border:rgba(255,255,255,0.06);
+      --shadow:rgba(0,0,0,0.4);
+      --correct-bg: rgba(22, 163, 74, 0.1);
+      --correct-border: #16a34a;
+      --incorrect-bg: rgba(220, 38, 38, 0.1);
+      --incorrect-border: #dc2626;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Segoe UI',Tahoma,sans-serif;
+      background:linear-gradient(135deg,#0a0e1a 0%,#0f1724 50%,#071b2a 100%);
+      color:var(--text-primary);
+      min-height:100vh;
+      line-height:1.6;
+      padding:20px;
+    }
+    .container{max-width:1200px;margin:0 auto}
+    
+    header{
+      background:linear-gradient(135deg,rgba(6,182,212,0.1),rgba(6,182,212,0.05));
+      border-radius:16px;
+      padding:24px;
+      margin-bottom:24px;
+      border:1px solid var(--border);
+      backdrop-filter:blur(10px);
+    }
+    
+    .header-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+    
+    h1{
+      font-size:24px;
+      font-weight:700;
+      background:linear-gradient(135deg,#06b6d4,#0891b2);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    
+    .back-btn{
+      padding:10px 20px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.05);
+      color:var(--text-primary);
+      cursor:pointer;
+      transition:all 0.3s ease;
+      text-decoration:none;
+      display:inline-block;
+      font-size:14px;
+    }
+    .back-btn:hover{
+      background:var(--accent);
+      color:#042029;
+      transform:translateY(-2px);
+    }
+    
+    .quiz-container{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .question-card{
+      background:var(--card-bg);
+      border-radius:14px;
+      border:1px solid var(--border);
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+    
+    .question-text {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .option {
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background-color: rgba(255,255,255,0.03);
+    }
+    .option:hover {
+        background-color: var(--card-hover);
+        border-color: var(--accent);
+    }
+    .option.selected {
+        background-color: var(--accent);
+        color: #042029;
+        font-weight: bold;
+        border-color: var(--accent-hover);
+    }
+    /* States for after checking */
+    .option.correct { background-color: var(--correct-bg); border-color: var(--correct-border); }
+    .option.incorrect { background-color: var(--incorrect-bg); border-color: var(--incorrect-border); }
+
+
+    .feedback {
+        margin-top: 16px;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: bold;
+        display: none; /* Initially hidden */
+    }
+    .feedback.correct { background-color: var(--correct-bg); border: 1px solid var(--correct-border); color: var(--correct-border); display: block; }
+    .feedback.incorrect { background-color: var(--incorrect-bg); border: 1px solid var(--incorrect-border); color: var(--incorrect-border); display: block; }
+    
+    .empty-state{
+      text-align:center;
+      padding:80px 20px;
+      color:var(--text-secondary);
+      background: var(--card-bg);
+      border-radius: 14px;
+    }
+    .empty-icon{font-size:64px;margin-bottom:16px;opacity:0.5}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <h1 id="pageTitle">Course Quiz</h1>
+        <a href="courses.html" class="back-btn">← Back to Courses</a>
+      </div>
+    </header>
+
+    <div class="quiz-container" id="quizContainer">
+      </div>
+  </div>
+
+  <script>
+    function initializeApp(data) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const courseCode = urlParams.get('code') || '';
+      
+      document.getElementById('pageTitle').textContent = `Quiz for ${courseCode}`;
+      
+      const quizzesData = data.quizzes || {};
+      const courseQuestions = quizzesData[courseCode] || [];
+      
+      renderQuiz(courseQuestions);
+    }
+
+    function renderQuiz(questions) {
+      const container = document.getElementById('quizContainer');
+      if (!questions.length) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">❓</div>
+            <h3>No Questions Available for This Course</h3>
+            <p>Questions will be added soon.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = questions.map((q, index) => `
+        <div class="question-card" id="question-${index}">
+          <p class="question-text">${index + 1}. ${escapeHtml(q.question)}</p>
+          <div class="options-grid">
+            ${q.options.map((opt, optIndex) => `
+              <div class="option" onclick="selectOption(this, ${index}, ${optIndex})">
+                ${escapeHtml(opt)}
+              </div>
+            `).join('')}
+          </div>
+          <div class="feedback" id="feedback-${index}"></div>
+        </div>
+      `).join('');
+    }
+
+    let userAnswers = {}; // Store user's selected option index for each question
+
+    function selectOption(element, questionIndex, optionIndex) {
+        const questionCard = document.getElementById(`question-${questionIndex}`);
+        const allOptions = questionCard.querySelectorAll('.option');
+
+        // Prevent changing answer after submission
+        if (questionCard.classList.contains('answered')) return;
+
+        allOptions.forEach(opt => opt.classList.remove('selected'));
+        element.classList.add('selected');
+        
+        userAnswers[questionIndex] = optionIndex; // Store the selected option index
+        
+        // Automatically check the answer once one is selected
+        checkAnswer(questionIndex);
+    }
+    
+    function checkAnswer(questionIndex) {
+        const data = window.courseData; // Assumes data is stored globally
+        const question = data.quizzes[new URLSearchParams(window.location.search).get('code')][questionIndex];
+        const selectedOptionIndex = userAnswers[questionIndex];
+
+        const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
+        const questionCard = document.getElementById(`question-${questionIndex}`);
+        const options = questionCard.querySelectorAll('.option');
+        
+        // Mark as answered to prevent changes
+        questionCard.classList.add('answered');
+
+        if (selectedOptionIndex === question.answer_index) {
+            feedbackEl.textContent = 'Correct Answer!';
+            feedbackEl.className = 'feedback correct';
+            options[selectedOptionIndex].classList.add('correct');
+        } else {
+            feedbackEl.textContent = 'Incorrect. The correct answer is highlighted in green.';
+            feedbackEl.className = 'feedback incorrect';
+            if(selectedOptionIndex !== undefined) {
+               options[selectedOptionIndex].classList.add('incorrect');
+            }
+            options[question.answer_index].classList.add('correct');
+        }
+    }
+
+
+    function escapeHtml(text) {
+      return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'}[m]));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('quiz.json')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+          window.courseData = data; // Store data globally for checker function
+          initializeApp(data);
+        })
+        .catch(error => {
+          console.error('Error loading quiz data:', error);
+          document.getElementById('quizContainer').innerHTML = '<p style="color:red; text-align:center;">Failed to load quiz data.</p>';
+        });
+    });
+  </script>
+</body>
+</html>
