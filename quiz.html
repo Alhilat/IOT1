@@ -131,11 +131,18 @@
         margin-top: 16px;
         padding: 12px;
         border-radius: 8px;
-        font-weight: bold;
+        font-weight: 500; /* changed from bold */
         display: none; /* Initially hidden */
+        line-height: 1.7; /* added for better readability */
     }
-    .feedback.correct { background-color: var(--correct-bg); border: 1px solid var(--correct-border); color: var(--correct-border); display: block; }
-    .feedback.incorrect { background-color: var(--incorrect-bg); border: 1px solid var(--incorrect-border); color: var(--incorrect-border); display: block; }
+    .feedback.correct { background-color: var(--correct-bg); border: 1px solid var(--correct-border); color: var(--correct-border); display: block; font-weight: bold; }
+    .feedback.incorrect { background-color: var(--incorrect-bg); border: 1px solid var(--incorrect-border); color: var(--text-primary); display: block; }
+    .feedback strong {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: var(--incorrect-border);
+    }
     
     .empty-state{
       text-align:center;
@@ -237,7 +244,8 @@
             feedbackEl.className = 'feedback correct';
             options[selectedOptionIndex].classList.add('correct');
         } else {
-            feedbackEl.textContent = 'Incorrect. The correct answer is highlighted in green.';
+            const explanation = question.explanation || 'No explanation provided.';
+            feedbackEl.innerHTML = `<strong>Incorrect.</strong> ${escapeHtml(explanation)}`;
             feedbackEl.className = 'feedback incorrect';
             if(selectedOptionIndex !== undefined) {
                options[selectedOptionIndex].classList.add('incorrect');

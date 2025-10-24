@@ -1,0 +1,16 @@
+{
+  "courses": {
+    "Course Name 1 (e.g., CS 122)": {
+      "repo": "your-github-username/your-repo-name",
+      "path": "path/to/your/file1.json",
+      "branch": "main",
+      "key": "CS 122"
+    },
+    "Course Name 2 (e.g., IOT 222)": {
+      "repo": "your-github-username/your-repo-name",
+      "path": "path/to/your/file2.json",
+      "branch": "main",
+      "key": "IOT 222"
+    }
+  }
+}

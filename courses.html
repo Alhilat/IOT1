@@ -211,6 +211,8 @@
       font-weight:600;
       font-size:14px;
       transition:all 0.3s ease;
+      text-decoration: none; /* Add this for <a> tags */
+      display: inline-block; /* Ensures consistent styling for <a> tags */
     }
     .btn:hover{
       background:var(--accent-hover);
@@ -288,6 +290,12 @@
       border:1px solid var(--border);
     }
     .modal-chip strong{color:var(--accent);display:block;margin-bottom:4px}
+    
+    .modal-links-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     
     footer{
       text-align:center;
@@ -430,60 +438,6 @@
 
 ];
 
-    // روابط لكل مقرر: ضع الاسم والرابط هنا لكل كود مقرر
-    const courseLinks = {
-      // مثال:
-      "IOT 322": [
-        { name: "Syllabus", link: "https://wokwi.com/projects/new/esp32" },
-         { name: "Course Page", link: "https://example.com/iot322" }
-      ],
-
-      "IOT 222": [
-        { name: "WOKWI", link: "https://wokwi.com/projects/new/arduino-uno" },
-        { name: "شرح المادة",link: "videosyo.html?code=IOT 222"},
-        {name:"سنوات درايف محمد ديارنة", link:"https://drive.google.com/drive/folders/1eU1xtaDuLW8LrtHNCiEjQpkP7CkvxzvY?usp=drive_link"}
-
-      ],
-//oop
-    "CS 122" :[
-      
-  { name:"شرح المادة", link: "videosyo.html?code=CS 122" } ,
-   {name:"سنوات درايف محمد ديارنة", link:"https://drive.google.com/drive/folders/1Pg2LCzNIgLDJxa1HD06ywQVeE36gUQIq?usp=drive_link"},
-
-    ]
-  ,
-
-//DIGITAL LOGIC
-  "IOT 231":[
-  { name:"شرح المادة نتالي الكايد", link: "videosyo.html?code=IOT 231" },
-    { name:"شرح المادة MBI", link: "videosyo.html?code=IOT 2311" },
-      {name:"سنوات درايف محمد ديارنة", link:"https://drive.google.com/drive/folders/1C4U3y8JCHPJRRcKlizdIDKkqbrWoi2Bf?usp=drive_link"}
-
-  ]
-  ,
-  //data structures and algorithms
-  "IOT 211":[
-  { name:"شرح المادة", link: "videosyo.html?code=IOT 211" }
-  ],
-  //cpp
-  "CS 103":[
-  { name:"شرح المادة", link: "videosyo.html?code=CS 103" },
-   {name:"سنوات درايف محمد ديارنة", link:"https://drive.google.com/drive/folders/1e1Vd-ZsGy-CB7LlO212NevAzh7xhVWfc?usp=drive_link"}
-  ],
-//java
-  "CS 222":[
-  { name:"شرح المادة", link: "videosyo.html?code=CS 222" }
-    ],
-   
-//program embedded systems
-  "IOT 321":[
-  { name:"اسئلة للمادة",link:"quiz.html?code=IOT321"}
-
-]
-
-    };
-
-
     const cards = document.getElementById('cards');
     const search = document.getElementById('search');
     const filterPra = document.getElementById('filterPra');
@@ -492,6 +446,7 @@
     const displayedCoursesEl = document.getElementById('displayedCourses');
     const totalCreditsEl = document.getElementById('totalCredits');
 
+    let courseLinks = {}; // This will be populated from the JSON file
 
     function hasPra(c){return c.pra && c.pra !== '-' && c.pra !== ''}
 
@@ -599,22 +554,49 @@
       `;
       
       mDesc.textContent = c.desc;
+      
       const links = courseLinks[c.code] || [];
       if(Array.isArray(links) && links.length){
-        const list = links.map(l => {
-          const n = escapeHtml(l.name || 'رابط');
+        const buttonsHTML = links.map(l => {
+          const name = escapeHtml(l.name || 'رابط');
           const href = escapeHtml(l.link || '#');
-          return `<li style=\"margin-bottom:6px\"><a href=\"${href}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:var(--accent)\">${n}</a></li>`;
+          return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="btn">${name}</a>`;
         }).join('');
-        mLinks.innerHTML = `<h4 style=\"margin:12px 0\">روابط مهمة</h4><ul style=\"padding-right:18px\">${list}</ul>`;
+        
+        mLinks.innerHTML = `
+            <h4 style="margin-top: 20px; margin-bottom: 12px; color: var(--text-primary);">روابط مهمة</h4>
+            <div class="modal-links-container">
+                ${buttonsHTML}
+            </div>
+        `;
       } else {
         mLinks.innerHTML = '';
       }
+      
       modalBack.style.display='flex';
     }
 
+    // Main function to fetch data and initialize the application
+    async function initializeApp() {
+        try {
+            const response = await fetch('course_links.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            courseLinks = await response.json();
+            console.log("Course links loaded successfully.");
+        } catch (error) {
+            console.error("Could not load course links:", error);
+            // The app will still work, but without the external links.
+        } finally {
+            // Initial render of the page
+            applyFilters();
+        }
+    }
 
-    applyFilters();
+    // Run the app initialization
+    initializeApp();
+
   </script>
 </body>
 </html>
