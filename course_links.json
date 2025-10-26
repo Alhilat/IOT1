@@ -1,1 +1,82 @@
-{}
+{
+  "IOT 322": [
+    {
+      "name": "Syllabus",
+      "link": "https://wokwi.com/projects/new/esp32"
+    },
+    {
+      "name": "Course Page",
+      "link": "https://example.com/iot322"
+    },
+    {
+      "name": "test",
+      "link": "https://soundcloud.com/wajdi-khaled/h7s9phfxoerz?si=61b8967ca23c4c72818284e467f414fb&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+    }
+  ],
+  "IOT 222": [
+    {
+      "name": "WOKWI",
+      "link": "https://wokwi.com/projects/new/arduino-uno"
+    },
+    {
+      "name": "شرح المادة",
+      "link": "videosyo.html?code=IOT 222"
+    },
+    {
+      "name": "سنوات درايف محمد ديارنة",
+      "link": "https://drive.google.com/drive/folders/1eU1xtaDuLW8LrtHNCiEjQpkP7CkvxzvY?usp=drive_link"
+    }
+  ],
+  "CS 122": [
+    {
+      "name": "شرح المادة",
+      "link": "videosyo.html?code=CS 122"
+    },
+    {
+      "name": "سنوات درايف محمد ديارنة",
+      "link": "https://drive.google.com/drive/folders/1Pg2LCzNIgLDJxa1HD06ywQVeE36gUQIq?usp=drive_link"
+    }
+  ],
+  "IOT 231": [
+    {
+      "name": "شرح المادة نتالي الكايد",
+      "link": "videosyo.html?code=IOT 231"
+    },
+    {
+      "name": "شرح المادة MBI",
+      "link": "videosyo.html?code=IOT 2311"
+    },
+    {
+      "name": "سنوات درايف محمد ديارنة",
+      "link": "https://drive.google.com/drive/folders/1C4U3y8JCHPJRRcKlizdIDKkqbrWoi2Bf?usp=drive_link"
+    }
+  ],
+  "IOT 211": [
+    {
+      "name": "شرح المادة",
+      "link": "videosyo.html?code=IOT 211"
+    }
+  ],
+  "CS 103": [
+    {
+      "name": "شرح المادة",
+      "link": "videosyo.html?code=CS 103"
+    },
+    {
+      "name": "سنوات درايف محمد ديارنة",
+      "link": "https://drive.google.com/drive/folders/1e1Vd-ZsGy-CB7LlO212NevAzh7xhVWfc?usp=drive_link"
+    }
+  ],
+  "CS 222": [
+    {
+      "name": "شرح المادة",
+      "link": "videosyo.html?code=CS 222"
+    }
+  ],
+  "IOT 321": [
+    {
+      "name": "اسئلة للمادة",
+      "link": "quiz.html?code=IOT321"
+    }
+  ]
+}
