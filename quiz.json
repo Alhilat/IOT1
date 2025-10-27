@@ -1,8 +1,9 @@
 {
   "quizzes": {
+
     "IOT321": [
       {
-        "chapter": "Intro to Embedded",
+        "chapter": "chapter 1",
         "question": "What is an embedded system?",
         "options": [
           "A server running cloud apps",
@@ -14,7 +15,7 @@
         "explanation": "An embedded system is designed to perform a dedicated function within a larger mechanical or electrical system. Unlike a general-purpose computer (like a laptop), it's a specialized combination of computer hardware and software for a specific task, such as the system inside a microwave oven."
       },
       {
-        "chapter": "Intro to Embedded",
+        "chapter": "chapter 1",
         "question": "Which of the following is an example of an embedded system?",
         "options": [
           "Desktop PC",
@@ -26,7 +27,7 @@
         "explanation": "A microwave oven contains a computer system dedicated solely to controlling its functions (heating, timer, etc.). A Desktop PC, gaming laptop, and cloud server are all general-purpose computers designed to run a wide variety of applications."
       },
       {
-        "chapter": "Intro to Embedded",
+        "chapter": "chapter 1",
         "question": "What distinguishes an embedded system from a general-purpose computer?",
         "options": [
           "Embedded systems are faster",
@@ -38,7 +39,7 @@
         "explanation": "The key difference is specialization. An embedded system is optimized to perform a specific task or a small set of tasks very efficiently and reliably, whereas a general-purpose computer is designed to be flexible and run many different types of software."
       },
       {
-        "chapter": "Intro to Embedded",
+        "chapter": "chapter 1",
         "question": "Why are processors often used instead of custom hardware in embedded systems?",
         "options": [
           "Less flexible",
@@ -50,7 +51,7 @@
         "explanation": "Using a general-purpose processor is often more cost-effective for manufacturing at scale. It also provides immense flexibility, as the system's logic can be changed or updated via software without redesigning the hardware."
       },
       {
-        "chapter": "Real-Time Systems",
+        "chapter": "chapter 1",
         "question": "What is a real-time system?",
         "options": [
           "A system that stores large data",
@@ -62,7 +63,7 @@
         "explanation": "A real-time system is a computing system where the correctness of a result depends not only on the logical result of the computation but also on the time at which the results are produced. They must meet strict deadlines."
       },
       {
-        "chapter": "Real-Time Systems",
+        "chapter": "chapter 1",
         "question": "What happens if a deadline is missed in a hard real-time system?",
         "options": [
           "Slight delay",
@@ -74,7 +75,7 @@
         "explanation": "In a 'hard' real-time system, missing a deadline is considered a total system failure. Examples include anti-lock braking systems or airbag controllers in a car, where a delay of even milliseconds can have catastrophic consequences."
       },
       {
-        "chapter": "I/O (Polling & Interrupts)",
+        "chapter": "chapter 1",
         "question": "What is polling in embedded systems?",
         "options": [
           "A method where CPU waits for user input",
@@ -86,7 +87,7 @@
         "explanation": "Polling is a technique in which the processor continuously checks the status of a peripheral in a loop to determine if it needs service. It’s simple but inefficient, as it wastes CPU cycles."
       },
       {
-        "chapter": "I/O (Polling & Interrupts)",
+        "chapter": "chapter 1",
         "question": "What is an interrupt in embedded systems?",
         "options": [
           "A mechanism to stop hardware permanently",
@@ -98,7 +99,7 @@
         "explanation": "An interrupt is a hardware or software signal that causes the processor to temporarily stop its current task and execute an interrupt service routine (ISR). It allows efficient event-driven processing."
       },
       {
-        "chapter": "Hardware & Memory",
+        "chapter": "chapter 1",
         "question": "Which memory type stores permanent firmware in embedded systems?",
         "options": [
           "RAM",
@@ -110,7 +111,7 @@
         "explanation": "ROM (Read-Only Memory) stores the embedded software (firmware) that runs permanently on the device, even when it’s powered off."
       },
       {
-        "chapter": "Hardware & Memory",
+        "chapter": "chapter 1",
         "question": "Why do embedded systems vary greatly in hardware design?",
         "options": [
           "To improve portability",
@@ -122,7 +123,7 @@
         "explanation": "Each embedded system is designed for a specific application. Designers remove unnecessary components to reduce cost and power consumption."
       },
       {
-        "chapter": "Hardware & Memory",
+        "chapter": "chapter 1",
         "question": "What are the main input and output types in embedded systems?",
         "options": [
           "Input: sensors, Output: displays or actuators",
@@ -134,7 +135,7 @@
         "explanation": "Inputs in embedded systems include sensors, buttons, and signals, while outputs control displays, actuators, or other devices interacting with the physical world."
       },
       {
-        "chapter": "Design Principles",
+        "chapter": "chapter 1",
         "question": "What is the role of an RTOS in embedded software?",
         "options": [
           "It handles user interfaces",
@@ -146,7 +147,7 @@
         "explanation": "A Real-Time Operating System (RTOS) organizes software into tasks, ensuring that high-priority tasks execute in time and improving the overall responsiveness of the embedded system."
       },
       {
-        "chapter": "Design Principles",
+        "chapter": "chapter 1",
         "question": "What is MIPS a measure of?",
         "options": [
           "Power usage",
@@ -158,7 +159,7 @@
         "explanation": "MIPS stands for Millions of Instructions Per Second. It measures a processor’s computational performance."
       },
       {
-        "chapter": "Design Principles",
+        "chapter": "chapter 1",
         "question": "Why is power consumption important in embedded systems?",
         "options": [
           "It affects display brightness",
@@ -170,7 +171,7 @@
         "explanation": "Power efficiency is critical for portable or battery-powered devices. Lower power usage means smaller batteries, less heat, and longer operation time."
       },
       {
-        "chapter": "Programming",
+        "chapter": "chapter 1",
         "question": "Why is C language preferred for embedded programming?",
         "options": [
           "Because it is object-oriented",
@@ -182,7 +183,7 @@
         "explanation": "C offers direct hardware control with structured programming features. It produces compact and efficient code suitable for embedded systems."
       },
       {
-        "chapter": "Programming",
+        "chapter": "chapter 1",
         "question": "Which of the following languages is mainly used for safety-critical systems like aerospace?",
         "options": [
           "C",
@@ -194,7 +195,7 @@
         "explanation": "Ada is used in safety-critical domains such as defense and aerospace due to its strong type-checking and structured design features."
       },
       {
-        "chapter": "Programming",
+        "chapter": "chapter 1",
         "question": "Why are fixed-width integers important in embedded systems?",
         "options": [
           "They make code faster",
@@ -206,7 +207,7 @@
         "explanation": "Fixed-width integers (like int8_t, int16_t) ensure that variables have predictable sizes across different architectures, improving portability and reliability."
       },
       {
-        "chapter": "Development Challenges",
+        "chapter": "chapter 1",
         "question": "What does NRE stand for in embedded system design?",
         "options": [
           "Nonrecurring Engineering",
@@ -218,7 +219,7 @@
         "explanation": "NRE (Nonrecurring Engineering) refers to one-time costs for designing and developing hardware and software before production begins."
       },
       {
-        "chapter": "Development Challenges",
+        "chapter": "chapter 1",
         "question": "What is a key challenge for embedded developers when writing code?",
         "options": [
           "Handling abundant resources",
@@ -230,7 +231,7 @@
         "explanation": "Embedded developers must write efficient and compact code since embedded systems often have limited memory and processing power."
       },
       {
-        "chapter": "Development Challenges",
+        "chapter": "chapter 1",
         "question": "What is dynamic memory fragmentation?",
         "options": [
           "Reorganizing files in ROM",
@@ -240,7 +241,246 @@
         ],
         "answer_index": 1,
         "explanation": "Dynamic allocation can fragment memory over time, leaving unusable gaps and causing instability or crashes in long-running embedded systems."
-      }
-    ]
-  }
+      },
+      {
+    "chapter": "Chapter 6",
+    "question": "What are the two main types of Random Access Memory (RAM) mentioned in the presentation?",
+    "options": [
+      "SRAM and DRAM",
+      "ROM and EPROM",
+      "Flash and EEPROM",
+      "NVRAM and Masked ROM"
+    ],
+    "answer_index": 0,
+    "explanation": "The presentation slide explicitly states that the two main types of RAM are SRAM (Static RAM) and DRAM (Dynamic RAM). ROM, EPROM, Flash, and EEPROM are all forms of Read-Only Memory."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "Which type of memory needs a controller to perform constant refresh operations to keep data alive, even when powered?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "Masked ROM",
+      "Flash Memory"
+    ],
+    "answer_index": 1,
+    "explanation": "DRAM (Dynamic RAM) loses its data very quickly (4 times a second) even with power, so it requires a DRAM controller to constantly refresh it. SRAM retains data as long as power is on without refreshing."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "Why is SRAM typically used for critical speed-sensitive tasks instead of main system memory?",
+    "options": [
+      "It is non-volatile.",
+      "It has a lower cost-per-byte.",
+      "It is much faster than DRAM and more expensive.",
+      "It requires a DRAM controller."
+    ],
+    "answer_index": 2,
+    "explanation": "SRAM is about 4 times faster than DRAM but is also more expensive to produce. This makes it ideal for speed-critical applications like CPU caches, while DRAM is used for larger, cheaper main memory."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "Which type of ROM is programmed during manufacturing and cannot be changed afterward, making it cost-effective only for mass production?",
+    "options": [
+      "PROM (Programmable ROM)",
+      "EPROM (Erasable and Programmable ROM)",
+      "Masked ROM",
+      "EEPROM (Electrically Erasable Programmable ROM)"
+    ],
+    "answer_index": 2,
+    "explanation": "Masked ROM is preprogrammed with hardwired transistors during the manufacturing process. No changes can be made after it leaves the factory, so it is only cost-effective for stable, finalized code in large volumes (100,000+ units)."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "How is an EPROM (Erasable and Programmable ROM) erased?",
+    "options": [
+      "Electrically, one byte at a time",
+      "By exposure to ultraviolet (UV) light",
+      "It cannot be erased",
+      "By a DRAM controller"
+    ],
+    "answer_index": 1,
+    "explanation": "EPROM is designed to be rewritable, but it must be erased by exposing the chip to UV light, which is a slow process. This is different from EEPROM, which is erased electrically."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is a key difference between Flash memory and EEPROM regarding erasure?",
+    "options": [
+      "Flash is erased with UV light, while EEPROM is electrical.",
+      "Flash can be erased byte-by-byte, while EEPROM is sector-based.",
+      "EEPROM can be erased byte-by-byte, while Flash is erased in sectors (blocks).",
+      "EEPROM has unlimited write cycles, while Flash does not."
+    ],
+    "answer_index": 2,
+    "explanation": "A key feature of EEPROM is its ability to be erased or rewritten at the byte level. Flash memory, while also electrical, must be erased in larger 'sectors' or 'blocks' (e.g., 8KB-64KB)."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is NVRAM?",
+    "options": [
+      "Another name for Flash memory.",
+      "SRAM that is combined with a battery backup to preserve data when power is off.",
+      "DRAM that has a built-in refresh controller.",
+      "A type of ROM that can be written to once."
+    ],
+    "answer_index": 1,
+    "explanation": "NVRAM stands for Nonvolatile RAM. It consists of standard SRAM paired with a battery. When main power is on, it acts like normal SRAM, and when power is off, the battery preserves the data, making it non-volatile."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is the primary benefit of using Direct Memory Access (DMA)?",
+    "options": [
+      "It makes the CPU run at a higher clock speed.",
+      "It validates the integrity of memory using a checksum.",
+      "It allows data transfers between devices and memory without CPU involvement, freeing the CPU.",
+      "It erases Flash memory sectors automatically."
+    ],
+    "answer_index": 2,
+    "explanation": "DMA is a technique that offloads data transfer tasks from the CPU. Instead of the CPU manually moving each byte, a DMA controller handles the transfer directly, which frees up the CPU to perform other processing tasks."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is 'Endianness'?",
+    "options": [
+      "The order in which memory tests must be run.",
+      "How multibyte data (like an integer) is stored in memory.",
+      "The process of erasing an EPROM chip.",
+      "The number of write cycles a Flash chip can endure."
+    ],
+    "answer_index": 1,
+    "explanation": "Endianness defines how multibyte data is stored in memory. The two types are Big-endian (Most Significant Byte stored first at the lowest address) and Little-endian (Least Significant Byte stored first at the lowest address)."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "If the 4-byte value 0x11223344 is stored in a **big-endian** system starting at address 0x1000, what value is stored at address 0x1001?",
+    "options": [
+      "0x11",
+      "0x22",
+      "0x33",
+      "0x44"
+    ],
+    "answer_index": 1,
+    "explanation": "Big-endian stores the Most Significant Byte (MSB) at the lowest memory address. For the value 0x11223344, the MSB is 0x11. So, 0x11 is at address 0x1000, 0x22 is at address 0x1001, 0x33 is at 0x1002, and 0x44 is at 0x1003."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "TCP/IP protocols use 'network byte order'. What endianness is this?",
+    "options": [
+      "Little-endian",
+      "Big-endian",
+      "It depends on the host system.",
+      "It is bi-endian and switches automatically."
+    ],
+    "answer_index": 1,
+    "explanation": "The TCP/IP networking standard explicitly uses big-endian, which is referred to as 'network byte order'. Little-endian systems (like x86 processors) must convert their data to big-endian before sending it over the network."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is the C macro `ntohl()` used for?",
+    "options": [
+      "Converting a 'long' (32-bit) value from Network to Host byte order.",
+      "Converting a 'short' (16-bit) value from Host to Network byte order.",
+      "Converting a 'long' (32-bit) value from Host to Network byte order.",
+      "Halting the CPU for a network operation."
+    ],
+    "answer_index": 0,
+    "explanation": "The macro `ntohl()` stands for 'Network to Host (Long)'. It is used to convert a 32-bit value from the network's big-endian format to the host system's native byte order. `htonl()` does the opposite (Host to Network)."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "According to the presentation, what are the 'real culprits' of memory problems, which are more common than faulty chips?",
+    "options": [
+      "Power surges and physical damage.",
+      "CPU overheating.",
+      "Circuit board issues, such as wiring faults, missing chips, or improper insertion.",
+      "Incorrect use of `htons()` and `ntohs()`."
+    ],
+    "answer_index": 2,
+    "explanation": "The presentation states it's a misconception that faulty chips are the main problem, as they are rigorously pre-tested. The 'real culprits' are circuit board defects like wiring errors (broken/misrouted lines), missing chips, or improperly seated chips."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is the correct and recommended order for executing the three main memory tests?",
+    "options": [
+      "1. Device test, 2. Address bus test, 3. Data bus test",
+      "1. Address bus test, 2. Data bus test, 3. Device test",
+      "1. Data bus test, 2. Device test, 3. Address bus test",
+      "1. Data bus test, 2. Address bus test, 3. Device test"
+    ],
+    "answer_index": 3,
+    "explanation": "The recommended strategy is to run the tests in order: Data bus test, Address bus test, and finally Device test. This is because the tests build on each other; for example, you cannot trust the address bus test if the data bus isn't working correctly."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "The 'Walking 1's' test is an efficient method for testing what?",
+    "options": [
+      "The wiring of the data bus.",
+      "The wiring of the address bus.",
+      "The presence of a memory chip.",
+      "The speed of the DMA controller."
+    ],
+    "answer_index": 0,
+    "explanation": "The 'Walking 1's' test is used to check the wiring of the data bus. It writes patterns with a single '1' bit (e.g., 0001, 0010, 0100...) to a fixed address to ensure each data bit can be set independently and is not shorted or open."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is the primary symptom of an address bus fault?",
+    "options": [
+      "Data bits are 'stuck' at 0 or 1.",
+      "The CPU cache stops working.",
+      "Overlapping addresses, where writing to one location overwrites data in another.",
+      "The memory chip physically overheats."
+    ],
+    "answer_index": 2,
+    "explanation": "Address signal faults, like a short or open wire, cause incorrect address decoding. This leads to 'overlapping addresses,' where two different addresses point to the same physical location, causing data written to one to overwrite the other. Stuck bits are a symptom of data signal faults."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "Why is it important to disable the data cache when testing RAM?",
+    "options": [
+      "The cache is too slow and will interfere with the test.",
+      "The cache may 'fake' memory success by responding to reads/writes instead of the RAM.",
+      "The cache uses a different endianness, corrupting the test.",
+      "The cache controller will conflict with the DMA controller."
+    ],
+    "answer_index": 1,
+    "explanation": "If the data cache is enabled, it can 'fake' a successful memory test. Writes might only go to the cache and not to the physical RAM, and reads might be served from the cache. This means the test would be checking the cache, not the RAM itself. Therefore, the data cache must always be disabled."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "Why is a simple checksum (summing all bytes) considered weaker than a CRC for validating ROM contents?",
+    "options": [
+      "It is much slower to calculate.",
+      "It cannot be stored in ROM.",
+      "It may miss multiple bit-flip errors that cancel each other out.",
+      "It only works on RAM, not ROM."
+    ],
+    "answer_index": 2,
+    "explanation": "A simple checksum's main weakness is that it can fail to detect certain errors. For example, if one bit flips from 1 to 0 and another flips from 0 to 1, the errors can 'cancel out' in the final sum, leading to a false pass. A CRC (Cyclic Redundancy Check) is a more robust algorithm designed to catch such common data errors."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is a robust method to handle a potential power failure during an in-field flash memory update?",
+    "options": [
+      "Running the update code from the same flash sector being erased.",
+      "Using a protected bootloader to verify flash integrity (with a CRC/checksum) on boot.",
+      "Telling the user not to unplug the device.",
+      "Encrypting the firmware image so it can't be corrupted."
+    ],
+    "answer_index": 1,
+    "explanation": "A power failure during an update can corrupt the flash. A robust solution is to use a protected bootloader that runs first. This bootloader verifies the integrity of the main firmware using a CRC or checksum. If it's corrupt, the bootloader can enter a safe mode to allow a new update, or boot from a second 'backup' image."
+  },
+  {
+    "chapter": "Chapter 6",
+    "question": "What is a key difference between reading from and writing to Flash memory from a programmer's perspective?",
+    "options": [
+      "Reading is slow and complex, while writing is fast and simple.",
+      "Reading requires a prior 'sector erase', while writing does not.",
+      "Reading is fast and simple (like regular memory), while writing is slow and requires a prior sector-based erase.",
+      "Reading is done byte-by-byte, while writing is done with DMA."
+    ],
+    "answer_index": 2,
+    "explanation": "Reading from flash is fast, direct, and simple, acting like regular memory. Writing is complex: it is slow, and data cannot be written until the corresponding sector has first been erased. This erasure is done on a large sector-by-sector basis, not byte-by-byte."
+  }]
+    }
 }
