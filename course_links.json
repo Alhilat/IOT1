@@ -78,5 +78,11 @@
       "name": "اسئلة للمادة",
       "link": "quiz.html?code=IOT321"
     }
+  ],
+  "IOT 453": [
+    {
+      "name": "اسئلة",
+      "link": "quiz.html?code=IOT 453"
+    }
   ]
 }
