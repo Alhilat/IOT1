@@ -278,6 +278,10 @@ class UnifiedEditorApp {
         this.toggleSecondaryControls(false);
     }
 
+    /**
+     * *** MODIFIED ***
+     * Displays the chapter name in the list.
+     */
     populateSecondaryList() {
         const listbox = this.dom.secondaryList;
         listbox.innerHTML = '';
@@ -289,11 +293,14 @@ class UnifiedEditorApp {
 
         this.data[this.current_primary_key].forEach((item, index) => {
             let text = item[displayKey] || "Untitled";
-            if (text.length > 80) text = text.substring(0, 80) + '...';
+            if (text.length > 60) text = text.substring(0, 60) + '...';
+            
+            const chapter = item.chapter || 'General'; // Get chapter, default to 'General'
             
             const option = document.createElement('option');
             option.value = index; // Store the index as the value
-            option.textContent = `${(index + 1).toString().padStart(2, '0')}: ${text.replace(/\n/g, ' ')}`;
+            // *** UPDATED LINE ***
+            option.textContent = `${(index + 1).toString().padStart(2, '0')}: [${chapter}] ${text.replace(/\n/g, ' ')}`;
             listbox.appendChild(option);
         });
     }
@@ -383,8 +390,7 @@ class UnifiedEditorApp {
 
     /**
      * *** MODIFIED ***
-     * Dynamically builds the modal's form based on the current_config.
-     * Added 'explanation' field for the quiz.
+     * Added 'chapter' field for the quiz.
      */
     buildModalForm(initialData = {}) {
         const dialogType = this.current_config.dialog_class_key;
@@ -426,6 +432,11 @@ class UnifiedEditorApp {
                 const options = initialData.options || ['', '', '', ''];
                 form.innerHTML = `
                     <div class="mb-3">
+                        <label for="modal-chapter" class="form-label">Chapter/Topic:</label>
+                        <input type="text" class="form-control" id="modal-chapter" value="${initialData.chapter || ''}" placeholder="e.g., Chapter 1: Introduction">
+                    </div>
+                    <hr>
+                    <div class="mb-3">
                         <label for="modal-question" class="form-label">Question:</label>
                         <textarea class="form-control" id="modal-question" rows="3">${initialData.question || ''}</textarea>
                     </div>
@@ -451,7 +462,7 @@ class UnifiedEditorApp {
     /**
      * *** MODIFIED ***
      * Saves the modal data.
-     * Added 'explanation' field for the quiz save logic.
+     * Added 'chapter' field for the quiz save logic.
      */
     onModalSave() {
         const dialogType = this.current_config.dialog_class_key;
@@ -486,6 +497,7 @@ class UnifiedEditorApp {
                         return;
                     }
                     newItemData = {
+                        chapter: document.getElementById('modal-chapter').value.trim() || 'General', // *** NEW ***
                         question: q,
                         options: [
                             document.getElementById('modal-option-0').value,
@@ -494,7 +506,7 @@ class UnifiedEditorApp {
                             document.getElementById('modal-option-3').value
                         ],
                         answer_index: answerIndex,
-                        explanation: document.getElementById('modal-explanation').value.trim() // *** NEW ***
+                        explanation: document.getElementById('modal-explanation').value.trim()
                     };
                     break;
             }

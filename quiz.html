@@ -76,6 +76,35 @@
       transform:translateY(-2px);
     }
     
+    /* --- NEW Chapter Styles --- */
+    .chapter-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .chapter-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .chapter-card:hover {
+        transform: translateY(-5px);
+        background: var(--card-hover);
+        border-color: var(--accent);
+    }
+    .chapter-card h3 {
+        font-size: 20px;
+        color: var(--accent);
+        margin-bottom: 8px;
+    }
+    .chapter-card p {
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+    
     .quiz-container{
         display: flex;
         flex-direction: column;
@@ -164,36 +193,106 @@
       </div>
     </header>
 
-    <div class="quiz-container" id="quizContainer">
+    <div class="chapter-container" id="chapterContainer">
+      </div>
+    
+    <div class="quiz-container" id="quizContainer" style="display: none;">
       </div>
   </div>
 
   <script>
+    // Store data globally for checker functions
+    window.courseData = {};
+    window.questionsByChapter = {};
+    window.currentQuestions = []; // Stores questions for the *selected* chapter
+    window.currentCourseCode = '';
+    
+    let userAnswers = {}; // Store user's selected option index for each question
+
+    function escapeHtml(text) {
+      return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'}[m]));
+    }
+    
+    function groupQuestions(questions) {
+        return questions.reduce((acc, q) => {
+            const chapter = q.chapter || 'General'; // Default chapter
+            if (!acc[chapter]) {
+                acc[chapter] = [];
+            }
+            acc[chapter].push(q);
+            return acc;
+        }, {});
+    }
+
     function initializeApp(data) {
       const urlParams = new URLSearchParams(window.location.search);
-      const courseCode = urlParams.get('code') || '';
+      window.currentCourseCode = urlParams.get('code') || '';
       
-      document.getElementById('pageTitle').textContent = `Quiz for ${courseCode}`;
+      document.getElementById('pageTitle').textContent = `Quizzes for ${window.currentCourseCode}`;
       
       const quizzesData = data.quizzes || {};
-      const courseQuestions = quizzesData[courseCode] || [];
+      const courseQuestions = quizzesData[window.currentCourseCode] || [];
       
-      renderQuiz(courseQuestions);
+      if (!courseQuestions.length) {
+          document.getElementById('chapterContainer').innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">❓</div>
+              <h3>No Questions Available for This Course</h3>
+              <p>Questions will be added soon.</p>
+            </div>
+          `;
+          return;
+      }
+      
+      window.questionsByChapter = groupQuestions(courseQuestions);
+      renderChapterList(Object.keys(window.questionsByChapter).sort());
+    }
+
+    function renderChapterList(chapterNames) {
+        const container = document.getElementById('chapterContainer');
+        container.innerHTML = chapterNames.map(name => `
+            <div class="chapter-card" onclick="selectChapter('${escapeHtml(name)}')">
+              <h3>${escapeHtml(name)}</h3>
+              <p>${window.questionsByChapter[name].length} questions</p>
+            </div>
+        `).join('');
+    }
+
+    function selectChapter(chapterName) {
+        window.currentQuestions = window.questionsByChapter[chapterName];
+        userAnswers = {}; // Reset answers when changing chapters
+        
+        renderQuiz(window.currentQuestions);
+        
+        document.getElementById('chapterContainer').style.display = 'none';
+        document.getElementById('quizContainer').style.display = 'flex';
+        document.getElementById('pageTitle').textContent = `${window.currentCourseCode}: ${chapterName}`;
+        
+        // Update Back Button
+        const backBtn = document.querySelector('.back-btn');
+        backBtn.textContent = '← Back to Chapters';
+        backBtn.href = '#';
+        backBtn.onclick = (e) => {
+            e.preventDefault();
+            showChapterList();
+        };
+    }
+    
+    function showChapterList() {
+        document.getElementById('chapterContainer').style.display = 'grid';
+        document.getElementById('quizContainer').style.display = 'none';
+        document.getElementById('quizContainer').innerHTML = ''; // Clear questions
+        document.getElementById('pageTitle').textContent = `Quizzes for ${window.currentCourseCode}`;
+        
+        // Reset Back Button
+        const backBtn = document.querySelector('.back-btn');
+        backBtn.textContent = '← Back to Courses';
+        backBtn.href = 'courses.html';
+        backBtn.onclick = null;
     }
 
     function renderQuiz(questions) {
       const container = document.getElementById('quizContainer');
-      if (!questions.length) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <div class="empty-icon">❓</div>
-            <h3>No Questions Available for This Course</h3>
-            <p>Questions will be added soon.</p>
-          </div>
-        `;
-        return;
-      }
-
       container.innerHTML = questions.map((q, index) => `
         <div class="question-card" id="question-${index}">
           <p class="question-text">${index + 1}. ${escapeHtml(q.question)}</p>
@@ -208,8 +307,6 @@
         </div>
       `).join('');
     }
-
-    let userAnswers = {}; // Store user's selected option index for each question
 
     function selectOption(element, questionIndex, optionIndex) {
         const questionCard = document.getElementById(`question-${questionIndex}`);
@@ -228,8 +325,7 @@
     }
     
     function checkAnswer(questionIndex) {
-        const data = window.courseData; // Assumes data is stored globally
-        const question = data.quizzes[new URLSearchParams(window.location.search).get('code')][questionIndex];
+        const question = window.currentQuestions[questionIndex]; // Get from chapter-specific list
         const selectedOptionIndex = userAnswers[questionIndex];
 
         const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
@@ -254,11 +350,6 @@
         }
     }
 
-
-    function escapeHtml(text) {
-      return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'}[m]));
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
       fetch('quiz.json')
         .then(response => {
@@ -266,12 +357,12 @@
             return response.json();
         })
         .then(data => {
-          window.courseData = data; // Store data globally for checker function
+          window.courseData = data; // Store full data
           initializeApp(data);
         })
         .catch(error => {
           console.error('Error loading quiz data:', error);
-          document.getElementById('quizContainer').innerHTML = '<p style="color:red; text-align:center;">Failed to load quiz data.</p>';
+          document.getElementById('chapterContainer').innerHTML = '<p style="color:red; text-align:center;">Failed to load quiz data.</p>';
         });
     });
   </script>

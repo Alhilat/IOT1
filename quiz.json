@@ -2,6 +2,7 @@
   "quizzes": {
     "IOT321": [
       {
+        "chapter": "Intro to Embedded",
         "question": "What is an embedded system?",
         "options": [
           "A server running cloud apps",
@@ -13,6 +14,7 @@
         "explanation": "An embedded system is designed to perform a dedicated function within a larger mechanical or electrical system. Unlike a general-purpose computer (like a laptop), it's a specialized combination of computer hardware and software for a specific task, such as the system inside a microwave oven."
       },
       {
+        "chapter": "Intro to Embedded",
         "question": "Which of the following is an example of an embedded system?",
         "options": [
           "Desktop PC",
@@ -24,6 +26,7 @@
         "explanation": "A microwave oven contains a computer system dedicated solely to controlling its functions (heating, timer, etc.). A Desktop PC, gaming laptop, and cloud server are all general-purpose computers designed to run a wide variety of applications."
       },
       {
+        "chapter": "Intro to Embedded",
         "question": "What distinguishes an embedded system from a general-purpose computer?",
         "options": [
           "Embedded systems are faster",
@@ -35,6 +38,7 @@
         "explanation": "The key difference is specialization. An embedded system is optimized to perform a specific task or a small set of tasks very efficiently and reliably, whereas a general-purpose computer is designed to be flexible and run many different types of software."
       },
       {
+        "chapter": "Intro to Embedded",
         "question": "Why are processors often used instead of custom hardware in embedded systems?",
         "options": [
           "Less flexible",
@@ -46,6 +50,7 @@
         "explanation": "Using a general-purpose processor is often more cost-effective for manufacturing at scale. It also provides immense flexibility, as the system's logic can be changed or updated via software without redesigning the hardware."
       },
       {
+        "chapter": "Real-Time Systems",
         "question": "What is a real-time system?",
         "options": [
           "A system that stores large data",
@@ -57,6 +62,7 @@
         "explanation": "A real-time system is a computing system where the correctness of a result depends not only on the logical result of the computation but also on the time at which the results are produced. They must meet strict deadlines."
       },
       {
+        "chapter": "Real-Time Systems",
         "question": "What happens if a deadline is missed in a hard real-time system?",
         "options": [
           "Slight delay",
@@ -68,6 +74,7 @@
         "explanation": "In a 'hard' real-time system, missing a deadline is considered a total system failure. Examples include anti-lock braking systems or airbag controllers in a car, where a delay of even milliseconds can have catastrophic consequences."
       },
       {
+        "chapter": "I/O (Polling & Interrupts)",
         "question": "What is polling in embedded systems?",
         "options": [
           "A method where CPU waits for user input",
@@ -79,6 +86,7 @@
         "explanation": "Polling is a technique in which the processor continuously checks the status of a peripheral in a loop to determine if it needs service. It’s simple but inefficient, as it wastes CPU cycles."
       },
       {
+        "chapter": "I/O (Polling & Interrupts)",
         "question": "What is an interrupt in embedded systems?",
         "options": [
           "A mechanism to stop hardware permanently",
@@ -90,6 +98,7 @@
         "explanation": "An interrupt is a hardware or software signal that causes the processor to temporarily stop its current task and execute an interrupt service routine (ISR). It allows efficient event-driven processing."
       },
       {
+        "chapter": "Hardware & Memory",
         "question": "Which memory type stores permanent firmware in embedded systems?",
         "options": [
           "RAM",
@@ -101,6 +110,7 @@
         "explanation": "ROM (Read-Only Memory) stores the embedded software (firmware) that runs permanently on the device, even when it’s powered off."
       },
       {
+        "chapter": "Hardware & Memory",
         "question": "Why do embedded systems vary greatly in hardware design?",
         "options": [
           "To improve portability",
@@ -112,6 +122,7 @@
         "explanation": "Each embedded system is designed for a specific application. Designers remove unnecessary components to reduce cost and power consumption."
       },
       {
+        "chapter": "Hardware & Memory",
         "question": "What are the main input and output types in embedded systems?",
         "options": [
           "Input: sensors, Output: displays or actuators",
@@ -123,6 +134,7 @@
         "explanation": "Inputs in embedded systems include sensors, buttons, and signals, while outputs control displays, actuators, or other devices interacting with the physical world."
       },
       {
+        "chapter": "Design Principles",
         "question": "What is the role of an RTOS in embedded software?",
         "options": [
           "It handles user interfaces",
@@ -134,6 +146,7 @@
         "explanation": "A Real-Time Operating System (RTOS) organizes software into tasks, ensuring that high-priority tasks execute in time and improving the overall responsiveness of the embedded system."
       },
       {
+        "chapter": "Design Principles",
         "question": "What is MIPS a measure of?",
         "options": [
           "Power usage",
@@ -145,6 +158,7 @@
         "explanation": "MIPS stands for Millions of Instructions Per Second. It measures a processor’s computational performance."
       },
       {
+        "chapter": "Design Principles",
         "question": "Why is power consumption important in embedded systems?",
         "options": [
           "It affects display brightness",
@@ -156,6 +170,7 @@
         "explanation": "Power efficiency is critical for portable or battery-powered devices. Lower power usage means smaller batteries, less heat, and longer operation time."
       },
       {
+        "chapter": "Programming",
         "question": "Why is C language preferred for embedded programming?",
         "options": [
           "Because it is object-oriented",
@@ -167,6 +182,7 @@
         "explanation": "C offers direct hardware control with structured programming features. It produces compact and efficient code suitable for embedded systems."
       },
       {
+        "chapter": "Programming",
         "question": "Which of the following languages is mainly used for safety-critical systems like aerospace?",
         "options": [
           "C",
@@ -178,6 +194,7 @@
         "explanation": "Ada is used in safety-critical domains such as defense and aerospace due to its strong type-checking and structured design features."
       },
       {
+        "chapter": "Programming",
         "question": "Why are fixed-width integers important in embedded systems?",
         "options": [
           "They make code faster",
@@ -189,6 +206,7 @@
         "explanation": "Fixed-width integers (like int8_t, int16_t) ensure that variables have predictable sizes across different architectures, improving portability and reliability."
       },
       {
+        "chapter": "Development Challenges",
         "question": "What does NRE stand for in embedded system design?",
         "options": [
           "Nonrecurring Engineering",
@@ -200,6 +218,7 @@
         "explanation": "NRE (Nonrecurring Engineering) refers to one-time costs for designing and developing hardware and software before production begins."
       },
       {
+        "chapter": "Development Challenges",
         "question": "What is a key challenge for embedded developers when writing code?",
         "options": [
           "Handling abundant resources",
@@ -211,6 +230,7 @@
         "explanation": "Embedded developers must write efficient and compact code since embedded systems often have limited memory and processing power."
       },
       {
+        "chapter": "Development Challenges",
         "question": "What is dynamic memory fragmentation?",
         "options": [
           "Reorganizing files in ROM",
