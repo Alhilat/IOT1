@@ -333,7 +333,6 @@
       "desc": ""
     }
   ],
-
   "IOT 231": [
     {
       "link": "https://youtu.be/ExxgXlYy9k0?si=-L7-iZo8Gsr6BUQO",
@@ -709,9 +708,8 @@
       "title": "#035 [Data Structures] - Depth First Search Algorithm (DFS)\n",
       "desc": ""
     }
-  ]
-  ,
- "CS 103":[
+  ],
+  "CS 103": [
     {
       "title": "introduction",
       "link": "https://youtu.be/z1FdInL8sjg?si=uSI4YhEIQLEgCaFY",
@@ -891,6 +889,53 @@
       "title": "String",
       "link": "https://youtu.be/HOB-Ey3tEqY?si=nFdckNvfJmukfpBq",
       "desc": "ممكن يكون داخل وممكن لا"
+    }
+  ],
+  "AEL102": [
+    {
+      "title": "انجليزي 102- الوحدة الاولى- الجزء الاول",
+      "link": "https://youtu.be/CsLdqW4nvhI?si=qTfGconDOO9mZ8yL",
+      "desc": ""
+    },
+    {
+      "title": "الجزء الثاني من الوحدة الاولى (القواعد)  102",
+      "link": "https://youtu.be/ZTWJi95xFCc?si=pNQWzrIZUpj5oKn5",
+      "desc": ""
+    },
+    {
+      "title": " الوحدة الثانية كاملة - انجليزي 102 ",
+      "link": "https://youtu.be/7vi9Zo1zNtg?si=ukmXcGG46hE95DOG",
+      "desc": ""
+    },
+    {
+      "title": "انجليزي 102 - الوحدة 3",
+      "link": "https://youtu.be/3KmgThXNvlo?si=hjBPYDptYsBimfDI",
+      "desc": ""
+    },
+    {
+      "title": "الوحدة الرابعة -انجليزي 102 - فقرات و معاني ",
+      "link": "https://youtu.be/-JvohuCm4RY?si=S9E51YH_9RaD9s_E",
+      "desc": ""
+    },
+    {
+      "title": "قواعد و صوتيات الوحدة الرابعة - انجليزي 102",
+      "link": "https://youtu.be/IrLOkcdbME4?si=Cu-JDPCpAuj5EbD2",
+      "desc": ""
+    },
+    {
+      "title": " الوحدة الخامسة - فقرات و معاني ",
+      "link": "https://youtu.be/KmzGIc-wvf4?si=Mc7TCHaOfzyHfjxU",
+      "desc": ""
+    },
+    {
+      "title": "قواعد الوحدة الخامسة ",
+      "link": "https://youtu.be/-AVw_F4tKgs?si=9jHkUK1-rBgnfe9f",
+      "desc": ""
+    },
+    {
+      "title": "الوحدة السادسة كاملة",
+      "link": "https://youtu.be/o2KCnX2muwI?si=ftN_r0q3Fcsoe7jx",
+      "desc": ""
     }
   ]
 }
