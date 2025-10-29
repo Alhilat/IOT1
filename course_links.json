@@ -83,8 +83,12 @@
   ],
   "AEL102": [
     {
-      "name": "",
+      "name": "Dr. Raghda AlSharabati شرح المادة",
       "link": "videosyo.html?code=AEL102"
+    },
+    {
+      "name": "ترجمة الكلمات واسئلة عليها",
+      "link": ""
     }
   ]
 }
