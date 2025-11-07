@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-g" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>تخصص إنترنت الأشياء</title>
   <style>
@@ -382,7 +382,7 @@
       </div>
       <div class="modal-content">
         <div class="modal-meta" id="mMeta"></div>
-        <p id="mDesc" style="margin-top:20px"></p>
+        <div id="mDesc" style="margin-top:20px"></div>
         <div id="mLinks" style="margin-top:20px"></div>
       </div>
     </div>
@@ -390,58 +390,12 @@
 
 
   <script>
-  const courses = [
-  {code:"CD 101", name:"مهارات الحاسوب والتعليم الالكتروني", pra:"-", pra_hours:0, practical:1, th_hours:1, credit:1, desc:`English Name: Computer Skills and Distance Learning. Concepts, trends, techniques and applications of E-learning. Concepts and skills related to the setup and use of online collaborative tools, such as storage, productivity, applications, social media, calendar, web meetings, learning environment and mobile technology. Concepts related to secure use of Information and Communication Technology (ICT) in daily life and skills used to maintain a secure network connection, use internet safely and securely, and manage data and information appropriately. Concepts and skills related to digital images, image editing application to enhance images and apply effects.`},
-  {code:"CS 103", name:"مهارات الحاسوب 2", pra:"-", pra_hours:0, practical:3, th_hours:2, credit:3, desc:`English Name: Computer Skills (2). Basics of programming, algorithm development using top-down design with syntax and semantics of the C++ programming language, creating, compiling and executing C++ programs, primitive data types, operations, Loops, control structures, procedures and functions, arrays and classes.`},
-  {code:"CS 122", name:"البرمجة الموجهة للكائنات", pra:"CS 103", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Object Oriented Programming. Object-oriented (OO) programming environment, OO building blocks, input/output, loops, decisions, functions, arrays and strings, data structures, encapsulation, advanced variables, object oriented programming, useful OO features, classes and objects, inheritance, composition, polymorphism, method overloading, handling exceptions, thread programming and multithreading by using Java Language.`},
-  {code:"CS 123", name:"مختبر البرمجة الموجهة للكائنات", pra:"CS 122", pra_hours:0, practical:3, th_hours:0, credit:1, desc:`English Name: Object Oriented Programming Lab. Structured Programming Skills Recap, Object-Oriented Programming(OOP) Skills, Classes And Objects, Access Modifiers, Constructors, Constructor Overloading, Destructors, Using Constant in OOP, Using Static in OOP, Methods and Parameter Passing, Array of Objects, Composition, Inheritance, Abstract Classes, Derived Classes, Interfaces, Method Override, Polymorphism, Working with Files, Exception Handling, OOP and GUI by using Java Language.`},
-  {code:"CS 222", name:"البرمجة بلغة جافا", pra:"CS 123", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Java Programming. Introduction to Java, the Java programming environment, variables, primitive data types, expressions, control constructs, strings in Java, arrays and vectors, Hash tables, files and I/O in Java, loops, Java GUI, components, events, layout managers, improved GUI libraries, threads, synchronization, Sockets, writing a server and a client.`},
-  {code:"CS 223", name:"مختبر البرمجة بلغة جافا", pra:"CS 222", pra_hours:0, practical:3, th_hours:0, credit:1, desc:`English Name: Java Programming Lab. Introduction to Java, JDK and IDE Installation, Input and Output Statements, Construct Basic Java Program with Class, Control Structures, Methods and Objects, Constructors, Arrays and Array List, Inheritance, Polymorphism, Abstract Classes and Interfaces, Exception Handling, Strings, File Processing, GUI Basics and Layout, Event Driven Programming.`},
-  {code:"IOT 211", name:"هياكل البيانات والخوارزميات", pra:"CS 122", pra_hours:0, practical:3, th_hours:2, credit:3, desc:`English Name: Data Structures and Algorithms. Introduction to data structures, problem specification and program design, analysis, testing, verification, and correctness of algorithms, logical and physical representation of data, data structure operations, linked lists, queues, stacks, searching and sorting, tree data structures, sorting by using Java Language.`},
-  {code:"IOT 231", name:"المنطق الرقمي", pra:"CS 103", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Digital Logic. Numbering systems, Boolean algebra, logic algebra, basic logic gates, minimization of logic functions, combinational logic: adders, subtractors, encoders and decoders, multiplexers and demultiplexers, sequential logic: flip-flops, counters, registers and clocked sequential circuits.`},
-  {code:"IOT 322", name:"برمجة تطبيقات انترنت الاشياء", pra:"IOT 244", pra_hours:0, practical:3, th_hours:2, credit:3, desc:`English Name: Internet Applications Programming. Web design using HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets), HTTP protocol planning and designing effective web pages; implementing web pages by writing HTML and CSS code; enhancing web pages with the use of page layout techniques, text formatting, graphics, images, and multimedia; and producing a functional, multi-page website, Client Server Architecture, Exploring HTML5, Introduction to server side language, Front-end Frameworks, Model View Controller Design Methodology, JQuery, Ajax and JSON, Deploying a web application, building Web Database System, Practical Aspects of Web Security, Search Engine theories.`},
-  {code:"IOT 244", name:"تصميم وادارة قواعد البيانات", pra:"CS 222", pra_hours:0, practical:3, th_hours:2, credit:3, desc:`English Name: Databases Design and Management. Basic concepts and terminology, database, database administrator, database management systems, characteristics of the database approach, the three level-schema architecture, data independence, the entity relationship model, notations and concepts, the relational model (concepts, constraints and operations), relational algebra, ER to relational mappings, the SQL language, functional dependencies and normalization.`},
-  {code:"IOT 342", name:"الذكاء الاصطناعي", pra:"IOT 211", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Artificial Intelligence. Introduction artificial intelligence (AI), history of AI, propositional calculus, predicate calculus, first-order logic, inference, soundness, completeness, unification algorithm, resolution, structures and strategies for state space search, data driven and goal driven search, breadth first search, depth first search, depth first iterative deepening search, heuristic search and games theory, greedy best first search, A* search algorithm, using heuristic search in games, Min-Max algorithm, alpha-beta pruning, planning, the language of planning problem.`},
-  {code:"IOT 332", name:"مقدمة في تصميم الحاسوب", pra:"IOT 231", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Introduction To Computer Design. Internal structure and operation of modern computer systems, Design and operation of the system bus, Design and operation of Arithmetic, Logic, and Shift Units, Control Unit: microprogrammed vs. Hardwired control, CISC and RISC architectures, Pipelining, cache memory and memory hierarchies, Interrupts and I/O structures.`},
-  {code:"IOT 331", name:"مبادئ نظم التشغيل", pra:"CS 222", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Fundamentals of Operating Systems. Basic concepts and mechanisms of modern operating systems, history of operating systems, computer and operating system structures, basic issues in concurrency, thread management, deadlock control, synchronization, scheduling, memory management, process management, multi-threading.`},
-  {code:"CS 241", name:"شبكات الحاسوب والأتصالات", pra:"CS 122", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Communications and Computer Networks. Open system interconnection (OSI) reference model, TCP/IP reference model, physical layer, data link layer, network layer, transport layer, session layer, presentation layer, applications layer, LAN architectures, WAN architectures, network design, network management and network security.`},
-  {code:"CS 242", name:"مختبر شبكات الحاسوب والاتصالات", pra:"CS 241", pra_hours:0, practical:3, th_hours:0, credit:1, desc:`English Name: Communications and Computer Networks Lab. Practices on open system interconnection (OSI) reference model, TCP/IP reference model, physical layer, data link layer, network layer, transport layer, session layer, presentation layer, applications layer, LAN architectures, WAN architectures, network design, network management and network security.`},
-  {code:"IOT 344", name:"اساسيات الامن السيبراني", pra:"IOT 322", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Fundamentals of Cybersecurity. Introduction to computer security, understanding the security issues in computing platforms and operating systems, database security, security policies, entity authentication, defense methods, writing secure programs, computer security threats and attacks including: vulnerabilities in the password authentication system, file system, virtual memory system, respond to potential violations, access control, threats and vulnerabilities to network architectures and protocols, e-mail security, IP security, web security, network attack propagation modeling, traffic analysis, network security management techniques, firewalls.`},
-  {code:"IOT 343", name:"هندسة البرمجيات التطبيقية", pra:"IOT 244", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Applied Software Engineering. Principles and practices of software engineering, software quality concepts, process models, software requirements' analysis, design methodologies, software testing and software maintenance, hands-on experience in building a software system using the waterfall life cycle model in the lab environment, software development life cycle deliverables, the requirements, specification and design documents, the system code, test plan, and user manuals.`},
-  {code:"IOT 222", name:"تصميم وتنظيم الانظمة المدمجة", pra:"CS 122", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Design & Organization of Embedded Systems. Introduction to embedded systems, C programming, embedded system design, introduction to Arduino, basic circuit diagrams, instruction sets, registers and memory access, digital I/O, LEDs and buttons, timers, debugging, pulse width modulation, servos, analog to digital converters, analog sensors, CPU bus, communication protocols, interrupts, communication, peripherals, sensors, embedded operating systems, embedded systems applications, power management, embedded algorithms.`},
-  {code:"IOT 223", name:"مختبر تصميم وتنظيم الانظمة المدمجة", pra:"IOT 222", pra_hours:0, practical:3, th_hours:0, credit:1, desc:`English Name: Design & Organization of Embedded Systems Lab. Apply C programming to embedded system design with Arduino, basic circuit diagrams, instruction sets, registers and memory access, digital I/O, LEDs and buttons, timers, debugging, pulse width modulation, servos, analog to digital converters, analog sensors, CPU bus, communication protocols, interrupts, communication, peripherals, sensors, embedded operating systems, embedded systems applications, power management, embedded algorithms.`},
-  {code:"IOT 471", name:"Project-1 for Internet of Things students", pra:"90 Cr.Hrs", pra_hours:0, practical:0, th_hours:1, credit:1, desc:`English Name: Project-1 for Internet of Things students. The student is expected to put into action his knowledge gained from the different courses in this study plan through a graduation project.`},
-  {code:"IOT 472", name:"Project-2 for Internet of Things students", pra:"IOT 471", pra_hours:0, practical:0, th_hours:2, credit:2, desc:`English Name: Project-2 for Internet of Things students. The student is expected to put into action his knowledge gained from the different courses in this study plan through a graduation project.`},
-  {code:"IOT 473", name:"التدريب الميداني لطلبة انترنت الاشياء", pra:"90 Cr.Hrs", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Field Training for Internet of Things students. Practical training in the field, where students should register as trainees in IT sector, under the supervision of the department.`},
-  {code:"IOT 442", name:"التعلم الالي", pra:"IOT 342", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Machine Learning. Introduction to machine learning, artificial intelligence and reasoning under uncertainty, supervised learning, ensemble methods and boosting, neural networks, support vector machines, kernel methods, clustering and unsupervised learning, genetic algorithms, maximum likelihood, and computational learning theory, machine learning in data mining and applications, data preprocessing, cleaning, classification and clustering, web mining.`},
-  {code:"IOT 447", name:"الحوسبة السحابية", pra:"IOT 342", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Cloud Computing. Cloud computing concepts, Cloud computing environments, Cloud services, Cloud characteristics and service attributes, Cloud category, risks and benefits of implementing cloud computing, security threat within a cloud computing infrastructure, Cloud Delivery Models, Cloud Architectural Models.`},
-  {code:"IOT 455", name:"مواضيع خاصة في علم الانترنت والاشياء", pra:"90 Cr.Hrs", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Special Topics in Internet of Things. Students are introduced to advanced selected topics in different areas of computing not covered in other courses. The topics covered vary from year to year, depending on the students and staff.`},
-  {code:"IOT 456", name:"الروبوتات والانظمة المؤتمتة", pra:"IOT 321", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Robotics and Autonomous Systems. Introduction to Robotics, Introduction to autonomous systems, microcontrollers, embedded systems design, PIC and Arduino Platforms, Motor Principles, Interaction between real and digital world, Concepts of artificial intelligence, Gantry robot, Polar Robots, Articulated Robots, parallel robots, vehicle robots, Bluetooth communication programming, GSM communication programming, GPS communication programming, Wi-Fi communication programming, smart houses, smart robots, machine vision, audio and video communication programming, libraries and APIs.`},
-  {code:"IOT 114", name:"رياضيات متقطعه", pra:"30202101", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Discrete Structures and Mathematics. Introduction to Logic, Propositional Logic, Predicate Logic, Formal and Informal Proofs, Sets, Set Operations. Functions, Countable and Uncountable Sets. Integers and Modular Arithmetic, Sequences, Summations, Mathematical Induction, Recursion, Counting, Permutations, Combinations, Probability, Relations, Graph Theory, Trees.`},
-  {code:"IOT 361", name:"مبادئ التحليل العددي", pra:"IOT 114", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Principles of Numerical Analysis. This course analyzed the basic techniques for the efficient numerical solution of problems in science and engineering. Topics spanned root finding, interpolation, approximation of functions, integration, differential equations and direct and iterative methods in linear algebra.`},
-  {code:"IOT 105", name:"الفيزياء", pra:"-", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Physics for Internet of Things Students. Vectors, equations of motion, Newton's laws and applications, work, work and energy, electric force, electric field, electric flux, Gausses law and applications, potential difference and equipotential surfaces, electric potential due to point charges, energy stored in a system of point charges, capacitors, combination of capacitors, energy stored in a charged capacitor, electric current, resistance and Ohm's law, electrical energy and power, electromotive force, combination of resistances, Kirchhoff's laws, RC circuit, magnetic field, magnetic force on a charged particle, magnetic force on a current carrying conductor, Biot-Savart law, Amperes law, applications.`},
-  {code:"IOT 106", name:"مختبر الفيزياء", pra:"IOT 105", pra_hours:0, practical:0, th_hours:3, credit:1, desc:`English Name: Physics for Internet of Things Students - Lab. Significant figures and errors, measurements and uncertainty, vectors (equilibrium of forces), friction, conservation of energy, Galvanometer, Ammeter and Voltmeter, electric field mapping, Ohm's law, electric equivalent of heat, potentiometer, Kirchhoff's rules, parallel plate capacitor, RC circuit.`},
-  {code:"IOT 261", name:"الاحصاء والاحتمالات", pra:"IOT 114", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Applied Probability and Statistics. Combinatorics and Probability, Discrete Distributions, Simulation, Discrete Decision Theory, Real Line-Probability, Continuous Distributions, Parameter Estimation.`},
-  {code:"IOT 251", name:"مقدمه في انترنت الاشياء", pra:"CS 122", pra_hours:0, practical:0, th_hours:2, credit:2, desc:`English Name: Introduction to Internet of Things. Introduces the fundamental concepts of Internet of Things and motivates the study of Internet of Things. It focuses on the Devices, Data Collection, Networking, Cloud Computing, Risks and Opportunities in Internet of Things context.`},
-  {code:"IOT 201", name:"مقدمة في الدوائر والأجهزة الالكترونية", pra:"IOT 231", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Introduction to Circuits & Electronic Hardware. Introduction to resistive circuits, laws governing circuits, electronic switches, logic gates, electronic memories, standard input and output ports.`},
-  {code:"IOT 453", name:"متحكمات دقيقة لاجهزة انترنت الاشياء", pra:"IOT 222", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Microcontrollers for Internet of Things Devices. Overview of embedded systems and microcontrollers with a comprehensive in-depth look at the MSP43Q. Students will learn about this powerful mixed-signal, low power consumption microcontroller.`},
-  {code:"IOT 452", name:"الاتصالات اللاسلكية لإنترنت الاشياء", pra:"IOT 251, CS 241", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Wireless Communications for Internet of Things. This course will cover source coding for data compression, channel coding for error correction, digital transmission and reception, wireless channels, and the narrow-band Internet of Things communication system.`},
-  {code:"IOT 321", name:"برمجة الانظمة المدمجة", pra:"IOT 222", pra_hours:0, practical:3, th_hours:2, credit:3, desc:`English Name: Programming Embedded Systems. Embedded Systems implementation using programming of synchronous state machines to capture behavior of time oriented systems for running on microcontrollers.`},
-  {code:"IOT 333", name:"انظمة التشغيل المدمجة", pra:"IOT 331", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Embedded Operating Systems. This is a course to the use of Embedded Operating Systems (OS) as developing environment. Course also includes OS concepts and unique embedded application development.`},
-  {code:"IOT 451", name:"علم البيانات", pra:"IOT 344", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Introduction to Security of Internet of Things. In this class, the students will learn the introductory topics related to the security of Internet of Things by gaining hands-on training on real Internet of Things devices.`},
-  {code:"IOT 352", name:"مجسات لانترنت الاشياء", pra:"IOT 321", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Sensors for Internet of Things. This course introduces sensors and sensor design for Internet of Things devices. Topics include history of Internet of Things enabled sensors, design and fabrication of smart sensors, theory and case studies of important smart sensors.`},
-  {code:"IOT 351", name:"انترنت الاشياء وبرمجة الاستشعار مع بايثون", pra:"IOT 321", pra_hours:0, practical:6, th_hours:0, credit:3, desc:`English Name: Internet of Things & Sensor Programming with Python. This course will introduce students to the Python programming language as it applies to its interaction to sensor and Internet of Things devices.`},
-  {code:"IOT 457", name:"خصوصية انترنت الاشياء", pra:"IOT 251", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Internet of Things Privacy. Introduces the privacy issues related to Internet of Things technologies. Focuses on privacy preserving technologies regarding Internet of Things user data, access to such data and privacy law around such personal data.`},
-  {code:"IOT 458", name:"بروتوكولات الشبكة لانترنت الاشياء", pra:"IOT 352", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Network Protocols for Internet of Things. This course introduces the underlying network protocols for Internet of Things communications. Protocols at the medium access and network layers are discussed.`},
-  {code:"IOT 454", name:"برمجة واجهة المستخدم الرسومية المضمنة", pra:"IOT 351", pra_hours:0, practical:6, th_hours:0, credit:3, desc:`English Name: Embedded GUI Programming. Graphical user interface (GUI) for embedded system included elements and style, events, component and object oriented user interface models, and graphical application programming issues.`},
-  {code:"IOT 459", name:"تحليل البيانات الضخمة", pra:"IOT 251", pra_hours:0, practical:0, th_hours:3, credit:3, desc:`English Name: Internet of Things Forensics. This course examines the existing Digital Forensics models and methodologies for their applicability within the Internet of Things domain. Various tools and techniques will provide access within these devices.`},
-  {code:"AEL101", name:"لغة انجليزية تطبيقية 1", pra:"-", pra_hours:0, practical:3, th_hours:0, credit:3, desc:"English Name: Applied English Language (1)"},
-  {code:"AAL101", name:"لغة عربية تطبيقية", pra:"-", pra_hours:0, practical:3, th_hours:0, credit:3, desc:"English Name: Applied Arabic Language"},
-  {code:"IEC101", name:"الابتكار والريادة والابداع", pra:"-", pra_hours:0, practical:2, th_hours:0, credit:2, desc:"English Name: Innovation, Entrepreneurship and Creativity"},
-  {code:"AEL102", name:"لغة انجليزية تطبيقية 2", pra:"EL101", pra_hours:0, practical:3, th_hours:0, credit:3, desc:"English Name: Applied English Language (2)"},
-  {code:"NE101", name:"التربية الوطنية والسلوك الجامعي", pra:"-", pra_hours:0, practical:3, th_hours:0, credit:3, desc:"English Name: Patriotic Education and University Behavior"}
-];
+    // --- UPDATED ---
+    // Declare variables to hold data. 'courses' is now empty and will be filled by fetch.
+    let courses = [];
+    let courseLinks = {}; // This will be populated from the JSON file
 
+    // Get DOM elements
     const cards = document.getElementById('cards');
     const search = document.getElementById('search');
     const filterPra = document.getElementById('filterPra');
@@ -450,13 +404,11 @@
     const displayedCoursesEl = document.getElementById('displayedCourses');
     const totalCreditsEl = document.getElementById('totalCredits');
 
-    let courseLinks = {}; // This will be populated from the JSON file
-
     function hasPra(c){return c.pra && c.pra !== '-' && c.pra !== ''}
 
     function updateStats(list){
-      totalCoursesEl.textContent = courses.length;
-      displayedCoursesEl.textContent = list.length;
+      totalCoursesEl.textContent = courses.length; // 'courses' is the full list
+      displayedCoursesEl.textContent = list.length; // 'list' is the filtered list
       const credits = list.reduce((sum, c) => sum + (c.credit > 0 ? c.credit : 0), 0);
       totalCreditsEl.textContent = credits;
     }
@@ -476,7 +428,7 @@
       list.forEach(c=>{
         const div=document.createElement('div');
         div.className='card';
-        div.onclick=()=>openModal(c.code);
+        div.onclick=()=> window.location.hash = c.code;
         
         const badgeHtml = hasPra(c) 
           ? '<span class="badge badge-info">لها متطلبات</span>'
@@ -498,8 +450,8 @@
           <div class="desc">${escapeHtml(c.desc)}</div>
           ${hasPra(c) ? `<div class="prereq">المتطلبات: ${escapeHtml(c.pra)}</div>` : ''}
           <div class="card-footer">
-            <span style="font-size:13px;color:var(--text-secondary)"> </span>
-            <button class="btn" onclick="event.stopPropagation();openModal('${c.code}')">عرض التفاصيل</button>
+            <span style="font-size:13px;color:var(--text-secondary)">انقر للتفاصيل</span>
+            <button class="btn" onclick="event.stopPropagation(); window.location.hash = '${c.code}'">عرض التفاصيل</button>
           </div>
         `;
         cards.appendChild(div);
@@ -507,10 +459,17 @@
     }
 
     function escapeHtml(s){
+      if (!s) return '';
       return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
     function applyFilters(){
+      // Check if courses data has loaded, if not, don't do anything
+      if (courses.length === 0) {
+        console.log("Waiting for courses to load...");
+        return;
+      }
+
       const q=search.value.trim().toLowerCase();
       let res = courses.filter(c=>{
         const concat = `${c.code} ${c.name} ${c.desc} ${c.pra}`.toLowerCase();
@@ -528,21 +487,94 @@
       render(res);
     }
 
+    // Event listeners
     search.addEventListener('input', applyFilters);
     filterPra.addEventListener('change', applyFilters);
     sortBy.addEventListener('change', applyFilters);
 
+    // Modal elements
     const modalBack = document.getElementById('modalBack');
     const mTitle = document.getElementById('mTitle');
     const mMeta = document.getElementById('mMeta');
     const mDesc = document.getElementById('mDesc');
     const mLinks = document.getElementById('mLinks');
     
-    document.getElementById('closeModal').addEventListener('click', ()=>modalBack.style.display='none');
+    document.getElementById('closeModal').addEventListener('click', ()=> window.location.hash = '');
     modalBack.addEventListener('click', (e)=>{
-      if(e.target === modalBack) modalBack.style.display='none';
+      if(e.target === modalBack) window.location.hash = '';
     });
 
+    /**
+     * --- 💡 NEW FUNCTION 💡 ---
+     * Toggles the visibility of the topics list in the modal
+     */
+    function toggleTopics(event) {
+        event.preventDefault(); // Prevents the '#' from being added to the URL
+        const topicsList = document.getElementById('modal-topics-list');
+        if (topicsList) {
+            const isHidden = topicsList.style.display === 'none';
+            topicsList.style.display = isHidden ? 'block' : 'none';
+        }
+    }
+
+
+    /**
+     * --- 💡 UPDATED FUNCTION 💡 ---
+     * Function to generate summary HTML from description
+     */
+    function createDescriptionSummary(desc) {
+        const description = desc || '';
+        const engNameMatch = description.match(/English Name:\s*([^.]+)\.?/);
+        const engName = engNameMatch ? escapeHtml(engNameMatch[1].trim()) : '';
+
+        let summaryHtml = '';
+
+        if (engName) {
+            summaryHtml += `<strong style="color: var(--text-primary); display: block; margin-bottom: 8px;">English Name:</strong> ${engName}`;
+        }
+
+        let topicsPart = description;
+        if (engNameMatch) {
+            topicsPart = description.substring(engNameMatch[0].length).trim();
+        } else if (description.startsWith(engName) && engName) {
+            topicsPart = '';
+        }
+        
+        const topics = topicsPart.split(/[.,;]\s+/)
+            .map(s => s.trim().replace(/[.,;]$/, ''))
+            .filter(s => s.length > 3); 
+
+        if (topics.length > 0) {
+            // Updated to include the toggle link
+            summaryHtml += `
+                <div style="margin-top: 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <strong style="color: var(--text-primary); display: block;">Key Topics:</strong>
+                    <a href="#" onclick="toggleTopics(event)" style="font-size: 13px; color: var(--accent); cursor: pointer; text-decoration: none;">
+                        (إظهار / إخفاء)
+                    </a>
+                </div>
+            `;
+            
+            // Added id="modal-topics-list", style="display: none;", dir="rtl", and text-align: right
+            summaryHtml += `<ul id="modal-topics-list" style="padding-right: 20px; margin: 0; color: var(--text-secondary); display: none; dir: rtl; text-align: right;">`;
+            topics.forEach(topic => {
+                summaryHtml += `<li style="margin-bottom: 6px;">${escapeHtml(topic)}</li>`;
+            });
+            summaryHtml += `</ul>`;
+
+        } else if (!engName) {
+            summaryHtml = `<p>${escapeHtml(description)}</p>`;
+        } else if (topicsPart.length > 0) {
+            summaryHtml += `<p style="margin-top: 16px;">${escapeHtml(topicsPart)}</p>`;
+        }
+        
+        return summaryHtml;
+    }
+
+
+    /**
+     * openModal now only POPULATES content
+     */
     function openModal(code){
       const c = courses.find(x=>x.code===code);
       if(!c) return;
@@ -557,7 +589,7 @@
         <div class="modal-chip"><strong>المتطلبات السابقة</strong>${c.pra || '-'}</div>
       `;
       
-      mDesc.textContent = c.desc;
+      mDesc.innerHTML = createDescriptionSummary(c.desc);
       
       const links = courseLinks[c.code] || [];
       if(Array.isArray(links) && links.length){
@@ -576,25 +608,69 @@
       } else {
         mLinks.innerHTML = '';
       }
-      
-      modalBack.style.display='flex';
     }
 
-    // Main function to fetch data and initialize the application
+    /**
+     * This function controls modal visibility based on the URL hash
+     */
+    function handleHashChange() {
+        const code = decodeURIComponent(window.location.hash.substring(1)); // Get hash, remove #, and decode
+        
+        // Wait for courses to load
+        if (courses.length === 0) {
+            console.log("Hash change ignored, courses not loaded yet.");
+            return;
+        }
+
+        const course = courses.find(x => x.code === code);
+        
+        if (course) {
+            openModal(course.code); // Populate the modal with content
+            modalBack.style.display = 'flex'; // Show the modal
+        } else {
+            modalBack.style.display = 'none'; // Hide the modal
+        }
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    /**
+     * --- UPDATED: Main function to fetch BOTH data files and initialize ---
+     */
     async function initializeApp() {
         try {
-            const response = await fetch('course_links.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Fetch courses first
+            const coursesResponse = await fetch('courses.json');
+            if (!coursesResponse.ok) {
+                throw new Error(`HTTP error! status: ${coursesResponse.status} (courses.json)`);
             }
-            courseLinks = await response.json();
+            courses = await coursesResponse.json(); // Assign to the global 'courses' variable
+            console.log("Courses loaded successfully.");
+
+            // Then fetch course links
+            const linksResponse = await fetch('course_links.json');
+            if (!linksResponse.ok) {
+                throw new Error(`HTTP error! status: ${linksResponse.status} (course_links.json)`);
+            }
+            courseLinks = await linksResponse.json();
             console.log("Course links loaded successfully.");
+
         } catch (error) {
-            console.error("Could not load course links:", error);
-            // The app will still work, but without the external links.
+            console.error("Could not load initial data:", error);
+            // Display an error message to the user
+            cards.innerHTML = `
+              <div class="empty-state">
+                <div class="empty-icon">⚠️</div>
+                <h3>خطأ في تحميل البيانات</h3>
+                <p>لا يمكن تحميل بيانات المقررات. الرجاء المحاولة مرة أخرى لاحقاً.</p>
+              </div>`;
         } finally {
+            // These functions will now run after data is loaded (or has failed)
             // Initial render of the page
             applyFilters();
+            
+            // Check hash on initial page load
+            handleHashChange();
         }
     }
 
@@ -602,5 +678,5 @@
     initializeApp();
 
   </script>
-</body>
+  </body>
 </html>
