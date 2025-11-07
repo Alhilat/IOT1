@@ -966,7 +966,7 @@
     ],
     "IOT201": [
       {
-        "chapter": "Quiz 1:",
+        "chapter": "Quiz1:",
         "question": "In circuit theory, a lumped element is best described as:",
         "options": [
           "A) A component whose internal interactions are ignored in favor of terminal behavior",
