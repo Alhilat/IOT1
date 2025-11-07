@@ -73,16 +73,16 @@
     {
       "name": "اسئلة للمادة",
       "link": "quiz.html?code=IOT321"
+    },
+    {
+      "name": "ملخص شابتر 1+2",
+      "link": "https://drive.google.com/drive/folders/16oWFILsDwPYt52s3BHJbvXpByvRuVbYh?usp=drive_link"
     }
   ],
   "IOT 453": [
     {
       "name": "اسئلة",
       "link": "quiz.html?code=IOT 453"
-    },
-    {
-      "name": "ملخص شابتر 1+2",
-      "link": "https://drive.google.com/drive/folders/16oWFILsDwPYt52s3BHJbvXpByvRuVbYh?usp=drive_link"
     }
   ],
   "AEL102": [
