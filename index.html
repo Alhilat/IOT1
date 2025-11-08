@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الصفحة الرئيسية - IoT Web</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
+
         :root {
             --bg-dark: #0a0e1a;
             --bg-medium: #0f1724;
-            --card-bg: #131a2b;
-            --card-hover: #182033;
+            
+            /* Card colors with transparency for glass effect */
+            --card-bg: rgba(19, 26, 43, 0.5); /* Was #131a2b */
+            --card-hover: rgba(24, 32, 51, 0.7); /* Was #182033 */
+            
             --text-primary: #e8f0f8;
             --text-secondary: #9ca3af;
             --accent: #06b6d4;
             --accent-hover: #0891b2;
             --success: #10b981;
             --warning: #f59e0b;
-            --border: rgba(255,255,255,0.06);
-            --shadow: rgba(0,0,0,0.4);
+            
+            /* Border color with transparency */
+            --border: rgba(255, 255, 255, 0.1); /* Was 0.06 opacity */
+            --border-hover: rgba(255, 255, 255, 0.2);
+            --shadow: rgba(0,0,0,0.37);
         }
 
         * {
@@ -27,8 +42,9 @@
         }
 
         body {
-            font-family: Almarai, 'Segoe UI', Tahoma, sans-serif;
+            font-family: 'Almarai', 'Segoe UI', Tahoma, sans-serif;
             background: linear-gradient(135deg, #0a0e1a 0%, #0f1724 50%, #071b2a 100%);
+            background-attachment: fixed; /* Keeps gradient stable on scroll */
             min-height: 100vh;
             color: var(--text-primary);
             line-height: 1.6;
@@ -74,22 +90,26 @@
         }
 
         .nav-card {
+            /* This is the new "Frosted Glass" effect */
             background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px 0 var(--shadow);
+            
             border-radius: 15px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 30px var(--shadow);
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
             color: inherit;
-            border: 1px solid var(--border);
         }
 
         .nav-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px var(--shadow);
             background: var(--card-hover);
+            border-color: var(--border-hover);
         }
 
         .nav-card h2 {
@@ -110,10 +130,11 @@
             display: block;
         }
 
-        .courses { color: var(--accent); }
-        .articles { color: #06b6d4; }
-        .books { color: var(--success); }
-        .arabic-courses { color: var(--warning); }
+        /* Icon Colors */
+        .nav-card.videos .icon { color: var(--accent); }
+        .nav-card.books .icon { color: var(--success); }
+        .nav-card.courses .icon { color: var(--warning); }
+
 
         .btn {
             background: linear-gradient(45deg, var(--accent), var(--accent-hover));
@@ -143,7 +164,7 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .nav-grid {
@@ -152,7 +173,7 @@
             }
             
             .nav-card {
-                padding: 20px;
+                padding: 25px;
             }
         }
     </style>
@@ -160,38 +181,27 @@
 <body>
     <div class="container">
         <header>
-            <h1>  IoT Web - huson college</h1>
-            <p class="subtitle">منصة شاملة للتعلم والتطوير في مجال إنترنت الأشياء
-            
-            </p>
+            <h1>IoT Web - huson college</h1>
+            <p class="subtitle">منصة شاملة للتعلم والتطوير في مجال إنترنت الأشياء</p>
         </header>
 
         <div class="nav-grid">
-           <!--
-            <a href="excourseres.html" class="nav-card courses">
-                <span class="icon">📚</span>
-                <h2>الدورات التدريبية</h2>
-                <p>استكشف مجموعة واسعة من الدورات التدريبية المتخصصة في مجال إنترنت الأشياء والتكنولوجيا الحديثة</p>
-                <span class="btn">ابدأ التعلم</span>
-            </a>-->
-          
-
-            <a href="articles.html" class="nav-card articles">
-                <span class="icon"></span>
+            <a href="articles.html" class="nav-card videos">
+                <i class="fa-solid fa-clapperboard icon"></i>
                 <h2>فيديوهات</h2>
                 <p>شاهد مجموعة من القنوات التقنيةعلى اليوتيوب</p>
                 <span class="btn">شاهد</span>
             </a>
 
             <a href="books.html" class="nav-card books">
-                <span class="icon">📖</span>
+                <i class="fa-solid fa-book-open icon"></i>
                 <h2>الكتب</h2>
                 <p>مجموعة مختارة من الكتب المرجعية والمواد التعليمية المتخصصة في التكنولوجيا</p>
                 <span class="btn">تصفح الكتب</span>
             </a>
 
-            <a href="courses.html" class="nav-card arabic-courses">
-                <span class="icon">🎓</span>
+            <a href="courses.html" class="nav-card courses">
+                <i class="fa-solid fa-graduation-cap icon"></i>
                 <h2>مواد الجامعة</h2>
                 <p>تعريف بالمواد وروابط مهمة</p>
                 <span class="btn">عرض المواد</span>
@@ -202,22 +212,5 @@
             <p>عبدالرحمن الهيلات</p>
         </footer>
     </div>
-
-    <script>
-        // Add smooth scrolling and interactive effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.nav-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.background = 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.background = 'white';
-                });
-            });
-        });
-    </script>
 </body>
 </html>
