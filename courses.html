@@ -1,106 +1,194 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!doctype html
+<html lang="ar" dir="ltr">
 <head>
-  <meta charset="utf-g" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>تخصص إنترنت الأشياء</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
+
     :root{
-      --bg-dark:#0a0e1a;
-      --bg-medium:#0f1724;
-      --card-bg:#131a2b;
-      --card-hover:#182033;
-      --text-primary:#e8f0f8;
-      --text-secondary:#9ca3af;
-      --accent:#06b6d4;
-      --accent-hover:#0891b2;
-      --success:#10b981;
-      --warning:#f59e0b;
-      --border:rgba(255,255,255,0.06);
-      --shadow:rgba(0,0,0,0.4);
+      /* Dark Mode (Default) */
+      --bg-main: #0a0e1a;
+      --bg-header: linear-gradient(135deg,rgba(6,182,212,0.1),rgba(6,182,212,0.05));
+      --card-bg: #131a2b;
+      --card-hover: #182033;
+      --input-bg: rgba(255,255,255,0.03);
+      --input-focus: rgba(255,255,255,0.06);
+      --text-primary: #e8f0f8;
+      --text-secondary: #9ca3af;
+      --accent: #06b6d4;
+      --accent-hover: #0891b2;
+      --border: rgba(255,255,255,0.06);
+      --shadow: rgba(0,0,0,0.4);
+      --modal-bg: rgba(0,0,0,0.75);
+      --btn-active-text: #042029;
     }
+    
+    /* --- 💡 NEW: Light Mode Colors 💡 --- */
+    body.light-mode {
+      --bg-main: #f4f7fa; /* Light grey background */
+      --bg-header: #ffffff; /* White header */
+      --card-bg: #ffffff;
+      --card-hover: #f9fafb;
+      --input-bg: rgba(0,0,0,0.04);
+      --input-focus: #ffffff;
+      --text-primary: #111827; /* Dark text */
+      --text-secondary: #4b5563; /* Medium grey text */
+      --accent: #06b6d4;
+      --accent-hover: #0891b2;
+      --border: rgba(0,0,0,0.1);
+      --shadow: rgba(0,0,0,0.05);
+      --modal-bg: rgba(0,0,0,0.5);
+      --btn-active-text: #ffffff; /* White text on accent */
+    }
+    
     *{box-sizing:border-box;margin:0;padding:0}
     body{
-      font-family:Almarai,'Segoe UI',Tahoma,sans-serif;
-      background:linear-gradient(135deg,#0a0e1a 0%,#0f1724 50%,#071b2a 100%);
+      font-family:'Almarai','Segoe UI',Tahoma,sans-serif;
+      background: var(--bg-main);
       color:var(--text-primary);
       min-height:100vh;
       line-height:1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .container{max-width:1200px;margin:0 auto;padding:24px}
     
     /* Header */
     header{
-      background:linear-gradient(135deg,rgba(6,182,212,0.1),rgba(6,182,212,0.05));
+      background: var(--bg-header);
       border-radius:16px;
       padding:28px;
       margin-bottom:28px;
       border:1px solid var(--border);
       backdrop-filter:blur(10px);
+      transition: all 0.3s ease;
     }
     .header-content{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
     h1{
       font-size:28px;
       font-weight:700;
-      background:linear-gradient(135deg,#06b6d4,#0891b2);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+      /* --- 💡 UPDATED: Simpler title color for toggling 💡 --- */
+      color: var(--text-primary);
+    }
+    body.light-mode h1 {
+      color: var(--accent-hover);
     }
     .subtitle{color:var(--text-secondary);font-size:14px;margin-top:6px}
+
+    /* --- 💡 NEW: Theme Toggle Button 💡 --- */
+    .theme-toggle {
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .theme-toggle:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .theme-toggle .fa-sun { display: none; }
+    .theme-toggle .fa-moon { display: block; }
+    body.light-mode .theme-toggle .fa-sun { display: block; }
+    body.light-mode .theme-toggle .fa-moon { display: none; }
+
     
-    /* Controls */
-    .controls{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .header-toolbar {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .header-toolbar input[type=text] {
+      flex: 1;
+    }
+    .view-toggle {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .view-toggle button {
+      background: var(--input-bg);
+      color: var(--text-secondary);
+      border: none;
+      padding: 10px 14px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    /* --- 💡 UPDATED: LTR border 💡 --- */
+    .view-toggle button:first-child {
+      border-right: 1px solid var(--border); 
+    }
+    .view-toggle button:hover {
+      color: var(--text-primary);
+      background: var(--input-focus);
+    }
+    .view-toggle button.active {
+      color: var(--btn-active-text);
+      background: var(--accent);
+    }
+
+    
     input[type=text]{
       padding:12px 16px;
       border-radius:10px;
       border:1px solid var(--border);
-      background:rgba(255,255,255,0.03);
+      background: var(--input-bg);
       color:var(--text-primary);
-      min-width:300px;
-      flex:1;
+      width:100%;
       transition:all 0.3s ease;
       font-size:14px;
     }
     input[type=text]:focus{
       outline:none;
       border-color:var(--accent);
-      background:rgba(255,255,255,0.06);
+      background: var(--input-focus);
       box-shadow:0 0 0 3px rgba(6,182,212,0.1);
     }
-    select{
-      padding:12px 16px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.03);
-      color:var(--text-primary);
-      cursor:pointer;
-      transition:all 0.3s ease;
-      font-size:14px;
-    }
-    select:hover{background:rgba(255,255,255,0.06)}
-    select:focus{outline:none;border-color:var(--accent)}
     
-    /* Stats Bar */
-    .stats{
-      display:flex;
-      gap:12px;
-      margin-bottom:24px;
-      flex-wrap:wrap;
+    .category-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 1px solid var(--border);
     }
-    .stat-card{
-      flex:1;
-      min-width:140px;
-      background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(6,182,212,0.03));
-      padding:16px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      text-align:center;
+    .category-buttons button {
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text-secondary);
+      font-family: 'Almarai', sans-serif;
     }
-    .stat-value{font-size:28px;font-weight:700;color:var(--accent)}
-    .stat-label{font-size:13px;color:var(--text-secondary);margin-top:4px}
+    .category-buttons button:hover {
+      background: var(--input-focus);
+      border-color: var(--border);
+      color: var(--text-primary);
+    }
+    .category-buttons button.active {
+      background: var(--accent);
+      color: var(--btn-active-text);
+      border-color: var(--accent);
+    }
     
-    /* Grid */
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
@@ -116,15 +204,17 @@
       cursor:pointer;
       position:relative;
       overflow:hidden;
+      box-shadow: 0 4px 12px var(--shadow);
     }
     .card::before{
       content:'';
       position:absolute;
       top:0;
-      left:0;
-      right:0;
+      /* --- 💡 UPDATED: LTR position 💡 --- */
+      right:0; 
+      left: 0;
       height:3px;
-      background:linear-gradient(90deg,var(--accent),transparent);
+      background:linear-gradient(90deg, transparent, var(--accent));
       opacity:0;
       transition:opacity 0.3s ease;
     }
@@ -136,7 +226,25 @@
     }
     .card:hover::before{opacity:1}
     
-    .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+    .card-category {
+      position: absolute;
+      top: 12px;
+      /* --- 💡 UPDATED: LTR position 💡 --- */
+      right: 12px;
+      background: rgba(113, 113, 122, 0.2);
+      color: var(--text-secondary);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .card-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      margin-bottom:12px;
+      padding-top: 24px;
+    }
     .code-title{flex:1}
     .code{
       font-weight:700;
@@ -150,7 +258,6 @@
       color:var(--text-primary);
       line-height:1.4;
     }
-    
     .badge{
       padding:6px 12px;
       border-radius:20px;
@@ -160,7 +267,6 @@
     }
     .badge-success{background:rgba(16,185,129,0.15);color:var(--success)}
     .badge-info{background:rgba(6,182,212,0.15);color:var(--accent)}
-    
     .meta{
       display:flex;
       gap:16px;
@@ -173,8 +279,6 @@
       border-bottom:1px solid var(--border);
     }
     .meta-item{display:flex;align-items:center;gap:6px}
-    .meta-icon{width:16px;height:16px}
-    
     .desc{
       font-size:14px;
       color:var(--text-secondary);
@@ -185,7 +289,6 @@
       overflow:hidden;
       margin-bottom:12px;
     }
-    
     .prereq{
       font-size:13px;
       padding:8px 12px;
@@ -194,7 +297,6 @@
       color:#fbbf24;
       border:1px solid rgba(245,158,11,0.2);
     }
-    
     .card-footer{
       display:flex;
       justify-content:space-between;
@@ -206,13 +308,13 @@
       border-radius:8px;
       border:none;
       background:var(--accent);
-      color:#042029;
+      color: var(--btn-active-text);
       cursor:pointer;
       font-weight:600;
       font-size:14px;
       transition:all 0.3s ease;
-      text-decoration: none; /* Add this for <a> tags */
-      display: inline-block; /* Ensures consistent styling for <a> tags */
+      text-decoration: none;
+      display: inline-block;
     }
     .btn:hover{
       background:var(--accent-hover);
@@ -220,14 +322,55 @@
       box-shadow:0 6px 16px rgba(6,182,212,0.3);
     }
     
+    
+    /* List View Styles */
+    .grid.list-view {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .grid.list-view .card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 16px 20px;
+    }
+    .grid.list-view .card:hover { transform: none; }
+    .grid.list-view .card-category { display: none; }
+    .grid.list-view .card-header { flex: 1; margin-bottom: 0; padding-top: 0; }
+    .grid.list-view .meta {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      border: none;
+      padding: 0;
+      margin: 0 24px;
+      width: auto;
+      font-size: 13px;
+    }
+    .grid.list-view .meta .meta-item:nth-child(2),
+    .grid.list-view .meta .meta-item:nth-child(3) {
+      display: none;
+    }
+    .grid.list-view .desc { display: none; }
+    .grid.list-view .prereq { display: none; }
+    .grid.list-view .card-footer { margin-top: 0; }
+    .grid.list-view .card-footer span { display: none; }
+    
+    @media (max-width: 768px) {
+      .grid.list-view .meta { display: none; }
+      .grid.list-view .card { padding: 12px 16px; }
+      .header-toolbar { flex-wrap: wrap; }
+    }
+    
     /* Modal */
     .modal-back{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.75);
+      background: var(--modal-bg);
       backdrop-filter:blur(8px);
       display:none;
-      align-items:center;
+      align:items:center;
       justify-content:center;
       padding:20px;
       z-index:1000;
@@ -241,7 +384,7 @@
       border-radius:16px;
       padding:28px;
       border:1px solid var(--border);
-      box-shadow:0 20px 60px rgba(0,0,0,0.6);
+      box-shadow:0 20px 60px var(--shadow);
       animation:slideUp 0.3s ease;
       max-height:90vh;
       overflow-y:auto;
@@ -259,37 +402,75 @@
       font-size:22px;
       color:var(--accent);
       margin:0;
+      line-height: 1.5;
     }
     .close-btn{
       padding:8px 16px;
       border-radius:8px;
       border:1px solid var(--border);
-      background:rgba(255,255,255,0.05);
+      background:var(--input-bg);
       color:var(--text-secondary);
       cursor:pointer;
       transition:all 0.3s ease;
       font-size:14px;
     }
     .close-btn:hover{
-      background:rgba(255,255,255,0.1);
+      background: var(--input-focus);
       color:var(--text-primary);
     }
+    
     .modal-content{line-height:1.8;color:var(--text-secondary)}
+    
+    .modal-meta-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      margin-top: 12px;
+    }
+    .modal-meta-toggle strong {
+      color: var(--text-primary);
+      display: block;
+    }
+    .modal-meta-toggle a,
+    .toggle-link {
+      font-size: 13px;
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
     .modal-meta{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap:12px;
-      margin:20px 0;
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 500px;
     }
+    .modal-meta.collapsed {
+      max-height: 0;
+      gap: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      opacity: 0;
+    }
+    
+    
     .modal-chip{
       padding:12px;
-      background:rgba(255,255,255,0.04);
+      background:var(--input-bg);
       border-radius:10px;
       text-align:center;
       font-size:13px;
       border:1px solid var(--border);
     }
-    .modal-chip strong{color:var(--accent);display:block;margin-bottom:4px}
+    .modal-chip strong{
+      color:var(--accent);
+      display:block;
+      margin-bottom:4px;
+      font-size: 14px;
+    }
     
     .modal-links-container {
       display: flex;
@@ -310,17 +491,25 @@
       text-align:center;
       padding:60px 20px;
       color:var(--text-secondary);
+      grid-column: 1 / -1;
     }
     .empty-icon{font-size:48px;margin-bottom:16px;opacity:0.5}
     
     
     @media (max-width:768px){
       .header-content{flex-direction:column;align-items:stretch}
-      .controls{flex-direction:column}
-      input[type=text]{min-width:100%;width:100%}
-      .grid{grid-template-columns:1fr}
       h1{font-size:22px}
       .modal{padding:20px}
+      .modal-meta{grid-template-columns: 1fr;}
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        /* --- 💡 UPDATED: LTR position 💡 --- */
+        right: 20px; 
+      }
+      .header-content div:first-child {
+        padding-right: 50px; /* Avoid overlap */
+      }
     }
   </style>
 
@@ -334,36 +523,33 @@
           <h1>IoT - إنترنت الأشياء</h1>
           <div class="subtitle"> المقررات الدراسية</div>
         </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </div>
-      <div class="controls">
+      
+      <div class="header-toolbar">
+        <div class="view-toggle" id="viewToggle">
+          <button class="active" id="viewGridBtn" aria-label="Grid View">
+            <i class="fa-solid fa-grip"></i>
+          </button>
+          <button id="viewListBtn" aria-label="List View">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
         <input id="search" type="text" placeholder="ابحث باسم المادة، رقم المقرر، أو كلمة من الوصف..." />
-        <select id="filterPra">
-          <option value="all">كل المقررات</option>
-          <option value="hasPra">لها متطلبات سابقة</option>
-          <option value="noPra">بدون متطلبات سابقة</option>
-        </select>
-        <select id="sortBy">
-          <option value="code">ترتيب حسب الكود</option>
-          <option value="name">ترتيب حسب الاسم</option>
-          <option value="credit">ترتيب حسب الساعات المعتمدة</option>
-        </select>
+      </div>
+        
+      <div class="category-buttons" id="categoryButtons">
+        <button data-category="all" class="active">كل التصنيفات</button>
+        <button data-category="متطلب جامعة اجباري">جامعة</button>
+        <button data-category="متطلب كلية اجباري">كلية</button>
+        <button data-category="متطلب تخصص اجباري انترنت الاشياء">تخصص (اجباري)</button>
+        <button data-category="متطلب تخصص اختياري">تخصص (اختياري)</button>
+        <button data-category="متطلبات التخصص المساندة">مساند</button>
       </div>
     </header>
-
-    <div class="stats">
-      <div class="stat-card">
-        <div class="stat-value" id="totalCourses">0</div>
-        <div class="stat-label">إجمالي المقررات</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="displayedCourses">0</div>
-        <div class="stat-label">المقررات المعروضة</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="totalCredits">0</div>
-        <div class="stat-label">مجموع الساعات</div>
-      </div>
-    </div>
 
     <main>
       <div class="grid" id="cards"></div>
@@ -380,38 +566,39 @@
         <h2 id="mTitle"></h2>
         <button id="closeModal" class="close-btn">إغلاق</button>
       </div>
+      
       <div class="modal-content">
-        <div class="modal-meta" id="mMeta"></div>
+      
+        <div class="modal-meta-toggle">
+            <strong>التفاصيل الأساسية</strong>
+            <a href="#" onclick="toggleMeta(event)" class="toggle-link">
+                (إظهار)
+            </a>
+        </div>
+        
+        <div class="modal-meta collapsed" id="mMeta"></div>
+        
         <div id="mDesc" style="margin-top:20px"></div>
+        
         <div id="mLinks" style="margin-top:20px"></div>
       </div>
+      
     </div>
   </div>
 
 
   <script>
-    // --- UPDATED ---
-    // Declare variables to hold data. 'courses' is now empty and will be filled by fetch.
     let courses = [];
-    let courseLinks = {}; // This will be populated from the JSON file
+    let courseLinks = {};
 
-    // Get DOM elements
     const cards = document.getElementById('cards');
     const search = document.getElementById('search');
-    const filterPra = document.getElementById('filterPra');
-    const sortBy = document.getElementById('sortBy');
-    const totalCoursesEl = document.getElementById('totalCourses');
-    const displayedCoursesEl = document.getElementById('displayedCourses');
-    const totalCreditsEl = document.getElementById('totalCredits');
+    const categoryButtons = document.querySelectorAll('#categoryButtons button');
+    
+    const viewGridBtn = document.getElementById('viewGridBtn');
+    const viewListBtn = document.getElementById('viewListBtn');
 
     function hasPra(c){return c.pra && c.pra !== '-' && c.pra !== ''}
-
-    function updateStats(list){
-      totalCoursesEl.textContent = courses.length; // 'courses' is the full list
-      displayedCoursesEl.textContent = list.length; // 'list' is the filtered list
-      const credits = list.reduce((sum, c) => sum + (c.credit > 0 ? c.credit : 0), 0);
-      totalCreditsEl.textContent = credits;
-    }
 
     function render(list){
       cards.innerHTML='';
@@ -425,6 +612,7 @@
         `;
         return;
       }
+      
       list.forEach(c=>{
         const div=document.createElement('div');
         div.className='card';
@@ -435,6 +623,7 @@
           : '<span class="badge badge-success">بدون متطلب</span>';
         
         div.innerHTML=`
+          <span class="card-category">${escapeHtml(c.category)}</span>
           <div class="card-header">
             <div class="code-title">
               <div class="code">${escapeHtml(c.code)}</div>
@@ -464,35 +653,51 @@
     }
 
     function applyFilters(){
-      // Check if courses data has loaded, if not, don't do anything
       if (courses.length === 0) {
-        console.log("Waiting for courses to load...");
         return;
       }
 
-      const q=search.value.trim().toLowerCase();
+      const q = search.value.trim().toLowerCase();
+      
+      const activeCategoryButton = document.querySelector('#categoryButtons button.active');
+      const category = activeCategoryButton ? activeCategoryButton.dataset.category : 'all';
+      
       let res = courses.filter(c=>{
         const concat = `${c.code} ${c.name} ${c.desc} ${c.pra}`.toLowerCase();
         return concat.includes(q);
       });
       
-      if(filterPra.value==='hasPra') res = res.filter(hasPra);
-      if(filterPra.value==='noPra') res = res.filter(c=>!hasPra(c));
+      if (category !== 'all') {
+        res = res.filter(c => c.category === category);
+      }
       
-      if(sortBy.value==='code') res.sort((a,b)=>a.code.localeCompare(b.code));
-      else if(sortBy.value==='name') res.sort((a,b)=>a.name.localeCompare(b.name));
-      else if(sortBy.value==='credit') res.sort((a,b)=>b.credit - a.credit);
-      
-      updateStats(res);
       render(res);
     }
 
     // Event listeners
     search.addEventListener('input', applyFilters);
-    filterPra.addEventListener('change', applyFilters);
-    sortBy.addEventListener('change', applyFilters);
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        applyFilters();
+      });
+    });
 
-    // Modal elements
+    viewGridBtn.addEventListener('click', () => {
+      cards.classList.remove('list-view');
+      viewGridBtn.classList.add('active');
+      viewListBtn.classList.remove('active');
+    });
+    
+    viewListBtn.addEventListener('click', () => {
+      cards.classList.add('list-view');
+      viewListBtn.classList.add('active');
+      viewGridBtn.classList.remove('active');
+    });
+
+    // --- Modal Logic ---
     const modalBack = document.getElementById('modalBack');
     const mTitle = document.getElementById('mTitle');
     const mMeta = document.getElementById('mMeta');
@@ -504,59 +709,57 @@
       if(e.target === modalBack) window.location.hash = '';
     });
 
-    /**
-     * --- 💡 NEW FUNCTION 💡 ---
-     * Toggles the visibility of the topics list in the modal
-     */
-    function toggleTopics(event) {
-        event.preventDefault(); // Prevents the '#' from being added to the URL
-        const topicsList = document.getElementById('modal-topics-list');
-        if (topicsList) {
-            const isHidden = topicsList.style.display === 'none';
-            topicsList.style.display = isHidden ? 'block' : 'none';
+    function toggleMeta(event) {
+        event.preventDefault();
+        const metaList = document.getElementById('mMeta');
+        const link = event.target;
+        
+        if (metaList) {
+            const isCollapsed = metaList.classList.toggle('collapsed');
+            link.textContent = isCollapsed ? '(إظهار)' : '(إخفاء)';
         }
     }
 
+    function toggleTopics(event) {
+        event.preventDefault();
+        const topicsList = document.getElementById('modal-topics-list');
+        const link = event.target;
+        
+        if (topicsList) {
+            const isHidden = topicsList.style.display === 'none';
+            topicsList.style.display = isHidden ? 'block' : 'none';
+            link.textContent = isHidden ? '(إخفاء)' : '(إظهار)';
+        }
+    }
 
-    /**
-     * --- 💡 UPDATED FUNCTION 💡 ---
-     * Function to generate summary HTML from description
-     */
     function createDescriptionSummary(desc) {
         const description = desc || '';
         const engNameMatch = description.match(/English Name:\s*([^.]+)\.?/);
         const engName = engNameMatch ? escapeHtml(engNameMatch[1].trim()) : '';
-
         let summaryHtml = '';
-
         if (engName) {
             summaryHtml += `<strong style="color: var(--text-primary); display: block; margin-bottom: 8px;">English Name:</strong> ${engName}`;
         }
-
         let topicsPart = description;
         if (engNameMatch) {
             topicsPart = description.substring(engNameMatch[0].length).trim();
         } else if (description.startsWith(engName) && engName) {
             topicsPart = '';
         }
-        
         const topics = topicsPart.split(/[.,;]\s+/)
             .map(s => s.trim().replace(/[.,;]$/, ''))
             .filter(s => s.length > 3); 
-
         if (topics.length > 0) {
-            // Updated to include the toggle link
             summaryHtml += `
-                <div style="margin-top: 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                <div class="modal-meta-toggle">
                     <strong style="color: var(--text-primary); display: block;">Key Topics:</strong>
-                    <a href="#" onclick="toggleTopics(event)" style="font-size: 13px; color: var(--accent); cursor: pointer; text-decoration: none;">
-                        (إظهار / إخفاء)
+                    <a href="#" onclick="toggleTopics(event)" class="toggle-link">
+                        (إظهار)
                     </a>
                 </div>
             `;
-            
-            // Added id="modal-topics-list", style="display: none;", dir="rtl", and text-align: right
-            summaryHtml += `<ul id="modal-topics-list" style="padding-right: 20px; margin: 0; color: var(--text-secondary); display: none; dir: rtl; text-align: right;">`;
+            /* --- 💡 UPDATED: LTR styles 💡 --- */
+            summaryHtml += `<ul id="modal-topics-list" style="padding-left: 20px; margin: 0; color: var(--text-secondary); dir: ltr; text-align: left; display: none;">`;
             topics.forEach(topic => {
                 summaryHtml += `<li style="margin-bottom: 6px;">${escapeHtml(topic)}</li>`;
             });
@@ -572,21 +775,24 @@
     }
 
 
-    /**
-     * openModal now only POPULATES content
-     */
     function openModal(code){
       const c = courses.find(x=>x.code===code);
       if(!c) return;
       
-      mTitle.textContent = `${c.code} — ${c.name}`;
+      const metaBox = document.getElementById('mMeta');
+      metaBox.classList.add('collapsed');
+      const metaToggleLink = metaBox.previousElementSibling.querySelector('.toggle-link');
+      if (metaToggleLink) metaToggleLink.textContent = '(إظهار)';
       
+      
+      mTitle.textContent = `${c.code} — ${c.name}`;
       mMeta.innerHTML = `
         <div class="modal-chip"><strong>الكود</strong>${c.code}</div>
+        <div class="modal-chip"><strong>التصنيف</strong>${escapeHtml(c.category)}</div>
         <div class="modal-chip"><strong>الساعات المعتمدة</strong>${c.credit}</div>
+        <div class="modal-chip"><strong>المتطلبات السابقة</strong>${c.pra || '-'}</div>
         <div class="modal-chip"><strong>الساعات النظرية</strong>${c.th_hours >= 0 ? c.th_hours : 'N/A'}</div>
         <div class="modal-chip"><strong>الساعات العملية</strong>${c.practical >= 0 ? c.practical : 'N/A'}</div>
-        <div class="modal-chip"><strong>المتطلبات السابقة</strong>${c.pra || '-'}</div>
       `;
       
       mDesc.innerHTML = createDescriptionSummary(c.desc);
@@ -610,54 +816,72 @@
       }
     }
 
-    /**
-     * This function controls modal visibility based on the URL hash
-     */
     function handleHashChange() {
-        const code = decodeURIComponent(window.location.hash.substring(1)); // Get hash, remove #, and decode
-        
-        // Wait for courses to load
+        const code = decodeURIComponent(window.location.hash.substring(1));
         if (courses.length === 0) {
-            console.log("Hash change ignored, courses not loaded yet.");
             return;
         }
-
         const course = courses.find(x => x.code === code);
-        
         if (course) {
-            openModal(course.code); // Populate the modal with content
-            modalBack.style.display = 'flex'; // Show the modal
+            openModal(course.code);
+            modalBack.style.display = 'flex';
         } else {
-            modalBack.style.display = 'none'; // Hide the modal
+            modalBack.style.display = 'none';
         }
     }
 
     window.addEventListener('hashchange', handleHashChange);
 
-    /**
-     * --- UPDATED: Main function to fetch BOTH data files and initialize ---
-     */
+    // --- 💡 NEW: Theme Toggle Logic 💡 ---
+    const themeToggle = document.getElementById('themeToggle');
+    // Check for saved theme in localStorage
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      // Save preference
+      if (document.body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+      } else {
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // --- Initialization Logic ---
     async function initializeApp() {
         try {
-            // Fetch courses first
             const coursesResponse = await fetch('courses.json');
             if (!coursesResponse.ok) {
                 throw new Error(`HTTP error! status: ${coursesResponse.status} (courses.json)`);
             }
-            courses = await coursesResponse.json(); // Assign to the global 'courses' variable
+            courses = await coursesResponse.json();
             console.log("Courses loaded successfully.");
 
-            // Then fetch course links
+            const courseCategories = {
+              "AEL101": "متطلب جامعة اجباري", "AAL101": "متطلب جامعة اجباري", "CD 101": "متطلب جامعة اجباري", "IEC101": "متطلب جامعة اجباري", "AEL102": "متطلب جامعة اجباري", "NE101": "متطلب جامعة اجباري",
+              "CS 122": "متطلب كلية اجباري", "CS 123": "متطلب كلية اجباري", "CS 222": "متطلب كلية اجباري", "CS 223": "متطلب كلية اجباري", "CS 241": "متطلب كلية اجباري", "CS 242": "متطلب كلية اجباري", "CS 103": "متطلب كلية اجباري",
+              "IOT 361": "متطلبات التخصص المساندة", "IOT 261": "متطلبات التخصص المساندة",
+              "IOT 442": "متطلب تخصص اختياري", "IOT 447": "متطلب تخصص اختياري", "IOT 455": "متطلب تخصص اختياري", "IOT 456": "متطلب تخصص اختياري", "IOT 457": "متطلب تخصص اختياري", "IOT 458": "متطلب تخصص اختياري", "IOT 459": "متطلب تخصص اختياري"
+            };
+            const defaultCategory = "متطلب تخصص اجباري انترنت الاشياء";
+
+            courses.forEach(c => {
+              c.category = courseCategories[c.code] || defaultCategory;
+            });
+
             const linksResponse = await fetch('course_links.json');
             if (!linksResponse.ok) {
-                throw new Error(`HTTP error! status: ${linksResponse.status} (course_links.json)`);
+                console.warn(`Could not load course_links.json. Status: ${linksResponse.status}`);
+                courseLinks = {};
+            } else {
+                courseLinks = await linksResponse.json();
+                console.log("Course links loaded successfully.");
             }
-            courseLinks = await linksResponse.json();
-            console.log("Course links loaded successfully.");
 
         } catch (error) {
             console.error("Could not load initial data:", error);
-            // Display an error message to the user
             cards.innerHTML = `
               <div class="empty-state">
                 <div class="empty-icon">⚠️</div>
@@ -665,16 +889,11 @@
                 <p>لا يمكن تحميل بيانات المقررات. الرجاء المحاولة مرة أخرى لاحقاً.</p>
               </div>`;
         } finally {
-            // These functions will now run after data is loaded (or has failed)
-            // Initial render of the page
             applyFilters();
-            
-            // Check hash on initial page load
             handleHashChange();
         }
     }
 
-    // Run the app initialization
     initializeApp();
 
   </script>
