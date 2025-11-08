@@ -962,6 +962,66 @@
         ],
         "answer_index": 3,
         "explanation": "In an Arduino sketch, the `analogWrite()` function is used to control the duty cycle of PWM pins. The value is set between 0 (0% duty cycle / off) and 255 (100% duty cycle / on)."
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "Arduino MEGA 2560 boards are only available with:",
+        "options": [
+          "DMS",
+          "a through-hole mounted microcontroller",
+          "MSD",
+          "SMD"
+        ],
+        "answer_index": 3,
+        "explanation": "Arduino MEGA 2560 boards are only available with a surface mount microcontroller, as there is no through-hole version of the microcontroller available"
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "Arduino MEGA 2560 SRAM(data) size is:",
+        "options": [
+          "4096 bytes",
+          "8192 bytes",
+          "8092 bytes",
+          "1024 bytes"
+        ],
+        "answer_index": 1,
+        "explanation": "The ATmega2560 microcontroller, and therefore the Arduino MEGA 2560, has 8K bytes (8\n× 1024 bytes) of SRAM, where a byte is 8 bits wide and 1K = 1024 bytes."
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "voltage of between 7V to 12V can be applied to the external power connector of the Arduino MEGA 2560, allowing it to",
+        "options": [
+          "A) run stand-alone without the need of a computer connected to the USB port",
+          "B) upload sketch and cannot run stand-alone without computer with Arduino IDE",
+          "C) run stand-alone and upload sketch without the need of a computer connected to the USB port",
+          ""
+        ],
+        "answer_index": 0,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "Arduino MEGA 2560 Flash (Program) size is",
+        "options": [
+          "A) 128K bytes available",
+          "B) 256K available by default",
+          "C) 248K available by default",
+          "D) 246K available by default"
+        ],
+        "answer_index": 2,
+        "explanation": "the Arduino MEGA 2560 board, has 256K\nbytes (256 × 1024 bytes) of Flash memory , 248K is available for user programs or sketches."
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "Arduino MEGA 2560 Chip Package (TQFP) and it stand for",
+        "options": [
+          "Thin Quad Flat Package",
+          "Thin Quad Fast Programming",
+          "Thin Quad Flat Programing",
+          "Thin Quantity Flat Package"
+        ],
+        "answer_index": 0,
+        "explanation": "The \"Thin\" indicates it has a low profile, and \"Quad Flat Package\" refers to the square shape with leads extending from all four sides."
       }
     ],
     "IOT201": [
