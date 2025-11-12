@@ -115,5 +115,10 @@
       "link": "quiz.html?code=IOT201"
     }
   ],
-  "IOT 331": []
+  "IOT 331": [
+    {
+      "name": "اسئلة و كويزات",
+      "link": "quiz.html?code=Os1"
+    }
+  ]
 }
