@@ -1061,6 +1061,128 @@
         "answer_index": 0,
         "explanation": ""
       }
+    ],
+    "Os1": [
+      {
+        "chapter": "Quiz 1",
+        "question": "Error detection may occur in :",
+        "options": [
+          "CPU",
+          "Main Memory",
+          "User Program  ",
+          "All of the above "
+        ],
+        "answer_index": 3,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "job scheduler – selects which processes should be brought into:",
+        "options": [
+          "Job queue ",
+          "Device queues  ",
+          "Registers",
+          "None of the above "
+        ],
+        "answer_index": 3,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "________ has the receiver receive a valid message or null",
+        "options": [
+          "Non-blocking send ",
+          "Blocking receive ",
+          "Blocking send ",
+          "None of above "
+        ],
+        "answer_index": 3,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "In ___________ communication Processes can communicate only if they share a mailbox",
+        "options": [
+          "Direct",
+          "Indirect ",
+          "Direct and Indirect",
+          "None of above "
+        ],
+        "answer_index": 1,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "The process may change from running state to ready state when",
+        "options": [
+          "The user should answer to the I/O event",
+          "The user may forcing the CPU to change the process state ",
+          "The dispatcher my performing the scheduler request  ",
+          "All of above "
+        ],
+        "answer_index": 1,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "CLI and GUI interfaces include in all types of OS.",
+        "options": [
+          "True ",
+          "False ",
+          "",
+          ""
+        ],
+        "answer_index": 0,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "In OS, User interface (UI) has only two types.",
+        "options": [
+          "True ",
+          "False ",
+          "",
+          ""
+        ],
+        "answer_index": 1,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "One of the following is not an OS services",
+        "options": [
+          "System Call ",
+          "Program Execution",
+          "File System",
+          "None of the above "
+        ],
+        "answer_index": 0,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "Which state occurs by the user but not OS",
+        "options": [
+          "New",
+          "Waiting",
+          "Both New and Waiting ",
+          "None of above "
+        ],
+        "answer_index": 2,
+        "explanation": ""
+      },
+      {
+        "chapter": "Quiz 1",
+        "question": "Only OS may changing between processes state .",
+        "options": [
+          "True ",
+          "False ",
+          "",
+          ""
+        ],
+        "answer_index": 1,
+        "explanation": ""
+      }
     ]
   }
 }
