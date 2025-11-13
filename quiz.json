@@ -1292,6 +1292,18 @@
         ],
         "answer_index": 1,
         "explanation": "Semantic vision improves data meaning and reduces redundancy."
+      },
+      {
+        "chapter": "Chapter 1 – Part 1",
+        "question": "A force driving IoT expansion is",
+        "options": [
+          " Decrease in cloud storage",
+          "Low data usage apps",
+          " High-data-consumption mobile applications",
+          "Fewer embedded devices"
+        ],
+        "answer_index": 2,
+        "explanation": "Data-heavy apps increase IoT network demand."
       }
     ]
   }
