@@ -514,7 +514,7 @@
           "The capacity of a memory device",
           "The order in which bytes are stored in memory"
         ],
-        "answer_index": 0,
+        "answer_index": 3,
         "explanation": "Endianness describes whether the Most Significant Byte (Big-Endian) or the Least Significant Byte (Little-Endian) is stored at the lowest memory address."
       },
       {
@@ -627,7 +627,7 @@
       },
       {
         "chapter": "mid2/25",
-        "question": "In a hard real-time system (like an airbag controller), missing a deadline constitutes a total system failure. In a soft real-time system (like video streaming), missing a deadline only degrades performance (e.g., buffering) but isn't catastrophic.",
+        "question": "Which of the following design requirements is most likely to directly influence the [cost of] an embedded system?",
         "options": [
           "Memory size.",
           "Production volume.",
