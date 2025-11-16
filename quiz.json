@@ -480,6 +480,162 @@
         ],
         "answer_index": 2,
         "explanation": "Reading from flash is fast, direct, and simple, acting like regular memory. Writing is complex: it is slow, and data cannot be written until the corresponding sector has first been erased. This erasure is done on a large sector-by-sector basis, not byte-by-byte."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "What is an embedded system?",
+        "options": [
+          "A computer designed for gaming",
+          "A personal computer for general use",
+          "A combination of hardware and software designed for a dedicated function",
+          "A software-only product"
+        ],
+        "answer_index": 2,
+        "explanation": "Embedded systems are, by definition, specialized computer systems designed to perform a specific, dedicated function, unlike a general-purpose PC."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "Which memory type is most suitable for high-speed operations in embedded systems?",
+        "options": [
+          "DRAM",
+          "SRAM",
+          "EEPROM",
+          "Flash memory"
+        ],
+        "answer_index": 1,
+        "explanation": "SRAM (Static RAM) is significantly faster than DRAM and is used for high-speed CPU caches because it doesn't require refreshing."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "Endianness refers to",
+        "options": [
+          "The speed of memory access",
+          " The method by which data is encrypted",
+          "The capacity of a memory device",
+          "The order in which bytes are stored in memory"
+        ],
+        "answer_index": 0,
+        "explanation": "Endianness describes whether the Most Significant Byte (Big-Endian) or the Least Significant Byte (Little-Endian) is stored at the lowest memory address."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "What happens when a system uses Flash memory for data storage?",
+        "options": [
+          "Data can be written and erased rapidly at the byte level",
+          "The data is non-volatile and can be erased in large blocks.",
+          "Flash memory operates similarly to DRAM with a refresh cycle",
+          "Flash memory requires a constant power supply to maintain data."
+        ],
+        "answer_index": 1,
+        "explanation": "Flash memory is non-volatile (keeps data without power). Its key characteristic is that data must be erased in large \"blocks\" before it can be rewritten, which is different from RAM."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "In a little-endian system, how would the 32-bit integer 0x12345678 be stored in memory (assuming 4-byte memory cells)?",
+        "options": [
+          "78 56 34 12",
+          "12 34 56 78",
+          "78 12 34 56",
+          "56 34 12 78"
+        ],
+        "answer_index": 0,
+        "explanation": "Little-endian means the \"little end\" (the Least Significant Byte, 78) is stored first at the lowest memory address. The bytes are stored in reverse order: 78, 56, 34, 12."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "Which processor family is known to be little-endian?",
+        "options": [
+          "SPARC",
+          "PowerPC",
+          "Intel's 80x86",
+          "MIPS"
+        ],
+        "answer_index": 2,
+        "explanation": "The Intel x86 architecture (used in most PCs) is the most prominent example of a little-endian system. SPARC and PowerPC are traditionally big-endian."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "Which of the following is a primary advantage of using Direct Memory Access (DMA)?",
+        "options": [
+          "It reduces the power consumption of the CPU.",
+          "It allows the CPU to directly control memory transfers.",
+          "It minimizes CPU involvement in large or frequent data transfers.",
+          "It eliminates the need for memory addressing."
+        ],
+        "answer_index": 2,
+        "explanation": "A DMA controller moves blocks of data between peripherals and memory without using the CPU, freeing the CPU to perform other computational tasks simultaneously."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "Which of the following is a crucial skill for an embedded software developer when working with hardware?",
+        "options": [
+          "Writing high-level application code with minimal hardware interaction.",
+          "Being familiar with integrated circuits, boards, buses, and peripheral devices.",
+          "Designing user interfaces for embedded systems.",
+          "Creating algorithms that do not depend on the physical hardware."
+        ],
+        "answer_index": 1,
+        "explanation": "Embedded development requires a deep understanding of the underlying hardware (like reading datasheets, understanding memory maps, and interfacing with peripherals) to make the software function correctly."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "In the context of video game players, why might designers move memory and peripherals off the main circuit board onto game cartridges?",
+        "options": [
+          "To increase the cost of the game player and reduce the cost of the cartridges.",
+          "To allow more powerful graphics and computation within the system.",
+          "To reduce the cost of the game player and increase the price of each game.",
+          "To make the game cartridges reusable for different game players."
+        ],
+        "answer_index": 1,
+        "explanation": "This design allows the cartridge to include specialized hardware (like extra RAM or co-processors) that enhances the base console's capabilities, enabling more advanced games."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "What does the metric mW/MIPS (milliwatts per MIPS) primarily measure in [embedded systems]?",
+        "options": [
+          "The speed of the processor.",
+          "The power efficiency relationship.",
+          "The memory capacity required for the system.",
+          "The size of the embedded system."
+        ],
+        "answer_index": 1,
+        "explanation": "This metric literally measures power (milliwatts) per unit of performance (MIPS), making it a direct measurement of power efficiency. A lower number is better."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "What is the purpose of the macros htonl() and ntohl() in network communication?",
+        "options": [
+          "They convert between little-endian and big-endian formats",
+          "They are used for error checking in network communication",
+          "They are used to optimize data transmission speed",
+          "They manage socket connections between processors"
+        ],
+        "answer_index": 0,
+        "explanation": "Networks use a standard \"Network Byte Order\" (which is big-endian). These functions convert integers from the \"Host\" format (htons = Host to Network) to the network format and back (ntohs = Network to Host) to ensure all systems can communicate regardless of their native endianness."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "What distinguishes a hard real-time system from a soft real-time system?",
+        "options": [
+          "A hard real-time system is less concerned with meeting deadlines.",
+          "A soft real-time system has deadlines that must always be met, whereas hard deadlines are flexible.",
+          "A hard real-time system has strict consequences for missing deadlines, while soft deadlines have less severe consequences.",
+          "none"
+        ],
+        "answer_index": 2,
+        "explanation": "In a hard real-time system (like an airbag controller), missing a deadline constitutes a total system failure. In a soft real-time system (like video streaming), missing a deadline only degrades performance (e.g., buffering) but isn't catastrophic."
+      },
+      {
+        "chapter": "mid2/25",
+        "question": "In a hard real-time system (like an airbag controller), missing a deadline constitutes a total system failure. In a soft real-time system (like video streaming), missing a deadline only degrades performance (e.g., buffering) but isn't catastrophic.",
+        "options": [
+          "Memory size.",
+          "Production volume.",
+          "Lifetime of the product.",
+          "Reliability of the system."
+        ],
+        "answer_index": 1,
+        "explanation": "Production volume has a massive impact on the per-unit cost. A high volume allows for lower component costs and amortizes the non-recurring engineering (NRE) costs over many more units."
       }
     ],
     "IOT 453": [
