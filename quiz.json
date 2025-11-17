@@ -1460,6 +1460,246 @@
         ],
         "answer_index": 2,
         "explanation": "Data-heavy apps increase IoT network demand."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Which term refers to converting physical or analog signals into digital data ?",
+        "options": [
+          "Data collection",
+          "Data acquisition",
+          "Data management",
+          "Data streaming"
+        ],
+        "answer_index": 0,
+        "explanation": "Data acquisition converts physical or analog signals into digital data ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Data enrichment is the process of ?",
+        "options": [
+          "Adding context or extra information to data",
+          "Merging multiple datasets",
+          "Real-time transmission",
+          "Encrypting data"
+        ],
+        "answer_index": 0,
+        "explanation": "Enrichment adds meaning or context to improve data quality ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Data streaming refers to ?",
+        "options": [
+          "Long-term storage",
+          "Sending data in real or near-real time ",
+          "Encoding data",
+          "Offline processing"
+        ],
+        "answer_index": 0,
+        "explanation": "Streaming means transmitting data instantly ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Data management refers to ?",
+        "options": [
+          "Examining data",
+          "Ensuring integrity, security, and compliance",
+          "Real-time streaming",
+          "Collecting data only"
+        ],
+        "answer_index": 0,
+        "explanation": "Data management ensures secure and correct handling of data ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Which term refers to organizing and structuring data for efficient access ?",
+        "options": [
+          "Data analysis",
+          "Data gathering",
+          "Data enrichment",
+          "Data organization "
+        ],
+        "answer_index": 0,
+        "explanation": "Organization arranges data for easier use ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Data analysis refers to ?",
+        "options": [
+          "Displaying data only",
+          "Examining data to extract insights",
+          "Collecting raw signals",
+          "Storing data"
+        ],
+        "answer_index": 0,
+        "explanation": "Analysis finds patterns and meaning in data ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "The controller in an IoT device is responsible for ?",
+        "options": [
+          "Displaying data only",
+          " Managing operations and processing data",
+          "Increasing Wi-Fi speed",
+          "Cloud storage"
+        ],
+        "answer_index": 0,
+        "explanation": "The controller is the device’s “brain” ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Transcoding means ?",
+        "options": [
+          "Encrypting data",
+          "Converting data from one digital format to another",
+          "Real-time processing",
+          "Compressing data"
+        ],
+        "answer_index": 0,
+        "explanation": "Transcoding changes the data format ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Data consolidation means ?",
+        "options": [
+          "Adding metadata",
+          "Cleaning data",
+          "Combining data from multiple sources",
+          "Streaming data"
+        ],
+        "answer_index": 0,
+        "explanation": "Consolidation merges data into one system ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Data assembling refers to ?",
+        "options": [
+          "Structuring and arranging data",
+          "Broadcasting data",
+          "Encrypting signals",
+          "Collecting raw input"
+        ],
+        "answer_index": 0,
+        "explanation": "Assembling organizes data into a defined format ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "The basic IoT equation is ?",
+        "options": [
+          "Data + Cloud + App",
+          "Physical Object + Controller + Internet",
+          "Collect + Organize + Display",
+          "Sensor + Power + Network"
+        ],
+        "answer_index": 0,
+        "explanation": "This is the simplest conceptual model of IoT ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "IoT business-services equation is ?",
+        "options": [
+          "Collect + Upload",
+          "Connect + Sync",
+          "Process + Visualize",
+          "Gather + Enrich + Stream + Manage + Acquire + Organize + Analyze"
+        ],
+        "answer_index": 0,
+        "explanation": "Describes how IoT handles enterprise data workflows ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "IoT cloud-based equation includes ?",
+        "options": [
+          "Gather + Consolidate + Connect + Collect + Assemble + Manage + Analyze ",
+          "Sense + Move + Store",
+          "Display + Upload",
+          "Collect + Transfer"
+        ],
+        "answer_index": 0,
+        "explanation": "Represents cloud-dependent IoT processes ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Passive IoT data sources ?",
+        "options": [
+          "Send continuous real-time data",
+          "Support two-way communication",
+          "Send data only when triggered or requested",
+          "Work automatically without sensors"
+        ],
+        "answer_index": 0,
+        "explanation": "Passive sensors operate only when activated ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Active IoT data sources ?",
+        "options": [
+          "Send delayed data",
+          "Send continuous real-time data",
+          "Only send data on request",
+          "Never use power"
+        ],
+        "answer_index": 0,
+        "explanation": "Active sources continuously generate data ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Dynamic IoT data sources ?",
+        "options": [
+          "One-way data output",
+          "Always offline",
+          "Require manual updates",
+          "Two-way communication and auto-configuration"
+        ],
+        "answer_index": 0,
+        "explanation": "Dynamic sources support adjustable, interactive communication ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "A groundwater sensor that sends data only when asked is ?",
+        "options": [
+          "Dynamic",
+          "Active",
+          "Passive",
+          "Cloud-based"
+        ],
+        "answer_index": 0,
+        "explanation": "It only sends data when triggered → passive ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "Jet engine monitoring sensors are ?",
+        "options": [
+          "Passive",
+          "Active",
+          "Dynamic",
+          "Manual"
+        ],
+        "answer_index": 0,
+        "explanation": "Jet engine sensors send continuous data → active ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "The layered IoT architecture explains ?",
+        "options": [
+          "Only hardware components",
+          "Power distribution",
+          "Sensor calibration",
+          "Interaction between devices, networks, and applications"
+        ],
+        "answer_index": 0,
+        "explanation": "Shows how IoT components communicate in layers ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 2",
+        "question": "The conceptual IoT framework allows ?",
+        "options": [
+          "Distributed devices to gather and send data to a central unit",
+          "Devices to operate offline only",
+          "Manual data transfer",
+          "No cloud involvement"
+        ],
+        "answer_index": 0,
+        "explanation": "Devices collect and send data to a central system or cloud ."
       }
     ]
   }
