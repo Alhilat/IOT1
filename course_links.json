@@ -120,5 +120,11 @@
       "name": "اسئلة و كويزات",
       "link": "quiz.html?code=Os1"
     }
+  ],
+  "IOT 251": [
+    {
+      "name": "اسئلة مقترحة",
+      "link": "quiz.html?code=IOT 251"
+    }
   ]
 }
