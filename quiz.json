@@ -1700,6 +1700,330 @@
         ],
         "answer_index": 0,
         "explanation": "Devices collect and send data to a central system or cloud ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which equation conceptually describes the IoT umbrella ?",
+        "options": [
+          "Gather + Enrich + Stream + Manage + Organize and Analyze = Internet of Things",
+          "Gather + Consolidate + Connect + Collect + Assemble + Manage and Analyze = Internet of Things",
+          "Physical object + Controller, Sensor and Actuators + Internet = Internet of Things",
+          "Controller + Application + User Interface = Internet of Things"
+        ],
+        "answer_index": 0,
+        "explanation": "This equation represents the IoT umbrella because it combines physical objects with sensors, controllers, and the Internet ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which IoT layer collects and analyzes real-time data from physical attributes ?",
+        "options": [
+          "Data Processing Layer",
+          "Application Layer",
+          "Gateway and Network Layer",
+          "Sensing Layer"
+        ],
+        "answer_index": 0,
+        "explanation": "The sensing layer collects data from physical attributes using sensors ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which IoT layer manages and transmits large volumes of sensor data through reliable networks ?",
+        "options": [
+          "Application Layer",
+          "Sensing Layer",
+          "Gateway and Network Layer",
+          "Data Processing Layer"
+        ],
+        "answer_index": 0,
+        "explanation": "The gateway and network layer handles data transmission through reliable networks and supports M2M communication ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which IoT layer processes data, ensures security, and automates tasks ?",
+        "options": [
+          "Gateway and Network Layer",
+          "Sensing Layer",
+          "Application Layer",
+          "Data Processing Layer"
+        ],
+        "answer_index": 0,
+        "explanation": "The data processing layer handles analytics, security, and device management ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which layer provides direct interaction between users and IoT devices ?",
+        "options": [
+          "Data Processing Layer",
+          "Gateway and Network Layer",
+          "Application Layer",
+          "Sensing Layer"
+        ],
+        "answer_index": 0,
+        "explanation": "The application layer offers a direct user interface and converts data into meaningful insights ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which short-range wireless technology is designed for low-power, low-data rate applications and uses mesh networking ?",
+        "options": [
+          "ZigBee",
+          "Wi-Fi",
+          "Bluetooth",
+          "NFC"
+        ],
+        "answer_index": 0,
+        "explanation": "ZigBee is designed for low-power applications and uses mesh networking ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which technology uses IPv6 and mesh networking for IoT ?",
+        "options": [
+          "Z-Wave",
+          "Thread",
+          "RFID",
+          "NFC"
+        ],
+        "answer_index": 0,
+        "explanation": "Thread is a low-power protocol that uses IPv6 and mesh networking ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which wireless protocol is known for strong device compatibility and is widely used in home automation ?",
+        "options": [
+          "NB-IoT",
+          "Sigfox",
+          "Z-Wave",
+          "Bluetooth"
+        ],
+        "answer_index": 0,
+        "explanation": "Z-Wave is widely compatible with smart home devices ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which communication technology provides high bandwidth but consumes high power ?",
+        "options": [
+          "Wi-Fi",
+          "ZigBee",
+          "NFC",
+          "Sigfox"
+        ],
+        "answer_index": 0,
+        "explanation": "Wi-Fi offers high data rates but consumes high power ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which long-range technology offers excellent coverage even underground and inside buildings ?",
+        "options": [
+          "LoRa WAN",
+          "LTE Cat-M1",
+          "NB-IoT",
+          "ZigBee"
+        ],
+        "answer_index": 0,
+        "explanation": "NB-IoT provides excellent deep coverage including indoors and underground ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which long-range technology is cost-effective for very small data transmissions and consumes extremely low power ?",
+        "options": [
+          "Z-Wave",
+          "LoRa WAN",
+          "Sigfox",
+          "RFID"
+        ],
+        "answer_index": 0,
+        "explanation": "Sigfox is designed for very small data packets with extremely low power consumption ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which data-collection technology uses electromagnetic fields to identify and track tags ?",
+        "options": [
+          "NFC",
+          "RFID",
+          "Bluetooth",
+          "Z-Wave"
+        ],
+        "answer_index": 0,
+        "explanation": "RFID uses electromagnetic fields to identify and track tags ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which technology allows communication within only a few centimeters ?",
+        "options": [
+          "RFID",
+          "NFC",
+          "Bluetooth",
+          "LoRa WAN"
+        ],
+        "answer_index": 0,
+        "explanation": "NFC supports communication only at very short distances ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which type of IoT data source sends data only when triggered ?",
+        "options": [
+          "Dynamic sources",
+          "Active sources",
+          "Passive sources",
+          "Hybrid sources"
+        ],
+        "answer_index": 0,
+        "explanation": "Passive sources send data only when requested by the application ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which data source supports two-way communication, real-time updates, and auto-configuration ?",
+        "options": [
+          "Passive sources",
+          "Active sources",
+          "Manual sources",
+          "Dynamic sources "
+        ],
+        "answer_index": 0,
+        "explanation": "Dynamic sources support real-time updates and two-way communication ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "What is a key advantage of ZigBee technology ?",
+        "options": [
+          "Very high data rate",
+          "Long-range coverage up to 100 km",
+          "Low power consumption and reliable mesh networking",
+          "No need for a gateway"
+        ],
+        "answer_index": 0,
+        "explanation": "ZigBee is known for low power usage and reliable mesh networking ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "What is a main disadvantage of Thread technology ?",
+        "options": [
+          "Limited market penetration and compatibility issues",
+          "High power consumption",
+          "Low security",
+          "Very high data rate"
+        ],
+        "answer_index": 0,
+        "explanation": "Thread’s drawback is that it is relatively new and may have compatibility issues ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which technology often requires a dedicated hub or controller ?",
+        "options": [
+          "Wi-Fi",
+          "Z-Wave",
+          "NFC",
+          "Bluetooth"
+        ],
+        "answer_index": 0,
+        "explanation": "Z-Wave often requires a dedicated hub or controller ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which wireless communication supports high-bandwidth applications like video streaming ?",
+        "options": [
+          "ZigBee",
+          "Wi-Fi",
+          "Sigfox",
+          "LoRa WAN"
+        ],
+        "answer_index": 0,
+        "explanation": "Wi-Fi supports high-bandwidth applications such as video streaming ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which version of Bluetooth offers low energy consumption ?",
+        "options": [
+          "Bluetooth Classic only",
+          "Bluetooth High Power Mode",
+          "Bluetooth Low Energy (BLE)",
+          "NFC-Bluetooth Hybrid"
+        ],
+        "answer_index": 0,
+        "explanation": "BLE is designed for low energy use, ideal for wearables ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which cellular IoT technology can use existing LTE infrastructure ?",
+        "options": [
+          "NB-IoT",
+          "LTE-Cat M1",
+          "Sigfox",
+          "LoRa WAN"
+        ],
+        "answer_index": 0,
+        "explanation": "LTE-Cat M1 operates on existing LTE infrastructure ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which long-range technology requires dedicated gateways for connectivity ?",
+        "options": [
+          "NFC",
+          "ZigBee",
+          "Wi-Fi",
+          "LoRa WAN"
+        ],
+        "answer_index": 0,
+        "explanation": "LoRa WAN requires dedicated gateways for communication ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which technology is limited to very small data payload sizes ?",
+        "options": [
+          "LoRa WAN",
+          "ZigBee",
+          "Bluetooth",
+          "Sigfox"
+        ],
+        "answer_index": 0,
+        "explanation": "Sigfox supports very small data payloads ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which sensing technology does NOT require a power source in its passive form ?",
+        "options": [
+          "RFID",
+          "Thread",
+          "LoRa WAN",
+          "Z-Wave"
+        ],
+        "answer_index": 0,
+        "explanation": "Passive RFID tags do not require a power source ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which sensing technology is commonly used for contactless payments ?",
+        "options": [
+          "RFID",
+          "NFC",
+          "Bluetooth",
+          "ZigBee"
+        ],
+        "answer_index": 0,
+        "explanation": "NFC is widely used in contactless payments due to its short range and security ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which data processing method enhances IoT systems through prediction and optimization ?",
+        "options": [
+          "RFID",
+          "NFC",
+          "AI and ML",
+          "Z-Wave"
+        ],
+        "answer_index": 0,
+        "explanation": "AI and ML improve prediction and decision-making in IoT ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "What ensures privacy and protection against cyber threats in IoT ?",
+        "options": [
+          "High-bandwidth Wi-Fi",
+          "End-to-end encryption and secure authentication",
+          "Short-range communication",
+          "Passive sensors"
+        ],
+        "answer_index": 0,
+        "explanation": "Encryption and secure authentication protect devices and data from cyber threats ."
       }
     ]
   }
