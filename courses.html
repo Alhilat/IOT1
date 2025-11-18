@@ -639,7 +639,7 @@
           <div class="desc">${escapeHtml(c.desc)}</div>
           ${hasPra(c) ? `<div class="prereq">المتطلبات: ${escapeHtml(c.pra)}</div>` : ''}
           <div class="card-footer">
-            <span style="font-size:13px;color:var(--text-secondary)">انقر للتفاصيل</span>
+            <span style="font-size:13px;color:var(--text-secondary)"> </span>
             <button class="btn" onclick="event.stopPropagation(); window.location.hash = '${c.code}'">عرض التفاصيل</button>
           </div>
         `;
