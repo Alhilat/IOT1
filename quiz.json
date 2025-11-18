@@ -2024,6 +2024,30 @@
         ],
         "answer_index": 1,
         "explanation": "Encryption and secure authentication protect devices and data from cyber threats ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which of the following best describes data collection ?",
+        "options": [
+          "Examining data to find patterns",
+          "Structuring data for quick access",
+          "Systematically gathering data from multiple sources",
+          "Converting physical signals into digital format"
+        ],
+        "answer_index": 2,
+        "explanation": "Data collection means gathering data from various sources in an organized way ."
+      },
+      {
+        "chapter": "Chapter 1 – Part 3",
+        "question": "Which process improves raw data by adding missing or related information ?",
+        "options": [
+          "Data management",
+          "Data enrichment",
+          "Data assembling",
+          "Data consolidation"
+        ],
+        "answer_index": 1,
+        "explanation": "Enrichment enhances raw data by adding more context ."
       }
     ]
   }
