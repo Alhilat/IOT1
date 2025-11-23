@@ -586,7 +586,7 @@
           "To reduce the cost of the game player and increase the price of each game.",
           "To make the game cartridges reusable for different game players."
         ],
-        "answer_index": 1,
+        "answer_index": 2,
         "explanation": "This design allows the cartridge to include specialized hardware (like extra RAM or co-processors) that enhances the base console's capabilities, enabling more advanced games."
       },
       {
