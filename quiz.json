@@ -538,7 +538,7 @@
           "78 12 34 56",
           "56 34 12 78"
         ],
-        "answer_index": 0,
+        "answer_index": 1,
         "explanation": "Little-endian means the \"little end\" (the Least Significant Byte, 78) is stored first at the lowest memory address. The bytes are stored in reverse order: 78, 56, 34, 12."
       },
       {
