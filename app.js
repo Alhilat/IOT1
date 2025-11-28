@@ -10,8 +10,7 @@ const EDITOR_CONFIG = {
         'secondary_item_name': 'link',
         'data_wrapper_key': null,
         'item_display_key': 'name',
-        'dialog_class_key': 'link', // Changed from class to a simple key
-        'local_repo_dir': 'temp_links_repo' // Kept for reference, but unused in web
+        'dialog_class_key': 'link'
     },
     'videos': {
         'file_name': 'videos.json', 'main_title': 'Video Editor',
@@ -19,8 +18,7 @@ const EDITOR_CONFIG = {
         'primary_add_prompt': 'Enter the new course name:', 'primary_confirm_delete': 'course',
         'secondary_item_name': 'video',
         'data_wrapper_key': null, 'item_display_key': 'title', 
-        'dialog_class_key': 'video',
-        'local_repo_dir': 'temp_video_repo'
+        'dialog_class_key': 'video'
     },
     'quizzes': {
         'file_name': 'quiz.json', 'main_title': 'Quiz Editor',
@@ -28,8 +26,7 @@ const EDITOR_CONFIG = {
         'primary_add_prompt': 'Enter the new quiz code:', 'primary_confirm_delete': 'quiz',
         'secondary_item_name': 'question',
         'data_wrapper_key': 'quizzes', 'item_display_key': 'question', 
-        'dialog_class_key': 'question',
-        'local_repo_dir': 'temp_quiz_repo'
+        'dialog_class_key': 'question'
     }
 };
 
@@ -101,6 +98,7 @@ class UnifiedEditorApp {
         this.dom.removeSecondaryBtn.addEventListener('click', this.removeSecondaryItem.bind(this));
         
         this.dom.saveFileBtn.addEventListener('click', this.saveData.bind(this));
+        // Note: modalSaveBtn listener is bound to an async method now
         this.dom.modalSaveBtn.addEventListener('click', this.onModalSave.bind(this));
         
         // GitHub buttons
@@ -111,6 +109,52 @@ class UnifiedEditorApp {
     setStatus(message, isError = false) {
         this.dom.statusLabel.textContent = `Status: ${message}`;
         this.dom.statusLabel.className = isError ? 'text-danger' : 'text-muted';
+    }
+
+    // --- Helper: Read File to Base64 ---
+    readFileAsBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // --- Helper: Compress Image ---
+    // Resizes image to max width 800px and compresses to JPEG quality 0.7
+    compressImage(file, maxWidth = 800, quality = 0.7) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    // Calculate new dimensions
+                    let width = img.width;
+                    let height = img.height;
+                    
+                    if (width > maxWidth) {
+                        height *= maxWidth / width;
+                        width = maxWidth;
+                    }
+
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Compress to JPEG
+                    const dataUrl = canvas.toDataURL('image/jpeg', quality);
+                    resolve(dataUrl);
+                };
+                img.onerror = (err) => reject(err);
+            };
+            reader.onerror = (err) => reject(err);
+        });
     }
 
     // --- Event Handlers and Logic ---
@@ -162,7 +206,6 @@ class UnifiedEditorApp {
     }
     
     onSecondarySelect(event) {
-        // Enable edit/remove buttons only when an item is selected
         if (this.dom.secondaryList.selectedIndex >= 0) {
             this.dom.editSecondaryBtn.disabled = false;
             this.dom.removeSecondaryBtn.disabled = false;
@@ -176,17 +219,14 @@ class UnifiedEditorApp {
         this.dom.removeSecondaryBtn.disabled = !enabled;
     }
 
-    // --- Data Loading and Saving (Web Version) ---
+    // --- Data Loading and Saving ---
 
     processLoadedData(jsonData, successMessage) {
         try {
             const wrapperKey = this.current_config.data_wrapper_key;
-            
-            // Handle case where file is empty or JSON is just 'null'
             if (typeof jsonData !== 'object' || jsonData === null) {
                 jsonData = {};
             }
-
             this.data = wrapperKey ? (jsonData[wrapperKey] || {}) : jsonData;
             
             this.populatePrimaryList();
@@ -194,7 +234,7 @@ class UnifiedEditorApp {
             this.setStatus(successMessage);
         } catch (err) {
             this.setStatus(`Error processing JSON: ${err.message}`, true);
-            alert(`Error: Could not process the JSON data. It may be corrupted.`);
+            alert(`Error: Could not process the JSON data.`);
         }
     }
 
@@ -208,12 +248,10 @@ class UnifiedEditorApp {
                 const jsonData = JSON.parse(e.target.result);
                 this.processLoadedData(jsonData, `File '${file.name}' loaded successfully.`);
             } catch (err) {
-                // Handle empty file case
                 if (e.target.result === "") {
                     this.processLoadedData({}, `File '${file.name}' is empty. Initialized new data.`);
                 } else {
                     this.setStatus(`Error reading file: ${err.message}`, true);
-                    alert(`Error: Could not read ${file.name}. It may be empty or corrupted.`);
                 }
             }
         };
@@ -234,7 +272,6 @@ class UnifiedEditorApp {
             const content = JSON.stringify(dataToSave, null, 2);
             const blob = new Blob([content], { type: 'application/json;charset=utf-8' });
             
-            // Create a temporary link to trigger the download
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = fileName;
@@ -246,15 +283,14 @@ class UnifiedEditorApp {
             this.setStatus(`Changes saved to ${fileName}.`);
         } catch (e) {
             this.setStatus(`Failed to save file: ${e}`, true);
-            alert(`Failed to save file: ${e}`);
         }
     }
 
-    // --- List Population (Unchanged) ---
+    // --- List Population ---
 
     populatePrimaryList() {
         const listbox = this.dom.primaryList;
-        listbox.innerHTML = ''; // Clear list
+        listbox.innerHTML = '';
         listbox.disabled = false;
         this.dom.removePrimaryBtn.disabled = true;
 
@@ -278,10 +314,6 @@ class UnifiedEditorApp {
         this.toggleSecondaryControls(false);
     }
 
-    /**
-     * *** MODIFIED ***
-     * Displays the chapter name in the list.
-     */
     populateSecondaryList() {
         const listbox = this.dom.secondaryList;
         listbox.innerHTML = '';
@@ -295,17 +327,16 @@ class UnifiedEditorApp {
             let text = item[displayKey] || "Untitled";
             if (text.length > 60) text = text.substring(0, 60) + '...';
             
-            const chapter = item.chapter || 'General'; // Get chapter, default to 'General'
+            const chapter = item.chapter || 'General';
             
             const option = document.createElement('option');
-            option.value = index; // Store the index as the value
-            // *** UPDATED LINE ***
+            option.value = index;
             option.textContent = `${(index + 1).toString().padStart(2, '0')}: [${chapter}] ${text.replace(/\n/g, ' ')}`;
             listbox.appendChild(option);
         });
     }
 
-    // --- Item Manipulation (Primary) (Unchanged) ---
+    // --- Item Manipulation ---
 
     addPrimaryItem() {
         const promptText = this.current_config.primary_add_prompt;
@@ -317,7 +348,6 @@ class UnifiedEditorApp {
             } else {
                 this.data[newKey] = [];
                 this.populatePrimaryList();
-                // Select the new item
                 this.dom.primaryList.value = newKey;
                 this.onPrimarySelect();
             }
@@ -339,15 +369,13 @@ class UnifiedEditorApp {
         }
     }
 
-    // --- Item Manipulation (Secondary) & Modals ---
-
     addSecondaryItem() {
         if (!this.current_primary_key) {
             alert("Please select a primary item first.");
             return;
         }
         
-        this.current_secondary_index = -1; // -1 means "add new"
+        this.current_secondary_index = -1; // New item
         const itemName = this.current_config.secondary_item_name;
         this.dom.modalTitle.textContent = `Add New ${itemName.charAt(0).toUpperCase() + itemName.slice(1)}`;
         this.buildModalForm();
@@ -388,14 +416,10 @@ class UnifiedEditorApp {
         }
     }
 
-    /**
-     * *** MODIFIED ***
-     * Added 'chapter' field for the quiz.
-     */
     buildModalForm(initialData = {}) {
         const dialogType = this.current_config.dialog_class_key;
         const form = this.dom.modalFormContent;
-        form.innerHTML = ''; // Clear previous form
+        form.innerHTML = ''; 
 
         switch (dialogType) {
             case 'link':
@@ -430,41 +454,61 @@ class UnifiedEditorApp {
 
             case 'question':
                 const options = initialData.options || ['', '', '', ''];
+                // Logic for Image Preview
+                const hasImage = initialData.image_base64 && initialData.image_base64.length > 0;
+                const imagePreviewHtml = hasImage 
+                    ? `<div class="mt-2"><img src="${initialData.image_base64}" style="max-height:150px; border-radius:4px; border:1px solid #ccc;"> <br> <small class="text-success">Current image loaded</small></div>` 
+                    : `<div class="mt-2 text-muted"><small>No image currently set</small></div>`;
+
                 form.innerHTML = `
                     <div class="mb-3">
                         <label for="modal-chapter" class="form-label">Chapter/Topic:</label>
-                        <input type="text" class="form-control" id="modal-chapter" value="${initialData.chapter || ''}" placeholder="e.g., Chapter 1: Introduction">
+                        <input type="text" class="form-control" id="modal-chapter" value="${initialData.chapter || ''}" placeholder="e.g., Chapter 1">
                     </div>
-                    <hr>
                     <div class="mb-3">
                         <label for="modal-question" class="form-label">Question:</label>
-                        <textarea class="form-control" id="modal-question" rows="3">${initialData.question || ''}</textarea>
+                        <textarea class="form-control" id="modal-question" rows="2">${initialData.question || ''}</textarea>
                     </div>
+                    
+                    <div class="mb-3 p-2 border border-secondary rounded bg-dark-subtle">
+                        <label for="modal-image-input" class="form-label">Question Image (Optional):</label>
+                        <input type="file" class="form-control" id="modal-image-input" accept="image/*">
+                        <div class="form-text text-info">Images will be automatically compressed (Max width 800px).</div>
+                        <input type="hidden" id="modal-existing-image" value="${initialData.image_base64 || ''}">
+                        <div id="modal-image-preview-container">
+                            ${imagePreviewHtml}
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" id="modal-remove-image">
+                            <label class="form-check-label text-danger" for="modal-remove-image">
+                                Remove existing image on save
+                            </label>
+                        </div>
+                    </div>
+                    
                     ${options.map((opt, i) => `
                     <div class="mb-3">
                         <label for="modal-option-${i}" class="form-label">Option ${i}:</label>
                         <input type="text" class="form-control" id="modal-option-${i}" value="${opt}">
                     </div>
                     `).join('')}
-                    <div class="mb-3">
-                        <label for="modal-answer" class="form-label">Correct Answer Index (0-3):</label>
-                        <input type="number" class="form-control" id="modal-answer" min="0" max="3" value="${initialData.answer_index || 0}" style="width: 100px;">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="modal-answer" class="form-label">Correct Answer Index (0-3):</label>
+                            <input type="number" class="form-control" id="modal-answer" min="0" max="3" value="${initialData.answer_index || 0}">
+                        </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 mt-3">
                         <label for="modal-explanation" class="form-label">Explanation:</label>
-                        <textarea class="form-control" id="modal-explanation" rows="3">${initialData.explanation || ''}</textarea>
+                        <textarea class="form-control" id="modal-explanation" rows="2">${initialData.explanation || ''}</textarea>
                     </div>
                 `;
                 break;
         }
     }
 
-    /**
-     * *** MODIFIED ***
-     * Saves the modal data.
-     * Added 'chapter' field for the quiz save logic.
-     */
-    onModalSave() {
+    async onModalSave() {
         const dialogType = this.current_config.dialog_class_key;
         let newItemData = {};
 
@@ -496,9 +540,31 @@ class UnifiedEditorApp {
                         alert("Answer Index must be a number between 0 and 3.");
                         return;
                     }
+
+                    // Handle Image Logic
+                    let finalImageBase64 = document.getElementById('modal-existing-image').value;
+                    const fileInput = document.getElementById('modal-image-input');
+                    const removeImage = document.getElementById('modal-remove-image').checked;
+
+                    if (removeImage) {
+                        finalImageBase64 = ""; // Clear it
+                    } else if (fileInput.files.length > 0) {
+                        // User uploaded a new file
+                        try {
+                            // NEW: Compress image instead of just reading it
+                            // Max width 800px, Quality 70%
+                            finalImageBase64 = await this.compressImage(fileInput.files[0], 800, 0.7);
+                        } catch (err) {
+                            alert("Failed to process image.");
+                            console.error(err);
+                            return;
+                        }
+                    }
+
                     newItemData = {
-                        chapter: document.getElementById('modal-chapter').value.trim() || 'General', // *** NEW ***
+                        chapter: document.getElementById('modal-chapter').value.trim() || 'General',
                         question: q,
+                        image_base64: finalImageBase64, // SAVE BASE64 HERE
                         options: [
                             document.getElementById('modal-option-0').value,
                             document.getElementById('modal-option-1').value,
@@ -516,85 +582,48 @@ class UnifiedEditorApp {
         }
 
         if (this.current_secondary_index === -1) {
-            // Add new item
             this.data[this.current_primary_key].push(newItemData);
         } else {
-            // Edit existing item
             this.data[this.current_primary_key][this.current_secondary_index] = newItemData;
         }
 
         this.modal.hide();
         this.populateSecondaryList();
-        // Reselect the item that was just edited
         if (this.current_secondary_index !== -1) {
             this.dom.secondaryList.selectedIndex = this.current_secondary_index;
-            this.onSecondarySelect(); // Enable buttons
+            this.onSecondarySelect();
         }
     }
 
     // --- GitHub Integration (Unchanged) ---
-
     async loadFromGitHub() {
-        if (!this.current_config) {
-            alert("Please select an editor type first.");
-            return;
-        }
-
+        if (!this.current_config) { alert("Please select an editor type first."); return; }
         const token = this.dom.githubToken.value;
         const user = this.dom.githubUser.value;
         const repo = this.dom.githubRepo.value;
         const filepath = this.dom.githubFilePath.value;
-
-        if (!user || !repo || !filepath) {
-             alert("GitHub Username, Repo Name, and File Path are required to load.");
-             return;
-        }
-
+        if (!user || !repo || !filepath) { alert("GitHub Username, Repo Name, and File Path are required to load."); return; }
         this.setStatus("Loading file from GitHub...");
-        
         const API_URL = `https://api.github.com/repos/${user}/${repo}/contents/${filepath}`;
-        const headers = {
-            'Accept': 'application/vnd.github.v3+json',
-            'X-GitHub-Api-Version': '2022-11-28'
-        };
-        
-        // Add auth token if provided (for private repos and rate limiting)
-        if (token) {
-            headers['Authorization'] = `token ${token}`;
-        }
+        const headers = { 'Accept': 'application/vnd.github.v3+json', 'X-GitHub-Api-Version': '2022-11-28' };
+        if (token) { headers['Authorization'] = `token ${token}`; }
 
         try {
             const response = await fetch(API_URL, { method: 'GET', headers });
-
             if (!response.ok) {
                 if (response.status === 404) {
-                     alert("File not found on GitHub. Check the path/repo/user. If this is a new file, you can start editing and then push.");
-                     // Load empty data so user can start fresh
-                     this.processLoadedData({}, "File not found. Initialized empty data for new file.");
-                } else {
-                    throw new Error(`Failed to get file: ${response.statusText}`);
-                }
+                     alert("File not found on GitHub. Initialized empty data.");
+                     this.processLoadedData({}, "File not found. Initialized empty data.");
+                } else { throw new Error(`Failed to get file: ${response.statusText}`); }
                 return;
             }
-
             const fileData = await response.json();
-            
-            if (fileData.type !== 'file' || fileData.encoding !== 'base64') {
-                throw new Error("The path does not point to a base64 encoded file.");
-            }
-
-            // Decode base64 content (UTF-8 safe)
             const binaryString = atob(fileData.content);
             const bytes = new Uint8Array(binaryString.length);
-            for (let i = 0; i < binaryString.length; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
+            for (let i = 0; i < binaryString.length; i++) { bytes[i] = binaryString.charCodeAt(i); }
             const decodedContent = new TextDecoder().decode(bytes);
-            
             const jsonData = JSON.parse(decodedContent);
-            
             this.processLoadedData(jsonData, `Successfully loaded ${filepath} from GitHub.`);
-
         } catch (e) {
             this.setStatus(`GitHub Load Error: ${e.message}`, true);
             alert(`An error occurred while loading from GitHub: ${e.message}`);
@@ -602,25 +631,15 @@ class UnifiedEditorApp {
     }
 
     async commitAndPush(event) {
-        event.preventDefault(); // Prevent form submission
-        if (!this.current_config) {
-            alert("Please select an editor type first.");
-            return;
-        }
-        
+        event.preventDefault();
+        if (!this.current_config) { alert("Please select an editor type first."); return; }
         const token = this.dom.githubToken.value;
         const user = this.dom.githubUser.value;
         const repo = this.dom.githubRepo.value;
         const filepath = this.dom.githubFilePath.value;
-
-        if (!token || !user || !repo || !filepath) {
-            alert("All GitHub fields (including Token) are required to push.");
-            return;
-        }
+        if (!token || !user || !repo || !filepath) { alert("All GitHub fields (including Token) are required to push."); return; }
         
         this.setStatus("Saving and preparing data...");
-        
-        // 1. Prepare data
         const wrapperKey = this.current_config.data_wrapper_key;
         const dataToSave = wrapperKey ? { [wrapperKey]: this.data } : this.data;
         const content = JSON.stringify(dataToSave, null, 2);
@@ -629,57 +648,29 @@ class UnifiedEditorApp {
         const encodedContent = btoa(unescape(encodeURIComponent(content)));
         
         const API_URL = `https://api.github.com/repos/${user}/${repo}/contents/${filepath}`;
-        const headers = {
-            'Authorization': `token ${token}`,
-            'Accept': 'application/vnd.github.v3+json',
-            'X-GitHub-Api-Version': '2022-11-28'
-        };
+        const headers = { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json', 'X-GitHub-Api-Version': '2022-11-28' };
 
         try {
-            // 2. Get the current file SHA (to update it)
-            this.setStatus("Fetching current file SHA from GitHub...");
+            this.setStatus("Fetching current file SHA...");
             let currentSha = null;
             try {
                 const getResponse = await fetch(API_URL, { method: 'GET', headers });
                 if (getResponse.ok) {
                     const fileData = await getResponse.json();
                     currentSha = fileData.sha;
-                    this.setStatus("Got file SHA. Pushing update...");
-                } else if (getResponse.status === 404) {
-                    this.setStatus("File not found. Creating new file...");
-                } else {
-                    throw new Error(`Failed to get file: ${getResponse.statusText}`);
                 }
-            } catch (e) {
-                console.warn("Could not fetch file SHA, proceeding to create.", e.message);
-            }
+            } catch (e) { console.warn("Could not fetch file SHA, proceeding to create.", e.message); }
 
-            // 3. Create or Update the file
-            const body = {
-                message: `Update ${filepath} via web editor`,
-                content: encodedContent,
-                sha: currentSha // If sha is null, this creates a new file. If provided, it updates.
-            };
-            
-            if (!currentSha) {
-                delete body.sha; // Ensure 'sha' key is not present for new files
-            }
+            const body = { message: `Update ${filepath} via web editor`, content: encodedContent, sha: currentSha };
+            if (!currentSha) { delete body.sha; }
 
-            const putResponse = await fetch(API_URL, {
-                method: 'PUT',
-                headers,
-                body: JSON.stringify(body)
-            });
-
+            const putResponse = await fetch(API_URL, { method: 'PUT', headers, body: JSON.stringify(body) });
             if (!putResponse.ok) {
                 const errorData = await putResponse.json();
                 throw new Error(`Push failed: ${putResponse.statusText} - ${errorData.message}`);
             }
-            
-            await putResponse.json();
             this.setStatus("Successfully pushed to GitHub!");
             alert("Changes have been successfully pushed to GitHub.");
-
         } catch (e) {
             this.setStatus(`GitHub Error: ${e.message}`, true);
             alert(`An error occurred: ${e.message}`);
@@ -687,7 +678,4 @@ class UnifiedEditorApp {
     }
 }
 
-// Wait for the DOM to be fully loaded before starting the app
-document.addEventListener('DOMContentLoaded', () => {
-    window.app = new UnifiedEditorApp();
-});
+document.addEventListener('DOMContentLoaded', () => { window.app = new UnifiedEditorApp(); });
