@@ -76,7 +76,7 @@
       transform:translateY(-2px);
     }
     
-    /* --- NEW Chapter Styles --- */
+    /* --- Chapter Styles --- */
     .chapter-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -119,6 +119,40 @@
       transition: all 0.3s ease;
     }
     
+    /* --- IMAGE STYLES --- */
+    .question-image-container {
+        margin-bottom: 20px;
+        text-align: center;
+        min-height: 100px; /* Prevent total collapse before load */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .question-image {
+        max-width: 100%;
+        max-height: 400px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        display: inline-block;
+        
+        /* Lazy Load Animations */
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+    }
+
+    .question-image.loaded {
+        opacity: 1;
+    }
+    
+    /* Placeholder loader */
+    .image-placeholder {
+        color: var(--text-secondary);
+        font-size: 14px;
+        font-style: italic;
+    }
+    
     .question-text {
         font-size: 18px;
         font-weight: 600;
@@ -151,18 +185,18 @@
         font-weight: bold;
         border-color: var(--accent-hover);
     }
-    /* States for after checking */
-    .option.correct { background-color: var(--correct-bg); border-color: var(--correct-border); }
-    .option.incorrect { background-color: var(--incorrect-bg); border-color: var(--incorrect-border); }
+    
+    .option.correct { background-color: var(--correct-bg); border-color: var(--correct-border);color: #ffffff; }
+    .option.incorrect { background-color: var(--incorrect-bg); border-color: var(--incorrect-border);}
 
 
     .feedback {
         margin-top: 16px;
         padding: 12px;
         border-radius: 8px;
-        font-weight: 500; /* changed from bold */
-        display: none; /* Initially hidden */
-        line-height: 1.7; /* added for better readability */
+        font-weight: 500;
+        display: none;
+        line-height: 1.7;
     }
     .feedback.correct { background-color: var(--correct-bg); border: 1px solid var(--correct-border); color: var(--correct-border); display: block; font-weight: bold; }
     .feedback.incorrect { background-color: var(--incorrect-bg); border: 1px solid var(--incorrect-border); color: var(--text-primary); display: block; }
@@ -201,13 +235,13 @@
   </div>
 
   <script>
-    // Store data globally for checker functions
     window.courseData = {};
     window.questionsByChapter = {};
-    window.currentQuestions = []; // Stores questions for the *selected* chapter
+    window.currentQuestions = [];
     window.currentCourseCode = '';
     
-    let userAnswers = {}; // Store user's selected option index for each question
+    let userAnswers = {};
+    let imageObserver = null;
 
     function escapeHtml(text) {
       return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'}[m]));
@@ -215,7 +249,7 @@
     
     function groupQuestions(questions) {
         return questions.reduce((acc, q) => {
-            const chapter = q.chapter || 'General'; // Default chapter
+            const chapter = q.chapter || 'General';
             if (!acc[chapter]) {
                 acc[chapter] = [];
             }
@@ -260,7 +294,7 @@
 
     function selectChapter(chapterName) {
         window.currentQuestions = window.questionsByChapter[chapterName];
-        userAnswers = {}; // Reset answers when changing chapters
+        userAnswers = {};
         
         renderQuiz(window.currentQuestions);
         
@@ -268,7 +302,6 @@
         document.getElementById('quizContainer').style.display = 'flex';
         document.getElementById('pageTitle').textContent = `${window.currentCourseCode}: ${chapterName}`;
         
-        // Update Back Button
         const backBtn = document.querySelector('.back-btn');
         backBtn.textContent = '← Back to Chapters';
         backBtn.href = '#';
@@ -281,10 +314,9 @@
     function showChapterList() {
         document.getElementById('chapterContainer').style.display = 'grid';
         document.getElementById('quizContainer').style.display = 'none';
-        document.getElementById('quizContainer').innerHTML = ''; // Clear questions
+        document.getElementById('quizContainer').innerHTML = '';
         document.getElementById('pageTitle').textContent = `Quizzes for ${window.currentCourseCode}`;
         
-        // Reset Back Button
         const backBtn = document.querySelector('.back-btn');
         backBtn.textContent = '← Back to Courses';
         backBtn.href = 'courses.html';
@@ -293,8 +325,22 @@
 
     function renderQuiz(questions) {
       const container = document.getElementById('quizContainer');
+      
+      // Render logic
       container.innerHTML = questions.map((q, index) => `
         <div class="question-card" id="question-${index}">
+          
+          ${q.image_base64 ? `
+            <div class="question-image-container">
+                <img 
+                    data-index="${index}" 
+                    class="question-image lazy-load" 
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" 
+                    alt="Question Image"
+                >
+            </div>
+          ` : ''}
+          
           <p class="question-text">${index + 1}. ${escapeHtml(q.question)}</p>
           <div class="options-grid">
             ${q.options.map((opt, optIndex) => `
@@ -306,33 +352,71 @@
           <div class="feedback" id="feedback-${index}"></div>
         </div>
       `).join('');
+
+      // Initialize the lazy loader after rendering HTML
+      setupLazyLoading();
+    }
+
+    // --- LAZY LOADING LOGIC ---
+    function setupLazyLoading() {
+        // Disconnect previous observer if exists
+        if (imageObserver) {
+            imageObserver.disconnect();
+        }
+
+        // Create new observer
+        imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const index = img.dataset.index;
+                    
+                    // Retrieve Base64 from memory only when needed
+                    if (window.currentQuestions[index] && window.currentQuestions[index].image_base64) {
+                        img.src = window.currentQuestions[index].image_base64;
+                        
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                            img.classList.remove('lazy-load');
+                        };
+                    }
+                    
+                    // Stop observing this image
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: "200px 0px", // Start loading 200px before the image enters viewport
+            threshold: 0.01
+        });
+
+        // Observe all images with class 'lazy-load'
+        const lazyImages = document.querySelectorAll('.lazy-load');
+        lazyImages.forEach(img => imageObserver.observe(img));
     }
 
     function selectOption(element, questionIndex, optionIndex) {
         const questionCard = document.getElementById(`question-${questionIndex}`);
         const allOptions = questionCard.querySelectorAll('.option');
 
-        // Prevent changing answer after submission
         if (questionCard.classList.contains('answered')) return;
 
         allOptions.forEach(opt => opt.classList.remove('selected'));
         element.classList.add('selected');
         
-        userAnswers[questionIndex] = optionIndex; // Store the selected option index
+        userAnswers[questionIndex] = optionIndex;
         
-        // Automatically check the answer once one is selected
         checkAnswer(questionIndex);
     }
     
     function checkAnswer(questionIndex) {
-        const question = window.currentQuestions[questionIndex]; // Get from chapter-specific list
+        const question = window.currentQuestions[questionIndex];
         const selectedOptionIndex = userAnswers[questionIndex];
 
         const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
         const questionCard = document.getElementById(`question-${questionIndex}`);
         const options = questionCard.querySelectorAll('.option');
         
-        // Mark as answered to prevent changes
         questionCard.classList.add('answered');
 
         if (selectedOptionIndex === question.answer_index) {
@@ -357,7 +441,7 @@
             return response.json();
         })
         .then(data => {
-          window.courseData = data; // Store full data
+          window.courseData = data;
           initializeApp(data);
         })
         .catch(error => {
