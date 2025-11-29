@@ -1,5 +1,912 @@
 {
   "quizzes": {
+    "IOT 244":[
+      
+  {
+    "chapter": "Chapter 1",
+    "question": "Which of the following best describes a database according to the text?",
+    "options": [
+      "A random assortment of data",
+      "A collection of unrelated data",
+      "A logically coherent collection of related data with some inherent meaning",
+      "A software program used to write code"
+    ],
+    "answer_index": 2,
+    "explanation": "A database is defined as a collection of related data that is logically coherent and possesses some inherent meaning, designed for a specific purpose."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is the primary function of a Database Management System (DBMS)?",
+    "options": [
+      "To execute arbitrary computer code",
+      "To enable users to create and maintain a database",
+      "To replace the operating system",
+      "To purely store data without retrieval capabilities"
+    ],
+    "answer_index": 1,
+    "explanation": "A DBMS is a computerized system that enables users to create and maintain a database, facilitating defining, constructing, manipulating, and sharing databases."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What term is used to refer to the database and DBMS software together?",
+    "options": [
+      "Database Catalog",
+      "Database System",
+      "Operating System",
+      "Transaction System"
+    ],
+    "answer_index": 1,
+    "explanation": "The text states that the database and DBMS software together are called a database system."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is 'meta-data' in the context of a database?",
+    "options": [
+      "The actual data stored in the records",
+      "The database definition or descriptive information stored in the catalog",
+      "Data that has been deleted",
+      "The output of a query"
+    ],
+    "answer_index": 1,
+    "explanation": "The database definition or descriptive information is stored by the DBMS in the form of a database catalog or dictionary; it is called meta-data."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which characteristic of the database approach allows changing the data storage structures without affecting the application programs?",
+    "options": [
+      "Program-data independence",
+      "Data redundancy",
+      "Referential integrity",
+      "Concurrency control"
+    ],
+    "answer_index": 0,
+    "explanation": "Program-data independence ensures that the structure of data files is stored separately from access programs, so changes to the structure do not necessitate changes to the programs."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is the function of 'Data Abstraction' in a DBMS?",
+    "options": [
+      "To expose all physical storage details to the user",
+      "To duplicate data across multiple files",
+      "To provide a conceptual representation that hides storage and implementation details",
+      "To prevent users from accessing the database"
+    ],
+    "answer_index": 2,
+    "explanation": "Data abstraction allows the DBMS to provide users with a conceptual representation of data that does not include the details of how the data is stored or how operations are implemented."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which group of users typically accesses the database using 'canned transactions'?",
+    "options": [
+      "Database Administrators (DBA)",
+      "Casual end users",
+      "Naive or parametric end users",
+      "System analysts"
+    ],
+    "answer_index": 2,
+    "explanation": "Naive or parametric end users constantly query and update the database using standard types of queries and updates called canned transactions."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is the primary responsibility of a Database Administrator (DBA)?",
+    "options": [
+      "To write the DBMS software code",
+      "To authorize access, coordinate/monitor use, and acquire resources",
+      "To use canned transactions for data entry",
+      "To design the hardware for the server"
+    ],
+    "answer_index": 1,
+    "explanation": "The DBA is responsible for authorizing access to the database, coordinating and monitoring its use, and acquiring software and hardware resources."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which type of user typically interacts with the database through interactive queries but needs different information each time?",
+    "options": [
+      "Naive end users",
+      "Casual end users",
+      "Parametric end users",
+      "Workers behind the scene"
+    ],
+    "answer_index": 1,
+    "explanation": "Casual end users occasionally access the database but may need different information each time, using a sophisticated database query interface."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is the main purpose of Concurrency Control software in a DBMS?",
+    "options": [
+      "To ensure data is backed up daily",
+      "To allow only one user to access the database at a time",
+      "To ensure that several users trying to update the same data do so in a controlled and correct manner",
+      "To prevent any updates to the database"
+    ],
+    "answer_index": 2,
+    "explanation": "Concurrency control software ensures that concurrent transactions operate correctly and efficiently, preventing errors when multiple users update the same data."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is a 'transaction' in the context of a database?",
+    "options": [
+      "The purchase of the DBMS software",
+      "An executing program or process that includes one or more database accesses",
+      "A storage medium for the database",
+      "The process of shutting down the database"
+    ],
+    "answer_index": 1,
+    "explanation": "A transaction is an executing program or process that includes one or more database accesses, such as reading or updating database records."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which of the following is considered a 'worker behind the scene'?",
+    "options": [
+      "Database Designer",
+      "Naive End User",
+      "DBMS system designer and implementer",
+      "Database Administrator"
+    ],
+    "answer_index": 2,
+    "explanation": "Workers behind the scene include DBMS system designers and implementers, tool developers, and operators; they design the system but are not interested in the database content itself."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is 'Data Normalization' primarily used for?",
+    "options": [
+      "To create multiple copies of data for safety",
+      "To ensure consistency and save storage space by storing a logical data item in only one place",
+      "To increase the redundancy of data",
+      "To encrypt the data"
+    ],
+    "answer_index": 1,
+    "explanation": "Data normalization ensures that each logical data item is stored in only one place in the database, thereby ensuring consistency and saving storage space."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is the 'impedance mismatch' problem?",
+    "options": [
+      "The difference in speed between the CPU and the hard drive",
+      "The incompatibility between the data structures provided by the DBMS and the programming language's data structures",
+      "The lack of security in a database",
+      "The inability of a database to handle multiple users"
+    ],
+    "answer_index": 1,
+    "explanation": "Impedance mismatch refers to the difficulty where data structures provided by the DBMS were incompatible with the programming language's data structures (e.g., in traditional systems vs. OOP)."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which of the following is NOT an advantage of using the database approach?",
+    "options": [
+      "Controlling redundancy",
+      "Restricting unauthorized access",
+      "Providing persistent storage for program objects",
+      "Increasing development time for new applications"
+    ],
+    "answer_index": 3,
+    "explanation": "The text states that 'Reduced Application Development Time' is an advantage, not increasing it. Using a DBMS generally reduces the time to create new applications."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is a 'referential integrity constraint'?",
+    "options": [
+      "A rule specifying that a record in one file must be related to records in other files",
+      "A rule that data must be numeric",
+      "A rule that prevents users from deleting data",
+      "A rule that encrypts passwords"
+    ],
+    "answer_index": 0,
+    "explanation": "A referential integrity constraint specifies that a record in one file must be related to records in other files (e.g., a section record must relate to a course record)."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What are 'indexes' used for in a database?",
+    "options": [
+      "To encrypt the data",
+      "To speed up disk search for desired records",
+      "To store meta-data",
+      "To backup the database"
+    ],
+    "answer_index": 1,
+    "explanation": "Indexes are auxiliary files based on tree or hash structures used to speed up disk search for desired records."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What does the 'isolation' property of a transaction ensure?",
+    "options": [
+      "That the transaction is backed up immediately",
+      "That the transaction executes entirely or not at all",
+      "That each transaction appears to execute in isolation from other transactions",
+      "That the transaction takes a long time to complete"
+    ],
+    "answer_index": 2,
+    "explanation": "The isolation property ensures that each transaction appears to execute in isolation from other transactions, even if they are executing concurrently."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What does OLTP stand for?",
+    "options": [
+      "Online Text Processing",
+      "Offline Transaction Processing",
+      "Online Transaction Processing",
+      "Only Long Term Processing"
+    ],
+    "answer_index": 2,
+    "explanation": "OLTP stands for Online Transaction Processing, which refers to applications that support a large number of concurrent transactions without excessive delays."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is a 'trigger' in a database system?",
+    "options": [
+      "A form of rule activated by updates to a table that results in additional operations",
+      "A button on the user interface",
+      "A type of hardware failure",
+      "A backup mechanism"
+    ],
+    "answer_index": 0,
+    "explanation": "A trigger is a form of a rule activated by updates to the table, which results in performing some additional operations to other tables or sending messages."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which of the following is a situation where using a DBMS might NOT be desirable?",
+    "options": [
+      "When there are stringent real-time requirements that DBMS overhead cannot meet",
+      "When data needs to be shared among multiple users",
+      "When there is a large amount of complex data",
+      "When security and recovery are critical"
+    ],
+    "answer_index": 0,
+    "explanation": "The text lists stringent real-time requirements as a reason not to use a general-purpose DBMS due to the associated overhead."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What does the term NOSQL generally stand for?",
+    "options": [
+      "No SQL Allowed",
+      "Not Only SQL",
+      "New Operating SQL",
+      "Non-Open SQL"
+    ],
+    "answer_index": 1,
+    "explanation": "The term NOSQL is generally interpreted as 'Not Only SQL', meaning systems that manage large data where some is stored in SQL and some in other formats."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is a 'view' in a database?",
+    "options": [
+      "The physical hard drive where data is stored",
+      "A subset of the database or virtual data derived from database files",
+      "The screen of the computer monitor",
+      "The log of all transactions"
+    ],
+    "answer_index": 1,
+    "explanation": "A view may be a subset of the database or contain virtual data that is derived from the database files but is not explicitly stored."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "Which historical data model separates the physical storage of data from its conceptual representation and provides a mathematical foundation?",
+    "options": [
+      "Hierarchical Model",
+      "Network Model",
+      "Relational Model",
+      "Inverted File Model"
+    ],
+    "answer_index": 2,
+    "explanation": "Relational databases were originally proposed to separate the physical storage of data from its conceptual representation and to provide a mathematical foundation."
+  },
+  {
+    "chapter": "Chapter 1",
+    "question": "What is the 'atomicity' property of a transaction?",
+    "options": [
+      "Ensuring the transaction is isolated",
+      "Ensuring the transaction is executed quickly",
+      "Ensuring that either all database operations in a transaction are executed or none are",
+      "Ensuring the transaction is written to a log file"
+    ],
+    "answer_index": 2,
+    "explanation": "The atomicity property ensures that either all the database operations in a transaction are executed or none are."
+  },
+  
+  {
+    "chapter": "Chapter 2",
+    "question": "Which category of data models provides concepts that are close to the way many users perceive data?",
+    "options": [
+      "Physical data models",
+      "Representational data models",
+      "High-level or conceptual data models",
+      "Low-level data models"
+    ],
+    "answer_index": 2,
+    "explanation": "High-level or conceptual data models provide concepts that are close to the way many users perceive data."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is the term used to describe the description of a database, which includes descriptions of the schema constructs and constraints?",
+    "options": [
+      "Database State",
+      "Database Extension",
+      "Database Schema (Intension)",
+      "Database Snapshot"
+    ],
+    "answer_index": 2,
+    "explanation": "The description of a database is called the database schema, which is also sometimes called the intension."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is the 'extension' of the schema referring to?",
+    "options": [
+      "The database catalog",
+      "The data manipulation language",
+      "The database state or snapshot",
+      "The set of user views"
+    ],
+    "answer_index": 2,
+    "explanation": "The data in the database at a particular moment in time is called a database state or snapshot. A database state is called an extension of the schema."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "In the three-schema architecture, which level describes the physical storage structure of the database?",
+    "options": [
+      "Conceptual level",
+      "External level",
+      "Internal level",
+      "View level"
+    ],
+    "answer_index": 2,
+    "explanation": "The internal level has an internal schema, which describes the physical storage structure of the database."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is 'Logical Data Independence'?",
+    "options": [
+      "The capacity to change the internal schema without changing the conceptual schema",
+      "The capacity to change the conceptual schema without having to change external schemas or application programs",
+      "The capacity to change the hardware without changing the software",
+      "The capacity to backup data without stopping the system"
+    ],
+    "answer_index": 1,
+    "explanation": "Logical data independence is the capacity to change the conceptual schema without having to change external schemas or application programs."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which language is used by the DBA and database designers to define the conceptual and internal schemas?",
+    "options": [
+      "Data Manipulation Language (DML)",
+      "View Definition Language (VDL)",
+      "Data Definition Language (DDL)",
+      "Storage Definition Language (SDL)"
+    ],
+    "answer_index": 2,
+    "explanation": "One language, called the data definition language (DDL), is used by the DBA and by database designers to define both schemas."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which type of Data Manipulation Language (DML) retrieves and processes individual records one at a time?",
+    "options": [
+      "High-level DML",
+      "Set-oriented DML",
+      "Declarative DML",
+      "Low-level or Procedural DML"
+    ],
+    "answer_index": 3,
+    "explanation": "A low-level or procedural DML must be embedded in a general-purpose programming language. Low-level DMLs are also called record-at-a-time DMLs."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is the function of the 'Query Optimizer' in a DBMS?",
+    "options": [
+      "To store meta-data in the catalog",
+      "To schedule disk read/write operations",
+      "To rearrange and reorder operations for efficient execution",
+      "To compile host language code"
+    ],
+    "answer_index": 2,
+    "explanation": "The query optimizer is concerned with the rearrangement and possible reordering of operations, elimination of redundancies, and use of efficient search algorithms."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "In a three-tier client/server architecture, what is the intermediate layer usually called?",
+    "options": [
+      "Database Server",
+      "User Interface",
+      "Application Server or Web Server",
+      "Data Dictionary"
+    ],
+    "answer_index": 2,
+    "explanation": "This intermediate layer or middle tier is called the application server or the Web server, depending on the application."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which database utility is used to reformat a data file and store it in the database?",
+    "options": [
+      "Backup utility",
+      "Loading utility",
+      "Performance monitoring utility",
+      "Sorting utility"
+    ],
+    "answer_index": 1,
+    "explanation": "A loading utility is used to load existing data files into the database; it then automatically reformats the data and stores it."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What distinguishes a 'Homogeneous DDBMS' from a 'Heterogeneous DDBMS'?",
+    "options": [
+      "Homogeneous uses the same DBMS software at all sites; Heterogeneous uses different DBMS software",
+      "Homogeneous is centralized; Heterogeneous is distributed",
+      "Homogeneous supports multiple users; Heterogeneous supports single users",
+      "Homogeneous uses SQL; Heterogeneous uses NOSQL"
+    ],
+    "answer_index": 0,
+    "explanation": "Homogeneous DDBMSs use the same DBMS software at all the sites, whereas heterogeneous DDBMSs can use different DBMS software at each site."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is a 'Data Dictionary' or 'Information Repository'?",
+    "options": [
+      "A backup of the database data",
+      "A system that stores catalog information, design decisions, usage standards, and user information",
+      "A file that contains only the names of the database users",
+      "The memory buffer used for query processing"
+    ],
+    "answer_index": 1,
+    "explanation": "A data dictionary stores catalog information about schemas and constraints, design decisions, usage standards, application program descriptions, and user information."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which component of the DBMS interacts with the host programming language compiler?",
+    "options": [
+      "Runtime Database Processor",
+      "Precompiler",
+      "Stored Data Manager",
+      "Concurrency Control System"
+    ],
+    "answer_index": 1,
+    "explanation": "Application programmers write programs in host languages that are submitted to a precompiler. The precompiler extracts DML commands."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is 'Physical Data Independence'?",
+    "options": [
+      "The capacity to change the internal schema without having to change the conceptual schema",
+      "The capacity to change the conceptual schema without changing the external schema",
+      "The capacity to change the data without changing the backup",
+      "The ability to move the database to a new building"
+    ],
+    "answer_index": 0,
+    "explanation": "Physical data independence is the capacity to change the internal schema without having to change the conceptual schema."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which of the following best describes the 'Conceptual Level' of the three-schema architecture?",
+    "options": [
+      "It describes the physical storage structure of the database",
+      "It describes the part of the database a particular user group is interested in",
+      "It describes the structure of the whole database for a community of users, hiding physical storage details",
+      "It stores the data on the disk"
+    ],
+    "answer_index": 2,
+    "explanation": "The conceptual schema describes the structure of the whole database for a community of users and hides the details of physical storage structures."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What are 'Representational' or 'Implementation' data models?",
+    "options": [
+      "Models used most frequently in traditional commercial DBMSs, like Relational and Network models",
+      "Models that describe exact physical storage on disk",
+      "Models that are strictly for conceptual design and cannot be implemented",
+      "Models that store data as unstructured text"
+    ],
+    "answer_index": 0,
+    "explanation": "Representational or implementation data models are the models used most frequently in traditional commercial DBMSs. These include the widely used relational data model."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What standard provides an application programming interface (API) for client-side programs to call the DBMS?",
+    "options": [
+      "TCP/IP",
+      "HTML",
+      "ODBC (Open Database Connectivity)",
+      "XML"
+    ],
+    "answer_index": 2,
+    "explanation": "A standard called Open Database Connectivity (ODBC) provides an application programming interface (API), which allows client-side programs to call the DBMS."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is a 'Federated DBMS'?",
+    "options": [
+      "A centralized system with one server",
+      "A system where all sites use the exact same software",
+      "A system that accesses several autonomous preexisting databases stored under heterogeneous DBMSs",
+      "A system that uses only open source software"
+    ],
+    "answer_index": 2,
+    "explanation": "It is also possible to develop middleware software to access several autonomous preexisting databases stored under heterogeneous DBMSs. This leads to a federated DBMS."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which legacy data model represents data as hierarchical tree structures?",
+    "options": [
+      "Relational Model",
+      "Network Model",
+      "Hierarchical Model",
+      "Object-Oriented Model"
+    ],
+    "answer_index": 2,
+    "explanation": "The hierarchical model represents data as hierarchical tree structures."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What does a 'High-level' or 'Set-at-a-time' DML typically specify?",
+    "options": [
+      "How to retrieve data step-by-step",
+      "Which data to retrieve rather than how to retrieve it",
+      "The physical memory address of the data",
+      "The looping constructs to process records"
+    ],
+    "answer_index": 1,
+    "explanation": "A query in a high-level DML often specifies which data to retrieve rather than how to retrieve it; therefore, such languages are also called declarative."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is the role of the 'Runtime Database Processor'?",
+    "options": [
+      "To compile the DDL statements",
+      "To execute privileged commands, executable query plans, and canned transactions",
+      "To design the user interface",
+      "To physically install the hard drives"
+    ],
+    "answer_index": 1,
+    "explanation": "The runtime database processor executes (1) the privileged commands, (2) the executable query plans, and (3) the canned transactions with runtime parameters."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which user interface is typically used by casual end users?",
+    "options": [
+      "Forms-based interfaces",
+      "Interactive high-level query language interfaces",
+      "Programming language interfaces",
+      "System administration commands"
+    ],
+    "answer_index": 1,
+    "explanation": "Casual end users typically use a high-level query language to specify their requests."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "What is 'Schema Evolution'?",
+    "options": [
+      "The process of deleting a database",
+      "The process of backing up a schema",
+      "The ability to apply changes to the schema as application requirements change",
+      "The history of database technology"
+    ],
+    "answer_index": 2,
+    "explanation": "It is not uncommon that changes occasionally need to be applied to the schema as the application requirements change. This is known as schema evolution."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "In a client/server architecture, which machine typically provides user interface capabilities and local processing?",
+    "options": [
+      "The Server",
+      "The Client",
+      "The Router",
+      "The Mainframe"
+    ],
+    "answer_index": 1,
+    "explanation": "A client in this framework is typically a user machine that provides user interface capabilities and local processing."
+  },
+  {
+    "chapter": "Chapter 2",
+    "question": "Which of the following is NOT a criterion used to classify DBMSs?",
+    "options": [
+      "The data model",
+      "The number of users",
+      "The number of sites",
+      "The color of the server case"
+    ],
+    "answer_index": 3,
+    "explanation": "The text lists criteria such as data model, number of users, number of sites, cost, and access paths, but not the physical color of hardware."
+  },
+
+
+  {
+    "chapter": "Chapter 3",
+    "question": "Which phase of database design involves creating a high-level description of the data requirements using a model like ER?",
+    "options": [
+      "Requirements Collection",
+      "Conceptual Design",
+      "Logical Design",
+      "Physical Design"
+    ],
+    "answer_index": 1,
+    "explanation": "The step called conceptual design creates a conceptual schema using a high-level conceptual data model."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is a 'Composite Attribute'?",
+    "options": [
+      "An attribute that has multiple values for a single entity",
+      "An attribute calculated from other attributes",
+      "An attribute that can be divided into smaller subparts with independent meanings",
+      "An attribute that must be unique"
+    ],
+    "answer_index": 2,
+    "explanation": "Composite attributes can be divided into smaller subparts, which represent more basic attributes with independent meanings."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "Which type of attribute can have a set of values for the same entity, such as 'Colors' for a car?",
+    "options": [
+      "Composite Attribute",
+      "Derived Attribute",
+      "Multivalued Attribute",
+      "Simple Attribute"
+    ],
+    "answer_index": 2,
+    "explanation": "In some cases an attribute can have a set of values for the same entity. Such attributes are called multivalued."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "If an attribute 'Age' is calculated using the current date and a 'Birth_date' attribute, what type of attribute is 'Age'?",
+    "options": [
+      "Stored Attribute",
+      "Derived Attribute",
+      "Key Attribute",
+      "Complex Attribute"
+    ],
+    "answer_index": 1,
+    "explanation": "The Age attribute is hence called a derived attribute and is said to be derivable from the Birth_date attribute."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What does a NULL value represent when an attribute is not applicable to an entity?",
+    "options": [
+      "The value is zero",
+      "The value exists but is missing",
+      "The entity does not exist",
+      "The attribute value is not valid for that specific entity"
+    ],
+    "answer_index": 3,
+    "explanation": "For example, the Apartment_number attribute applies only to addresses that are in apartment buildings. For such situations, a special value called NULL is created."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What defines an 'Entity Type'?",
+    "options": [
+      "A single specific object in the real world",
+      "A collection of entities that have the same attributes",
+      "A relationship between two tables",
+      "A set of allowed values for an attribute"
+    ],
+    "answer_index": 1,
+    "explanation": "An entity type defines a collection (or set) of entities that have the same attributes."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is a 'Key Attribute' of an entity type?",
+    "options": [
+      "An attribute that can have multiple values",
+      "An attribute whose values are distinct for each individual entity in the entity set",
+      "An attribute that relates to another entity",
+      "An attribute that allows NULL values"
+    ],
+    "answer_index": 1,
+    "explanation": "An entity type usually has one or more attributes whose values are distinct for each individual entity. Such an attribute is called a key attribute."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is the 'Degree' of a relationship type?",
+    "options": [
+      "The number of attributes it has",
+      "The number of participating entity types",
+      "The number of relationship instances allowed",
+      "The strength of the relationship"
+    ],
+    "answer_index": 1,
+    "explanation": "The degree of a relationship type is the number of participating entity types."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is a 'Recursive Relationship'?",
+    "options": [
+      "A relationship that repeats indefinitely",
+      "A relationship where the same entity type participates more than once in different roles",
+      "A relationship between weak entities only",
+      "A relationship that has no attributes"
+    ],
+    "answer_index": 1,
+    "explanation": "In such cases the same entity type participates more than once in a relationship type in different roles. Such relationship types are called recursive relationships."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What does the 'Cardinality Ratio' for a binary relationship specify?",
+    "options": [
+      "The maximum number of relationship instances that an entity can participate in",
+      "The minimum number of entities required",
+      "Whether the relationship is mandatory or optional",
+      "The number of attributes in the relationship"
+    ],
+    "answer_index": 0,
+    "explanation": "The cardinality ratio for a binary relationship specifies the maximum number of relationship instances that an entity can participate in."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What does 'Total Participation' (or existence dependency) mean?",
+    "options": [
+      "An entity can exist without being related to another entity",
+      "Every entity in the entity set must be related to another entity via the relationship",
+      "The relationship allows partial NULL values",
+      "The entity has a composite key"
+    ],
+    "answer_index": 1,
+    "explanation": "Total participation means that every entity in the total set of employee entities must be related to a department entity via WORKS_FOR."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What characterizes a 'Weak Entity Type'?",
+    "options": [
+      "It has no attributes",
+      "It participates in no relationships",
+      "It does not have key attributes of its own",
+      "It has a single-valued key"
+    ],
+    "answer_index": 2,
+    "explanation": "Entity types that do not have key attributes of their own are called weak entity types."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is the 'Identifying Relationship' of a weak entity type?",
+    "options": [
+      "The relationship that links it to its owner entity type",
+      "The relationship between two weak entities",
+      "Any relationship involving a weak entity",
+      "A recursive relationship on the weak entity"
+    ],
+    "answer_index": 0,
+    "explanation": "We call the relationship type that relates a weak entity type to its owner the identifying relationship of the weak entity type."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "In the standard ER diagram notation described, what shape represents a 'Relationship Type'?",
+    "options": [
+      "Rectangular box",
+      "Oval",
+      "Diamond-shaped box",
+      "Hexagon"
+    ],
+    "answer_index": 2,
+    "explanation": "In ER diagrams, relationship types are displayed as diamond-shaped boxes."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "How are 'Multivalued Attributes' represented in the ER diagram notation?",
+    "options": [
+      "Single ovals",
+      "Double ovals",
+      "Dotted ovals",
+      "Rectangles"
+    ],
+    "answer_index": 1,
+    "explanation": "Multivalued attributes are displayed in double ovals."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "For a 1:N relationship type, where can a relationship attribute be migrated to?",
+    "options": [
+      "Only to the entity type on the 1-side",
+      "Only to the entity type on the N-side",
+      "To either participating entity type",
+      "It cannot be migrated and must remain on the relationship"
+    ],
+    "answer_index": 1,
+    "explanation": "For a 1:N relationship type, a relationship attribute can be migrated only to the entity type on the N-side of the relationship."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "Which attributes must remain on the relationship type and cannot be migrated to an entity?",
+    "options": [
+      "Attributes of 1:1 relationships",
+      "Attributes of 1:N relationships",
+      "Attributes of M:N relationships",
+      "All relationship attributes can be migrated"
+    ],
+    "answer_index": 2,
+    "explanation": "For M:N (many-to-many) relationship types, such attributes must be specified as relationship attributes."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is a 'Partial Key' (or discriminator)?",
+    "options": [
+      "A key that is missing values",
+      "An attribute that uniquely identifies weak entities related to the same owner entity",
+      "A key composed of multiple attributes",
+      "A key that is optional"
+    ],
+    "answer_index": 1,
+    "explanation": "A weak entity type normally has a partial key, which is the attribute that can uniquely identify weak entities that are related to the same owner entity."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What notation is used to represent a weak entity type in an ER diagram?",
+    "options": [
+      "Double rectangle",
+      "Dashed rectangle",
+      "Double diamond",
+      "Circle"
+    ],
+    "answer_index": 0,
+    "explanation": "Weak entity types are distinguished by being placed in double rectangles."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What does the (min, max) notation on a relationship participation specify?",
+    "options": [
+      "The minimum and maximum size of the attribute values",
+      "The exact number of attributes allowed",
+      "That each entity must participate in at least min and at most max relationship instances",
+      "The range of valid keys"
+    ],
+    "answer_index": 2,
+    "explanation": "The numbers mean that for each entity e in E, e must participate in at least min and at most max relationship instances in R."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "In UML class diagrams, what corresponds to an 'Entity Type' in the ER model?",
+    "options": [
+      "Association",
+      "Class",
+      "Link",
+      "Aggregation"
+    ],
+    "answer_index": 1,
+    "explanation": "The entity types are modeled as classes in UML."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What corresponds to a 'Relationship Type' in UML terminology?",
+    "options": [
+      "Class",
+      "Attribute",
+      "Association",
+      "Method"
+    ],
+    "answer_index": 2,
+    "explanation": "Relationship types are called associations in UML terminology."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "Can a ternary relationship always be replaced by three binary relationships?",
+    "options": [
+      "Yes, they are always equivalent",
+      "No, a ternary relationship usually represents different information than three binary relationships",
+      "Yes, if the degree is less than 3",
+      "No, binary relationships cannot exist with ternary ones"
+    ],
+    "answer_index": 1,
+    "explanation": "In general, a ternary relationship type represents different information than do three binary relationship types."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What is 'Aggregation' in UML meant to represent?",
+    "options": [
+      "A relationship between a whole object and its component parts",
+      "A recursive relationship",
+      "A many-to-many relationship",
+      "A derived attribute"
+    ],
+    "answer_index": 0,
+    "explanation": "Aggregation is meant to represent a relationship between a whole object and its component parts."
+  },
+  {
+    "chapter": "Chapter 3",
+    "question": "What are 'Complex Attributes'?",
+    "options": [
+      "Attributes that are strictly numeric",
+      "Attributes that are encrypted",
+      "Nesting of composite and multivalued attributes",
+      "Attributes that serve as primary keys"
+    ],
+    "answer_index": 2,
+    "explanation": "We can represent arbitrary nesting by grouping components. Such attributes are called complex attributes."
+  }
+
+    ],
     "IOT321": [
       {
         "chapter": "chapter 1",
