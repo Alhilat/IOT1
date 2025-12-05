@@ -3389,6 +3389,281 @@
         "answer_index": 2,
         "explanation": ""
       }
+    ],
+    "IOT 442": [
+      {
+        "chapter": "Part 1",
+        "question": "What is intelligence defined as ?",
+        "image_base64": "",
+        "options": [
+          "The ability to memorize facts only",
+          "The capacity to acquire and apply knowledge",
+          "The ability to perform physical tasks",
+          "The skill of creating machines"
+        ],
+        "answer_index": 1,
+        "explanation": "intelligence as the capacity to acquire and apply knowledge, as well as the faculty of thought and reason ."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Artificial Intelligence is primarily the study of systems that :",
+        "image_base64": "",
+        "options": [
+          "Behave randomly",
+          "Act in ways that appear intelligent",
+          "Only copy human emotions",
+          "Replace all human labor"
+        ],
+        "answer_index": 1,
+        "explanation": "AI is the study of systems that act in a way that would appear intelligent to an observer."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "According to the file, Weak AI refers to ?",
+        "image_base64": "",
+        "options": [
+          "Machines having minds like humans",
+          "AI that creates human-level consciousness",
+          "AI that develops useful and powerful applications",
+          "AI that cannot solve real-world problems"
+        ],
+        "answer_index": 2,
+        "explanation": "Weak AI focuses on creating useful applications, unlike Strong AI which claims machines can have human-like cognitive minds."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "The Turing Test evaluates a machine based on whether ?",
+        "image_base64": "",
+        "options": [
+          "It can solve mathematical problems",
+          "It looks like a human physically",
+          "It can fool a human into thinking it is human",
+          "It can store unlimited memory"
+        ],
+        "answer_index": 2,
+        "explanation": "The computer passes the test if a human interrogator cannot distinguish whether answers come from a human or a machine."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Which of the following is a required capability to pass the Turing Test ?",
+        "image_base64": "",
+        "options": [
+          "Rocket propulsion",
+          "Natural language processing",
+          "Physical manipulation only",
+          "Emotional intelligence"
+        ],
+        "answer_index": 1,
+        "explanation": "One capability mentioned is natural language processing to communicate successfully."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Engineering is a main goal of AI because AI can ?",
+        "image_base64": "",
+        "options": [
+          "Solve real-world problems using knowledge and reasoning",
+          "Replace all human jobs",
+          "Eliminate the need for computers",
+          "Focus only on entertainment"
+        ],
+        "answer_index": 0,
+        "explanation": "describes engineering as a goal where AI helps solve difficult real-world problems using reasoning and knowledge."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "A well-known AI application mentioned is ?",
+        "image_base64": "",
+        "options": [
+          "Solar energy panels",
+          "GPS systems only",
+          "Video compression tools",
+          "Deep Blue chess program"
+        ],
+        "answer_index": 3,
+        "explanation": "lists Deep Blue as an example of an AI system that defeated world champion Gary Kasparov."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Expert systems are mainly used because ?",
+        "image_base64": "",
+        "options": [
+          "They are always more accurate than humans",
+          "Experts are always available",
+          "They can explain their reasoning and work anytime",
+          "They require no knowledge base"
+        ],
+        "answer_index": 2,
+        "explanation": "expert systems can be used anywhere, anytime, and can explain their reasoning."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "A weakness of expert systems is that ?",
+        "image_base64": "",
+        "options": [
+          "They do not use rules",
+          "They are only used for entertainment",
+          "They are only as good as their knowledge base",
+          "They require no human expert input"
+        ],
+        "answer_index": 2,
+        "explanation": "explains that errors in the knowledge base lead to errors in the expert system’s output."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Neural networks can be used for ?",
+        "image_base64": "",
+        "options": [
+          "Building hardware",
+          "Predicting diseases and classification",
+          "Operating robots only",
+          "Drawing graphics automatically"
+        ],
+        "answer_index": 1,
+        "explanation": "lists prediction, classification, pattern recognition, and optimization as uses of neural networks."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Artificial Life (A-Life) is motivated by ?",
+        "image_base64": "",
+        "options": [
+          "Replacing all biological organisms",
+          "Creating entertainment games",
+          "Understanding life using computational models",
+          "Simulating only physical movement"
+        ],
+        "answer_index": 2,
+        "explanation": "describes A-Life as an attempt to understand real life by modeling entities in-silico."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "What is the best-known example of Cellular Automata mentioned ?",
+        "image_base64": "",
+        "options": [
+          "Sudoku solver",
+          "Google Maps",
+          "Conway’s Game of Life",
+          "Deep learning networks"
+        ],
+        "answer_index": 2,
+        "explanation": "states that Conway’s Life is the most known example of cellular automata."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Early AI work focused mainly on ?",
+        "image_base64": "",
+        "options": [
+          "Video editing",
+          "Proving theorems and solving puzzles",
+          "Car manufacturing",
+          "Weather forecasting only"
+        ],
+        "answer_index": 1,
+        "explanation": "mentions that early AI aimed at theorem proving, puzzles, and games."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "A knowledge-based system includes ?",
+        "image_base64": "",
+        "options": [
+          "A gaming controller",
+          "A web browser",
+          "A camera sensor only",
+          "Knowledge base and inference engine"
+        ],
+        "answer_index": 3,
+        "explanation": "specifies components such as the knowledge base, working memory, inference engine, and user interface."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Cellular Automata operate based on ?",
+        "image_base64": "",
+        "options": [
+          "Continuous mathematical equations",
+          "Pre-defined rules and cell interactions",
+          "Audio processing",
+          "Reinforcement signals"
+        ],
+        "answer_index": 1,
+        "explanation": "explains that CA consists of cells interacting with neighbors using rules."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Conway’s Game of Life simulates ?",
+        "image_base64": "",
+        "options": [
+          "Complex patterns from simple rules",
+          "Human intelligence",
+          "Space exploration",
+          "Animal behavior"
+        ],
+        "answer_index": 0,
+        "explanation": "states that simple rules in Conway’s Life create complex emergent patterns."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Which of the following is an example of a classic AI search problem?",
+        "image_base64": "",
+        "options": [
+          "Music generation",
+          "Map searching",
+          "Image coloring",
+          "Video compression"
+        ],
+        "answer_index": 1,
+        "explanation": "explicitly lists map searching as an example of classic AI search problems."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "The 8-Puzzle example is used to illustrate ?",
+        "image_base64": "",
+        "options": [
+          "Expert systems",
+          "Game theory",
+          "Problem solving by searching",
+          "Machine learning algorithms"
+        ],
+        "answer_index": 2,
+        "explanation": "includes the 8-Puzzle under classic AI search problems."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Knowledge-based systems involve extracting knowledge from ?",
+        "image_base64": "",
+        "options": [
+          "Random data",
+          "Movies",
+          "Human experts",
+          "Internet search engines"
+        ],
+        "answer_index": 2,
+        "explanation": "describes that knowledge usually comes from experts in the domain."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "One difficulty in expert system implementation is ?",
+        "image_base64": "",
+        "options": [
+          "Extracting knowledge from human experts",
+          "Choosing a programming language",
+          "Building a graphical interface",
+          "Running the system on fast hardware"
+        ],
+        "answer_index": 0,
+        "explanation": "states that knowledge extraction and encoding it into rules is the hardest part."
+      },
+      {
+        "chapter": "Part 1",
+        "question": "Artificial neural networks are described as ?",
+        "image_base64": "",
+        "options": [
+          "Exact biological replicas",
+          "Biologically inspired but not biologically plausible",
+          "Simple rule-based systems",
+          "Hardware-based intelligence"
+        ],
+        "answer_index": 1,
+        "explanation": "states that artificial neural networks take inspiration from biology but are not necessarily plausible biologically."
+      }
     ]
   }
 }
