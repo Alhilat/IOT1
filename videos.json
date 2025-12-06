@@ -949,5 +949,37 @@
       "link": "https://youtu.be/5VU-ho4CLm4?si=XmhMf3d7hmVxWYzN",
       "desc": ""
     }
+  ],
+  "IOT 442": [
+    {
+      "title": "Word Stemming Explained in Natural Language Processing | NLP Concepts for Building AI Applications",
+      "link": "https://www.youtube.com/watch?v=PQpAqE5MjNA",
+      "desc": ""
+    },
+    {
+      "title": "Stemming | NLP شرح عربي",
+      "link": "https://www.youtube.com/watch?v=V6ou1Da9A7U",
+      "desc": ""
+    },
+    {
+      "title": "Tokenization | NLP | tokenize شرح عربي",
+      "link": "https://www.youtube.com/watch?v=nL-DaaYHosA",
+      "desc": ""
+    },
+    {
+      "title": "Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "link": "https://www.youtube.com/watch?v=fNxaJsNG3-s",
+      "desc": ""
+    },
+    {
+      "title": "Stop words | NLP شرح عربي",
+      "link": "https://www.youtube.com/watch?v=--nDqywVxtA",
+      "desc": ""
+    },
+    {
+      "title": "Regular Expression | NLP شرح عربي",
+      "link": "https://www.youtube.com/watch?v=KJFLPbuOdEk",
+      "desc": ""
+    }
   ]
 }
