@@ -3663,6 +3663,201 @@
         ],
         "answer_index": 1,
         "explanation": "states that artificial neural networks take inspiration from biology but are not necessarily plausible biologically."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "Which of the following best describes Advanced AI?",
+        "image_base64": "",
+        "options": [
+          "AI that relies only on fixed rules",
+          "AI that simulates randomness",
+          "AI that uses machine learning, deep learning, and generative models",
+          "AI that does not require data"
+        ],
+        "answer_index": 2,
+        "explanation": "Advanced AI uses ML, deep learning, reinforcement learning, and generative models to perform complex tasks."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "Basic AI mainly depends on ?",
+        "image_base64": "",
+        "options": [
+          "Predefined rules and logic",
+          "Learning from large datasets",
+          "Reinforcement learning",
+          "Deep neural networks"
+        ],
+        "answer_index": 0,
+        "explanation": "Basic AI is rule-based and relies on logic and predefined instructions."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "Classical AI (GOFAI) is mainly characterized by ?",
+        "image_base64": "",
+        "options": [
+          "Deep learning and neural networks",
+          "Symbolic reasoning and search algorithms",
+          "Generative models",
+          "Reinforcement learning"
+        ],
+        "answer_index": 1,
+        "explanation": "Classical AI uses logic, symbolic reasoning, and rule-based search methods."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "Which of the following is an example of Modern AI?",
+        "image_base64": "",
+        "options": [
+          "Rule-based chess program",
+          "Transformer neural network",
+          "Logic-based planner",
+          "Search tree algorithm"
+        ],
+        "answer_index": 1,
+        "explanation": "Modern AI uses data-driven models like neural networks and transformers."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "Which field uses Advanced AI for medical image analysis?",
+        "image_base64": "",
+        "options": [
+          "Finance",
+          "Robotics",
+          "Transportation",
+          "Healthcare"
+        ],
+        "answer_index": 3,
+        "explanation": "Healthcare uses AI for tasks like medical image analysis and drug discovery."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "A major challenge in Advanced AI is ?",
+        "image_base64": "",
+        "options": [
+          "Lack of rule-based systems",
+          "Too much explainability",
+          "Bias and fairness issues",
+          "Limited applications"
+        ],
+        "answer_index": 2,
+        "explanation": "Advanced AI faces fairness and bias challenges due to data quality issues."
+      },
+      {
+        "chapter": "Part 2",
+        "question": "High computational cost is considered ?",
+        "image_base64": "",
+        "options": [
+          "An advantage of advanced AI",
+          "A challenge in advanced AI",
+          "Not related to advanced AI",
+          "A feature of classical AI"
+        ],
+        "answer_index": 1,
+        "explanation": "Advanced AI models require powerful hardware and high computational resources."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Machine Learning enables systems to ?",
+        "image_base64": "",
+        "options": [
+          "Follow fixed rules",
+          "Learn from data",
+          "Ignore experience",
+          "Avoid patterns"
+        ],
+        "answer_index": 1,
+        "explanation": "ML allows systems to learn and improve from data."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Which type of ML uses labeled data?",
+        "image_base64": "",
+        "options": [
+          "Unsupervised Learning",
+          "Reinforcement Learning",
+          "Supervised Learning",
+          "Clustering"
+        ],
+        "answer_index": 2,
+        "explanation": "Supervised learning relies on labeled input-output pairs."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Clustering customers into groups is an example of ?",
+        "image_base64": "",
+        "options": [
+          "Supervised Learning",
+          "Unsupervised Learning",
+          "Reinforcement Learning",
+          "Deep Learning only"
+        ],
+        "answer_index": 1,
+        "explanation": "Clustering is done without labels, so it is unsupervised."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Training data is used to ?",
+        "image_base64": "",
+        "options": [
+          "Test the model's performance",
+          "Teach the model patterns from data",
+          "Increase model variance",
+          "Reduce interpretability"
+        ],
+        "answer_index": 1,
+        "explanation": "Training data helps the model learn."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Overfitting happens when the model ?",
+        "image_base64": "",
+        "options": [
+          "Memorizes the training data",
+          "Performs well on new data",
+          "Is too simple",
+          "Has low variance"
+        ],
+        "answer_index": 0,
+        "explanation": "Overfitting occurs when the model memorizes training data instead of generalizing."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "The bias–variance tradeoff is about ?",
+        "image_base64": "",
+        "options": [
+          "Reducing training data",
+          "Balancing simplicity and complexity",
+          "Removing all variance",
+          "Using fewer features"
+        ],
+        "answer_index": 1,
+        "explanation": "Models must balance low bias and low variance to perform well."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Techniques like L1, L2, and Dropout are used for ?",
+        "image_base64": "",
+        "options": [
+          "Increasing overfitting",
+          "Reducing training data",
+          "Removing features",
+          "Regularization"
+        ],
+        "answer_index": 3,
+        "explanation": "L1, L2, and Dropout help reduce overfitting by regularizing the model."
+      },
+      {
+        "chapter": "Part 3",
+        "question": "Feature engineering involves ?",
+        "image_base64": "",
+        "options": [
+          "Deleting all features",
+          "Creating and selecting useful features",
+          "Removing labels",
+          "Increasing model bias"
+        ],
+        "answer_index": 1,
+        "explanation": "Feature engineering improves model performance by preparing effective input features."
       }
     ]
   }
