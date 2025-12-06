@@ -132,5 +132,11 @@
       "name": "اسئلة مقترحة",
       "link": "quiz.html?code=IOT 244"
     }
+  ],
+  "IOT 442": [
+    {
+      "name": "أسئلة مقترحة",
+      "link": "quiz.html?code=IOT 442"
+    }
   ]
 }
