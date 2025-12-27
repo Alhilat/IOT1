@@ -1,0 +1,42 @@
+{
+  "iot": [
+    {
+      "id": 1,
+      "title": "Real-Time IoT Imaging with Deep Neural Networks",
+      "author": "Nicolas Modrzyk",
+      "description": "An in-depth study of applying deep neural networks for real-time image processing and analysis in Internet of Things (IoT) systems.",
+      "cover": "images/book2.jpg",
+      "pages": 241,
+      "publishedYear": 2023,
+      "language": "English",
+      "downloadLink": "https://drive.google.com/file/d/1lmMVYar75JC0oA_9gYicBcj17fj_3Uhs/view?usp=drive_link"
+    },
+    {
+      "id": 2,
+      "title": "Applied Learning Algorithms for Intelligent IoT",
+      "author": "Pethuru Raj Chelliah, Usha Sakthivel, Susila Nagarajan",
+      "description": "A comprehensive guide exploring how intelligent algorithms enhance data processing, decision-making, and automation in modern Internet of Things (IoT) applications.",
+      "cover": "images/book1.jpg",
+      "pages": 370,
+      "publishedYear": 2023,
+      "language": "English",
+      "downloadLink": "https://drive.google.com/file/d/14mVpFApVXjAY61XqqN3DoFCGlhTEMSEY/view?usp=drive_link"
+    },
+    {
+      "id": 3,
+      "title": "IoT Sensor-Based Activity Recognition",
+      "author": "Md Atiqur Rahman Ahad, Anindya Das Antar, Masud Ahmed",
+      "description": "A detailed exploration of using IoT sensor data and machine learning techniques to recognize and analyze human activities in real time.",
+      "cover": "images/book1.jpg",
+      "pages": 214,
+      "publishedYear": 2023,
+      "language": "English",
+      "downloadLink": "https://drive.google.com/file/d/1JKD5Ci7X_3yYwrecodF6NG-IAn-oOzi2/view?usp=drive_link"
+    }
+  ],
+  "programming": [],
+  "ai": [],
+  "electronics": [],
+  "networking": [],
+  "security": []
+}

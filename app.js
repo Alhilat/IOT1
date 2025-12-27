@@ -27,6 +27,14 @@ const EDITOR_CONFIG = {
         'secondary_item_name': 'question',
         'data_wrapper_key': 'quizzes', 'item_display_key': 'question', 
         'dialog_class_key': 'question'
+    },
+    'books': {
+        'file_name': 'books.json', 'main_title': 'Library Editor',
+        'primary_list_label': 'Book Categories', 'secondary_list_label': 'Books in Category:',
+        'primary_add_prompt': 'Enter the new category key (e.g., iot, ai):', 'primary_confirm_delete': 'category',
+        'secondary_item_name': 'book',
+        'data_wrapper_key': null, 'item_display_key': 'title', 
+        'dialog_class_key': 'book'
     }
 };
 
@@ -327,11 +335,15 @@ class UnifiedEditorApp {
             let text = item[displayKey] || "Untitled";
             if (text.length > 60) text = text.substring(0, 60) + '...';
             
-            const chapter = item.chapter || 'General';
+            // For quizzes, add chapter info
+            if (this.current_config.dialog_class_key === 'question') {
+                 const chapter = item.chapter || 'General';
+                 text = `[${chapter}] ${text}`;
+            }
             
             const option = document.createElement('option');
             option.value = index;
-            option.textContent = `${(index + 1).toString().padStart(2, '0')}: [${chapter}] ${text.replace(/\n/g, ' ')}`;
+            option.textContent = `${(index + 1).toString().padStart(2, '0')}: ${text.replace(/\n/g, ' ')}`;
             listbox.appendChild(option);
         });
     }
@@ -505,6 +517,41 @@ class UnifiedEditorApp {
                     </div>
                 `;
                 break;
+
+            case 'book':
+                form.innerHTML = `
+                    <div class="mb-3">
+                        <label class="form-label">Book Title:</label>
+                        <input type="text" class="form-control" id="modal-book-title" value="${initialData.title || ''}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Author(s):</label>
+                        <input type="text" class="form-control" id="modal-book-author" value="${initialData.author || ''}">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Published Year:</label>
+                            <input type="number" class="form-control" id="modal-book-year" value="${initialData.publishedYear || ''}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Page Count:</label>
+                            <input type="number" class="form-control" id="modal-book-pages" value="${initialData.pages || ''}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description:</label>
+                        <textarea class="form-control" id="modal-book-desc" rows="3">${initialData.description || ''}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Download/View Link (Google Drive):</label>
+                        <input type="url" class="form-control" id="modal-book-link" value="${initialData.downloadLink || ''}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cover Image Path (e.g., images/book1.jpg):</label>
+                        <input type="text" class="form-control" id="modal-book-cover" value="${initialData.cover || ''}">
+                    </div>
+                `;
+                break;
         }
     }
 
@@ -549,14 +596,11 @@ class UnifiedEditorApp {
                     if (removeImage) {
                         finalImageBase64 = ""; // Clear it
                     } else if (fileInput.files.length > 0) {
-                        // User uploaded a new file
                         try {
-                            // NEW: Compress image instead of just reading it
                             // Max width 800px, Quality 70%
                             finalImageBase64 = await this.compressImage(fileInput.files[0], 800, 0.7);
                         } catch (err) {
                             alert("Failed to process image.");
-                            console.error(err);
                             return;
                         }
                     }
@@ -564,7 +608,7 @@ class UnifiedEditorApp {
                     newItemData = {
                         chapter: document.getElementById('modal-chapter').value.trim() || 'General',
                         question: q,
-                        image_base64: finalImageBase64, // SAVE BASE64 HERE
+                        image_base64: finalImageBase64,
                         options: [
                             document.getElementById('modal-option-0').value,
                             document.getElementById('modal-option-1').value,
@@ -573,6 +617,21 @@ class UnifiedEditorApp {
                         ],
                         answer_index: answerIndex,
                         explanation: document.getElementById('modal-explanation').value.trim()
+                    };
+                    break;
+                
+                case 'book':
+                    newItemData = {
+                        id: Date.now(), 
+                        title: document.getElementById('modal-book-title').value,
+                        author: document.getElementById('modal-book-author').value,
+                        publishedYear: parseInt(document.getElementById('modal-book-year').value) || 0,
+                        pages: parseInt(document.getElementById('modal-book-pages').value) || 0,
+                        description: document.getElementById('modal-book-desc').value,
+                        downloadLink: document.getElementById('modal-book-link').value,
+                        cover: document.getElementById('modal-book-cover').value,
+                        language: "English",
+                        category: this.current_primary_key // implicitly part of category logic
                     };
                     break;
             }
