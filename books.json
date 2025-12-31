@@ -236,6 +236,30 @@
       "cover": "",
       "language": "English",
       "category": "iot"
+    },
+    {
+      "id": 1767180882565,
+      "title": "IoT Signals Manufacturing Spotlight",
+      "author": "Microsoft, Intel",
+      "publishedYear": 2022,
+      "pages": 55,
+      "description": "This report, a collaboration between Microsoft, Intel, and IoT Analytics, examines the current and future state of IoT technology in the manufacturing industry. It focuses on how manufacturers are leveraging Smart Factory operations and Smart Products to drive digital transformation.\n\nThe insights are based on a survey of 500 decision-makers in discrete, hybrid, and process manufacturing across North America, Europe, and Asia-Pacific. [cite_start]The report highlights key trends such as the acceleration of digital transformation post-COVID-19, the shift of investments toward industrial automation, and the rising importance of sustainability and workforce enablement.",
+      "downloadLink": "https://drive.google.com/file/d/1lEeBQ-L2xuw5F-W7QWlEoUraf4-mcim-/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
+    },
+    {
+      "id": 1767180977526,
+      "title": "Blockchain  Principles and Applications in IoT",
+      "author": "Rajdeep Chakraborty, Anupam Ghosh, Valentina Emilia Balas, Ahmed A. Elngar",
+      "publishedYear": 2023,
+      "pages": 0,
+      "description": "This book is a comprehensive guide to Blockchain technology and its integration with the Internet of Things (IoT). It is designed as a resource for graduates, researchers, and professionals in computer science and IT.\n\nThe text covers the fundamental principles of blockchain, tracing its history from cryptocurrencies to broader industrial applications. It focuses on how blockchain can serve as a secure, decentralized data repository for IoT devices, addressing critical challenges like scalability, security, and privacy. The book also goes beyond financial use cases to explore applications in healthcare, supply chain management, and smart cities.\n\nChapters & Topics\nThe book is organized into three main sections:\n\nSection A: Blockchain Principles\nAn Overview of Blockchain as a Security Tool in the Internet of Things\n\nThe Study of Consensus Algorithms in Blockchain\n\nSmart Contracts: The Self-Executing Contracts\n\nIntroduction to Internet of Things with Flavor of Blockchain Technology\n\nBlockchain Implementation Challenges for IoT\n\nIoT Benchmark in Industry 5.0\n\nSection B: Blockchain Applications in Internet of Things (IoT)\nASIC-Based Mining System in Blockchain for IoT Environment to Increase Scalability and Security\n\nUsage of Blockchain with Machine Learning for Patient Record Management and Analysis Purposes\n\nIoT-Based Electronic Health Records (EHR) Management System Using Blockchain Technology\n\nApplications of Blockchain Technology to Emerging Educational Scenario: International Context and Indian Potentialities\n\nSection C: Security Aspects in Blockchain and IoT\nCryptographic and Consensus Techniques Supporting Privacy and Security Management of Cryptocurrency Transactions\n\nSecured Blockchain-based Database for Storing Sensitive Information for Access Control IoT Systems\n\nCryptographic Foundations of Blockchain Technology\n\nAccess Control and Data Security of IoT Applications using Blockchain Technology\n\nLightweight Cryptography and Protocols for IoT Security",
+      "downloadLink": "https://drive.google.com/file/d/1okUy4ziq-ovcYThlQ_uY8YfY7VTCYxmI/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
     }
   ],
   "programming": [
@@ -261,6 +285,18 @@
       "pages": 250,
       "description": "AI-Enabled Threat Detection and Security Analysis for Industrial IoT focuses on the application of artificial intelligence and machine learning techniques to enhance security in Industrial Internet of Things (IIoT) environments. The book addresses modern cyber threats targeting industrial systems and presents intelligent methods for intrusion detection, anomaly detection, malware analysis, and risk mitigation. It combines theoretical foundations with practical industrial use cases, making it a valuable reference for researchers, cybersecurity professionals, and engineers working with smart manufacturing and critical infrastructure systems.\nIntroduction to Industrial IoT Security\n\nThreat Landscape in Industrial IoT Systems\n\nAI and Machine Learning Fundamentals for Cybersecurity\n\nIntrusion Detection Systems for IIoT\n\nAnomaly Detection Using Deep Learning\n\nMalware Detection and Classification in IIoT\n\nNetwork Traffic Analysis for Industrial Systems\n\nSecure Architectures for AI-Enabled IIoT\n\nCase Studies in Industrial Cybersecurity\n\nChallenges, Limitations, and Ethical Considerations\n\nFuture Directions in AI-Based IIoT Security",
       "downloadLink": "https://drive.google.com/file/d/13o0tFehw_D2y-KNMvxLSb42EVX0tGD0u/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "ai"
+    },
+    {
+      "id": 1767180781077,
+      "title": "Artificial Intelligence, Blockchain and IoT for Smart Healthcare",
+      "author": "Hitesh Kumar Sharma, Anuj Kumar, Sangeeta Pant, Mangey Ram",
+      "publishedYear": 0,
+      "pages": 0,
+      "description": "This book presents a cross-disciplinary perspective on how Artificial Intelligence (AI), the Internet of Things (IoT), and Blockchain are converging to transform traditional healthcare into a smart, remote-accessible system.\n\nIt is heavily motivated by the shift in healthcare delivery seen during the COVID-19 pandemic, focusing on telemedicine and e-healthcare. The text explains how IoT sensors collect patient data, AI analyzes it for diagnosis, and Blockchain ensures the security and privacy of that sensitive medical information (Electronic Health Records). It is designed to be accessible to both beginners and advanced researchers, bridging the gap between medical staff and technology professionals\nntroduction to Smart Healthcare and Telemedicine Systems: Overview of the shift from traditional to smart healthcare and the challenges involved.\n\nAdvanced Technologies Involved in Smart Healthcare and Telemedicine Systems: A look at the specific tech stack driving the industry.\n\nRole of Artificial Intelligence, IoT and Blockchain in Smart Healthcare: How these three pillars interact within a single ecosystem.\n\nApplication of Artificial Intelligence in Smart Healthcare: Use cases for AI in diagnosis and patient management.\n\nApplication of IoT in Smart Healthcare: Focus on sensors, wearables, and remote monitoring tools.\n\nApplication of Blockchain in Smart Healthcare: Securing transactions and patient data ledgers.\n\nSecurity and Privacy Challenge in Smart Healthcare and Telemedicine Systems: Addressing user authentication and data breaches.\n\nElectronic Healthcare Record (EHR) Storage using Blockchain for Smart Healthcare: A specific framework for managing digital health records securely.",
+      "downloadLink": "https://drive.google.com/file/d/1los2HZODZhSeRa4mi8ETOai8ydZKXmVp/view?usp=drive_link",
       "cover": "",
       "language": "English",
       "category": "ai"
