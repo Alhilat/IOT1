@@ -260,6 +260,30 @@
       "cover": "",
       "language": "English",
       "category": "iot"
+    },
+    {
+      "id": 1767221489776,
+      "title": "internet of Things and the Law",
+      "author": "Guido Noto La Diega",
+      "publishedYear": 2023,
+      "pages": 360,
+      "description": "The book presents a comprehensive analysis of the legal issues surrounding the Internet of Things (IoT). It explores the shift from dematerialisation (digital/intangible wealth) back to \"rematerialisation\" (the return of data and power to the physical world). The central question addressed is whether the law can steer this development in a human-centric and socially just direction. [cite_start]It analyzes how existing laws—such as privacy, intellectual property, telecommunications, and competition laws—can empower IoT end-users, while also proposing a \"utopian horizon\" for IoT governance based on political economy and social theory.",
+      "downloadLink": "https://drive.google.com/file/d/1WC4tsxeXT2-2Nj1YPwiKf1gGyvPspyXO/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
+    },
+    {
+      "id": 1767221990490,
+      "title": "TinyML Cookbook",
+      "author": "Gian Marco Iodice",
+      "publishedYear": 2022,
+      "pages": 320,
+      "description": "his book serves as a practical guide to TinyML, a field combining machine learning with ultra-low-power embedded devices. It is structured as a cookbook with \"recipes\" for building end-to-end applications on the Arduino Nano 33 BLE Sense and Raspberry Pi Pico. [cite_start]The book covers a range of projects from basic prototyping to advanced use cases like voice control, gesture recognition, and image classification, and introduces concepts like microNPU (Neural Processing Unit) for next-generation edge computing.\nChapter 1: Getting Started with TinyML\n\nChapter 2: Prototyping with Microcontrollers\n\nChapter 3: Building a Weather Station with TensorFlow Lite for Microcontrollers\n\nChapter 4: Voice Controlling LEDs with Edge Impulse\n\nChapter 5: Indoor Scene Classification with TensorFlow Lite for Microcontrollers and the Arduino Nano\n\nChapter 6: Building a Gesture-Based Interface for YouTube Playback\n\nChapter 7: Running a Tiny CIFAR-10 Model on a Virtual Platform with the Zephyr OS\n\nChapter 8: Toward the Next TinyML Generation with microNPU",
+      "downloadLink": "https://drive.google.com/file/d/1Lhjq3Q-du_wZbWEZC8lvdifvCW7Rw2vW/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
     }
   ],
   "programming": [
