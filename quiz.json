@@ -3388,6 +3388,279 @@
         ],
         "answer_index": 2,
         "explanation": ""
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "What do static characteristics of sensors measure ?",
+        "image_base64": "",
+        "options": [
+          "Sensor response to changing input",
+          "Sensor behavior under constant input",
+          "Sensor power consumption",
+          "Sensor communication speed"
+        ],
+        "answer_index": 1,
+        "explanation": "Static characteristics describe how a sensor’s output behaves when the input remains constant over time."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Which characteristic refers to how close a measurement is to the actual value ?",
+        "image_base64": "",
+        "options": [
+          "Precision",
+          "Resolution",
+          "Accuracy",
+          "Range"
+        ],
+        "answer_index": 2,
+        "explanation": "Accuracy indicates how near the measured value is to the true value."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "A humidity sensor that works from 0% to 100% is describing which characteristic?",
+        "image_base64": "",
+        "options": [
+          "Accuracy",
+          "Resolution",
+          "Precision",
+          "Range"
+        ],
+        "answer_index": 3,
+        "explanation": "Range defines the minimum and maximum values a sensor can measure."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Resolution of a sensor refers to ?",
+        "image_base64": "",
+        "options": [
+          "Consistency of readings",
+          "Ability to measure small changes",
+          "Maximum measurable value",
+          "Speed of response"
+        ],
+        "answer_index": 1,
+        "explanation": "Resolution shows how small a change in input the sensor can detect."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Which term describes getting the same measurement repeatedly under identical conditions?",
+        "image_base64": "",
+        "options": [
+          "Accuracy",
+          "Precision",
+          "Range",
+          "Resolution"
+        ],
+        "answer_index": 1,
+        "explanation": "Precision refers to consistency and repeatability of measurements."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Dynamic characteristics are related to ?",
+        "image_base64": "",
+        "options": [
+          "Time-variable input",
+          "Constant input only",
+          "Sensor size",
+          "Sensor material"
+        ],
+        "answer_index": 0,
+        "explanation": "Dynamic characteristics describe sensor response when input changes with time."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Which system has no energy storage components?",
+        "image_base64": "",
+        "options": [
+          "First-order system",
+          "Second-order system",
+          "Zero-order system",
+          "Mechanical system"
+        ],
+        "answer_index": 2,
+        "explanation": "Zero-order systems have no energy storage and respond instantly to input."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "A system with one energy storage component is called ?",
+        "image_base64": "",
+        "options": [
+          "Zero-order system",
+          "First-order system",
+          "Second-order system",
+          "Static system"
+        ],
+        "answer_index": 1,
+        "explanation": "First-order systems contain one energy storage element, causing response delay."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Second-order systems are characterized by ?",
+        "image_base64": "",
+        "options": [
+          "No delay",
+          "One energy storage element",
+          "Two energy storage elements",
+          "No dynamic behavior"
+        ],
+        "answer_index": 2,
+        "explanation": "Second-order systems contain two energy storage components."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "What is the main function of actuators in IoT systems?",
+        "image_base64": "",
+        "options": [
+          "Store sensor data",
+          "Convert signals into physical actions",
+          "Measure environmental data",
+          "Process information"
+        ],
+        "answer_index": 1,
+        "explanation": "Actuators convert command signals into physical movement or action."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Which two things do actuators need to operate?",
+        "image_base64": "",
+        "options": [
+          "Software and data",
+          "Sensors and storage",
+          "Power and a signal",
+          "Network and memory"
+        ],
+        "answer_index": 2,
+        "explanation": "Actuators require power and a control signal to function."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Which actuator type uses fluid pressure?",
+        "image_base64": "",
+        "options": [
+          "Pneumatic",
+          "Electric",
+          "Hydraulic",
+          "Mechanical"
+        ],
+        "answer_index": 2,
+        "explanation": "Hydraulic actuators operate using pressurized hydraulic fluid."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "One disadvantage of hydraulic actuators is ?",
+        "image_base64": "",
+        "options": [
+          "Fluid leakage",
+          "Low force output",
+          "Slow response",
+          "Limited motion"
+        ],
+        "answer_index": 0,
+        "explanation": "Hydraulic systems are prone to leaks which reduce efficiency."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Pneumatic actuators mainly use ?",
+        "image_base64": "",
+        "options": [
+          "Electrical current",
+          "Compressed air",
+          "Hydraulic oil",
+          "Gears"
+        ],
+        "answer_index": 1,
+        "explanation": "Pneumatic actuators operate using compressed air or vacuum."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "Which actuator is known for precise control and programmability?",
+        "image_base64": "",
+        "options": [
+          "Hydraulic",
+          "Pneumatic",
+          "Electric",
+          "Relay"
+        ],
+        "answer_index": 2,
+        "explanation": "Electric actuators provide high precision, programmability, and efficiency."
+      },
+      {
+        "chapter": "Chapter 2 – Part 2",
+        "question": "A relay is best described as ?",
+        "image_base64": "",
+        "options": [
+          "A motor",
+          "A sensor",
+          "A fluid controller",
+          "An electrically controlled switch"
+        ],
+        "answer_index": 3,
+        "explanation": "A relay is an electrically controlled switch used in automation."
+      },
+      {
+        "chapter": "Chapter 2 – RFID WSN",
+        "question": "RFID stands for ?",
+        "image_base64": "",
+        "options": [
+          "Radio Frequency Identification",
+          "Random Frequency Identification",
+          "Remote Fiber Identification",
+          "Radio Fiber Device"
+        ],
+        "answer_index": 0,
+        "explanation": "RFID is an abbreviation for Radio Frequency Identification."
+      },
+      {
+        "chapter": "Chapter 2 – RFID WSN",
+        "question": "The section titled “Basics of RFID” mainly focuses on ?",
+        "image_base64": "",
+        "options": [
+          "Advanced programming",
+          "Fundamental concepts of RFID",
+          "Mechanical systems",
+          "Sensor calibration"
+        ],
+        "answer_index": 1,
+        "explanation": "“Basics of RFID” indicates an introduction to fundamental RFID concepts."
+      },
+      {
+        "chapter": "Chapter 2 – RFID WSN",
+        "question": "WSN refers to ?",
+        "image_base64": "",
+        "options": [
+          "Wireless Sensor Network",
+          "Wired Storage Network",
+          "Wide Signal Node",
+          "Web Service Network"
+        ],
+        "answer_index": 0,
+        "explanation": "WSN is commonly known as Wireless Sensor Network."
+      },
+      {
+        "chapter": "Chapter 2 – RFID WSN",
+        "question": "Which topic is directly related to identification using radio waves?",
+        "image_base64": "",
+        "options": [
+          "WSN",
+          "RFID",
+          "Sensors",
+          "Actuators"
+        ],
+        "answer_index": 1,
+        "explanation": "RFID is associated with identification through radio frequency signals."
+      },
+      {
+        "chapter": "Chapter 2 – RFID WSN",
+        "question": "RFID and WSN are usually studied together because they are both related to ?",
+        "image_base64": "",
+        "options": [
+          "Mechanical engineering",
+          "Networking and communication",
+          "Chemical processing",
+          "Power generation"
+        ],
+        "answer_index": 1,
+        "explanation": "Both RFID and WSN are communication-based technologies."
       }
     ],
     "IOT 442": [
