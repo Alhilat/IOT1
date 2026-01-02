@@ -3661,6 +3661,526 @@
         ],
         "answer_index": 1,
         "explanation": "Both RFID and WSN are communication-based technologies."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "An embedded system is best described as ?",
+        "image_base64": "",
+        "options": [
+          "A general-purpose computer used for multiple tasks",
+          "A computer system built into a product for a specific purpose",
+          "A cloud-based computing system",
+          "A software-only system"
+        ],
+        "answer_index": 1,
+        "explanation": "An embedded system is designed for a specific function and is integrated into a non-computer product."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Compared to general-purpose computers, embedded systems usually have ?",
+        "image_base64": "",
+        "options": [
+          "Unlimited functionality",
+          "More user-modifiable software",
+          "Limited and specific functionality",
+          "No hardware components"
+        ],
+        "answer_index": 2,
+        "explanation": "Embedded systems are designed for specific tasks, unlike general-purpose computers."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Early embedded systems mainly operated ?",
+        "image_base64": "",
+        "options": [
+          "As part of large networks",
+          "With constant internet access",
+          "In isolation with limited connectivity",
+          "Using wireless high-speed protocols"
+        ],
+        "answer_index": 2,
+        "explanation": "Originally, embedded systems worked independently with minimal or no internet access."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "RS-232 is mentioned as ?",
+        "image_base64": "",
+        "options": [
+          "An outdated communication protocol",
+          "A modern wireless protocol",
+          "A programming language",
+          "A real-time operating system"
+        ],
+        "answer_index": 0,
+        "explanation": "RS-232 is described as an old protocol developed in the 1960s with limited speed."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Modern embedded systems differ from older ones mainly by ?",
+        "image_base64": "",
+        "options": [
+          "Using less software",
+          "Having no communication capabilities",
+          "Using advanced high-bandwidth and often wireless protocols",
+          "Eliminating hardware components"
+        ],
+        "answer_index": 2,
+        "explanation": "Modern embedded systems use advanced communication technologies for connectivity."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "In IoT systems, embedded systems are important because they ?",
+        "image_base64": "",
+        "options": [
+          "Replace cloud servers",
+          "Provide intelligence, connectivity, and control",
+          "Only store data",
+          "Function without software"
+        ],
+        "answer_index": 1,
+        "explanation": "Embedded systems enable data processing, communication, and actuation in IoT."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "The comparison between the Apollo computer and modern smartphones highlights ?",
+        "image_base64": "",
+        "options": [
+          "Decrease in system complexity",
+          "Similar software size",
+          "Elimination of embedded systems",
+          "Growth in embedded system complexity"
+        ],
+        "answer_index": 3,
+        "explanation": "Modern systems have millions of lines of code, showing exponential growth in complexity."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "A microcontroller is preferred in many embedded systems because it ?",
+        "image_base64": "",
+        "options": [
+          "Requires external memory only",
+          "Combines CPU, memory, and components in one chip",
+          "Is more expensive",
+          "Has no processing unit"
+        ],
+        "answer_index": 1,
+        "explanation": "Microcontrollers integrate multiple components, making them simple and cost-effective."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Microprocessor-based embedded systems are preferred when ?",
+        "image_base64": "",
+        "options": [
+          "Minimal expansion is needed",
+          "Low cost is the main goal",
+          "Greater expansion and peripheral selection are required",
+          "No I/O ports are used"
+        ],
+        "answer_index": 2,
+        "explanation": "Microprocessor systems allow flexible expansion and peripheral selection."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Firmware in embedded systems is ?",
+        "image_base64": "",
+        "options": [
+          "Easily modified by users",
+          "Stored in volatile memory",
+          "Designed for specific tasks and stored in non-volatile memory",
+          "The same as desktop software"
+        ],
+        "answer_index": 2,
+        "explanation": "Firmware is task-specific software stored in non-volatile memory."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Updating firmware usually ?",
+        "image_base64": "",
+        "options": [
+          "Requires specialized tools and processes",
+          "Requires no tools",
+          "Is impossible",
+          "Happens automatically without design consideration"
+        ],
+        "answer_index": 0,
+        "explanation": "Firmware updates typically need specialized methods and tools."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Which of the following is an example of a simple IoT embedded system?",
+        "image_base64": "",
+        "options": [
+          "Supercomputer",
+          "GPS-enabled bike tracker",
+          "Desktop PC",
+          "Network server"
+        ],
+        "answer_index": 1,
+        "explanation": "The text mentions GPS-enabled bike trackers as simple IoT devices."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "A smart refrigerator is an example of an embedded system because it ?",
+        "image_base64": "",
+        "options": [
+          "Runs desktop applications",
+          "Monitors and acts on data automatically",
+          "Requires human operation only",
+          "Has no sensors"
+        ],
+        "answer_index": 1,
+        "explanation": "It collects data and performs actions like reordering items automatically."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "One major security challenge in IoT embedded systems is ?",
+        "image_base64": "",
+        "options": [
+          "Excess processing power",
+          "Lack of internet connectivity",
+          "Vulnerability to cyberattacks",
+          "Unlimited storage"
+        ],
+        "answer_index": 2,
+        "explanation": "Internet connectivity increases exposure to cyber threats."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Limited memory in embedded systems requires software to be ?",
+        "image_base64": "",
+        "options": [
+          "Large and complex",
+          "Compact and efficient",
+          "Cloud-based only",
+          "User-modifiable"
+        ],
+        "answer_index": 1,
+        "explanation": "Limited resources require optimized and efficient software."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "OTA updates in IoT systems allow ?",
+        "image_base64": "",
+        "options": [
+          "Manual device replacement",
+          "Hardware-only upgrades",
+          "Removal of firmware",
+          "Software updates over the air"
+        ],
+        "answer_index": 3,
+        "explanation": "OTA enables remote software updates."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Scalability in IoT embedded systems refers to ?",
+        "image_base64": "",
+        "options": [
+          "Increasing device size",
+          "Supporting large numbers of devices efficiently",
+          "Reducing functionality",
+          "Eliminating updates"
+        ],
+        "answer_index": 1,
+        "explanation": "IoT systems must manage many devices across locations."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Real-time processing in IoT requires ?",
+        "image_base64": "",
+        "options": [
+          "Random task execution",
+          "No operating system",
+          "Cloud-only computation",
+          "Predictable timing behavior"
+        ],
+        "answer_index": 3,
+        "explanation": "Real-time systems require predictable and timely responses."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Testing and validation are critical because IoT systems ?",
+        "image_base64": "",
+        "options": [
+          "Use only software",
+          "Use identical hardware",
+          "Combine hardware and software from multiple vendors",
+          "Do not require reliability"
+        ],
+        "answer_index": 2,
+        "explanation": "Interoperability testing is essential in mixed-vendor systems."
+      },
+      {
+        "chapter": "Chapter 3 – Part 1",
+        "question": "Embedded software must manage IoT data efficiently because ?",
+        "image_base64": "",
+        "options": [
+          "Data volume is small",
+          "Devices have unlimited resources",
+          "IoT devices generate large amounts of data",
+          "Analytics is unnecessary"
+        ],
+        "answer_index": 2,
+        "explanation": "IoT systems generate vast data that must be handled within limited resources."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Embedded systems in central heating systems are mainly used to ?",
+        "image_base64": "",
+        "options": [
+          "Store user data",
+          "Regulate and distribute temperature",
+          "Provide internet connectivity",
+          "Control lighting systems"
+        ],
+        "answer_index": 1,
+        "explanation": "Embedded systems control thermostats to regulate temperature and prevent energy wastage."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Which environments are mentioned as using embedded systems in central heating?",
+        "image_base64": "",
+        "options": [
+          "Schools and parks",
+          "Only factories",
+          "Airports only",
+          "Homes, offices, factories, and hospitals"
+        ],
+        "answer_index": 3,
+        "explanation": "Homes, office buildings, factories, and hospitals are using embedded systems in central heating."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Embedded systems in GPS devices help in ?",
+        "image_base64": "",
+        "options": [
+          "Location, time, and speed synchronization",
+          "Video streaming",
+          "Image editing",
+          "Power generation"
+        ],
+        "answer_index": 0,
+        "explanation": "GPS embedded systems provide accurate location, time, and speed data."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "GPS embedded systems are widely used in ?",
+        "image_base64": "",
+        "options": [
+          "Only satellites",
+          "Cars, mobile devices, and medical equipment",
+          "Industrial robots only",
+          "Home appliances"
+        ],
+        "answer_index": 1,
+        "explanation": "states that GPS embedded systems are used in cars, mobile devices, and medical equipment."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "In healthcare , embedded systems are mainly used to ?",
+        "image_base64": "",
+        "options": [
+          "Enter patient names",
+          "Manufacture medical tools",
+          "Control hospital lighting",
+          "Monitor vital signs"
+        ],
+        "answer_index": 3,
+        "explanation": "They monitor heart rate and pulse using medical devices."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Which medical devices are mentioned ?",
+        "image_base64": "",
+        "options": [
+          "MRI scanners only",
+          "Pacemakers and ultrasound scanners",
+          "X-ray machines",
+          "Blood analyzers"
+        ],
+        "answer_index": 1,
+        "explanation": "Pacemakers and ultrasound scanners are given as examples."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Automotive embedded systems improve safety by integrating ?",
+        "image_base64": "",
+        "options": [
+          "GPS only",
+          "Entertainment systems",
+          "Anti-lock braking systems and airbags",
+          "Manual controls"
+        ],
+        "answer_index": 2,
+        "explanation": "ABS and airbags are embedded safety features in vehicles."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Embedded systems in vehicles have helped ?",
+        "image_base64": "",
+        "options": [
+          "Increase fuel prices",
+          "Reduce car accident deaths",
+          "Remove safety features",
+          "Slow down vehicles"
+        ],
+        "answer_index": 1,
+        "explanation": "They reduced deaths by improving safety and efficiency."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Factory robots use embedded systems mainly to ?",
+        "image_base64": "",
+        "options": [
+          "Operate safely in hazardous environments",
+          "Replace all human workers",
+          "Increase noise levels",
+          "Reduce product quality"
+        ],
+        "answer_index": 0,
+        "explanation": "They are designed to work safely in dangerous conditions."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Which tasks are performed by factory robots ?",
+        "image_base64": "",
+        "options": [
+          "Assembly, quality monitoring, and welding",
+          "Teaching and training",
+          "Marketing and sales",
+          "Transportation only"
+        ],
+        "answer_index": 0,
+        "explanation": "That factory robots use embedded systems to safely perform tasks like assembly, quality monitoring, and welding."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Interactive kiosks allow users to ?",
+        "image_base64": "",
+        "options": [
+          "Communicate only with staff",
+          "Access services without human intervention",
+          "Repair devices",
+          "Control robots"
+        ],
+        "answer_index": 1,
+        "explanation": "They provide self-service without human assistance."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Interactive kiosks are commonly found in ?",
+        "image_base64": "",
+        "options": [
+          "Farms and factories only",
+          "Private homes only",
+          "Vehicles only",
+          "Airports, retail sites, hospitals, and government buildings"
+        ],
+        "answer_index": 3,
+        "explanation": "Kiosks are used in airports, shops, hospitals, and government buildings ."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Arduino is suitable for IoT prototyping because it ?",
+        "image_base64": "",
+        "options": [
+          "Requires advanced experience",
+          "Supports limited sensors",
+          "Is open-source and beginner-friendly",
+          "Is not adaptable"
+        ],
+        "answer_index": 2,
+        "explanation": "Arduino offers documentation and supports many sensors."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Netduino differs from Arduino mainly because it ?",
+        "image_base64": "",
+        "options": [
+          "Uses Linux",
+          "Supports development in C#",
+          "Is not open-source",
+          "Has no microcontroller"
+        ],
+        "answer_index": 1,
+        "explanation": "Netduino supports C# and high-level features."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Raspberry Pi is described as ?",
+        "image_base64": "",
+        "options": [
+          "A Linux-based single-board computer",
+          "Scalable for large projects",
+          "A real-time-only controller",
+          "Discontinued platform"
+        ],
+        "answer_index": 0,
+        "explanation": "Raspberry Pi runs Linux and is used for prototyping."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "One limitation of Raspberry Pi mentioned ?",
+        "image_base64": "",
+        "options": [
+          "Lack of connectivity",
+          "High cost",
+          "Limited scalability for large projects",
+          "No processing power"
+        ],
+        "answer_index": 2,
+        "explanation": "One of the drawbacks of the Raspberry Pi is its lack of scalability for large projects."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "BeagleBone boards are preferred because they ?",
+        "image_base64": "",
+        "options": [
+          "Are less powerful than Raspberry Pi",
+          "Do not support real-time processing",
+          "Offer better real-time capabilities",
+          "Are discontinued"
+        ],
+        "answer_index": 2,
+        "explanation": "BeagleBone provides better real-time performance."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Intel Galileo is described as ?",
+        "image_base64": "",
+        "options": [
+          "A mobile phone platform",
+          "Discontinued but robust IoT board",
+          "Cloud-based system",
+          "Sensor-only device"
+        ],
+        "answer_index": 1,
+        "explanation": "Intel Galileo is discontinued but offers advanced features."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Arm Cortex platforms support ?",
+        "image_base64": "",
+        "options": [
+          "Only basic computing",
+          "No machine learning",
+          "Desktop-only applications",
+          "High-performance edge computing with AI functions"
+        ],
+        "answer_index": 3,
+        "explanation": "They support AI tasks like speech recognition at the edge."
+      },
+      {
+        "chapter": "Chapter 3 – Part 2",
+        "question": "Arm Virtual Hardware is used to ?",
+        "image_base64": "",
+        "options": [
+          "Test and accelerate machine learning models",
+          "Manufacture processors",
+          "Replace physical devices permanently",
+          "Store user data"
+        ],
+        "answer_index": 0,
+        "explanation": "It is used for testing and accelerating ML development."
       }
     ],
     "IOT 442": [
