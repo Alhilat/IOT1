@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب المعدل - IoT Web</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Exact styles from index.html */
+        :root {
+            --bg-dark: #0a0e1a;
+            --bg-medium: #0f1724;
+            --card-bg: rgba(19, 26, 43, 0.5);
+            --card-hover: rgba(24, 32, 51, 0.7);
+            --text-primary: #e8f0f8;
+            --text-secondary: #9ca3af;
+            --accent: #06b6d4; /* Restored Cyan to match index */
+            --accent-hover: #0891b2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(255, 255, 255, 0.2);
+            --shadow: rgba(0,0,0,0.37);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Almarai', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #0f1724 50%, #071b2a 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+        /* Header matching index.html */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(6,182,212,0.05));
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glass Card - Static version of .nav-card from index */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px 0 var(--shadow);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        /* Input Styling to match theme */
+        .input-group { margin-bottom: 20px; }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-weight: bold;
+        }
+
+        input[type="text"], 
+        input[type="number"], 
+        select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Darker inset */
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-family: 'Almarai', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+        }
+
+        /* Grid for stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Course Rows */
+        .course-row {
+            display: grid;
+            grid-template-columns: 40px 1fr 90px 120px 80px 120px;
+            gap: 15px;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .course-row:last-child { border-bottom: none; }
+
+        .row-header {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            background: rgba(0,0,0,0.2);
+            padding: 15px 0;
+            padding-right: 10px; /* Adjust for padding in rows */
+            border-radius: 8px;
+        }
+
+        /* Checkbox */
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        /* Button matching .btn from index */
+        .btn-calc {
+            width: 100%;
+            background: linear-gradient(45deg, var(--accent), var(--accent-hover));
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-calc:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(6,182,212,0.3);
+        }
+
+        /* Results */
+        .result-box {
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-top: 10px;
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .course-row {
+                grid-template-columns: 1fr 1fr;
+                background: rgba(255,255,255,0.03);
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                border: 1px solid var(--border);
+            }
+            .row-header { display: none; }
+            .name-cell { grid-column: span 2; }
+            .back-btn { position: relative; display: block; top: 0; right: 0; margin-bottom: 20px; text-align: right; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+        <h1>حساب المعدل التراكمي</h1>
+        <p class="subtitle">حساب المعدل الفصلي والتراكمي (الأوزان الجديدة)</p>
+    </header>
+
+    <div class="glass-card">
+        <h2 style="color: var(--text-primary); margin-bottom: 20px;">
+            <i class="fa-solid fa-user-graduate" style="color: var(--accent);"></i> البيانات الحالية
+        </h2>
+        <div class="stats-grid">
+            <div class="input-group">
+                <label>الساعات المقطوعة سابقاً</label>
+                <input type="number" id="currentHours" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>المعدل التراكمي الحالي</label>
+                <input type="number" id="currentGPA" placeholder="0.00" step="0.01">
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+            <h2 style="color: var(--text-primary);">
+                <i class="fa-solid fa-list-check" style="color: var(--accent);"></i> المواد المسجلة
+            </h2>
+            <button onclick="location.reload()" style="background:transparent; border:1px solid #ef4444; color:#ef4444; padding:5px 15px; border-radius:20px; cursor:pointer;">
+                <i class="fa-solid fa-rotate-right"></i> مسح
+            </button>
+        </div>
+
+        <div class="course-row row-header">
+            <div style="text-align:center">#</div>
+            <div>اسم المادة</div>
+            <div>الساعات</div>
+            <div>العلامة المتوقعة</div>
+            <div style="text-align:center">إعادة؟</div>
+            <div>العلامة السابقة</div>
+        </div>
+
+        <div id="coursesList"></div>
+
+        <button class="btn-calc" onclick="calculate()">
+            احسب النتيجة
+        </button>
+    </div>
+
+    <div class="glass-card" id="resultSection" style="display:none; border-color: var(--accent);">
+        <h2 style="text-align:center; color:var(--text-primary); margin-bottom:20px;">النتيجة المتوقعة</h2>
+        <div class="stats-grid">
+            <div class="result-box">
+                <label>الساعات التراكمية الجديدة</label>
+                <div class="result-number" id="resHours">0</div>
+            </div>
+            <div class="result-box">
+                <label>المعدل التراكمي المتوقع</label>
+                <div class="result-number" id="resGPA">0.00</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // --- VERIFIED WEIGHTS ---
+    const weights = {
+        "A": 4.00, "A-": 3.75, "B+": 3.50,
+        "B": 3.25, "B-": 3.00, "C+": 2.75,
+        "C": 2.50, "C-": 2.00, "D+": 1.75,
+        "D": 1.25, "D-": 1.00, "F": 0.00
+    };
+
+    const gradeOptions = Object.keys(weights).map(k => `<option value="${weights[k]}">${k}</option>`).join('');
+
+    function init() {
+        let html = '';
+        for(let i=0; i<8; i++) {
+            html += `
+            <div class="course-row">
+                <div style="text-align:center">
+                    <input type="checkbox" id="en-${i}" checked onchange="toggle(${i})">
+                </div>
+                <div class="name-cell">
+                    <input type="text" placeholder="المادة ${i+1}">
+                </div>
+                <div>
+                    <select id="h-${i}">
+                        <option value="3">3 ساعات</option>
+                        <option value="2">2 ساعة</option>
+                        <option value="1">1 ساعة</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="g-${i}">${gradeOptions}</select>
+                </div>
+                <div style="text-align:center">
+                    <input type="checkbox" id="rep-${i}" onchange="toggle(${i})">
+                </div>
+                <div>
+                    <select id="old-${i}" disabled style="opacity:0.5">${gradeOptions}</select>
+                </div>
+            </div>`;
+        }
+        document.getElementById('coursesList').innerHTML = html;
+    }
+
+    function toggle(i) {
+        const enabled = document.getElementById(`en-${i}`).checked;
+        const isRepeated = document.getElementById(`rep-${i}`).checked;
+        
+        // Disable/Enable main inputs
+        document.getElementById(`h-${i}`).disabled = !enabled;
+        document.getElementById(`g-${i}`).disabled = !enabled;
+        document.getElementById(`rep-${i}`).disabled = !enabled;
+        
+        // Handle Repeat Logic
+        const oldSel = document.getElementById(`old-${i}`);
+        const shouldEnableOld = (enabled && isRepeated);
+        oldSel.disabled = !shouldEnableOld;
+        oldSel.style.opacity = shouldEnableOld ? "1" : "0.5";
+        oldSel.style.borderColor = shouldEnableOld ? "var(--accent)" : "var(--border)";
+        
+        // Visual fade for entire row inputs
+        const opacity = enabled ? "1" : "0.4";
+        document.getElementById(`h-${i}`).style.opacity = opacity;
+        document.getElementById(`g-${i}`).style.opacity = opacity;
+    }
+
+    function calculate() {
+        let currentHours = parseFloat(document.getElementById('currentHours').value) || 0;
+        let currentGPA = parseFloat(document.getElementById('currentGPA').value) || 0;
+
+        let totalPoints = currentHours * currentGPA;
+        let totalHours = currentHours;
+
+        for(let i=0; i<8; i++) {
+            if(!document.getElementById(`en-${i}`).checked) continue;
+
+            let h = parseFloat(document.getElementById(`h-${i}`).value);
+            let g = parseFloat(document.getElementById(`g-${i}`).value);
+            let isRep = document.getElementById(`rep-${i}`).checked;
+
+            if(isRep) {
+                // Repeat: Subtract old points, Add new points. Hours stay same.
+                let oldG = parseFloat(document.getElementById(`old-${i}`).value);
+                totalPoints = totalPoints - (h * oldG) + (h * g);
+            } else {
+                // New: Add points and Add hours.
+                totalPoints += (h * g);
+                totalHours += h;
+            }
+        }
+
+        let result = (totalHours > 0) ? (totalPoints / totalHours) : 0;
+        
+        document.getElementById('resHours').innerText = totalHours;
+        document.getElementById('resGPA').innerText = result.toFixed(2);
+        
+        const resSec = document.getElementById('resultSection');
+        resSec.style.display = 'block';
+        resSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    window.onload = init;
+</script>
+
+</body>
+</html>

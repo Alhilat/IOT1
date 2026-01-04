@@ -19,8 +19,8 @@
             --bg-medium: #0f1724;
             
             /* Card colors with transparency for glass effect */
-            --card-bg: rgba(19, 26, 43, 0.5); /* Was #131a2b */
-            --card-hover: rgba(24, 32, 51, 0.7); /* Was #182033 */
+            --card-bg: rgba(19, 26, 43, 0.5);
+            --card-hover: rgba(24, 32, 51, 0.7);
             
             --text-primary: #e8f0f8;
             --text-secondary: #9ca3af;
@@ -29,8 +29,7 @@
             --success: #10b981;
             --warning: #f59e0b;
             
-            /* Border color with transparency */
-            --border: rgba(255, 255, 255, 0.1); /* Was 0.06 opacity */
+            --border: rgba(255, 255, 255, 0.1);
             --border-hover: rgba(255, 255, 255, 0.2);
             --shadow: rgba(0,0,0,0.37);
         }
@@ -44,7 +43,7 @@
         body {
             font-family: 'Almarai', 'Segoe UI', Tahoma, sans-serif;
             background: linear-gradient(135deg, #0a0e1a 0%, #0f1724 50%, #071b2a 100%);
-            background-attachment: fixed; /* Keeps gradient stable on scroll */
+            background-attachment: fixed;
             min-height: 100vh;
             color: var(--text-primary);
             line-height: 1.6;
@@ -90,12 +89,10 @@
         }
 
         .nav-card {
-            /* This is the new "Frosted Glass" effect */
             background: var(--card-bg);
             backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             box-shadow: 0 8px 32px 0 var(--shadow);
-            
             border-radius: 15px;
             padding: 30px;
             text-align: center;
@@ -130,11 +127,10 @@
             display: block;
         }
 
-        /* Icon Colors */
         .nav-card.videos .icon { color: var(--accent); }
         .nav-card.books .icon { color: var(--success); }
         .nav-card.courses .icon { color: var(--warning); }
-
+        .nav-card.calc .icon { color: #8b5cf6; /* Violet color for calc */ }
 
         .btn {
             background: linear-gradient(45deg, var(--accent), var(--accent-hover));
@@ -163,18 +159,9 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .nav-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .nav-card {
-                padding: 25px;
-            }
+            h1 { font-size: 2.2rem; }
+            .nav-grid { grid-template-columns: 1fr; gap: 20px; }
+            .nav-card { padding: 25px; }
         }
     </style>
 </head>
@@ -189,14 +176,14 @@
             <a href="articles.html" class="nav-card videos">
                 <i class="fa-solid fa-clapperboard icon"></i>
                 <h2>فيديوهات</h2>
-                <p>شاهد مجموعة من القنوات التقنيةعلى اليوتيوب</p>
+                <p>شاهد مجموعة من القنوات التقنية على اليوتيوب</p>
                 <span class="btn">شاهد</span>
             </a>
 
             <a href="books.html" class="nav-card books">
                 <i class="fa-solid fa-book-open icon"></i>
                 <h2>الكتب</h2>
-                <p>مجموعة مختارة من الكتب المرجعية والمواد التعليمية المتخصصة في التكنولوجيا</p>
+                <p>مجموعة مختارة من الكتب المرجعية والمواد التعليمية</p>
                 <span class="btn">تصفح الكتب</span>
             </a>
 
@@ -205,6 +192,13 @@
                 <h2>مواد الجامعة</h2>
                 <p>تعريف بالمواد وروابط مهمة</p>
                 <span class="btn">عرض المواد</span>
+            </a>
+
+            <a href="gpaNew.html" class="nav-card calc">
+                <i class="fa-solid fa-calculator icon"></i>
+                <h2>حساب المعدل</h2>
+                <p>احسب معدلك التراكمي حسب الأوزان الجديدة</p>
+                <span class="btn">احسب الآن</span>
             </a>
         </div>
 
