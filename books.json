@@ -296,6 +296,30 @@
       "cover": "",
       "language": "English",
       "category": "iot"
+    },
+    {
+      "id": 1767630915008,
+      "title": "Automate the Boring Stuff with Python, 2nd Edition",
+      "author": "Al Sweigart",
+      "publishedYear": 2017,
+      "pages": 590,
+      "description": "A practical programming guide for total beginners that focuses on writing Python scripts to perform useful, time-saving tasks. It teaches how to automate repetitive \"grunt work\" like renaming hundreds of files, updating spreadsheet data, scraping websites, and sending email notifications.\nPython Programming Basics: Mastering variables, flow control (if/else), loops, and functions.\n\nPattern Matching: Using Regular Expressions (Regex) to find specific text patterns (like phone numbers or emails) in large documents.\n\nFile Management: Automatically creating, moving, renaming, or deleting folders and files.\n\nWeb Scraping: Using libraries like Requests and Beautiful Soup to pull information directly from websites.\n\nOffice Productivity: Programmatically reading and editing Excel spreadsheets, Google Sheets, PDFs, and Word documents.\n\nCommunication Automation: Writing scripts to send emails and SMS text messages automatically based on certain triggers.\n\nGUI Automation: Using the PyAutoGUI module to control the mouse and keyboard to interact with other applications.",
+      "downloadLink": "https://drive.google.com/file/d/1654JP5UziWyUdKECF6vebpR98rUM8wnW/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
+    },
+    {
+      "id": 1767630886832,
+      "title": "علم الآلة وعلم البيانات: الأساسيات والمفاهيم والخوارزميات والأدوات",
+      "author": "تأليف: ميلاد أوزان | ترجمة: د. علاء طعيمة",
+      "publishedYear": 2022,
+      "pages": 317,
+      "description": "يعد هذا الكتاب مرجعاً شاملاً باللغة العربية يهدف إلى تبسيط مفاهيم ذكاء الآلة وعلم البيانات. يبدأ من الأسس الرياضية والبرمجية، مروراً بشرح خوارزميات التعلم الخاضع وغير الخاضع للإشراف، وصولاً إلى التطبيق العملي باستخدام لغة بايثون ومكتباتها الشهيرة، مما يجعله مناسباً جداً للطلاب والأكاديميين.\nالتمهيد الرياضي والبرمجي: مقدمة في الجبر الخطي والإحصاء الضروري لفهم كيفية عمل الخوارزميات، بالإضافة إلى بيئة العمل في بايثون.\n\nالتعلم الخاضع للإشراف (Supervised Learning): مثل خوارزميات الانحدار (Regression) وأشجار القرار (Decision Trees) والشبكات العصبية.\n\nالتعلم غير الخاضع للإشراف (Unsupervised Learning): مثل خوارزميات التجميع (Clustering) وتقليل الأبعاد.\n\nأدوات علم البيانات: التعامل مع المكتبات الأساسية مثل NumPy للعمليات الحسابية، Pandas لتحليل البيانات، و Scikit-Learn لبناء النماذج.\n\nتقييم النماذج: كيفية قياس دقة النموذج والتأكد من فعاليته قبل تطبيقه على بيانات حقيقية.",
+      "downloadLink": "https://drive.google.com/file/d/1KZf9BePjcqfI7kRPwXXZ_w49s8ie3Vu2/view?usp=drive_link",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
     }
   ],
   "programming": [
