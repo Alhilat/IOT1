@@ -286,13 +286,13 @@
       "category": "iot"
     },
     {
-      "id": 1767628919645,
+      "id": 1767629397118,
       "title": "Internet of Things with Python",
       "author": "Hans-Petter Halvorsen",
       "publishedYear": 2021,
       "pages": 160,
       "description": "This is a comprehensive textbook designed to teach the Internet of Things (IoT) using the Python programming language. It features numerous practical examples, exercises, and applications, focusing on topics such as Raspberry Pi integration, sensor data acquisition (DAQ), and communication protocols like MQTT and HTTP.\nPython Essentials for IoT: Getting started with Python specifically for hardware interaction.\n\nHardware Platforms: Heavy focus on the Raspberry Pi as the primary gateway/controller.\n\nData Acquisition (DAQ): Reading from sensors (like the DHT11 or TMP36 you've used) using Python.\n\nIoT Protocols: Implementing MQTT for device-to-cloud communication.\n\nDatabase Integration: Saving sensor data to SQL Server or NoSQL databases like MongoDB.\n\nCloud Services: Connecting devices to platforms like ThingSpeak or Microsoft Azure.",
-      "downloadLink": "Python Essentials for IoT: Getting started with Python specifically for hardware interaction.  Hardware Platforms: Heavy focus on the Raspberry Pi as the primary gateway/controller.  Data Acquisition (DAQ): Reading from sensors (like the DHT11 or TMP36 you've used) using Python.  IoT Protocols: Implementing MQTT for device-to-cloud communication.  Database Integration: Saving sensor data to SQL Server or NoSQL databases like MongoDB.  Cloud Services: Connecting devices to platforms like ThingSpeak or Microsoft Azure.",
+      "downloadLink": "https://drive.google.com/file/d/1Ji1WlbeoH6i3TorplMccd_aLUY2aogFV/view?usp=drive_link",
       "cover": "",
       "language": "English",
       "category": "iot"
