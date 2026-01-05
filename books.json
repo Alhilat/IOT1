@@ -320,6 +320,18 @@
       "cover": "",
       "language": "English",
       "category": "iot"
+    },
+    {
+      "id": 1767634331049,
+      "title": "Hands-On RTOS with Microcontrollers",
+      "author": "Brian Amos",
+      "publishedYear": 2020,
+      "pages": 550,
+      "description": "This book is a practical, hands-on guide for getting a Real-Time Operating System (RTOS) up and running on a microcontroller unit (MCU). [cite_start]It uses the FreeRTOS kernel with STM32 ARM MCUs and focuses on real-world development trade-offs, professional debugging techniques, and building responsive, modular firmware",
+      "downloadLink": "https://drive.google.com/file/d/1xy-jYkHQDtENXjF_GXceGMTLho-mnpGu/view?usp=sharing",
+      "cover": "",
+      "language": "English",
+      "category": "iot"
     }
   ],
   "programming": [
