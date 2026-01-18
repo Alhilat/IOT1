@@ -2441,307 +2441,306 @@
         "answer_index": 1,
         "explanation": "Certain groups of pins have their own maximum current ratings (e.g., some groups max at 100mA, others at 200mA), preventing all pins in a group from driving max current simultaneously."
       },
-  {
-    "chapter": "esp32",
-    "question": "What does the term Internet of Things (IoT) primarily refer to?",
-    "options": [
-      "A network of computers sharing files",
-      "A system of cloud-based servers only",
-      "A network of physical devices connected to the internet that collect and exchange data",
-      "A software platform for mobile applications"
-    ],
-    "answer_index": 2,
-    "explanation": "IoT focuses on physical objects such as sensors and devices that are connected to the internet and can collect, send, and receive data automatically."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which component is responsible for collecting and processing sensor data in IoT systems?",
-    "options": [
-      "Router",
-      "Microcontroller",
-      "Cloud server",
-      "Database"
-    ],
-    "answer_index": 1,
-    "explanation": "Microcontrollers act as the brain of IoT devices, handling sensor data collection, processing, and communication with other systems."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which characteristic of IoT enables devices to communicate and exchange data in real time?",
-    "options": [
-      "Scalability",
-      "Connectivity",
-      "User experience",
-      "Security"
-    ],
-    "answer_index": 1,
-    "explanation": "Connectivity allows IoT devices to connect to networks and each other, enabling real-time communication and automation."
-  },
-  {
-    "chapter": "esp32",
-    "question": "In IoT, what is the role of sensing and perception?",
-    "options": [
-      "Encrypting transmitted data",
-      "Storing information in the cloud",
-      "Collecting environmental data and analyzing it for action",
-      "Designing user interfaces"
-    ],
-    "answer_index": 2,
-    "explanation": "Sensors collect raw data from the environment, and perception processes this data to make decisions or trigger actions."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which IoT characteristic ensures devices can work together despite using different technologies?",
-    "options": [
-      "Scalability",
-      "Interoperability",
-      "Perception",
-      "Connectivity"
-    ],
-    "answer_index": 1,
-    "explanation": "Interoperability allows different devices, platforms, and systems to communicate seamlessly and function as one system."
-  },
-  {
-    "chapter": "esp32",
-    "question": "What does scalability in IoT systems mainly refer to?",
-    "options": [
-      "Improving user interfaces",
-      "Increasing data security",
-      "Handling growth in devices and data without performance loss",
-      "Reducing power consumption"
-    ],
-    "answer_index": 2,
-    "explanation": "Scalability ensures IoT systems can expand by adding more devices or data without degrading performance."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which IoT layer is responsible for collecting data from the physical environment?",
-    "options": [
-      "Network layer",
-      "Application layer",
-      "Data processing layer",
-      "Sensing (perception) layer"
-    ],
-    "answer_index": 3,
-    "explanation": "This layer includes sensors and actuators that directly interact with the physical world to gather data."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which IoT layer handles data storage, processing, and decision-making?",
-    "options": [
-      "Application layer",
-      "Network layer",
-      "Data processing layer",
-      "Perception layer"
-    ],
-    "answer_index": 2,
-    "explanation": "The data processing layer analyzes incoming data, stores it, and makes decisions based on predefined logic or algorithms."
-  },
-  {
-    "chapter": "esp32",
-    "question": "In the IoT architecture, which layer directly interacts with end users?",
-    "options": [
-      "Network layer",
-      "Application layer",
-      "Data processing layer",
-      "Sensor layer"
-    ],
-    "answer_index": 1,
-    "explanation": "The application layer provides user interfaces such as mobile apps, dashboards, or web applications."
-  },
-  {
-    "chapter": "esp32",
-    "question": "In a thermostat controlled via a mobile app, where does the control flow originate?",
-    "options": [
-      "Sensing layer",
-      "Network layer",
-      "Application layer",
-      "Data processing layer"
-    ],
-    "answer_index": 2,
-    "explanation": "User commands are initiated at the application layer and then sent downward through the system to control devices."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which IoT application focuses on controlling lighting, heating, and entertainment systems?",
-    "options": [
-      "Healthcare",
-      "Industrial automation",
-      "Smart homes",
-      "Transportation"
-    ],
-    "answer_index": 2,
-    "explanation": "Smart homes use IoT to automate and manage household devices for comfort, efficiency, and security."
-  },
-  {
-    "chapter": "esp32",
-    "question": "How does IoT improve healthcare services?",
-    "options": [
-      "By replacing doctors with machines",
-      "By enabling remote monitoring and real-time patient tracking",
-      "By increasing hospital construction",
-      "By eliminating medical equipment"
-    ],
-    "answer_index": 1,
-    "explanation": "IoT devices such as wearables continuously monitor patient health and transmit data to healthcare providers."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which IoT application helps reduce downtime and improve productivity in factories?",
-    "options": [
-      "Smart homes",
-      "Healthcare",
-      "Industrial automation",
-      "Agriculture"
-    ],
-    "answer_index": 2,
-    "explanation": "Industrial IoT enables predictive maintenance, quality control, and supply chain optimization."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Why is the ESP32 considered ideal for IoT projects?",
-    "options": [
-      "It is expensive and powerful",
-      "It lacks wireless connectivity",
-      "It includes built-in Wi-Fi and Bluetooth with high performance",
-      "It only supports wired communication"
-    ],
-    "answer_index": 2,
-    "explanation": "ESP32 combines low cost, strong processing power, and integrated wireless communication, making it ideal for IoT."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which ESP32 feature allows it to act as a gateway in IoT systems?",
-    "options": [
-      "Limited memory",
-      "Built-in Wi-Fi and Bluetooth connectivity",
-      "External power supply",
-      "Analog-only pins"
-    ],
-    "answer_index": 1,
-    "explanation": "Wireless connectivity allows the ESP32 to collect data from nodes and forward it to cloud services or networks."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which interface converts analog signals into digital values in the ESP32?",
-    "options": [
-      "DAC",
-      "PWM",
-      "ADC",
-      "UART"
-    ],
-    "answer_index": 2,
-    "explanation": "Analog-to-Digital Converters (ADC) transform sensor signals into digital data that the microcontroller can process."
-  },
-  {
-    "chapter": "esp32",
-    "question": "What is the primary function of GPIO pins on the ESP32?",
-    "options": [
-      "Storing data permanently",
-      "Providing internet access",
-      "Reading inputs and controlling outputs",
-      "Encrypting communication"
-    ],
-    "answer_index": 2,
-    "explanation": "GPIO pins allow ESP32 to interact with external components such as buttons, LEDs, and sensors."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which communication protocol uses asynchronous serial communication?",
-    "options": [
-      "I2C",
-      "SPI",
-      "UART",
-      "PWM"
-    ],
-    "answer_index": 2,
-    "explanation": "UART does not require a clock signal and relies on predefined baud rates for communication."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which UART-based device example was mentioned in the chapter?",
-    "options": [
-      "Temperature sensor",
-      "RFID reader PN532",
-      "RTC DS1307",
-      "LoRaWAN module"
-    ],
-    "answer_index": 1,
-    "explanation": "The PN532 RFID module can communicate with ESP32 using UART for data exchange."
-  },
-  {
-    "chapter": "esp32",
-    "question": "How many wires are required for I2C communication (excluding ground)?",
-    "options": [
-      "One",
-      "Two",
-      "Three",
-      "Four"
-    ],
-    "answer_index": 1,
-    "explanation": "I2C uses two lines: SDA for data and SCL for the clock signal."
-  },
-  {
-    "chapter": "esp32",
-    "question": "What are the two main I2C communication lines called?",
-    "options": [
-      "MOSI and MISO",
-      "TX and RX",
-      "SDA and SCL",
-      "CS and CLK"
-    ],
-    "answer_index": 2,
-    "explanation": "SDA carries data, while SCL provides synchronization through a clock signal."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which device was used as an example of I2C communication with ESP32?",
-    "options": [
-      "PN532 NFC reader",
-      "LED module",
-      "DS1307 RTC module",
-      "GSM modem"
-    ],
-    "answer_index": 2,
-    "explanation": "The DS1307 RTC uses I2C to transmit date and time information to the ESP32."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which SPI line is used to send data from the master to the slave?",
-    "options": [
-      "MISO",
-      "MOSI",
-      "SCLK",
-      "CS"
-    ],
-    "answer_index": 1,
-    "explanation": "MOSI (Master Out, Slave In) carries data from the master device to the slave."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which feature makes SPI suitable for high-speed data communication?",
-    "options": [
-      "Asynchronous operation",
-      "Single-wire transmission",
-      "Full-duplex synchronous communication",
-      "Lack of clock signal"
-    ],
-    "answer_index": 2,
-    "explanation": "SPI allows simultaneous sending and receiving of data using a clock signal, enabling high-speed transfer."
-  },
-  {
-    "chapter": "esp32",
-    "question": "Which ESP32 wireless capability allows it to act as both a client and an access point?",
-    "options": [
-      "Bluetooth Classic",
-      "NFC",
-      "Built-in Wi-Fi",
-      "Zigbee"
-    ],
-    "answer_index": 2,
-    "explanation": "ESP32 can connect to existing Wi-Fi networks as a client or create its own network as an access point."
-  }
-
+      {
+        "chapter": "esp32",
+        "question": "What does the term Internet of Things (IoT) primarily refer to?",
+        "options": [
+          "A network of computers sharing files",
+          "A system of cloud-based servers only",
+          "A network of physical devices connected to the internet that collect and exchange data",
+          "A software platform for mobile applications"
+        ],
+        "answer_index": 2,
+        "explanation": "IoT focuses on physical objects such as sensors and devices that are connected to the internet and can collect, send, and receive data automatically."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which component is responsible for collecting and processing sensor data in IoT systems?",
+        "options": [
+          "Router",
+          "Microcontroller",
+          "Cloud server",
+          "Database"
+        ],
+        "answer_index": 1,
+        "explanation": "Microcontrollers act as the brain of IoT devices, handling sensor data collection, processing, and communication with other systems."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which characteristic of IoT enables devices to communicate and exchange data in real time?",
+        "options": [
+          "Scalability",
+          "Connectivity",
+          "User experience",
+          "Security"
+        ],
+        "answer_index": 1,
+        "explanation": "Connectivity allows IoT devices to connect to networks and each other, enabling real-time communication and automation."
+      },
+      {
+        "chapter": "esp32",
+        "question": "In IoT, what is the role of sensing and perception?",
+        "options": [
+          "Encrypting transmitted data",
+          "Storing information in the cloud",
+          "Collecting environmental data and analyzing it for action",
+          "Designing user interfaces"
+        ],
+        "answer_index": 2,
+        "explanation": "Sensors collect raw data from the environment, and perception processes this data to make decisions or trigger actions."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which IoT characteristic ensures devices can work together despite using different technologies?",
+        "options": [
+          "Scalability",
+          "Interoperability",
+          "Perception",
+          "Connectivity"
+        ],
+        "answer_index": 1,
+        "explanation": "Interoperability allows different devices, platforms, and systems to communicate seamlessly and function as one system."
+      },
+      {
+        "chapter": "esp32",
+        "question": "What does scalability in IoT systems mainly refer to?",
+        "options": [
+          "Improving user interfaces",
+          "Increasing data security",
+          "Handling growth in devices and data without performance loss",
+          "Reducing power consumption"
+        ],
+        "answer_index": 2,
+        "explanation": "Scalability ensures IoT systems can expand by adding more devices or data without degrading performance."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which IoT layer is responsible for collecting data from the physical environment?",
+        "options": [
+          "Network layer",
+          "Application layer",
+          "Data processing layer",
+          "Sensing (perception) layer"
+        ],
+        "answer_index": 3,
+        "explanation": "This layer includes sensors and actuators that directly interact with the physical world to gather data."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which IoT layer handles data storage, processing, and decision-making?",
+        "options": [
+          "Application layer",
+          "Network layer",
+          "Data processing layer",
+          "Perception layer"
+        ],
+        "answer_index": 2,
+        "explanation": "The data processing layer analyzes incoming data, stores it, and makes decisions based on predefined logic or algorithms."
+      },
+      {
+        "chapter": "esp32",
+        "question": "In the IoT architecture, which layer directly interacts with end users?",
+        "options": [
+          "Network layer",
+          "Application layer",
+          "Data processing layer",
+          "Sensor layer"
+        ],
+        "answer_index": 1,
+        "explanation": "The application layer provides user interfaces such as mobile apps, dashboards, or web applications."
+      },
+      {
+        "chapter": "esp32",
+        "question": "In a thermostat controlled via a mobile app, where does the control flow originate?",
+        "options": [
+          "Sensing layer",
+          "Network layer",
+          "Application layer",
+          "Data processing layer"
+        ],
+        "answer_index": 2,
+        "explanation": "User commands are initiated at the application layer and then sent downward through the system to control devices."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which IoT application focuses on controlling lighting, heating, and entertainment systems?",
+        "options": [
+          "Healthcare",
+          "Industrial automation",
+          "Smart homes",
+          "Transportation"
+        ],
+        "answer_index": 2,
+        "explanation": "Smart homes use IoT to automate and manage household devices for comfort, efficiency, and security."
+      },
+      {
+        "chapter": "esp32",
+        "question": "How does IoT improve healthcare services?",
+        "options": [
+          "By replacing doctors with machines",
+          "By enabling remote monitoring and real-time patient tracking",
+          "By increasing hospital construction",
+          "By eliminating medical equipment"
+        ],
+        "answer_index": 1,
+        "explanation": "IoT devices such as wearables continuously monitor patient health and transmit data to healthcare providers."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which IoT application helps reduce downtime and improve productivity in factories?",
+        "options": [
+          "Smart homes",
+          "Healthcare",
+          "Industrial automation",
+          "Agriculture"
+        ],
+        "answer_index": 2,
+        "explanation": "Industrial IoT enables predictive maintenance, quality control, and supply chain optimization."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Why is the ESP32 considered ideal for IoT projects?",
+        "options": [
+          "It is expensive and powerful",
+          "It lacks wireless connectivity",
+          "It includes built-in Wi-Fi and Bluetooth with high performance",
+          "It only supports wired communication"
+        ],
+        "answer_index": 2,
+        "explanation": "ESP32 combines low cost, strong processing power, and integrated wireless communication, making it ideal for IoT."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which ESP32 feature allows it to act as a gateway in IoT systems?",
+        "options": [
+          "Limited memory",
+          "Built-in Wi-Fi and Bluetooth connectivity",
+          "External power supply",
+          "Analog-only pins"
+        ],
+        "answer_index": 1,
+        "explanation": "Wireless connectivity allows the ESP32 to collect data from nodes and forward it to cloud services or networks."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which interface converts analog signals into digital values in the ESP32?",
+        "options": [
+          "DAC",
+          "PWM",
+          "ADC",
+          "UART"
+        ],
+        "answer_index": 2,
+        "explanation": "Analog-to-Digital Converters (ADC) transform sensor signals into digital data that the microcontroller can process."
+      },
+      {
+        "chapter": "esp32",
+        "question": "What is the primary function of GPIO pins on the ESP32?",
+        "options": [
+          "Storing data permanently",
+          "Providing internet access",
+          "Reading inputs and controlling outputs",
+          "Encrypting communication"
+        ],
+        "answer_index": 2,
+        "explanation": "GPIO pins allow ESP32 to interact with external components such as buttons, LEDs, and sensors."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which communication protocol uses asynchronous serial communication?",
+        "options": [
+          "I2C",
+          "SPI",
+          "UART",
+          "PWM"
+        ],
+        "answer_index": 2,
+        "explanation": "UART does not require a clock signal and relies on predefined baud rates for communication."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which UART-based device example was mentioned in the chapter?",
+        "options": [
+          "Temperature sensor",
+          "RFID reader PN532",
+          "RTC DS1307",
+          "LoRaWAN module"
+        ],
+        "answer_index": 1,
+        "explanation": "The PN532 RFID module can communicate with ESP32 using UART for data exchange."
+      },
+      {
+        "chapter": "esp32",
+        "question": "How many wires are required for I2C communication (excluding ground)?",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "answer_index": 1,
+        "explanation": "I2C uses two lines: SDA for data and SCL for the clock signal."
+      },
+      {
+        "chapter": "esp32",
+        "question": "What are the two main I2C communication lines called?",
+        "options": [
+          "MOSI and MISO",
+          "TX and RX",
+          "SDA and SCL",
+          "CS and CLK"
+        ],
+        "answer_index": 2,
+        "explanation": "SDA carries data, while SCL provides synchronization through a clock signal."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which device was used as an example of I2C communication with ESP32?",
+        "options": [
+          "PN532 NFC reader",
+          "LED module",
+          "DS1307 RTC module",
+          "GSM modem"
+        ],
+        "answer_index": 2,
+        "explanation": "The DS1307 RTC uses I2C to transmit date and time information to the ESP32."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which SPI line is used to send data from the master to the slave?",
+        "options": [
+          "MISO",
+          "MOSI",
+          "SCLK",
+          "CS"
+        ],
+        "answer_index": 1,
+        "explanation": "MOSI (Master Out, Slave In) carries data from the master device to the slave."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which feature makes SPI suitable for high-speed data communication?",
+        "options": [
+          "Asynchronous operation",
+          "Single-wire transmission",
+          "Full-duplex synchronous communication",
+          "Lack of clock signal"
+        ],
+        "answer_index": 2,
+        "explanation": "SPI allows simultaneous sending and receiving of data using a clock signal, enabling high-speed transfer."
+      },
+      {
+        "chapter": "esp32",
+        "question": "Which ESP32 wireless capability allows it to act as both a client and an access point?",
+        "options": [
+          "Bluetooth Classic",
+          "NFC",
+          "Built-in Wi-Fi",
+          "Zigbee"
+        ],
+        "answer_index": 2,
+        "explanation": "ESP32 can connect to existing Wi-Fi networks as a client or create its own network as an access point."
+      }
     ],
     "IOT201": [
       {
@@ -4952,6 +4951,21 @@
         ],
         "answer_index": 1,
         "explanation": "Feature engineering improves model performance by preparing effective input features."
+      }
+    ],
+    "IOT 342": [
+      {
+        "chapter": "Theoretical material",
+        "question": "Which statement best distinguishes acting rationally from thinking rationally in AI?",
+        "image_base64": "",
+        "options": [
+          "Acting rationally focuses on logical proofs, while thinking rationally focuses on behavior",
+          "Acting rationally emphasizes goal achievement regardless of internal reasoning",
+          "Thinking rationally ignores formal logic",
+          "Acting rationally emphasizes goal achievement regardless of internal reasoning"
+        ],
+        "answer_index": 1,
+        "explanation": "Acting rationally is concerned with outcomes and performance, not how reasoning is internally performed."
       }
     ]
   }
