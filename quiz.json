@@ -4954,19 +4954,396 @@
       }
     ],
     "IOT 342": [
-      {
-        "chapter": "Theoretical material",
-        "question": "Which statement best distinguishes acting rationally from thinking rationally in AI?",
-        "image_base64": "",
-        "options": [
-          "Acting rationally focuses on logical proofs, while thinking rationally focuses on behavior",
-          "Acting rationally emphasizes goal achievement regardless of internal reasoning",
-          "Thinking rationally ignores formal logic",
-          "Acting rationally emphasizes goal achievement regardless of internal reasoning"
-        ],
-        "answer_index": 1,
-        "explanation": "Acting rationally is concerned with outcomes and performance, not how reasoning is internally performed."
-      }
-    ]
+    {
+      "chapter": "Chapter 1: Foundations of Artificial Intelligence (Hard)",
+      "question": "Which statement best distinguishes acting rationally from thinking rationally in AI?",
+      "image_base64": "",
+      "options": [
+        "Acting rationally focuses on logical proofs, while thinking rationally focuses on behavior",
+        "Acting rationally emphasizes goal achievement regardless of internal reasoning",
+        "Thinking rationally ignores formal logic",
+        "Acting rationally requires human-like cognition"
+      ],
+      "answer_index": 1,
+      "explanation": "Acting rationally is concerned with outcomes and performance, not how reasoning is internally performed."
+    },
+    {
+      "chapter": "Chapter 1: Foundations of Artificial Intelligence (Hard)",
+      "question": "A rational agent may choose a suboptimal action when:",
+      "image_base64": "",
+      "options": [
+        "The environment is fully observable",
+        "The performance measure is unclear",
+        "There is uncertainty in outcomes",
+        "The agent has complete knowledge"
+      ],
+      "answer_index": 2,
+      "explanation": "Rationality is based on expected outcomes, not guaranteed optimal ones."
+    },
+    {
+      "chapter": "Chapter 1: Foundations of Artificial Intelligence (Hard)",
+      "question": "Which of the following is NOT a core purpose of AI as defined in the chapter?",
+      "image_base64": "",
+      "options": [
+        "Search",
+        "Planning",
+        "Hardware optimization",
+        "Knowledge representation"
+      ],
+      "answer_index": 2,
+      "explanation": "AI focuses on intelligence techniques, not hardware efficiency."
+    },
+    {
+      "chapter": "Chapter 1: Foundations of Artificial Intelligence (Hard)",
+      "question": "Weak AI differs from Strong AI primarily in that Weak AI:",
+      "image_base64": "",
+      "options": [
+        "Cannot learn",
+        "Rejects symbolic reasoning",
+        "Does not attempt to model the human mind",
+        "Requires neural networks"
+      ],
+      "answer_index": 2,
+      "explanation": "Weak AI focuses on task performance, not human-like cognition."
+    },
+    {
+      "chapter": "Chapter 1: Foundations of Artificial Intelligence (Hard)",
+      "question": "Which paradigm relies most heavily on formal logic and state-space search?",
+      "image_base64": "",
+      "options": [
+        "Connectionist AI",
+        "Behavioral AI",
+        "Symbolic AI",
+        "Evolutionary AI"
+      ],
+      "answer_index": 2,
+      "explanation": "Symbolic AI uses explicit knowledge representations and logical inference."
+    },
+    {
+      "chapter": "Chapter 1: Foundations of Artificial Intelligence (Hard)",
+      "question": "Acting humanly is most closely associated with which historical benchmark?",
+      "image_base64": "",
+      "options": [
+        "Rational agent model",
+        "Performance measures",
+        "Turing Test–style evaluation",
+        "Knowledge bases"
+      ],
+      "answer_index": 2,
+      "explanation": "Acting humanly evaluates whether machines behave like humans."
+    },
+    {
+      "chapter": "Chapter 2: Knowledge Representation & Logic (Hard)",
+      "question": "A knowledge base is best described as:",
+      "image_base64": "",
+      "options": [
+        "A database of facts only",
+        "A collection of well-formed formulas in a KR language",
+        "A truth table",
+        "A set of heuristic rules"
+      ],
+      "answer_index": 1,
+      "explanation": "A KB contains sentences expressed in a formal representation language."
+    },
+    {
+      "chapter": "Chapter 2: Knowledge Representation & Logic (Hard)",
+      "question": "Why is inference essential in knowledge representation?",
+      "image_base64": "",
+      "options": [
+        "It stores facts",
+        "It assigns syntax",
+        "It derives new knowledge from existing knowledge",
+        "It defines semantics"
+      ],
+      "answer_index": 2,
+      "explanation": "Inference allows the system to reason beyond explicitly stated facts."
+    },
+    {
+      "chapter": "Chapter 2: Knowledge Representation & Logic (Hard)",
+      "question": "Which component of logic determines whether a sentence is meaningful in the language?",
+      "image_base64": "",
+      "options": [
+        "Semantics",
+        "Inference",
+        "Syntax",
+        "Model"
+      ],
+      "answer_index": 2,
+      "explanation": "Syntax defines how sentences can be correctly constructed."
+    },
+    {
+      "chapter": "Chapter 2: Knowledge Representation & Logic (Hard)",
+      "question": "A sentence that is true in at least one model is:",
+      "image_base64": "",
+      "options": [
+        "Valid",
+        "Entailed",
+        "Sound",
+        "Satisfiable"
+      ],
+      "answer_index": 3,
+      "explanation": "Satisfiability requires truth in some model, not all."
+    },
+    {
+      "chapter": "Chapter 2: Knowledge Representation & Logic (Hard)",
+      "question": "What does entailment (α ⊨ β) guarantee?",
+      "image_base64": "",
+      "options": [
+        "β is sometimes true",
+        "β is syntactically correct",
+        "β is true in all models where α is true",
+        "β can be inferred heuristically"
+      ],
+      "answer_index": 2,
+      "explanation": "Entailment is a semantic guarantee across all models."
+    },
+    {
+      "chapter": "Chapter 2: Knowledge Representation & Logic (Hard)",
+      "question": "An inference system that derives only logically correct conclusions but not all of them is:",
+      "image_base64": "",
+      "options": [
+        "Complete but unsound",
+        "Sound but incomplete",
+        "Unsound and incomplete",
+        "Valid but inconsistent"
+      ],
+      "answer_index": 1,
+      "explanation": "Soundness ensures correctness; completeness ensures coverage."
+    },
+    {
+      "chapter": "First-Order Logic (Hard)",
+      "question": "Which feature distinguishes First-Order Logic from Propositional Logic?",
+      "image_base64": "",
+      "options": [
+        "Truth symbols",
+        "Logical connectives",
+        "Quantifiers and objects",
+        "Entailment"
+      ],
+      "answer_index": 2,
+      "explanation": "FOL allows reasoning about objects, relations, and quantification."
+    },
+    {
+      "chapter": "First-Order Logic (Hard)",
+      "question": "A function in FOL differs from a predicate because it:",
+      "image_base64": "",
+      "options": [
+        "Returns a truth value",
+        "Requires quantifiers",
+        "Returns an object",
+        "Cannot be nested"
+      ],
+      "answer_index": 2,
+      "explanation": "Functions map objects to objects, not to true/false."
+    },
+    {
+      "chapter": "First-Order Logic (Hard)",
+      "question": "Universal quantification asserts that a statement:",
+      "image_base64": "",
+      "options": [
+        "Is true for at least one object",
+        "Is true for all objects in the domain",
+        "Is conditionally true",
+        "Is probabilistic"
+      ],
+      "answer_index": 1,
+      "explanation": "Universal quantifiers apply to every element."
+    },
+    {
+      "chapter": "First-Order Logic (Hard)",
+      "question": "Unification is primarily used to:",
+      "image_base64": "",
+      "options": [
+        "Eliminate universal quantifiers",
+        "Match logical expressions by substitution",
+        "Create new predicates",
+        "Assign truth values"
+      ],
+      "answer_index": 1,
+      "explanation": "Unification makes expressions identical via variable replacement."
+    },
+    {
+      "chapter": "First-Order Logic (Hard)",
+      "question": "Skolem functions are introduced to eliminate:",
+      "image_base64": "",
+      "options": [
+        "Universal quantifiers",
+        "Negation",
+        "Existential quantifiers",
+        "Predicates"
+      ],
+      "answer_index": 2,
+      "explanation": "Existential variables are replaced by Skolem functions."
+    },
+    {
+      "chapter": "Chapter 3: Problem Solving by Search (Hard)",
+      "question": "Which element defines whether a state satisfies the solution requirement?",
+      "image_base64": "",
+      "options": [
+        "Path cost",
+        "Goal test",
+        "Action set",
+        "State space"
+      ],
+      "answer_index": 1,
+      "explanation": "The goal test determines success."
+    },
+    {
+      "chapter": "Chapter 3: Problem Solving by Search (Hard)",
+      "question": "A solution differs from a path because a solution:",
+      "image_base64": "",
+      "options": [
+        "Includes states only",
+        "Includes actions leading to a goal",
+        "Has no cost",
+        "Must be optimal"
+      ],
+      "answer_index": 1,
+      "explanation": "A solution is an action sequence from start to goal."
+    },
+    {
+      "chapter": "Chapter 3: Problem Solving by Search (Hard)",
+      "question": "Backward planning starts search from:",
+      "image_base64": "",
+      "options": [
+        "Initial state",
+        "Dead-end states",
+        "Goal state",
+        "State list"
+      ],
+      "answer_index": 2,
+      "explanation": "Regression works backward from the goal."
+    },
+    {
+      "chapter": "Chapter 3: Problem Solving by Search (Hard)",
+      "question": "Which list contains nodes that will be evaluated in the future?",
+      "image_base64": "",
+      "options": [
+        "CS",
+        "SL",
+        "DE",
+        "NSL"
+      ],
+      "answer_index": 3,
+      "explanation": "NSL holds unexplored candidate states."
+    },
+    {
+      "chapter": "Chapter 3: Problem Solving by Search (Hard)",
+      "question": "Dead-end states are those that:",
+      "image_base64": "",
+      "options": [
+        "Have the highest cost",
+        "Have been proven not to lead to a solution",
+        "Are goal states",
+        "Are unexplored"
+      ],
+      "answer_index": 1,
+      "explanation": "Dead ends cannot reach a goal."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "Heuristic search differs from uninformed search because it:",
+      "image_base64": "",
+      "options": [
+        "Uses random guessing",
+        "Uses domain-specific knowledge",
+        "Avoids state spaces",
+        "Guarantees optimality"
+      ],
+      "answer_index": 1,
+      "explanation": "Heuristics guide search intelligently."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "The heuristic function h(n) estimates:",
+      "image_base64": "",
+      "options": [
+        "Cost from start to n",
+        "Total path cost",
+        "Cost from n to a goal",
+        "Search depth"
+      ],
+      "answer_index": 2,
+      "explanation": "h(n) is a future cost estimate."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "An admissible heuristic guarantees:",
+      "image_base64": "",
+      "options": [
+        "Fastest execution",
+        "Overestimation of cost",
+        "Optimal solutions in A*",
+        "No memory usage"
+      ],
+      "answer_index": 2,
+      "explanation": "Admissibility ensures A* optimality."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "Consistency (monotonicity) of a heuristic implies:",
+      "image_base64": "",
+      "options": [
+        "h(n) ≤ actual cost",
+        "Triangle inequality holds",
+        "h(n) decreases arbitrarily",
+        "g(n) = h(n)"
+      ],
+      "answer_index": 1,
+      "explanation": "Consistency enforces step-wise cost constraints."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "Greedy Best-First Search selects nodes based on:",
+      "image_base64": "",
+      "options": [
+        "g(n) only",
+        "f(n) only",
+        "h(n) only",
+        "g(n) + h(n)"
+      ],
+      "answer_index": 2,
+      "explanation": "It ignores path cost completely."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "In A* search, g(n) represents:",
+      "image_base64": "",
+      "options": [
+        "Estimated future cost",
+        "Heuristic error",
+        "Cost from start to n",
+        "Total estimated cost"
+      ],
+      "answer_index": 2,
+      "explanation": "g(n) is the accumulated path cost."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "The evaluation function f(n) in A* is designed to:",
+      "image_base64": "",
+      "options": [
+        "Minimize depth",
+        "Maximize speed",
+        "Estimate total solution cost",
+        "Replace heuristics"
+      ],
+      "answer_index": 2,
+      "explanation": "f(n) combines known and estimated costs."
+    },
+    {
+      "chapter": "Chapter 4: Heuristic Search (Hard)",
+      "question": "If a heuristic is admissible but not consistent, A* search:",
+      "image_base64": "",
+      "options": [
+        "Becomes unsound",
+        "Loses completeness",
+        "May re-expand nodes",
+        "Cannot find a solution"
+      ],
+      "answer_index": 2,
+      "explanation": "Inconsistency can cause repeated expansions but not incorrect results."
+    }
+  ]
   }
 }
