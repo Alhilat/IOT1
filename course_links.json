@@ -142,5 +142,11 @@
       "name": "شرح المادة ",
       "link": "videosyo.html?code=IOT 442"
     }
+  ],
+  "IOT 342": [
+    {
+      "name": "Theortical Questions",
+      "link": "quiz.html?code=IOT 342"
+    }
   ]
 }
