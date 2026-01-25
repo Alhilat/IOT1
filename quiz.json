@@ -3654,6 +3654,539 @@
         ],
         "answer_index": 0,
         "explanation": "Shared memory is fastest IPC method."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Which scheduling criterion should be maximized ?",
+        "image_base64": "",
+        "options": [
+          "Turnaround time",
+          "Waiting time",
+          "Response time",
+          "CPU utilization"
+        ],
+        "answer_index": 3,
+        "explanation": "Higher CPU utilization means better performance."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Response time is best defined as ?",
+        "image_base64": "",
+        "options": [
+          "Total execution time",
+          "Time from submission to completion",
+          "Time from request to first response",
+          "Time spent waiting in ready queue"
+        ],
+        "answer_index": 2,
+        "explanation": "Response time measures interactivity."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "First-Come, First-Served (FCFS) scheduling suffers from ?",
+        "image_base64": "",
+        "options": [
+          "Convoy effect",
+          "Starvation",
+          "High overhead",
+          "Preemption"
+        ],
+        "answer_index": 0,
+        "explanation": "Long processes delay short ones."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Shortest-Job-First (SJF) scheduling is optimal because it ?",
+        "image_base64": "",
+        "options": [
+          "Maximizes response time",
+          "Minimizes average waiting time",
+          "Prevents starvation",
+          "Is preemptive only"
+        ],
+        "answer_index": 1,
+        "explanation": "SJF minimizes average waiting time."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "The preemptive version of SJF is known as ?",
+        "image_base64": "",
+        "options": [
+          "Round Robin",
+          "Priority Scheduling",
+          "Shortest Remaining Time First",
+          "FCFS"
+        ],
+        "answer_index": 2,
+        "explanation": "SRTF allows preemption."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Round Robin scheduling is best suited for ?",
+        "image_base64": "",
+        "options": [
+          "Batch systems",
+          "Real-time systems",
+          "Single-user systems",
+          "Time-sharing systems"
+        ],
+        "answer_index": 3,
+        "explanation": "RR provides fair CPU sharing."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "In Round Robin scheduling, the time quantum ?",
+        "image_base64": "",
+        "options": [
+          "Must be very large",
+          "Determines response time and overhead",
+          "Eliminates context switching",
+          "Is fixed by hardware"
+        ],
+        "answer_index": 1,
+        "explanation": "Small quantum increases overhead."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Priority scheduling can lead to ?",
+        "image_base64": "",
+        "options": [
+          "Deadlock",
+          "Convoy effect",
+          "Starvation",
+          "Thrashing"
+        ],
+        "answer_index": 2,
+        "explanation": "Low-priority processes may never execute."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Aging is used in scheduling to ?",
+        "image_base64": "",
+        "options": [
+          "Increase CPU utilization",
+          "Prevent starvation",
+          "Reduce turnaround time",
+          "Improve I/O performance"
+        ],
+        "answer_index": 1,
+        "explanation": "Aging gradually increases priority."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "A process is best described as ?",
+        "image_base64": "",
+        "options": [
+          "A program stored on disk",
+          "A program in execution",
+          "A CPU scheduling algorithm",
+          "A memory segment"
+        ],
+        "answer_index": 1,
+        "explanation": "A process is an active program being executed."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Which of the following is NOT a component of a process ?",
+        "image_base64": "",
+        "options": [
+          "Program counter",
+          "CPU registers",
+          "Process stack",
+          "Cache memory"
+        ],
+        "answer_index": 3,
+        "explanation": "Cache is part of hardware, not the process itself."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "The stack segment of a process is mainly used for ?",
+        "image_base64": "",
+        "options": [
+          "Global variables",
+          "Dynamic memory allocation",
+          "Function calls and local variables",
+          "Machine instructions"
+        ],
+        "answer_index": 2,
+        "explanation": "Stack stores function calls and local variables."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Heap memory is used for ?",
+        "image_base64": "",
+        "options": [
+          "Static data",
+          "Dynamic memory allocation",
+          "CPU registers",
+          "Program instructions"
+        ],
+        "answer_index": 1,
+        "explanation": "Heap is allocated dynamically during execution."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Which of the following is a valid process state ?",
+        "image_base64": "",
+        "options": [
+          "Executing",
+          "Waiting",
+          "Ready",
+          "All of the above"
+        ],
+        "answer_index": 3,
+        "explanation": "These are standard process states."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "A process moves from Running to Waiting state when ?",
+        "image_base64": "",
+        "options": [
+          "It finishes execution",
+          "An interrupt occurs",
+          "It requests I/O",
+          "It is preempted"
+        ],
+        "answer_index": 2,
+        "explanation": "I/O requests cause the process to wait."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "The Process Control Block (PCB) contains ?",
+        "image_base64": "",
+        "options": [
+          "Only process ID",
+          "CPU scheduling information",
+          "Memory management information",
+          "All of the above"
+        ],
+        "answer_index": 3,
+        "explanation": "PCB stores all information related to a process."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Which information is NOT stored in the PCB ?",
+        "image_base64": "",
+        "options": [
+          "Source code",
+          "Process state",
+          "Program counter",
+          "CPU registers"
+        ],
+        "answer_index": 0,
+        "explanation": "Source code is not stored in PCB."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Which system call is used to create a new process ?",
+        "image_base64": "",
+        "options": [
+          "wait()",
+          "exit()",
+          "fork()",
+          "exec()"
+        ],
+        "answer_index": 2,
+        "explanation": "fork() creates a new process."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "The exec() system call ?",
+        "image_base64": "",
+        "options": [
+          "Replaces the process memory image",
+          "Creates a new process",
+          "Terminates a process",
+          "Suspends execution"
+        ],
+        "answer_index": 0,
+        "explanation": "exec() loads a new program into a process."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "After a fork() system call ?",
+        "image_base64": "",
+        "options": [
+          "Only the parent continues",
+          "Both parent and child execute",
+          "Only the child continues",
+          "The system halts"
+        ],
+        "answer_index": 1,
+        "explanation": "Both processes run concurrently."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "The child process ?",
+        "image_base64": "",
+        "options": [
+          "Has a different PID than the parent",
+          "Shares the same PID",
+          "Cannot execute independently",
+          "Always runs first"
+        ],
+        "answer_index": 0,
+        "explanation": "Each process has a unique PID."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "A process terminates normally when it ?",
+        "image_base64": "",
+        "options": [
+          "Is interrupted",
+          "Calls exit()",
+          "Requests I/O",
+          "Is preempted"
+        ],
+        "answer_index": 1,
+        "explanation": "exit() ends a process normally."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Cooperating processes are processes that ?",
+        "image_base64": "",
+        "options": [
+          "Run independently",
+          "Share no data",
+          "Can affect or be affected by others",
+          "Execute sequentially"
+        ],
+        "answer_index": 2,
+        "explanation": "They interact and share data."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Which is a method of IPC ?",
+        "image_base64": "",
+        "options": [
+          "Paging",
+          "Message passing",
+          "Scheduling",
+          "Context switching"
+        ],
+        "answer_index": 1,
+        "explanation": "Message passing is a common IPC method."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Shared memory IPC requires ?",
+        "image_base64": "",
+        "options": [
+          "Kernel intervention for every access",
+          "No synchronization",
+          "Synchronization mechanisms",
+          "Separate address spaces"
+        ],
+        "answer_index": 2,
+        "explanation": "Synchronization is required to avoid race conditions."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Message passing can be ?",
+        "image_base64": "",
+        "options": [
+          "Blocking only",
+          "Non-blocking only",
+          "Blocking or non-blocking",
+          "Asynchronous only"
+        ],
+        "answer_index": 2,
+        "explanation": "Both modes are supported."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "Buffering is used to ?",
+        "image_base64": "",
+        "options": [
+          "Speed up CPU execution",
+          "Handle differences in producer-consumer speeds",
+          "Eliminate context switching",
+          "Prevent deadlock"
+        ],
+        "answer_index": 1,
+        "explanation": "Buffers balance speed differences."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "A bounded buffer ?",
+        "image_base64": "",
+        "options": [
+          "Has unlimited size",
+          "Does not require synchronization",
+          "Is kernel-free",
+          "Has fixed size"
+        ],
+        "answer_index": 3,
+        "explanation": "Bounded buffer has limited capacity."
+      },
+      {
+        "chapter": "Chapter 3",
+        "question": "The producer-consumer problem is directly related to ?",
+        "image_base64": "",
+        "options": [
+          "Scheduling",
+          "Buffering",
+          "Paging",
+          "Deadlock"
+        ],
+        "answer_index": 1,
+        "explanation": "It uses buffers between producers and consumers."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "User-level threads are managed by ?",
+        "image_base64": "",
+        "options": [
+          "Hardware",
+          "Kernel",
+          "Thread library",
+          "Scheduler"
+        ],
+        "answer_index": 2,
+        "explanation": "Kernel is unaware of user threads."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Kernel-level threads allow ?",
+        "image_base64": "",
+        "options": [
+          "Only one thread per process",
+          "True parallelism on multiprocessors",
+          "No context switching",
+          "Faster creation always"
+        ],
+        "answer_index": 1,
+        "explanation": "Kernel threads can run on multiple CPUs."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "The critical-section problem requires ?",
+        "image_base64": "",
+        "options": [
+          "Mutual exclusion",
+          "High CPU usage",
+          "Busy waiting",
+          "Scheduling"
+        ],
+        "answer_index": 0,
+        "explanation": "Only one process enters critical section."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "A race condition occurs when ?",
+        "image_base64": "",
+        "options": [
+          "CPU is idle",
+          "Processes execute sequentially",
+          "Output depends on execution order",
+          "Scheduling fails"
+        ],
+        "answer_index": 2,
+        "explanation": "Concurrent access causes inconsistency."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Virtual memory allows ?",
+        "image_base64": "",
+        "options": [
+          "Programs larger than physical memory",
+          "Faster CPU execution",
+          "Elimination of paging",
+          "Fixed memory allocation"
+        ],
+        "answer_index": 0,
+        "explanation": "VM separates logical from physical memory."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Paging is a memory management scheme that ?",
+        "image_base64": "",
+        "options": [
+          "Uses variable-size blocks",
+          "Causes external fragmentation",
+          "Divides memory into fixed-size pages",
+          "Requires contiguous allocation"
+        ],
+        "answer_index": 2,
+        "explanation": "Paging avoids external fragmentation."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "A page fault occurs when ?",
+        "image_base64": "",
+        "options": [
+          "Page is modified",
+          "Page is not in main memory",
+          "Disk fails",
+          "TLB is full"
+        ],
+        "answer_index": 1,
+        "explanation": "OS must fetch page from disk."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "FIFO page replacement replaces ?",
+        "image_base64": "",
+        "options": [
+          "Least recently used page",
+          "Page with smallest size",
+          "Most frequently used page",
+          "Oldest loaded page"
+        ],
+        "answer_index": 3,
+        "explanation": "FIFO removes the first loaded page."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "LRU page replacement replaces ?",
+        "image_base64": "",
+        "options": [
+          "Oldest page",
+          "Least recently used page",
+          "Random page",
+          "Largest page"
+        ],
+        "answer_index": 1,
+        "explanation": "LRU tracks recent usage."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Belady’s anomaly is associated with ?",
+        "image_base64": "",
+        "options": [
+          "LRU",
+          "Optimal replacement",
+          "FIFO",
+          "Paging hardware"
+        ],
+        "answer_index": 2,
+        "explanation": "FIFO may increase page faults."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Thrashing occurs when ?",
+        "image_base64": "",
+        "options": [
+          "CPU is overloaded",
+          "Disk is full",
+          "Memory is unused",
+          "System spends most time paging"
+        ],
+        "answer_index": 3,
+        "explanation": "System does more paging than execution."
+      },
+      {
+        "chapter": "Chapter 5",
+        "question": "Working set model is used to ?",
+        "image_base64": "",
+        "options": [
+          "Increase fragmentation",
+          "Reduce thrashing",
+          "Replace FIFO",
+          "Eliminate paging"
+        ],
+        "answer_index": 1,
+        "explanation": "Keeps needed pages in memory."
       }
     ],
     "IOT 251": [
