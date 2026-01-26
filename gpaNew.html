@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>حساب المعدل - IoT Web</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+
     <style>
         /* ====================
-           1. Original Website Theme
+           1. Global Styles
            ==================== */
         :root {
             --bg-dark: #0a0e1a;
             --bg-medium: #0f1724;
-            --card-bg: rgba(19, 26, 43, 0.6); /* Slightly more opaque for cards */
+            --card-bg: rgba(19, 26, 43, 0.6);
             --text-primary: #e8f0f8;
             --text-secondary: #9ca3af;
-            --accent: #06b6d4;      /* Cyan */
+            --accent: #06b6d4; /* Cyan */
             --accent-hover: #0891b2;
             --border: rgba(255, 255, 255, 0.1);
             --shadow: rgba(0,0,0,0.37);
-            
             --list-bg: #1e293b;
-            --list-option: #334155; 
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
         body {
             font-family: 'Almarai', sans-serif;
@@ -37,14 +40,23 @@
             background-attachment: fixed;
             min-height: 100vh;
             color: var(--text-primary);
-            padding-bottom: 120px; /* Space for sticky footer */
+            /* Extra padding at bottom so links aren't hidden behind the sticky bar */
+            padding-bottom: 140px;
         }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        a { text-decoration: none; color: inherit; }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
         /* ====================
-           2. Header (Original Style)
+           2. Header
            ==================== */
         header {
             text-align: center;
@@ -74,10 +86,13 @@
             font-size: 1.2rem;
             transition: 0.3s;
         }
-        .back-btn:hover { color: var(--accent); }
+
+            .back-btn:hover {
+                color: var(--accent);
+            }
 
         /* ====================
-           3. Glass Components
+           3. Cards & Inputs
            ==================== */
         .glass-card {
             background: var(--card-bg);
@@ -89,7 +104,6 @@
             margin-bottom: 20px;
         }
 
-        /* Input Styling (Matching Original) */
         label {
             display: block;
             margin-bottom: 8px;
@@ -110,13 +124,15 @@
             outline: none;
             transition: 0.3s;
         }
-        
-        select { background-color: var(--list-bg); }
-        
-        input:focus, select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+
+        select {
+            background-color: var(--list-bg);
         }
+
+            input:focus, select:focus {
+                border-color: var(--accent);
+                box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+            }
 
         .stats-grid {
             display: grid;
@@ -125,7 +141,7 @@
         }
 
         /* ====================
-           4. Mobile Course Cards (New Logic, Old Style)
+           4. Course Cards
            ==================== */
         .course-card {
             background: rgba(255,255,255,0.02);
@@ -135,13 +151,12 @@
             margin-bottom: 15px;
             transition: all 0.3s ease;
         }
-        
-        .course-card.disabled {
-            opacity: 0.5;
-            border-style: dashed;
-        }
 
-        /* Card Header: Switch + Name */
+            .course-card.disabled {
+                opacity: 0.5;
+                border-style: dashed;
+            }
+
         .card-header {
             display: flex;
             align-items: center;
@@ -158,9 +173,12 @@
             font-size: 1.1rem !important;
             border-radius: 0 !important;
         }
-        .subject-input:focus { box-shadow: none !important; color: var(--accent) !important; }
 
-        /* Card Body: Hours + Grade */
+            .subject-input:focus {
+                box-shadow: none !important;
+                color: var(--accent) !important;
+            }
+
         .card-body {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -168,7 +186,6 @@
             margin-bottom: 12px;
         }
 
-        /* Card Footer: Repeat Checkbox + Old Grade */
         .card-footer {
             background: rgba(0,0,0,0.2);
             margin: 0 -16px -16px -16px;
@@ -180,7 +197,7 @@
             justify-content: space-between;
         }
 
-        /* Custom Toggle Switch (Styled with Cyan) */
+        /* Toggle Switch */
         .toggle-switch {
             position: relative;
             display: inline-block;
@@ -188,53 +205,138 @@
             height: 24px;
             flex-shrink: 0;
         }
-        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+
+            .toggle-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
         .slider {
             position: absolute;
             cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-color: #334155;
             transition: .4s;
             border-radius: 34px;
         }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .slider { background-color: var(--accent); }
-        input:checked + .slider:before { transform: translateX(22px); }
 
-        /* Hidden Old Grade */
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 18px;
+                width: 18px;
+                left: 3px;
+                bottom: 3px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
+            }
+
+        input:checked + .slider {
+            background-color: var(--accent);
+        }
+
+            input:checked + .slider:before {
+                transform: translateX(22px);
+            }
+
         .old-grade-container {
-            display: none; /* Hidden by default */
+            display: none;
             animation: fadeIn 0.3s;
         }
-        @keyframes fadeIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* ====================
-           5. Sticky Footer (Glass Style)
+           5. Footer Links (New Section)
+           ==================== */
+        .site-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+            .footer-nav a {
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                transition: 0.3s;
+                font-weight: 600;
+            }
+
+                .footer-nav a:hover {
+                    color: var(--accent);
+                }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                background: rgba(255,255,255,0.05);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--text-secondary);
+                transition: 0.3s;
+            }
+
+                .social-links a:hover {
+                    background: var(--accent);
+                    color: white;
+                    border-color: var(--accent);
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(6,182,212,0.3);
+                }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* ====================
+           6. Sticky Result Bar
            ==================== */
         .sticky-result {
             position: fixed;
             bottom: 20px;
-            left: 20px; 
+            left: 20px;
             right: 20px;
             max-width: 760px;
             margin: 0 auto;
-            
-            /* Glass Effect matching original */
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(15px);
             border: 1px solid var(--accent);
             box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
-            
             border-radius: 16px;
             padding: 15px 25px;
             display: flex;
@@ -243,208 +345,227 @@
             z-index: 1000;
         }
 
-        .res-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2px; }
-        .res-value { 
-            font-size: 1.8rem; 
-            font-weight: 800; 
+        .res-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .res-value {
+            font-size: 1.8rem;
+            font-weight: 800;
             color: var(--accent);
             text-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
             line-height: 1;
         }
-        
+
         .reset-btn {
             background: transparent;
             border: 1px solid #ef4444;
             color: #ef4444;
-            width: 35px; height: 35px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
-        <h1>حساب المعدل التراكمي</h1>
-        <p style="color:var(--text-secondary)">بنظام الاوزان الجديدة</p>
-    </header>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+            <h1>حساب المعدل التراكمي</h1>
+            <p style="color:var(--text-secondary)">بنظام الاوزان الجديدة</p>
+        </header>
 
-    <div class="glass-card">
-        <h3 style="margin-bottom:15px; color:var(--text-primary); display:flex; align-items:center; gap:10px;">
-            <i class="fa-solid fa-user-graduate" style="color: var(--accent);"></i> البيانات الحالية
-        </h3>
-        <div class="stats-grid">
-            <div>
-                <label>الساعات المقطوعة</label>
-                <input type="number" id="currentHours" placeholder="0" inputmode="decimal" oninput="calculate()">
-            </div>
-            <div>
-                <label>المعدل الحالي</label>
-                <input type="number" id="currentGPA" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calculate()">
+        <div class="glass-card">
+            <h3 style="margin-bottom:15px; color:var(--text-primary); display:flex; align-items:center; gap:10px;">
+                <i class="fa-solid fa-user-graduate" style="color: var(--accent);"></i> البيانات الحالية
+            </h3>
+            <div class="stats-grid">
+                <div>
+                    <label>الساعات المقطوعة</label>
+                    <input type="number" id="currentHours" placeholder="0" inputmode="decimal" oninput="calculate()">
+                </div>
+                <div>
+                    <label>المعدل الحالي</label>
+                    <input type="number" id="currentGPA" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calculate()">
+                </div>
             </div>
         </div>
+
+        <div id="coursesList"></div>
+
+        <footer class="site-footer">
+            <div class="footer-nav">
+                
+                <a href="team.html">تواصل معنا</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://t.me/czx4c"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+
+
+        </footer>
+
     </div>
 
-    <div id="coursesList"></div>
-    
-</div>
+    <div class="sticky-result">
+        <div>
+            <div class="res-label">المعدل المتوقع</div>
+            <div class="res-value" id="resGPA">0.00</div>
+        </div>
 
-<div class="sticky-result">
-    <div>
-        <div class="res-label">المعدل المتوقع</div>
-        <div class="res-value" id="resGPA">0.00</div>
+        <div style="text-align: left; padding-left: 15px; border-left: 1px solid var(--border);">
+            <div class="res-label">ساعات جديدة</div>
+            <div style="font-size: 1.2rem; font-weight: bold; color:white;" id="resHours">0</div>
+        </div>
+
+        <button onclick="location.reload()" class="reset-btn">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
     </div>
-    
-    <div style="text-align: left; padding-left: 15px; border-left: 1px solid var(--border);">
-        <div class="res-label">ساعات جديدة</div>
-        <div style="font-size: 1.2rem; font-weight: bold; color:white;" id="resHours">0</div>
-    </div>
 
-    <button onclick="location.reload()" class="reset-btn">
-        <i class="fa-solid fa-rotate-right"></i>
-    </button>
-</div>
+    <script>
+        const TOTAL_COURSES = 9;
 
-<script>
-    const gradeList = [
-        { label: "A (4.00)",  value: 4.00 },
-        { label: "A- (3.75)", value: 3.75 },
-        { label: "B+ (3.50)", value: 3.50 },
-        { label: "B (3.25)",  value: 3.25 },
-        { label: "B- (3.00)", value: 3.00 },
-        { label: "C+ (2.75)", value: 2.75 },
-        { label: "C (2.50)",  value: 2.50 },
-        { label: "C- (2.00)", value: 2.00 },
-        { label: "D+ (1.75)", value: 1.75 },
-        { label: "D (1.25)",  value: 1.25 },
-        { label: "D- (1.00)", value: 1.00 },
-        { label: "F (0.00)",  value: 0.00 }
-    ];
+        const gradeList = [
+            { label: "A (4.00)", value: 4.00 },
+            { label: "A- (3.75)", value: 3.75 },
+            { label: "B+ (3.50)", value: 3.50 },
+            { label: "B (3.25)", value: 3.25 },
+            { label: "B- (3.00)", value: 3.00 },
+            { label: "C+ (2.75)", value: 2.75 },
+            { label: "C (2.50)", value: 2.50 },
+            { label: "C- (2.00)", value: 2.00 },
+            { label: "D+ (1.75)", value: 1.75 },
+            { label: "D (1.25)", value: 1.25 },
+            { label: "D- (1.00)", value: 1.00 },
+            { label: "F (0.50)", value: 0.50 }
+        ];
 
-    const gradeOptions = gradeList.map(g => `<option value="${g.value}">${g.label}</option>`).join('');
+        const gradeOptions = gradeList.map(g => `<option value="${g.value}">${g.label}</option>`).join('');
 
-    function init() {
-        let html = '';
-        // Generating 7 cards
-        for(let i=0; i<7; i++) {
-            const isChecked = (i < 4) ? "checked" : "";
-            
-            html += `
-            <div class="course-card" id="card-${i}">
-                <div class="card-header">
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="en-${i}" ${isChecked} onchange="toggle(${i}); calculate()">
-                        <span class="slider"></span>
-                    </label>
-                    <input type="text" class="subject-input" placeholder="المادة ${i+1}">
-                </div>
+        function init() {
+            let html = '';
+            for (let i = 0; i < TOTAL_COURSES; i++) {
+                const isChecked = (i < 4) ? "checked" : "";
 
-                <div class="card-body">
-                    <div>
-                        <label>الساعات</label>
-                        <select id="h-${i}" onchange="calculate()">
-                            <option value="3">3 ساعات</option>
-                            <option value="2">2 ساعة</option>
-                            <option value="1">1 ساعة</option>
-                            <option value="0">0 ساعة</option>
-                        </select>
+                html += `
+                <div class="course-card" id="card-${i}">
+                    <div class="card-header">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="en-${i}" ${isChecked} onchange="toggle(${i}); calculate()">
+                            <span class="slider"></span>
+                        </label>
+                        <input type="text" class="subject-input" placeholder="المادة ${i + 1}">
                     </div>
-                    <div>
-                        <label>العلامة المتوقعة</label>
-                        <select id="g-${i}" onchange="calculate()">${gradeOptions}</select>
+
+                    <div class="card-body">
+                        <div>
+                            <label>الساعات</label>
+                            <select id="h-${i}" onchange="calculate()">
+                                <option value="3">3 ساعات</option>
+                                <option value="2">2 ساعة</option>
+                                <option value="1">1 ساعة</option>
+                                <option value="0">0 ساعة</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>العلامة المتوقعة</label>
+                            <select id="g-${i}" onchange="calculate()">${gradeOptions}</select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card-footer">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <input type="checkbox" id="rep-${i}" onchange="toggleRep(${i}); calculate()" 
-                               style="width:18px; height:18px; accent-color:var(--accent);">
-                        <label for="rep-${i}" style="margin:0; font-size:0.9rem; cursor:pointer;">مادة معادة؟</label>
+                    <div class="card-footer">
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <input type="checkbox" id="rep-${i}" onchange="toggleRep(${i}); calculate()"
+                                   style="width:18px; height:18px; accent-color:var(--accent);">
+                            <label for="rep-${i}" style="margin:0; font-size:0.9rem; cursor:pointer;">مادة معادة؟</label>
+                        </div>
+
+                        <div class="old-grade-container" id="old-sect-${i}">
+                            <select id="old-${i}" onchange="calculate()" style="padding:5px; font-size:0.85rem; width:110px;">
+                                <option disabled selected>العلامة السابقة</option>
+                                ${gradeOptions}
+                            </select>
+                        </div>
                     </div>
-                    
-                    <div class="old-grade-container" id="old-sect-${i}">
-                        <select id="old-${i}" onchange="calculate()" style="padding:5px; font-size:0.85rem; width:110px;">
-                            <option disabled selected>العلامة السابقة</option>
-                            ${gradeOptions}
-                        </select>
-                    </div>
-                </div>
-            </div>`;
+                </div>`;
+            }
+            document.getElementById('coursesList').innerHTML = html;
+
+            for (let i = 0; i < TOTAL_COURSES; i++) {
+                toggle(i);
+                toggleRep(i);
+            }
+            calculate();
         }
-        document.getElementById('coursesList').innerHTML = html;
 
-        // Initialize Logic
-        for(let i=0; i<7; i++) {
-            toggle(i);
-            toggleRep(i);
-        }
-        calculate(); 
-    }
+        function toggle(i) {
+            const enabled = document.getElementById(`en-${i}`).checked;
+            const card = document.getElementById(`card-${i}`);
 
-    function toggle(i) {
-        const enabled = document.getElementById(`en-${i}`).checked;
-        const card = document.getElementById(`card-${i}`);
-        
-        if(enabled) {
-            card.classList.remove('disabled');
-            card.querySelectorAll('select, input[type="text"]').forEach(el => el.disabled = false);
-            toggleRep(i); 
-        } else {
-            card.classList.add('disabled');
-            card.querySelectorAll('select, input[type="text"]').forEach(el => el.disabled = true);
-            // Ensure main checkbox stays enabled
-            document.getElementById(`en-${i}`).disabled = false;
-        }
-    }
-
-    function toggleRep(i) {
-        const isRep = document.getElementById(`rep-${i}`).checked;
-        const isEnabled = document.getElementById(`en-${i}`).checked;
-        const oldSection = document.getElementById(`old-sect-${i}`);
-        
-        if (isRep && isEnabled) {
-            oldSection.style.display = 'block';
-        } else {
-            oldSection.style.display = 'none';
-        }
-    }
-
-    function calculate() {
-        let currentHours = parseFloat(document.getElementById('currentHours').value) || 0;
-        let currentGPA = parseFloat(document.getElementById('currentGPA').value) || 0;
-
-        let totalPoints = currentHours * currentGPA;
-        let totalHours = currentHours;
-
-        for(let i=0; i<7; i++) {
-            if(!document.getElementById(`en-${i}`).checked) continue;
-
-            let h = parseFloat(document.getElementById(`h-${i}`).value);
-            let g = parseFloat(document.getElementById(`g-${i}`).value);
-            let isRep = document.getElementById(`rep-${i}`).checked;
-
-            if(isRep) {
-                let oldG = parseFloat(document.getElementById(`old-${i}`).value);
-                if(isNaN(oldG)) oldG = 0; 
-                totalPoints = totalPoints - (h * oldG) + (h * g);
+            if (enabled) {
+                card.classList.remove('disabled');
+                card.querySelectorAll('select, input[type="text"]').forEach(el => el.disabled = false);
+                toggleRep(i);
             } else {
-                totalPoints += (h * g);
-                totalHours += h;
+                card.classList.add('disabled');
+                card.querySelectorAll('select, input[type="text"]').forEach(el => el.disabled = true);
+                document.getElementById(`en-${i}`).disabled = false;
             }
         }
 
-        let result = (totalHours > 0) ? (totalPoints / totalHours) : 0;
-        
-        document.getElementById('resHours').innerText = totalHours;
-        document.getElementById('resGPA').innerText = result.toFixed(2);
-    }
+        function toggleRep(i) {
+            const isRep = document.getElementById(`rep-${i}`).checked;
+            const isEnabled = document.getElementById(`en-${i}`).checked;
+            const oldSection = document.getElementById(`old-sect-${i}`);
 
-    window.onload = init;
-</script>
+            if (isRep && isEnabled) {
+                oldSection.style.display = 'block';
+            } else {
+                oldSection.style.display = 'none';
+            }
+        }
+
+        function calculate() {
+            let currentHours = parseFloat(document.getElementById('currentHours').value) || 0;
+            let currentGPA = parseFloat(document.getElementById('currentGPA').value) || 0;
+
+            let totalPoints = currentHours * currentGPA;
+            let totalHours = currentHours;
+
+            for (let i = 0; i < TOTAL_COURSES; i++) {
+                if (!document.getElementById(`en-${i}`).checked) continue;
+
+                let h = parseFloat(document.getElementById(`h-${i}`).value);
+                let g = parseFloat(document.getElementById(`g-${i}`).value);
+                let isRep = document.getElementById(`rep-${i}`).checked;
+
+                if (isRep) {
+                    let oldG = parseFloat(document.getElementById(`old-${i}`).value);
+                    if (isNaN(oldG)) oldG = 0;
+                    totalPoints = totalPoints - (h * oldG) + (h * g);
+                } else {
+                    totalPoints += (h * g);
+                    totalHours += h;
+                }
+            }
+
+            let result = (totalHours > 0) ? (totalPoints / totalHours) : 0;
+
+            document.getElementById('resHours').innerText = totalHours;
+            document.getElementById('resGPA').innerText = result.toFixed(2);
+        }
+
+        window.onload = init;
+    </script>
 
 </body>
 </html>
