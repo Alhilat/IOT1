@@ -512,18 +512,22 @@
             "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"
         ];
 
-        // Values from 'gpaNew.html'
         const newWeights = [
             4.00, 3.75, 3.50, 3.25, 3.00, 2.75, 2.50, 2.00, 1.75, 1.25, 1.00, 0.50
         ];
 
-        // Values from 'image_136318.jpg'
         const oldWeights = [
             4.00, 3.75, 3.50, 3.00, 2.75, 2.50, 2.00, 1.75, 1.50, 1.00, 0.75, 0.50
         ];
 
-        const gradeOptions = gradeLabels.map((label, index) =>
+        // 1. Generate options string for the NEW system
+        const newGradeOptions = gradeLabels.map((label, index) =>
             `<option value="${index}">${label} (${newWeights[index]})</option>`
+        ).join('');
+
+        // 2. Generate options string for the OLD system
+        const oldGradeOptions = gradeLabels.map((label, index) =>
+            `<option value="${index}">${label} (${oldWeights[index]})</option>`
         ).join('');
 
         function init() {
@@ -553,7 +557,7 @@
                             </div>
                             <div>
                                 <label>العلامة المتوقعة</label>
-                                <select id="g-${i}" onchange="calculate()">${gradeOptions}</select>
+                                <select id="g-${i}" onchange="calculate()">${newGradeOptions}</select>
                             </div>
                         </div>
 
@@ -561,7 +565,7 @@
                             <div class="footer-row">
                                 <div style="display:flex; align-items:center; gap:10px;">
                                     <input type="checkbox" id="rep-${i}" onchange="toggleRep(${i}); calculate()"
-                                           style="width:18px; height:18px; accent-color:var(--accent);">
+                                         style="width:18px; height:18px; accent-color:var(--accent);">
                                     <label for="rep-${i}" style="margin:0; font-size:0.9rem; cursor:pointer;">مادة معادة؟</label>
                                 </div>
                             </div>
@@ -571,11 +575,11 @@
                                     <label style="font-size:0.8rem; margin-bottom:5px;">وزن العلامة السابقة:</label>
                                     <div class="weight-system-selector">
                                         <label class="radio-label">
-                                            <input type="radio" name="ws-${i}" value="new" checked onchange="calculate()">
+                                            <input type="radio" name="ws-${i}" value="new" checked onchange="updateOldOptions(${i}); calculate()">
                                             وزن جديد
                                         </label>
                                         <label class="radio-label">
-                                            <input type="radio" name="ws-${i}" value="old" onchange="calculate()">
+                                            <input type="radio" name="ws-${i}" value="old" onchange="updateOldOptions(${i}); calculate()">
                                             وزن قديم
                                         </label>
                                     </div>
@@ -583,7 +587,7 @@
 
                                 <select id="old-${i}" onchange="calculate()" style="width:100%;">
                                     <option disabled selected value="-1">اختر العلامة السابقة</option>
-                                    ${gradeOptions}
+                                    ${newGradeOptions}
                                 </select>
                             </div>
                         </div>
@@ -617,7 +621,6 @@
             const isRep = document.getElementById(`rep-${i}`).checked;
             const isEnabled = document.getElementById(`en-${i}`).checked;
             const oldSection = document.getElementById(`old-sect-${i}`);
-
             const radios = document.getElementsByName(`ws-${i}`);
 
             if (isRep && isEnabled) {
@@ -626,6 +629,43 @@
             } else {
                 oldSection.style.display = 'none';
                 radios.forEach(r => r.disabled = true);
+            }
+        }
+
+        // 3. New function to swap the dropdown content
+        function updateOldOptions(i) {
+            const oldSelect = document.getElementById(`old-${i}`);
+            const radios = document.getElementsByName(`ws-${i}`);
+            let isOldSystem = false;
+
+            // Check which radio is checked
+            for (let r of radios) {
+                if (r.checked && r.value === 'old') {
+                    isOldSystem = true;
+                    break;
+                }
+            }
+
+            // Save the currently selected value (index) so we don't lose the user's selection
+            const currentVal = oldSelect.value;
+
+            // Build the HTML, keeping the placeholder
+            let html = '<option disabled value="-1">اختر العلامة السابقة</option>';
+
+            // Inject correct options
+            if (isOldSystem) {
+                html += oldGradeOptions;
+            } else {
+                html += newGradeOptions;
+            }
+
+            oldSelect.innerHTML = html;
+
+            // Restore the previous selection (if it was valid)
+            if (currentVal !== "-1" && currentVal !== "") {
+                oldSelect.value = currentVal;
+            } else {
+                oldSelect.value = "-1";
             }
         }
 
@@ -665,6 +705,7 @@
                             }
                         }
 
+                        // Logic to use old weights for calculation
                         let oldPoints = isOldSystem ? oldWeights[oldGIndex] : newWeights[oldGIndex];
                         totalPoints = totalPoints - (h * oldPoints) + (h * gPoints);
                     } else {
@@ -693,7 +734,6 @@
             document.getElementById('resHours').innerText = totalHours;
             document.getElementById('resGPA').innerText = result.toFixed(2);
 
-           
             let rateText = "---";
             if (totalHours > 0) {
                 if (result >= 3.65) rateText = "امتياز";
