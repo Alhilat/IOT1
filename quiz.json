@@ -1,5 +1,489 @@
 {
   "quizzes": {
+
+
+    "IOT 451": [
+    {
+      "chapter": "unit 1",
+      "question": "What mathematician first articulated the \"data science dream\" in a 1962 article titled \"The Future of Data Analysis\"?",
+      "options": [
+        "William S. Cleveland",
+        "John W. Tukey",
+        "Peter Naur",
+        "Jeff Wu"
+      ],
+      "answer_index": 1,
+      "explanation": "American mathematician John W. Tukey foresaw the inevitable emergence of a new field in 1962, nearly two decades before personal computers."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which data science role is primarily responsible for creating blueprints for data management to ensure databases are centralized and protected?",
+      "options": [
+        "Data Engineer",
+        "Database Administrator",
+        "Data Architect",
+        "Data Scientist"
+      ],
+      "answer_index": 2,
+      "explanation": "A data architect creates the blueprints for data management so that the databases can be easily integrated, centralized, and protected with the best security measures."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "According to the document, which stage of a Data Science project involves manipulating null values, removing outliers, and typically takes the longest amount of time?",
+      "options": [
+        "Defining a problem",
+        "Evaluation",
+        "Modelling",
+        "Data Processing"
+      ],
+      "answer_index": 3,
+      "explanation": "Data processing involves pre-processing steps like removing outliers and manipulating null values. This is often the stage that will take the longest in any Data Science project."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "In what year did \"Big data\" officially enter the scene alongside technologies like Hadoop?",
+      "options": [
+        "1994",
+        "2005",
+        "2014",
+        "2018"
+      ],
+      "answer_index": 1,
+      "explanation": "Big data entered the scene in 2005, when tech giants such as Google and Facebook uncovered large amounts of data, leading to the rise of Hadoop."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which of the following is considered the primary difference between Data Privacy and Data Security?",
+      "options": [
+        "Privacy is for cloud systems, while security is for local servers.",
+        "Privacy mainly focuses on keeping data confidential, while security focuses on protecting it from malicious activity.",
+        "Privacy involves data masking, while security only relies on passwords.",
+        "There is no difference; the terms are completely interchangeable."
+      ],
+      "answer_index": 1,
+      "explanation": "The primary difference is that data privacy mainly focuses on keeping data confidential, while data security mainly focuses on protecting from malicious activity."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "What type of security threat involves adding malicious code to a seemingly innocent database query to gain illicit access?",
+      "options": [
+        "Ransomware",
+        "Phishing",
+        "SQL Injection",
+        "Insider Threat"
+      ],
+      "answer_index": 2,
+      "explanation": "SQL injection (SQLi) works by adding malicious code to a seemingly innocent database query to gain illicit access to databases and steal data."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which application of data science helps platforms like Amazon and Flipkart create a better user experience by suggesting products based on past choices?",
+      "options": [
+        "Target Recommendation",
+        "E-Commerce personalized recommendations",
+        "Autocomplete",
+        "Delivery Logistics"
+      ],
+      "answer_index": 1,
+      "explanation": "E-Commerce websites like Amazon and Flipkart use data science to make a better user experience with personalized recommendations based on past data."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "What type of insider threat refers to users who actively attempt to steal data or cause harm to the organization for personal gain?",
+      "options": [
+        "Non-malicious insider",
+        "Compromised insider",
+        "Malicious insider",
+        "Accidental insider"
+      ],
+      "answer_index": 2,
+      "explanation": "A malicious insider refers to a user who actively attempts to steal data or cause harm to the organization for personal gain."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which phase of the Data Science Lifecycle involves Exploratory/Confirmatory Analysis, Predictive Analysis, and Regression?",
+      "options": [
+        "Capture",
+        "Maintain",
+        "Process",
+        "Analyze"
+      ],
+      "answer_index": 3,
+      "explanation": "The Analyze stage involves Exploratory/Confirmatory, Predictive Analysis, Regression, Text Mining, and Qualitative Analysis."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which data science role builds and tests scalable Big Data ecosystems so that algorithms can run on stable systems?",
+      "options": [
+        "Data Analyst",
+        "Data Engineer",
+        "Statistician",
+        "Business Analyst"
+      ],
+      "answer_index": 1,
+      "explanation": "Data engineers build and test scalable Big Data ecosystems for the businesses so that data scientists can run their algorithms on highly optimized systems."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "The process of converting data from a readable format (plaintext) to an unreadable encoded format (ciphertext) is known as:",
+      "options": [
+        "Data Discovery",
+        "Data Masking",
+        "Data Encryption",
+        "Data Cleansing"
+      ],
+      "answer_index": 2,
+      "explanation": "Data encryption is a method of converting data from a readable format (plaintext) to an unreadable encoded format (ciphertext)."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which healthcare application uses algorithms to forecast how a human body will react to treatments without requiring physical lab experiments?",
+      "options": [
+        "Medical Image Analysis",
+        "Medicine and Drug Development",
+        "Detecting Tumor",
+        "Virtual Medical Bots"
+      ],
+      "answer_index": 1,
+      "explanation": "In Medicine and Drug Development, algorithms based on data science forecast how a medicine will react to the human body without lab experiments."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "What data security solution creates a synthetic version of organizational data for purposes like software testing and training?",
+      "options": [
+        "Data Encryption",
+        "Data Masking",
+        "Data Detection",
+        "Password Hygiene"
+      ],
+      "answer_index": 1,
+      "explanation": "Data masking lets you create a synthetic version of your organizational data, which you can use for software testing, training, and other purposes that don't require real data."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "During which stage of a data science project does a team utilize frameworks and libraries like sklearn, statsmodels, and tensorflow?",
+      "options": [
+        "Defining a problem",
+        "Evaluation",
+        "Deployment",
+        "Modelling"
+      ],
+      "answer_index": 3,
+      "explanation": "In the Modelling phase, many frameworks or libraries exist, such as sklearn, statsmodels, and tensorflow, that can be readily utilized."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "What type of social engineering attack involves messages that appear to be from a trusted source, but are actually sent by an attacker?",
+      "options": [
+        "Phishing",
+        "Ransomware",
+        "SQL Injection",
+        "Data Masking"
+      ],
+      "answer_index": 0,
+      "explanation": "Phishing is a common form of social engineering that involves messages that appear to be from a trusted source, but in fact are sent by an attacker."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which stage in the Data Science lifecycle includes Data Warehousing, Data Cleansing, and Data Architecture?",
+      "options": [
+        "Capture",
+        "Maintain",
+        "Process",
+        "Communicate"
+      ],
+      "answer_index": 1,
+      "explanation": "The Maintain stage covers Data Warehousing, Data Cleansing, Data Staging, Data Processing, and Data Architecture."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "What was the focus of the 1994 Business Week story that highlighted early data science adoption by businesses?",
+      "options": [
+        "Big Data Processing",
+        "Database Marketing",
+        "Artificial Intelligence",
+        "Machine Learning"
+      ],
+      "answer_index": 1,
+      "explanation": "In 1994, Business Week published a story on the new phenomenon of \"Database Marketing,\" describing how businesses were leveraging enormous amounts of data to learn about customers."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "Which role separates high-value data from low-value data and focuses heavily on understanding organizational finances and business intelligence?",
+      "options": [
+        "Business Analyst",
+        "Data Scientist",
+        "Database Administrator",
+        "Machine Learning Engineer"
+      ],
+      "answer_index": 0,
+      "explanation": "A Business Analyst separates high-value data from low-value data and must have an understanding of business finances and business intelligence."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "What type of malware infects corporate devices and encrypts data, making it useless until a payment is made?",
+      "options": [
+        "SQL Injection",
+        "Phishing",
+        "Ransomware",
+        "Unauthorized Access"
+      ],
+      "answer_index": 2,
+      "explanation": "Ransomware is malware that infects corporate devices and encrypts data. Attackers display a ransom message asking for payment to release the key."
+    },
+    {
+      "chapter": "unit 1",
+      "question": "According to the document, why is it vital to clearly define a problem in the first stage of a Data Science project?",
+      "options": [
+        "To ensure data engineers have enough tasks",
+        "To determine the measure of success and know when the project is complete",
+        "To decide whether to use SQL or Python",
+        "To secure funding from stakeholders"
+      ],
+      "answer_index": 1,
+      "explanation": "Without a clearly defined problem, it can be hard to determine what your measure of success would be, meaning you can never know when your project is complete or good enough to be used in production."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Constructing a new attribute \"area\" from existing attributes \"height\" and \"width\" is an example of which technique?",
+      "options": [
+        "Data Discretization",
+        "Data Aggregation",
+        "Attribute Construction",
+        "Data Smoothing"
+      ],
+      "answer_index": 2,
+      "explanation": "In the attribute construction method, new attributes consult the existing attributes to construct a new data set. For example, a new attribute 'area' can be constructed from the attributes 'height' and 'weight' (or width)."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which of the following is considered a parametric numerosity reduction technique?",
+      "options": [
+        "Histogram",
+        "Regression and Log-Linear methods",
+        "Clustering",
+        "Data Cube Aggregation"
+      ],
+      "answer_index": 1,
+      "explanation": "One method of parametric numerosity reduction is the regression and log-linear method. Non-parametric data reduction techniques include Histograms, Clustering, Sampling, Data Cube Aggregation, and Data Compression."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "What is the primary function of descriptive statistics?",
+      "options": [
+        "To infer conclusions and probabilities from a sample.",
+        "To describe, show, and summarize the basic features of a dataset.",
+        "To compress data into binary forms.",
+        "To predict future trends based on historical data."
+      ],
+      "answer_index": 1,
+      "explanation": "Descriptive statistics describe, show, and summarize the basic features of a dataset found in a given study. Descriptive statistics represent the available data sample and does not include theories, inferences, probabilities, or conclusions."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "According to the document, what is secondary data?",
+      "options": [
+        "Data collected directly from first-hand experience.",
+        "Data that has already been collected by someone else.",
+        "Data used exclusively for quantitative analysis.",
+        "Data that cannot be accessed via the Internet."
+      ],
+      "answer_index": 1,
+      "explanation": "Secondary data refers to data that has already been collected by someone else. It is much more inexpensive and easier to collect than primary data."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "In data integration, what characterizes the \"loose coupling\" approach?",
+      "options": [
+        "Data is combined from different sources into a single physical location through ETL.",
+        "An interface takes the user's query, transforms it, and sends it directly to the source databases.",
+        "Redundant attributes are automatically deleted using correlation analysis.",
+        "It strictly uses the min-max normalization formula to combine data."
+      ],
+      "answer_index": 1,
+      "explanation": "In loose coupling, an interface is provided that takes the query from the user, transforms it in a way the source database can understand, and then sends the query directly to the source databases to obtain the result. The data only remains in the actual source databases."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which data cleaning method involves smoothing sorted data by dividing it into several segments of equal size?",
+      "options": [
+        "Regression",
+        "Clustering",
+        "Ignore the tuples",
+        "Binning method"
+      ],
+      "answer_index": 3,
+      "explanation": "The binning method involves the smoothing of sorted data using the values around it. The data is then divided into several segments of equal size."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which normalization method normalizes the value for an attribute using its mean and standard deviation?",
+      "options": [
+        "Min-max normalization",
+        "Decimal Scaling",
+        "Z-score normalization",
+        "Data smoothing"
+      ],
+      "answer_index": 2,
+      "explanation": "The Z-score normalization method normalizes the value for an attribute using the mean and standard deviation."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "During data preprocessing, what is the purpose of the data validation step?",
+      "options": [
+        "To split the data into a training set and a testing set to gauge model accuracy.",
+        "To identify existing datasets pertinent to the problem.",
+        "To synthesize statistically relevant data for missing values.",
+        "To combine salient variables and structure unstructured data."
+      ],
+      "answer_index": 0,
+      "explanation": "At the data validation stage, the data is split into two sets. The first set is used to train a machine learning or deep learning model. The second set is the testing data that is used to gauge the accuracy and robustness of the resulting model."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "What does data discretization involve?",
+      "options": [
+        "Combining data from multiple heterogeneous sources.",
+        "Converting continuous data into a set of data intervals.",
+        "Filtering out unwanted outliers manually.",
+        "Using a log-linear model to study probabilities."
+      ],
+      "answer_index": 1,
+      "explanation": "Data discretization is a process of converting continuous data into a set of data intervals. Continuous attribute values are substituted by small interval labels."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which type of data compression allows the precise original data to be restored from the compressed data?",
+      "options": [
+        "Lossy compression",
+        "Lossless compression",
+        "Parametric compression",
+        "Dimensional compression"
+      ],
+      "answer_index": 1,
+      "explanation": "Data that can be restored successfully from its compressed form is called Lossless compression. Lossless data compression uses algorithms to restore the precise original data from the compressed data."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which of the following is NOT one of the three main issues to consider during data integration?",
+      "options": [
+        "Schema Integration",
+        "Redundancy Detection",
+        "Data Value Conflicts",
+        "Decimal Scaling"
+      ],
+      "answer_index": 3,
+      "explanation": "There are three issues to consider during data integration: Schema Integration, Redundancy Detection, and resolution of data value conflicts. Decimal scaling is a normalization technique, not a data integration issue."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which primary data collection method is similar to an interview but is conducted with a group of people who share a common trait?",
+      "options": [
+        "Observations",
+        "Surveys",
+        "Focus Groups",
+        "Oral Histories"
+      ],
+      "answer_index": 2,
+      "explanation": "A focus group is similar to an interview, but it is conducted with a group of people who all have something in common. The data collected is similar to in-person interviews, but they offer a better understanding of why a certain group of people thinks in a particular way."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Why is a dataset generally split into a Training Set and a Test Set in machine learning?",
+      "options": [
+        "So the algorithm can learn from the training data to make predictions, and the test set can evaluate it.",
+        "To permanently store one half in a data warehouse and delete the other.",
+        "Because clustering algorithms cannot handle more than 30% of the data at once.",
+        "To satisfy data privacy regulations for secondary data."
+      ],
+      "answer_index": 0,
+      "explanation": "Data is split into two separate sets because the algorithm model is going to learn from the data to make predictions. Generally, data is split into a 70:30 ratio or 80:20, meaning a larger percentage is taken to train the model, and the remaining is used in the test."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Transforming quarterly sales reports into an annual sales report is an example of which technique?",
+      "options": [
+        "Data Normalization",
+        "Data Aggregation",
+        "Data Discretization",
+        "Concept Hierarchy Generation"
+      ],
+      "answer_index": 1,
+      "explanation": "Data aggregation is the method of storing and presenting data in a summary format. For example, a data set of quarterly sales of each year can be aggregated to get the enterprise's annual sales report."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "When handling missing values for a feature with numeric data, which strategy is commonly applied instead of dropping the values entirely?",
+      "options": [
+        "Replacing the missing values with the attribute's mean, median, or mode.",
+        "Using a wavelet transform to fabricate new strings.",
+        "Executing a tight coupling ETL process.",
+        "Implementing a top-down discretization process."
+      ],
+      "answer_index": 0,
+      "explanation": "To handle missing values on a feature which has numeric data, one can calculate the mean, median, or mode of the feature and replace it with the missing values."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which secondary data collection method offers authentic and verifiable data, though it may not always be readily available?",
+      "options": [
+        "Internet searches",
+        "Focus Groups",
+        "Government Archives",
+        "Oral Histories"
+      ],
+      "answer_index": 2,
+      "explanation": "An important advantage of government archives is that the data is authentic and verifiable. The challenge, however, is that data is not always readily available."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "What describes \"bottom-up mapping\" in concept hierarchy generation?",
+      "options": [
+        "It starts with general information and ends with specialized information.",
+        "It strictly removes duplicate entries from a database.",
+        "It starts at the bottom with specialized information and ends at the top with generalized information.",
+        "It divides a continuous dataset using splitting points."
+      ],
+      "answer_index": 2,
+      "explanation": "Bottom-up mapping generally starts with the bottom with some specialized information and ends with the top to the generalized information."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which of the following is a method of dimensionality reduction that identifies independent tuples with attributes that can represent the data set?",
+      "options": [
+        "Wavelet Transform",
+        "Principal Component Analysis",
+        "Histogram",
+        "Log-linear model"
+      ],
+      "answer_index": 1,
+      "explanation": "The principal component analysis identifies k independent tuples with n attributes that can represent the data set."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "In the \"tight coupling\" approach to data integration, how is data managed?",
+      "options": [
+        "It remains solely in the actual source databases.",
+        "It is combined from different sources into a single physical location through the ETL process.",
+        "It is analyzed using Principal Component Analysis before any integration.",
+        "It is processed via an interface that directly queries the original sources."
+      ],
+      "answer_index": 1,
+      "explanation": "In tight coupling, data is combined from different sources into a single physical location through the process of ETL - Extraction, Transformation, and Loading."
+    },
+    {
+      "chapter": "unit 2",
+      "question": "Which normalization method implements a linear transformation on the original data by mapping values to a smaller range, such as [0.0, 1.0]?",
+      "options": [
+        "Decimal Scaling",
+        "Z-score normalization",
+        "Min-max normalization",
+        "Attribute subset selection"
+      ],
+      "answer_index": 2,
+      "explanation": "Min-max normalization implements a linear transformation on the original data. The min-max normalization maps a value to a new smaller range, such as [new_minA, new_maxA], which is often a range like [0.0, 1.0]."
+    }
+  ],
     "IOT 244": [
       {
         "chapter": "Chapter 1",
