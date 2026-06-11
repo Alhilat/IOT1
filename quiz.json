@@ -1,493 +1,1684 @@
 {
   "quizzes": {
-
-
     "IOT 451": [
- 
-  {
-    "chapter": "unit 1",
-    "question": "Who first articulated the \"data science dream\" in a 1962 article titled \"The Future of Data Analysis\"?",
-    "options": [
-      "William S. Cleveland",
-      "John W. Tukey",
-      "Peter Naur",
-      "Jeff Wu"
+      {
+        "chapter": "final",
+        "question": "What is the main objective of data collection?",
+        "options": [
+            "To create software applications",
+            "To gather reliable information for analysis and decision-making",
+            "To delete unnecessary data",
+            "To train machine learning models directly"
+        ],
+        "answer_index": 1,
+        "explanation": "Data collection aims to gather reliable, information-rich data that can be analyzed to support critical decisions."
+    },
+    {
+        "chapter": "final",
+        "question": "Which type of data is collected directly from the original source?",
+        "options": [
+            "Secondary data",
+            "Archived data",
+            "Primary data",
+            "Processed data"
+        ],
+        "answer_index": 2,
+        "explanation": "Primary data is collected firsthand from the main source and has not been previously used."
+    },
+    {
+        "chapter": "final",
+        "question": "Which primary data collection method allows questions to be adjusted during the interaction?",
+        "options": [
+            "Survey",
+            "Observation",
+            "Interview",
+            "Library research"
+        ],
+        "answer_index": 2,
+        "explanation": "Interviews are flexible because questions can be modified according to the situation."
+    },
+    {
+        "chapter": "final",
+        "question": "In which method do researchers record findings by watching situations and behaviors?",
+        "options": [
+            "Focus Group",
+            "Observation",
+            "Oral History",
+            "Questionnaire"
+        ],
+        "answer_index": 1,
+        "explanation": "Observation involves monitoring situations and recording findings."
+    },
+    {
+        "chapter": "final",
+        "question": "Which method gathers opinions from a large number of people and can be conducted online?",
+        "options": [
+            "Surveys and Questionnaires",
+            "Oral Histories",
+            "Interviews",
+            "Focus Groups"
+        ],
+        "answer_index": 0,
+        "explanation": "Surveys and questionnaires can reach large groups and are often conducted online."
+    },
+    {
+        "chapter": "final",
+        "question": "What is a focus group?",
+        "options": [
+            "A survey with only one participant",
+            "A database of research papers",
+            "An interview conducted with a group sharing common characteristics",
+            "A government archive"
+        ],
+        "answer_index": 2,
+        "explanation": "Focus groups involve multiple participants who share something in common."
+    },
+    {
+        "chapter": "final",
+        "question": "Secondary data refers to data that:",
+        "options": [
+            "Is collected firsthand",
+            "Has already been collected by someone else",
+            "Is always numerical",
+            "Has never been analyzed"
+        ],
+        "answer_index": 1,
+        "explanation": "Secondary data is previously collected data reused for research."
+    },
+    {
+        "chapter": "final",
+        "question": "What is a major advantage of government archives as a data source?",
+        "options": [
+            "They are always free",
+            "They are authentic and verifiable",
+            "They contain only numerical data",
+            "They never require preprocessing"
+        ],
+        "answer_index": 1,
+        "explanation": "Government archives are trusted because their data is authentic and verifiable."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the purpose of data preprocessing?",
+        "options": [
+            "To delete all collected data",
+            "To transform raw data into a usable format",
+            "To create databases",
+            "To replace machine learning algorithms"
+        ],
+        "answer_index": 1,
+        "explanation": "Data preprocessing prepares raw data for analysis and machine learning tasks."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing technique selects a representative subset from a large population?",
+        "options": [
+            "Transformation",
+            "Imputation",
+            "Sampling",
+            "Normalization"
+        ],
+        "answer_index": 2,
+        "explanation": "Sampling chooses a smaller representative subset of data."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing method removes noise from data?",
+        "options": [
+            "Sampling",
+            "Denoising",
+            "Normalization",
+            "Profiling"
+        ],
+        "answer_index": 1,
+        "explanation": "Denoising removes unwanted noise and irregularities from data."
+    },
+    {
+        "chapter": "final",
+        "question": "What is imputation used for?",
+        "options": [
+            "Creating duplicates",
+            "Removing features",
+            "Filling missing values with statistically relevant data",
+            "Compressing files"
+        ],
+        "answer_index": 2,
+        "explanation": "Imputation estimates and replaces missing values."
+    },
+    {
+        "chapter": "final",
+        "question": "Which step in preprocessing examines data quality and characteristics?",
+        "options": [
+            "Data Validation",
+            "Data Transformation",
+            "Data Profiling",
+            "Data Reduction"
+        ],
+        "answer_index": 2,
+        "explanation": "Data profiling analyzes datasets and collects statistics about their quality."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the main purpose of data cleansing?",
+        "options": [
+            "Building predictive models",
+            "Correcting quality issues in data",
+            "Creating visualizations",
+            "Increasing storage size"
+        ],
+        "answer_index": 1,
+        "explanation": "Data cleansing fixes missing, incorrect, or poor-quality data."
+    },
+    {
+        "chapter": "final",
+        "question": "Which technique simplifies data by removing redundancy and irrelevant information?",
+        "options": [
+            "Data Reduction",
+            "Data Validation",
+            "Data Enrichment",
+            "Data Collection"
+        ],
+        "answer_index": 0,
+        "explanation": "Data reduction transforms large datasets into simpler forms."
+    },
+    {
+        "chapter": "final",
+        "question": "During data validation, the dataset is typically split into:",
+        "options": [
+            "Numeric and categorical data",
+            "Clean and dirty data",
+            "Training and testing sets",
+            "Input and output sets only"
+        ],
+        "answer_index": 2,
+        "explanation": "One set trains the model, while the other evaluates its performance."
+    },
+    {
+        "chapter": "final",
+        "question": "Which of the following is NOT listed as a major preprocessing task in data mining?",
+        "options": [
+            "Data Cleaning",
+            "Data Integration",
+            "Data Reduction",
+            "Data Encryption"
+        ],
+        "answer_index": 3,
+        "explanation": "Data encryption is not one of the major preprocessing tasks mentioned."
+    },
+    {
+        "chapter": "final",
+        "question": "Which Python library is mainly used for data manipulation and analysis?",
+        "options": [
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "Seaborn"
+        ],
+        "answer_index": 1,
+        "explanation": "Pandas provides data structures and tools for data analysis."
+    },
+    {
+        "chapter": "final",
+        "question": "Which library is known for N-dimensional arrays and scientific computing?",
+        "options": [
+            "Pandas",
+            "Seaborn",
+            "NumPy",
+            "TensorFlow"
+        ],
+        "answer_index": 2,
+        "explanation": "NumPy provides powerful array-processing capabilities."
+    },
+    {
+        "chapter": "final",
+        "question": "What is one common method for handling missing values?",
+        "options": [
+            "Encrypting them",
+            "Replacing them with mean, median, or mode values",
+            "Converting them to images",
+            "Ignoring the dataset completely"
+        ],
+        "answer_index": 1,
+        "explanation": "Missing values can be filled using statistical measures."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the purpose of LabelEncoder?",
+        "options": [
+            "Visualize data",
+            "Remove duplicates",
+            "Convert categorical data into numerical values",
+            "Split datasets"
+        ],
+        "answer_index": 2,
+        "explanation": "LabelEncoder transforms categorical labels into numbers."
+    },
+    {
+        "chapter": "final",
+        "question": "What values can a dummy variable take?",
+        "options": [
+            "Any integer value",
+            "-1 and 1",
+            "0 or 1",
+            "Any decimal value"
+        ],
+        "answer_index": 2,
+        "explanation": "Dummy variables indicate the absence or presence of a category."
+    },
+    {
+        "chapter": "final",
+        "question": "Why is feature scaling performed?",
+        "options": [
+            "To increase dataset size",
+            "To limit variable ranges for fair comparison",
+            "To remove outliers",
+            "To generate new features"
+        ],
+        "answer_index": 1,
+        "explanation": "Feature scaling ensures variables are on comparable scales."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data cleaning step focuses on removing duplicate observations?",
+        "options": [
+            "Fix Structural Errors",
+            "Validate Data Accuracy",
+            "Remove Duplicate or Irrelevant Observations",
+            "Handle Missing Data"
+        ],
+        "answer_index": 2,
+        "explanation": "Duplicate records can negatively affect analysis and should be removed."
+    },
+    {
+        "chapter": "final",
+        "question": "What is Data Integration?",
+        "options": [
+            "Creating machine learning models",
+            "Combining data from multiple heterogeneous sources into a unified view",
+            "Removing outliers from datasets",
+            "Converting numerical data to categorical data"
+        ],
+        "answer_index": 1,
+        "explanation": "Data integration merges data from different sources into a coherent data store."
+    },{
+        "chapter": "final",
+        "question": "Which primary data collection method focuses on personal experiences related to a specific event?",
+        "options": [
+            "Surveys",
+            "Oral Histories",
+            "Observations",
+            "Libraries"
+        ],
+        "answer_index": 1,
+        "explanation": "Oral histories collect opinions and experiences from people involved in a specific event."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data collection method is generally less expensive?",
+        "options": [
+            "Primary Data Collection",
+            "Interviews",
+            "Secondary Data Collection",
+            "Focus Groups"
+        ],
+        "answer_index": 2,
+        "explanation": "Secondary data has already been collected, making it cheaper and easier to obtain."
+    },
+    {
+        "chapter": "final",
+        "question": "What does normalization primarily do in data preprocessing?",
+        "options": [
+            "Removes duplicates",
+            "Organizes data for efficient access",
+            "Creates new variables",
+            "Splits datasets"
+        ],
+        "answer_index": 1,
+        "explanation": "Normalization structures data so it can be processed more effectively."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing technique extracts only the most relevant features?",
+        "options": [
+            "Imputation",
+            "Sampling",
+            "Feature Extraction",
+            "Profiling"
+        ],
+        "answer_index": 2,
+        "explanation": "Feature extraction identifies significant attributes relevant to a task."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the purpose of data enrichment?",
+        "options": [
+            "Delete unnecessary records",
+            "Apply feature engineering transformations",
+            "Store data in databases",
+            "Compress files"
+        ],
+        "answer_index": 1,
+        "explanation": "Data enrichment improves data by adding or transforming useful features."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing step may involve structuring unstructured data?",
+        "options": [
+            "Data Validation",
+            "Data Transformation",
+            "Data Profiling",
+            "Data Collection"
+        ],
+        "answer_index": 1,
+        "explanation": "Data transformation reorganizes data into a more useful format."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the first step in machine learning data preprocessing?",
+        "options": [
+            "Feature Scaling",
+            "Check Missing Values",
+            "Import Libraries",
+            "Split Dataset"
+        ],
+        "answer_index": 2,
+        "explanation": "Libraries such as NumPy and Pandas are imported before processing data."
+    },
+    {
+        "chapter": "final",
+        "question": "Which of the following is a data visualization library based on Matplotlib?",
+        "options": [
+            "NumPy",
+            "Pandas",
+            "Seaborn",
+            "OpenCV"
+        ],
+        "answer_index": 2,
+        "explanation": "Seaborn extends Matplotlib and simplifies statistical visualizations."
+    },
+    {
+        "chapter": "final",
+        "question": "Which file format is specifically mentioned as a dataset source?",
+        "options": [
+            "MP4",
+            "CSV",
+            "TXT only",
+            "EXE"
+        ],
+        "answer_index": 1,
+        "explanation": "CSV files are commonly used for storing tabular datasets."
+    },
+    {
+        "chapter": "final",
+        "question": "Improper handling of missing values may result in:",
+        "options": [
+            "Faster model training only",
+            "Accurate predictions always",
+            "Inaccurate conclusions about data",
+            "Better data quality"
+        ],
+        "answer_index": 2,
+        "explanation": "Missing values can bias results if not handled properly."
+    },
+    {
+        "chapter": "final",
+        "question": "Which strategy removes records containing null values?",
+        "options": [
+            "Replace Missing Values",
+            "Data Reduction",
+            "Drop Missing Values",
+            "Data Profiling"
+        ],
+        "answer_index": 2,
+        "explanation": "This approach eliminates records that contain missing data."
+    },
+    {
+        "chapter": "final",
+        "question": "Dummy variables are commonly used to represent:",
+        "options": [
+            "Numerical calculations",
+            "Continuous variables",
+            "Categorical effects",
+            "Missing values"
+        ],
+        "answer_index": 2,
+        "explanation": "Dummy variables encode categories using binary values."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the primary purpose of a training set?",
+        "options": [
+            "Evaluate model accuracy",
+            "Store cleaned data",
+            "Train the algorithm to learn patterns",
+            "Remove duplicates"
+        ],
+        "answer_index": 2,
+        "explanation": "The training set is used to build the predictive model."
+    },
+    {
+        "chapter": "final",
+        "question": "A common ratio for splitting data is:",
+        "options": [
+            "50:50",
+            "10:90",
+            "70:30",
+            "95:5"
+        ],
+        "answer_index": 2,
+        "explanation": "Many machine learning tasks use a 70% training and 30% testing split."
+    },
+    {
+        "chapter": "final",
+        "question": "Data cleaning is necessary because:",
+        "options": [
+            "Data is always perfect",
+            "Incorrect data leads to unreliable outcomes",
+            "It increases file size",
+            "It creates new datasets automatically"
+        ],
+        "answer_index": 1,
+        "explanation": "Poor-quality data produces inaccurate results and models."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data cleaning step addresses naming inconsistencies and typos?",
+        "options": [
+            "Handle Missing Data",
+            "Validate and QA",
+            "Fix Structural Errors",
+            "Filter Outliers"
+        ],
+        "answer_index": 2,
+        "explanation": "Structural errors include spelling mistakes and inconsistent naming."
+    },
+    {
+        "chapter": "final",
+        "question": "What is an outlier?",
+        "options": [
+            "A duplicate observation",
+            "A missing value",
+            "An observation that significantly differs from others",
+            "A categorical variable"
+        ],
+        "answer_index": 2,
+        "explanation": "Outliers are unusual data points that may affect analysis."
+    },
+    {
+        "chapter": "final",
+        "question": "Which of the following is a validation question after cleaning data?",
+        "options": [
+            "What programming language was used?",
+            "Does the data make sense?",
+            "How large is the hard disk?",
+            "Which operating system is installed?"
+        ],
+        "answer_index": 1,
+        "explanation": "Validation checks whether the cleaned data is logical and useful."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data cleaning method smooths sorted data using neighboring values?",
+        "options": [
+            "Clustering",
+            "Regression",
+            "Binning",
+            "Ignoring Tuples"
+        ],
+        "answer_index": 2,
+        "explanation": "Binning smooths data by grouping values into bins."
+    },
+    {
+        "chapter": "final",
+        "question": "Regression-based data cleaning smooths data using:",
+        "options": [
+            "Classification algorithms",
+            "Regression functions",
+            "Data warehouses",
+            "Surveys"
+        ],
+        "answer_index": 1,
+        "explanation": "Regression estimates trends and smooths noisy data."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the main purpose of clustering in data cleaning?",
+        "options": [
+            "Create databases",
+            "Group similar values and detect outliers",
+            "Encrypt records",
+            "Scale features"
+        ],
+        "answer_index": 1,
+        "explanation": "Clustering organizes similar records into groups and helps identify anomalies."
+    },
+    {
+        "chapter": "final",
+        "question": "Which process helps reduce duplicate entries at the point of data insertion?",
+        "options": [
+            "Standardizing the mining process",
+            "Feature scaling",
+            "Data profiling",
+            "Sampling"
+        ],
+        "answer_index": 0,
+        "explanation": "Standardization reduces the chance of duplicate records."
+    },
+    {
+        "chapter": "final",
+        "question": "Which step uses AI-powered tools to check data correctness?",
+        "options": [
+            "Research on Data",
+            "Validate Data Accuracy",
+            "Clustering",
+            "Binning"
+        ],
+        "answer_index": 1,
+        "explanation": "Modern tools can automatically verify data quality and correctness."
+    },
+    {
+        "chapter": "final",
+        "question": "Which of the following is a data cleaning tool?",
+        "options": [
+            "OpenRefine",
+            "NumPy",
+            "Java",
+            "Linux"
+        ],
+        "answer_index": 0,
+        "explanation": "OpenRefine is a popular tool for cleaning and transforming data."
+    },
+    {
+        "chapter": "final",
+        "question": "In the data integration model <G, S, M>, what does G represent?",
+        "options": [
+            "Grouping Schema",
+            "Global Schema",
+            "Generated Schema",
+            "Graph Schema"
+        ],
+        "answer_index": 1,
+        "explanation": "G represents the global schema that provides a unified data view."
+    },
+    {
+        "chapter": "final",
+        "question": "In the data integration model <G, S, M>, what does M represent?",
+        "options": [
+            "Metadata",
+            "Mapping between source and global schema queries",
+            "Mining Process",
+            "Memory Allocation"
+        ],
+        "answer_index": 1,
+        "explanation": "M defines how source data corresponds to the global schema."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data integration approach stores combined data in a single physical location?",
+        "options": [
+            "Loose Coupling",
+            "Distributed Coupling",
+            "Tight Coupling",
+            "Virtual Coupling"
+        ],
+        "answer_index": 2,
+        "explanation": "Tight coupling integrates data into a central warehouse through ETL processes."
+    },
+    {
+        "chapter": "final",
+        "question": "What does ETL stand for?",
+        "options": [
+            "Extract, Transfer, Link",
+            "Evaluate, Transform, Load",
+            "Extraction, Transformation, Loading",
+            "Encode, Test, Learn"
+        ],
+        "answer_index": 2,
+        "explanation": "ETL is the process used to move and integrate data into a warehouse."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing step directly evaluates the performance of a trained model?",
+        "options": [
+            "Data Profiling",
+            "Data Validation",
+            "Data Enrichment",
+            "Data Reduction"
+        ],
+        "answer_index": 1,
+        "explanation": "Validation uses test data to measure model accuracy and robustness."
+    },
+    {
+        "chapter": "final",
+        "question": "Which major preprocessing task combines data from multiple sources?",
+        "options": [
+            "Data Transformation",
+            "Data Cleaning",
+            "Data Integration",
+            "Data Reduction"
+        ],
+        "answer_index": 2,
+        "explanation": "Data integration merges information from heterogeneous sources into a unified dataset."
+    },{
+        "chapter": "final",
+        "question": "Which type of observation occurs when people know they are being observed?",
+        "options": [
+            "Hidden Observation",
+            "Controlled Observation",
+            "Secondary Observation",
+            "Random Observation"
+        ],
+        "answer_index": 1,
+        "explanation": "In controlled observation, participants are aware that they are being observed."
+    },
+    {
+        "chapter": "final",
+        "question": "Qualitative data collection methods mainly deal with:",
+        "options": [
+            "Numerical values only",
+            "Countable quantities",
+            "Non-numerical factors",
+            "Binary data only"
+        ],
+        "answer_index": 2,
+        "explanation": "Qualitative methods focus on opinions, behaviors, and characteristics rather than numbers."
+    },
+    {
+        "chapter": "final",
+        "question": "Which secondary data source is described as containing donated academic research?",
+        "options": [
+            "Internet",
+            "Government Archives",
+            "Libraries",
+            "Surveys"
+        ],
+        "answer_index": 2,
+        "explanation": "Researchers often donate copies of their work to libraries."
+    },
+    {
+        "chapter": "final",
+        "question": "Why is data preprocessing important before applying machine learning algorithms?",
+        "options": [
+            "To increase internet speed",
+            "To improve data quality and usability",
+            "To create databases",
+            "To reduce hardware requirements only"
+        ],
+        "answer_index": 1,
+        "explanation": "Machine learning models require clean and structured data for accurate results."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing technique creates a single input from raw data?",
+        "options": [
+            "Transformation",
+            "Sampling",
+            "Profiling",
+            "Validation"
+        ],
+        "answer_index": 0,
+        "explanation": "Transformation manipulates raw data into a more useful format."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the main goal of data reduction?",
+        "options": [
+            "Increase dataset complexity",
+            "Simplify data while retaining useful information",
+            "Generate missing values",
+            "Encrypt data"
+        ],
+        "answer_index": 1,
+        "explanation": "Data reduction removes redundancy and irrelevant information."
+    },
+    {
+        "chapter": "final",
+        "question": "Which step comes immediately after importing the dataset in machine learning preprocessing?",
+        "options": [
+            "Feature Scaling",
+            "Check Missing Values",
+            "Split Dataset",
+            "Data Validation"
+        ],
+        "answer_index": 1,
+        "explanation": "Missing values are examined before further preprocessing."
+    },
+    {
+        "chapter": "final",
+        "question": "Which Python library is primarily used for plotting and visualization?",
+        "options": [
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "Scikit-learn"
+        ],
+        "answer_index": 2,
+        "explanation": "Matplotlib is widely used for creating graphs and charts."
+    },
+    {
+        "chapter": "final",
+        "question": "Which method of handling missing data may result in losing information?",
+        "options": [
+            "Replacing values with mean",
+            "Label Encoding",
+            "Dropping observations with missing values",
+            "Feature Scaling"
+        ],
+        "answer_index": 2,
+        "explanation": "Removing records with missing values can reduce the amount of available data."
+    },
+    {
+        "chapter": "final",
+        "question": "LabelEncoder converts categorical data into:",
+        "options": [
+            "Images",
+            "Numerical values",
+            "Text values",
+            "Binary files"
+        ],
+        "answer_index": 1,
+        "explanation": "Machine learning algorithms generally require numerical inputs."
+    },
+    {
+        "chapter": "final",
+        "question": "What percentage of data is commonly used for testing in a 70:30 split?",
+        "options": [
+            "10%",
+            "20%",
+            "30%",
+            "70%"
+        ],
+        "answer_index": 2,
+        "explanation": "In a 70:30 split, 30% of the data is reserved for testing."
+    },
+    {
+        "chapter": "final",
+        "question": "Which issue is caused by inconsistent capitalization or naming conventions?",
+        "options": [
+            "Missing Values",
+            "Structural Errors",
+            "Outliers",
+            "Scaling Problems"
+        ],
+        "answer_index": 1,
+        "explanation": "Different naming styles can create incorrect categories."
+    },
+    {
+        "chapter": "final",
+        "question": "Which step of data cleaning removes observations that do not fit the expected pattern?",
+        "options": [
+            "Handle Missing Data",
+            "Fix Structural Errors",
+            "Filter Unwanted Outliers",
+            "Validate Data"
+        ],
+        "answer_index": 2,
+        "explanation": "Outliers that result from errors may be removed to improve analysis."
+    },
+    {
+        "chapter": "final",
+        "question": "Which method fills missing values using attribute means or probable values?",
+        "options": [
+            "Clustering",
+            "Ignore Tuples",
+            "Fill the Missing Value",
+            "Data Integration"
+        ],
+        "answer_index": 2,
+        "explanation": "Missing values can be estimated using statistical techniques."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data cleaning method groups similar data into clusters?",
+        "options": [
+            "Binning",
+            "Clustering",
+            "Regression",
+            "Profiling"
+        ],
+        "answer_index": 1,
+        "explanation": "Clustering organizes similar records into groups."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the purpose of monitoring errors during data cleaning?",
+        "options": [
+            "Increase storage space",
+            "Track where mistakes occur most often",
+            "Train machine learning models",
+            "Create visualizations"
+        ],
+        "answer_index": 1,
+        "explanation": "Monitoring helps identify and correct recurring data issues."
+    },
+    {
+        "chapter": "final",
+        "question": "Which process helps eliminate duplicate records automatically?",
+        "options": [
+            "Feature Scaling",
+            "Data Scrubbing",
+            "Data Visualization",
+            "Data Sampling"
+        ],
+        "answer_index": 1,
+        "explanation": "Data scrubbing identifies and removes duplicate entries."
+    },
+    {
+        "chapter": "final",
+        "question": "Which of the following is NOT listed as a data cleaning tool in the chapter?",
+        "options": [
+            "OpenRefine",
+            "Cloudingo",
+            "Winpure",
+            "MySQL"
+        ],
+        "answer_index": 3,
+        "explanation": "MySQL is a database system, not one of the listed data-cleaning tools."
+    },
+    {
+        "chapter": "final",
+        "question": "In data integration, S represents:",
+        "options": [
+            "Source Schema",
+            "Structured Data",
+            "Sample Data",
+            "Statistical Model"
+        ],
+        "answer_index": 0,
+        "explanation": "S refers to the heterogeneous source schemas involved in integration."
+    },
+    {
+        "chapter": "final",
+        "question": "Which statement best describes Tight Coupling?",
+        "options": [
+            "Data remains in separate systems",
+            "Data is integrated into a single physical location using ETL",
+            "Data is stored only in flat files",
+            "Data is collected through interviews"
+        ],
+        "answer_index": 1,
+        "explanation": "Tight coupling uses a data warehouse where information from multiple sources is combined through Extraction, Transformation, and Loading (ETL)."
+    },{
+        "chapter": "final",
+        "question": "What is the main objective of data profiling?",
+        "options": [
+            "Remove duplicate data",
+            "Analyze data quality and characteristics",
+            "Train machine learning models",
+            "Create visualizations"
+        ],
+        "answer_index": 1,
+        "explanation": "Data profiling examines datasets and collects statistics about their quality."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing step identifies datasets relevant to the problem being solved?",
+        "options": [
+            "Data Profiling",
+            "Data Validation",
+            "Feature Scaling",
+            "Data Cleaning"
+        ],
+        "answer_index": 0,
+        "explanation": "During profiling, data scientists determine which datasets are relevant."
+    },
+    {
+        "chapter": "final",
+        "question": "Principal Component Analysis (PCA) is commonly associated with:",
+        "options": [
+            "Data Collection",
+            "Data Reduction",
+            "Data Integration",
+            "Data Visualization"
+        ],
+        "answer_index": 1,
+        "explanation": "PCA reduces dimensionality while preserving important information."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing technique helps remove unnecessary attributes from a dataset?",
+        "options": [
+            "Data Reduction",
+            "Observation",
+            "Survey",
+            "Feature Scaling"
+        ],
+        "answer_index": 0,
+        "explanation": "Data reduction simplifies datasets by removing irrelevant information."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the purpose of feature engineering during data enrichment?",
+        "options": [
+            "To generate useful features from existing data",
+            "To delete records",
+            "To split datasets",
+            "To create backups"
+        ],
+        "answer_index": 0,
+        "explanation": "Feature engineering improves the usefulness of data for machine learning."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing step ensures a balance between training time and computational requirements?",
+        "options": [
+            "Data Enrichment",
+            "Data Collection",
+            "Observation",
+            "Data Entry"
+        ],
+        "answer_index": 0,
+        "explanation": "Data enrichment organizes data to optimize model training efficiency."
+    },
+    {
+        "chapter": "final",
+        "question": "What is one major reason raw data cannot be directly used in data mining?",
+        "options": [
+            "It is always encrypted",
+            "It may contain errors and inconsistencies",
+            "It is always numerical",
+            "It is already analyzed"
+        ],
+        "answer_index": 1,
+        "explanation": "Raw data often requires cleaning and transformation before analysis."
+    },
+    {
+        "chapter": "final",
+        "question": "Which is NOT one of the four major preprocessing tasks in data mining?",
+        "options": [
+            "Data Cleaning",
+            "Data Integration",
+            "Data Reduction",
+            "Data Visualization"
+        ],
+        "answer_index": 3,
+        "explanation": "Visualization is useful but not listed as a major preprocessing task."
+    },
+    {
+        "chapter": "final",
+        "question": "Which library provides Fourier transform capabilities?",
+        "options": [
+            "Pandas",
+            "NumPy",
+            "Seaborn",
+            "OpenRefine"
+        ],
+        "answer_index": 1,
+        "explanation": "NumPy includes tools for linear algebra and Fourier transforms."
+    },
+    {
+        "chapter": "final",
+        "question": "Pandas is best described as a library for:",
+        "options": [
+            "Web development",
+            "Data manipulation and analysis",
+            "Game development",
+            "Operating systems"
+        ],
+        "answer_index": 1,
+        "explanation": "Pandas provides powerful data structures and analysis tools."
+    },
+    {
+        "chapter": "final",
+        "question": "Which preprocessing step deals specifically with categorical values?",
+        "options": [
+            "Feature Scaling",
+            "Checking Missing Values",
+            "Label Encoding",
+            "Data Reduction"
+        ],
+        "answer_index": 2,
+        "explanation": "Label Encoding converts categories into numerical values."
+    },
+    {
+        "chapter": "final",
+        "question": "A dummy variable indicates:",
+        "options": [
+            "A missing value",
+            "The presence or absence of a category",
+            "A duplicate record",
+            "An outlier"
+        ],
+        "answer_index": 1,
+        "explanation": "Dummy variables use 0 and 1 to represent categories."
+    },
+    {
+        "chapter": "final",
+        "question": "Why is feature scaling important?",
+        "options": [
+            "To increase the number of records",
+            "To place variables on a common scale",
+            "To remove duplicates",
+            "To convert text into numbers"
+        ],
+        "answer_index": 1,
+        "explanation": "Features with different ranges become comparable after scaling."
+    },
+    {
+        "chapter": "final",
+        "question": "Duplicate observations most often occur during:",
+        "options": [
+            "Data collection and integration",
+            "Feature scaling",
+            "Data validation",
+            "Visualization"
+        ],
+        "answer_index": 0,
+        "explanation": "Combining data from multiple sources can create duplicates."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data cleaning step handles categories such as \"N/A\" and \"Not Applicable\" being treated differently?",
+        "options": [
+            "Handle Missing Data",
+            "Fix Structural Errors",
+            "Clustering",
+            "Validation"
+        ],
+        "answer_index": 1,
+        "explanation": "These inconsistencies should be standardized into one category."
+    },
+    {
+        "chapter": "final",
+        "question": "Which statement about outliers is true?",
+        "options": [
+            "All outliers must be removed",
+            "Outliers are always errors",
+            "Some outliers may result from incorrect data entry",
+            "Outliers cannot affect analysis"
+        ],
+        "answer_index": 2,
+        "explanation": "Outliers should be evaluated before removal."
+    },
+    {
+        "chapter": "final",
+        "question": "Which method of handling missing data may introduce assumptions into the dataset?",
+        "options": [
+            "Filling missing values",
+            "Removing duplicates",
+            "Feature scaling",
+            "Profiling"
+        ],
+        "answer_index": 0,
+        "explanation": "Replacing missing values often involves estimation and assumptions."
+    },
+    {
+        "chapter": "final",
+        "question": "Which data cleaning method is considered less feasible because it requires manually entering missing values?",
+        "options": [
+            "Fill the Missing Value",
+            "Clustering",
+            "Binning",
+            "Regression"
+        ],
+        "answer_index": 0,
+        "explanation": "Manual replacement can be time-consuming and impractical."
+    },
+    {
+        "chapter": "final",
+        "question": "In the binning method, data is first divided into:",
+        "options": [
+            "Databases",
+            "Clusters",
+            "Segments of equal size",
+            "Random groups"
+        ],
+        "answer_index": 2,
+        "explanation": "Binning groups sorted data into equal-sized bins."
+    },
+    {
+        "chapter": "final",
+        "question": "Linear regression differs from multiple regression because it uses:",
+        "options": [
+            "No variables",
+            "One independent variable",
+            "Two dependent variables",
+            "Multiple outputs only"
+        ],
+        "answer_index": 1,
+        "explanation": "Linear regression uses a single predictor variable."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the primary purpose of validating data accuracy?",
+        "options": [
+            "Reduce storage costs",
+            "Ensure correctness and reliability of records",
+            "Increase internet speed",
+            "Create visualizations"
+        ],
+        "answer_index": 1,
+        "explanation": "Validation checks whether the data is accurate and trustworthy."
+    },
+    {
+        "chapter": "final",
+        "question": "Why is research on data performed after cleaning?",
+        "options": [
+            "To verify completeness, accuracy, and reliability",
+            "To create duplicates",
+            "To scale features",
+            "To convert data types"
+        ],
+        "answer_index": 0,
+        "explanation": "Clean data is more suitable for meaningful research and analysis."
+    },
+    {
+        "chapter": "final",
+        "question": "What is one benefit of communicating with the team during data cleaning?",
+        "options": [
+            "Faster internet access",
+            "Improved collaboration and targeted data usage",
+            "Larger datasets",
+            "Automatic feature scaling"
+        ],
+        "answer_index": 1,
+        "explanation": "Team communication helps improve decision-making and data quality."
+    },
+    {
+        "chapter": "final",
+        "question": "Which of the following is listed as a data cleaning tool?",
+        "options": [
+            "Reifier",
+            "Visual Studio",
+            "Eclipse",
+            "Oracle VM"
+        ],
+        "answer_index": 0,
+        "explanation": "Reifier is one of the data-cleaning tools mentioned in the chapter."
+    },
+    {
+        "chapter": "final",
+        "question": "What is the ultimate goal of data integration?",
+        "options": [
+            "Create duplicate records",
+            "Combine heterogeneous data sources into a unified view",
+            "Increase missing values",
+            "Remove all numerical attributes"
+        ],
+        "answer_index": 1,
+        "explanation": "Data integration brings together data from multiple sources to provide a consistent and coherent view."
+    },
+      {
+        "chapter": "unit 1",
+        "question": "Who first articulated the \"data science dream\" in a 1962 article titled \"The Future of Data Analysis\"?",
+        "options": [
+          "William S. Cleveland",
+          "John W. Tukey",
+          "Peter Naur",
+          "Jeff Wu"
+        ],
+        "answer_index": 1,
+        "explanation": "American mathematician John W. Tukey first articulated the data science dream in 1962. In his article, he foresaw the inevitable emergence of a new field nearly two decades before the first personal computers."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "Which data science role is primarily responsible for creating blueprints for data management to ensure databases are easily integrated, centralized, and protected?",
+        "options": [
+          "Data Engineer",
+          "Database Administrator",
+          "Data Architect",
+          "Data Scientist"
+        ],
+        "answer_index": 2,
+        "explanation": "A data architect creates the blueprints for data management so that the databases can be easily integrated, centralized, and protected with the best security measures."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "According to the document, which stage of a Data Science project involves manipulating null values, removing outliers, and typically takes the longest amount of time?",
+        "options": [
+          "Defining a problem",
+          "Evaluation",
+          "Modelling",
+          "Data Processing"
+        ],
+        "answer_index": 3,
+        "explanation": "The data processing stage involves pre-processing steps like manipulating null values or removing outliers. This is often the stage that will take the longest in any Data Science project."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "In what year did \"Big data\" officially enter the scene alongside technologies like Hadoop?",
+        "options": [
+          "1994",
+          "2005",
+          "2014",
+          "2018"
+        ],
+        "answer_index": 1,
+        "explanation": "Big data entered the scene in 2005. With tech giants like Google and Facebook uncovering large amounts of data, new processing technologies became necessary, and Hadoop rose to the challenge."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "What is the primary difference between Data Privacy and Data Security?",
+        "options": [
+          "Privacy is for cloud systems, while security is for local servers.",
+          "Privacy mainly focuses on keeping data confidential, while security mainly focuses on protecting from malicious activity.",
+          "Privacy involves data masking, while security only relies on passwords.",
+          "There is no difference; the terms are completely interchangeable."
+        ],
+        "answer_index": 1,
+        "explanation": "While data security has many overlaps with data privacy, the primary difference is that data privacy mainly focuses on keeping data confidential, while data security mainly focuses on protecting from malicious activity."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "What type of security threat involves adding malicious code to a seemingly innocent database query to gain illicit access?",
+        "options": [
+          "Ransomware",
+          "Phishing",
+          "SQL Injection",
+          "Insider Threat"
+        ],
+        "answer_index": 2,
+        "explanation": "SQL injection (SQLi) is a technique used by attackers to gain illicit access to databases and steal data by adding malicious code to a seemingly innocent database query."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "How do E-Commerce websites like Amazon and Flipkart utilize data science to create a better user experience?",
+        "options": [
+          "By determining the speed limit of the user's internet connection.",
+          "By automating risk of loss analysis.",
+          "By providing personalized recommendations based on past choices.",
+          "By forecasting delivery vehicle mechanical failures."
+        ],
+        "answer_index": 2,
+        "explanation": "E-Commerce websites use data science to make a better user experience with personalized recommendations. They provide suggestions similar to choices according to past data."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "What type of insider threat refers to users who actively attempt to steal data or cause harm to the organization for personal gain?",
+        "options": [
+          "Non-malicious insider",
+          "Compromised insider",
+          "Malicious insider",
+          "Accidental insider"
+        ],
+        "answer_index": 2,
+        "explanation": "A malicious insider refers to a user who actively attempts to steal data or cause harm to the organization for personal gain."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "Which phase of the Data Science Lifecycle involves Exploratory/Confirmatory Analysis, Predictive Analysis, and Regression?",
+        "options": [
+          "Capture",
+          "Maintain",
+          "Process",
+          "Analyze"
+        ],
+        "answer_index": 3,
+        "explanation": "The Analyze stage involves Exploratory/Confirmatory, Predictive Analysis, Regression, Text Mining, and Qualitative Analysis."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "Which data science role builds and tests scalable Big Data ecosystems so that algorithms can run on stable systems?",
+        "options": [
+          "Data Analyst",
+          "Data Engineer",
+          "Statistician",
+          "Business Analyst"
+        ],
+        "answer_index": 1,
+        "explanation": "Data engineers build and test scalable Big Data ecosystems for businesses so that data scientists can run their algorithms on data systems that are stable and highly optimized."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "The process of converting data from a readable format (plaintext) to an unreadable encoded format (ciphertext) is known as:",
+        "options": [
+          "Data Discovery",
+          "Data Masking",
+          "Data Encryption",
+          "Data Cleansing"
+        ],
+        "answer_index": 2,
+        "explanation": "Data encryption is a method of converting data from a readable format (plaintext) to an unreadable encoded format (ciphertext)."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "How does data science streamline Medicine and Drug Development?",
+        "options": [
+          "By automating the manufacturing of pills in the laboratory.",
+          "By forecasting how a medicine will react to the human body without lab experiments.",
+          "By managing the delivery logistics to hospitals.",
+          "By automatically detecting tumors using virtual bots."
+        ],
+        "answer_index": 1,
+        "explanation": "Developing new medicine takes time and resources, but data science algorithms can forecast how a drug will react to the human body without lab experiments."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "Which data security solution creates a synthetic version of organizational data for purposes like software testing and training without exposing real data?",
+        "options": [
+          "Data Encryption",
+          "Data Masking",
+          "Data Detection",
+          "Password Hygiene"
+        ],
+        "answer_index": 1,
+        "explanation": "Data masking lets you create a synthetic version of your organizational data, which you can use for software testing, training, and other purposes that don't require the real data."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "During which stage of a data science project does a team commonly utilize frameworks and libraries like sklearn, statsmodels, and tensorflow?",
+        "options": [
+          "Defining a problem",
+          "Evaluation",
+          "Deployment",
+          "Modelling"
+        ],
+        "answer_index": 3,
+        "explanation": "The modelling phase is often the part that takes the least amount of time because many frameworks or libraries exist, such as sklearn, statsmodels, and tensorflow, that can be readily utilized."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "What type of social engineering attack involves messages that appear to be from a trusted source, but are actually sent by an attacker?",
+        "options": [
+          "Phishing",
+          "Ransomware",
+          "SQL Injection",
+          "Data Masking"
+        ],
+        "answer_index": 0,
+        "explanation": "Phishing is a common form of social engineering that involves messages that appear to be from a trusted source, but in fact are sent by an attacker."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "Which stage in the Data Science lifecycle includes Data Warehousing, Data Cleansing, Data Staging, and Data Architecture?",
+        "options": [
+          "Capture",
+          "Maintain",
+          "Process",
+          "Communicate"
+        ],
+        "answer_index": 1,
+        "explanation": "The Maintain stage explicitly covers Data Warehousing, Data Cleansing, Data Staging, Data Processing, and Data Architecture."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "What was the focus of the 1994 Business Week story that highlighted early data science adoption by businesses?",
+        "options": [
+          "Big Data Processing",
+          "Database Marketing",
+          "Artificial Intelligence",
+          "Machine Learning"
+        ],
+        "answer_index": 1,
+        "explanation": "In 1994, Business Week published a story on the new phenomenon of \"Database Marketing,\" describing the process by which businesses collected enormous amounts of data to learn more about their customers."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "Which role separates high-value data from low-value data and focuses heavily on understanding organizational finances and business intelligence?",
+        "options": [
+          "Business Analyst",
+          "Data Scientist",
+          "Database Administrator",
+          "Machine Learning Engineer"
+        ],
+        "answer_index": 0,
+        "explanation": "The role of a Business Analyst involves separating high-value data from low-value data. To become one, an understanding of business finances and business intelligence is required."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "What type of malware infects corporate devices and encrypts data, making it useless without a decryption key, usually demanding payment?",
+        "options": [
+          "SQL Injection",
+          "Phishing",
+          "Ransomware",
+          "Unauthorized Access"
+        ],
+        "answer_index": 2,
+        "explanation": "Ransomware is malware that infects corporate devices and encrypts data, making it useless without the decryption key. Attackers display a ransom message asking for payment to release the key."
+      },
+      {
+        "chapter": "unit 1",
+        "question": "According to the document, why is it vital to clearly define a problem in the first stage of a Data Science project?",
+        "options": [
+          "To ensure data engineers have enough tasks to build stable systems.",
+          "To determine the measure of success and know when the project is complete.",
+          "To decide whether to use public-key or private-key encryption.",
+          "To secure funding from cross-functional stakeholders."
+        ],
+        "answer_index": 1,
+        "explanation": "Without a clearly defined problem, it can be hard to determine what your measure of success would be. Without a defined measure of success, you can never know when your project is complete or is good enough to be used in production."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "According to the document, what is secondary data?",
+        "options": [
+          "Data collected directly from first-hand experience.",
+          "Data that has already been collected by someone else.",
+          "Data used exclusively for quantitative analysis.",
+          "Data that cannot be accessed via the Internet."
+        ],
+        "answer_index": 1,
+        "explanation": "Secondary data refers to data that has already been collected by someone else[cite: 380]. It is much more inexpensive and easier to collect than primary data[cite: 381]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which primary data collection method is similar to an interview but is conducted with a group of people who share a common trait?",
+        "options": [
+          "Observations",
+          "Surveys",
+          "Focus Groups",
+          "Oral Histories"
+        ],
+        "answer_index": 2,
+        "explanation": "A focus group is similar to an interview, but it is conducted with a group of people who all have something in common[cite: 373]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "During data preprocessing, what is the purpose of the data validation step?",
+        "options": [
+          "To split the data into a training set and a testing set to gauge model accuracy.",
+          "To identify existing datasets pertinent to the problem.",
+          "To synthesize statistically relevant data for missing values.",
+          "To combine salient variables and structure unstructured data."
+        ],
+        "answer_index": 0,
+        "explanation": "At the data validation stage, the data is split into two sets[cite: 423]. The first set is used to train a model, and the second set is the testing data used to gauge the accuracy and robustness of the resulting model[cite: 424, 425]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Why is a dataset generally split into a Training Set and a Test Set in machine learning?",
+        "options": [
+          "So the algorithm can learn from the training data to make predictions, and the test set can evaluate it.",
+          "To permanently store one half in a data warehouse and delete the other.",
+          "Because clustering algorithms cannot handle more than 30% of the data at once.",
+          "To satisfy data privacy regulations for secondary data."
+        ],
+        "answer_index": 0,
+        "explanation": "In any Machine Learning model, we split the data-set into a Training Set and a Test Set because it is the algorithm model that is going to learn from the data to make predictions[cite: 638, 642]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "When handling missing values for a feature with numeric data, which strategy is commonly applied instead of dropping the values entirely?",
+        "options": [
+          "Replacing the missing values with the attribute's mean, median, or mode.",
+          "Using a wavelet transform to fabricate new strings.",
+          "Executing a tight coupling ETL process.",
+          "Implementing a top-down discretization process."
+        ],
+        "answer_index": 0,
+        "explanation": "To handle missing values on a feature which has numeric data, one can calculate the mean, median, or mode of the feature and replace it with the missing values[cite: 532, 533]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which data cleaning method involves smoothing sorted data by dividing it into several segments of equal size?",
+        "options": [
+          "Regression",
+          "Clustering",
+          "Ignore the tuples",
+          "Binning method"
+        ],
+        "answer_index": 3,
+        "explanation": "In the binning method, the smoothing of sorted data is done using the values around it, and the data is then divided into several segments of equal size[cite: 691, 692, 693]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "In the \"tight coupling\" approach to data integration, how is data managed?",
+        "options": [
+          "It remains solely in the actual source databases.",
+          "It is combined from different sources into a single physical location through the ETL process.",
+          "It is analyzed using Principal Component Analysis before any integration.",
+          "It is processed via an interface that directly queries the original sources."
+        ],
+        "answer_index": 1,
+        "explanation": "In tight coupling, data is combined from different sources into a single physical location through the process of ETL - Extraction, Transformation, and Loading[cite: 748, 750]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which secondary data collection method offers authentic and verifiable data, though it may not always be readily available?",
+        "options": [
+          "Internet searches",
+          "Focus Groups",
+          "Government Archives",
+          "Oral Histories"
+        ],
+        "answer_index": 2,
+        "explanation": "There is lots of data available from government archives[cite: 391]. The most important advantage is that the data in government archives are authentic and verifiable; however, the challenge is that data is not always readily available[cite: 392, 393]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which of the following is a technique used for data reduction to transform raw data into a simpler form?",
+        "options": [
+          "Wavelet Transform",
+          "Principal Component Analysis",
+          "Histogram",
+          "Log-linear model"
+        ],
+        "answer_index": 1,
+        "explanation": "Data reduction uses techniques like principal component analysis to transform the raw data into a simpler form suitable for particular use cases[cite: 418]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "What is one of the largest areas to be considered when combining data sets from multiple places or scraping data?",
+        "options": [
+          "Filling in missing qualitative values.",
+          "Fixing structural errors like typos.",
+          "De-duplication of unwanted observations.",
+          "Generating dummy variables."
+        ],
+        "answer_index": 2,
+        "explanation": "When you combine data sets from multiple places or scrape data, there are opportunities to create duplicate data, making de-duplication one of the largest areas to be considered[cite: 659, 660]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "What is the purpose of a Dummy Variable in data preprocessing?",
+        "options": [
+          "To calculate the mean or median of a numeric column.",
+          "To take the value 0 or 1 to indicate the absence or presence of some categorical effect.",
+          "To integrate data from heterogeneous data sources into a global schema.",
+          "To split the dataset into 70% training and 30% testing sets."
+        ],
+        "answer_index": 1,
+        "explanation": "Dummy Variables is one that takes the value 0 or 1 to indicate the absence or presence of some categorical effect that may be expected to shift the outcome[cite: 609]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which object is explicitly used in the document to convert categorical data into a numerical format?",
+        "options": [
+          "LabelEncoder",
+          "StandardScaler",
+          "Data_Aggregator",
+          "Dummy_Mapper"
+        ],
+        "answer_index": 0,
+        "explanation": "The text states to use the LabelEncoder class, as it is an object that helps in transferring Categorical data into Numerical data[cite: 602, 603]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "What is the first step in key data preprocessing where data scientists collect statistics about data quality?",
+        "options": [
+          "Data cleansing",
+          "Data profiling",
+          "Data enrichment",
+          "Data transformation"
+        ],
+        "answer_index": 1,
+        "explanation": "Data profiling is the process of examining, analyzing and reviewing data to collect statistics about its quality, starting with a survey of existing data and its characteristics[cite: 413, 414]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which open-source library is used for data manipulation and analysis, providing high-performance data structures in Python?",
+        "options": [
+          "NumPy",
+          "Matplotlib",
+          "Pandas",
+          "Seaborn"
+        ],
+        "answer_index": 2,
+        "explanation": "Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language[cite: 509]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "How are data integration approaches formally defined as a triple?",
+        "options": [
+          "G = Grouping, S = Scaling, M = Mapping",
+          "G = Global schema, S = Heterogeneous source of schema, M = Mapping",
+          "G = Gathering, S = Sourcing, M = Merging",
+          "G = Global arrays, S = Structured data, M = Model"
+        ],
+        "answer_index": 1,
+        "explanation": "The data integration approaches are formally defined as triple <G, S, M> where G stands for global schema, S stands for heterogeneous source of schema, and M stands for mapping between queries[cite: 736, 737, 738, 739]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "What is the method used to limit the range of variables so that they can be compared on common grounds?",
+        "options": [
+          "Feature Scaling",
+          "Data Enrichment",
+          "Data Scrubbing",
+          "Denoising"
+        ],
+        "answer_index": 0,
+        "explanation": "Feature scaling is the method to limit the range of variables so that they can be compared on common grounds[cite: 646]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Structuring unstructured data or combining salient variables is part of which key step in data preprocessing?",
+        "options": [
+          "Data cleansing",
+          "Data reduction",
+          "Data profiling",
+          "Data transformation"
+        ],
+        "answer_index": 3,
+        "explanation": "Data transformation could include things like structuring unstructured data, combining salient variables when it makes sense or identifying important ranges to focus on[cite: 419, 420]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "In which primary data collection method do researchers evaluate the behaviour of different people in controlled and uncontrolled situations?",
+        "options": [
+          "Interviews",
+          "Observations",
+          "Questionnaires",
+          "Oral Histories"
+        ],
+        "answer_index": 1,
+        "explanation": "Observations can be used to evaluate the behaviour of different people in controlled (everyone knows they are being observed) and uncontrolled (no one knows they are being observed) situations[cite: 367, 368]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "What type of data cleaning error is characterized by strange naming conventions, typos, or incorrect capitalization like \"N/A\" vs \"Not Applicable\"?",
+        "options": [
+          "Duplicate observations",
+          "Unwanted outliers",
+          "Missing data",
+          "Structural errors"
+        ],
+        "answer_index": 3,
+        "explanation": "Structural errors are when you measure or transfer data and notice strange naming conventions, typos, or incorrect capitalization, such as finding \"N/A\" and \"Not Applicable\" in a sheet[cite: 662, 663]."
+      },
+      {
+        "chapter": "unit 2",
+        "question": "Which fundamental package for scientific computing with Python contains a powerful N-dimensional array object and tools for integrating C/C++ and FORTRAN code?",
+        "options": [
+          "NumPy",
+          "Pandas",
+          "Seaborn",
+          "Matplotlib"
+        ],
+        "answer_index": 0,
+        "explanation": "NumPy is the fundamental package for scientific computing with Python; it contains among other things a powerful N-dimensional array object and tools for integrating C/C++ and FORTRAN code[cite: 504, 505, 507]."
+      }
     ],
-    "answer_index": 1,
-    "explanation": "American mathematician John W. Tukey first articulated the data science dream in 1962. In his article, he foresaw the inevitable emergence of a new field nearly two decades before the first personal computers."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "Which data science role is primarily responsible for creating blueprints for data management to ensure databases are easily integrated, centralized, and protected?",
-    "options": [
-      "Data Engineer",
-      "Database Administrator",
-      "Data Architect",
-      "Data Scientist"
-    ],
-    "answer_index": 2,
-    "explanation": "A data architect creates the blueprints for data management so that the databases can be easily integrated, centralized, and protected with the best security measures."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "According to the document, which stage of a Data Science project involves manipulating null values, removing outliers, and typically takes the longest amount of time?",
-    "options": [
-      "Defining a problem",
-      "Evaluation",
-      "Modelling",
-      "Data Processing"
-    ],
-    "answer_index": 3,
-    "explanation": "The data processing stage involves pre-processing steps like manipulating null values or removing outliers. This is often the stage that will take the longest in any Data Science project."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "In what year did \"Big data\" officially enter the scene alongside technologies like Hadoop?",
-    "options": [
-      "1994",
-      "2005",
-      "2014",
-      "2018"
-    ],
-    "answer_index": 1,
-    "explanation": "Big data entered the scene in 2005. With tech giants like Google and Facebook uncovering large amounts of data, new processing technologies became necessary, and Hadoop rose to the challenge."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "What is the primary difference between Data Privacy and Data Security?",
-    "options": [
-      "Privacy is for cloud systems, while security is for local servers.",
-      "Privacy mainly focuses on keeping data confidential, while security mainly focuses on protecting from malicious activity.",
-      "Privacy involves data masking, while security only relies on passwords.",
-      "There is no difference; the terms are completely interchangeable."
-    ],
-    "answer_index": 1,
-    "explanation": "While data security has many overlaps with data privacy, the primary difference is that data privacy mainly focuses on keeping data confidential, while data security mainly focuses on protecting from malicious activity."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "What type of security threat involves adding malicious code to a seemingly innocent database query to gain illicit access?",
-    "options": [
-      "Ransomware",
-      "Phishing",
-      "SQL Injection",
-      "Insider Threat"
-    ],
-    "answer_index": 2,
-    "explanation": "SQL injection (SQLi) is a technique used by attackers to gain illicit access to databases and steal data by adding malicious code to a seemingly innocent database query."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "How do E-Commerce websites like Amazon and Flipkart utilize data science to create a better user experience?",
-    "options": [
-      "By determining the speed limit of the user's internet connection.",
-      "By automating risk of loss analysis.",
-      "By providing personalized recommendations based on past choices.",
-      "By forecasting delivery vehicle mechanical failures."
-    ],
-    "answer_index": 2,
-    "explanation": "E-Commerce websites use data science to make a better user experience with personalized recommendations. They provide suggestions similar to choices according to past data."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "What type of insider threat refers to users who actively attempt to steal data or cause harm to the organization for personal gain?",
-    "options": [
-      "Non-malicious insider",
-      "Compromised insider",
-      "Malicious insider",
-      "Accidental insider"
-    ],
-    "answer_index": 2,
-    "explanation": "A malicious insider refers to a user who actively attempts to steal data or cause harm to the organization for personal gain."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "Which phase of the Data Science Lifecycle involves Exploratory/Confirmatory Analysis, Predictive Analysis, and Regression?",
-    "options": [
-      "Capture",
-      "Maintain",
-      "Process",
-      "Analyze"
-    ],
-    "answer_index": 3,
-    "explanation": "The Analyze stage involves Exploratory/Confirmatory, Predictive Analysis, Regression, Text Mining, and Qualitative Analysis."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "Which data science role builds and tests scalable Big Data ecosystems so that algorithms can run on stable systems?",
-    "options": [
-      "Data Analyst",
-      "Data Engineer",
-      "Statistician",
-      "Business Analyst"
-    ],
-    "answer_index": 1,
-    "explanation": "Data engineers build and test scalable Big Data ecosystems for businesses so that data scientists can run their algorithms on data systems that are stable and highly optimized."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "The process of converting data from a readable format (plaintext) to an unreadable encoded format (ciphertext) is known as:",
-    "options": [
-      "Data Discovery",
-      "Data Masking",
-      "Data Encryption",
-      "Data Cleansing"
-    ],
-    "answer_index": 2,
-    "explanation": "Data encryption is a method of converting data from a readable format (plaintext) to an unreadable encoded format (ciphertext)."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "How does data science streamline Medicine and Drug Development?",
-    "options": [
-      "By automating the manufacturing of pills in the laboratory.",
-      "By forecasting how a medicine will react to the human body without lab experiments.",
-      "By managing the delivery logistics to hospitals.",
-      "By automatically detecting tumors using virtual bots."
-    ],
-    "answer_index": 1,
-    "explanation": "Developing new medicine takes time and resources, but data science algorithms can forecast how a drug will react to the human body without lab experiments."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "Which data security solution creates a synthetic version of organizational data for purposes like software testing and training without exposing real data?",
-    "options": [
-      "Data Encryption",
-      "Data Masking",
-      "Data Detection",
-      "Password Hygiene"
-    ],
-    "answer_index": 1,
-    "explanation": "Data masking lets you create a synthetic version of your organizational data, which you can use for software testing, training, and other purposes that don't require the real data."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "During which stage of a data science project does a team commonly utilize frameworks and libraries like sklearn, statsmodels, and tensorflow?",
-    "options": [
-      "Defining a problem",
-      "Evaluation",
-      "Deployment",
-      "Modelling"
-    ],
-    "answer_index": 3,
-    "explanation": "The modelling phase is often the part that takes the least amount of time because many frameworks or libraries exist, such as sklearn, statsmodels, and tensorflow, that can be readily utilized."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "What type of social engineering attack involves messages that appear to be from a trusted source, but are actually sent by an attacker?",
-    "options": [
-      "Phishing",
-      "Ransomware",
-      "SQL Injection",
-      "Data Masking"
-    ],
-    "answer_index": 0,
-    "explanation": "Phishing is a common form of social engineering that involves messages that appear to be from a trusted source, but in fact are sent by an attacker."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "Which stage in the Data Science lifecycle includes Data Warehousing, Data Cleansing, Data Staging, and Data Architecture?",
-    "options": [
-      "Capture",
-      "Maintain",
-      "Process",
-      "Communicate"
-    ],
-    "answer_index": 1,
-    "explanation": "The Maintain stage explicitly covers Data Warehousing, Data Cleansing, Data Staging, Data Processing, and Data Architecture."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "What was the focus of the 1994 Business Week story that highlighted early data science adoption by businesses?",
-    "options": [
-      "Big Data Processing",
-      "Database Marketing",
-      "Artificial Intelligence",
-      "Machine Learning"
-    ],
-    "answer_index": 1,
-    "explanation": "In 1994, Business Week published a story on the new phenomenon of \"Database Marketing,\" describing the process by which businesses collected enormous amounts of data to learn more about their customers."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "Which role separates high-value data from low-value data and focuses heavily on understanding organizational finances and business intelligence?",
-    "options": [
-      "Business Analyst",
-      "Data Scientist",
-      "Database Administrator",
-      "Machine Learning Engineer"
-    ],
-    "answer_index": 0,
-    "explanation": "The role of a Business Analyst involves separating high-value data from low-value data. To become one, an understanding of business finances and business intelligence is required."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "What type of malware infects corporate devices and encrypts data, making it useless without a decryption key, usually demanding payment?",
-    "options": [
-      "SQL Injection",
-      "Phishing",
-      "Ransomware",
-      "Unauthorized Access"
-    ],
-    "answer_index": 2,
-    "explanation": "Ransomware is malware that infects corporate devices and encrypts data, making it useless without the decryption key. Attackers display a ransom message asking for payment to release the key."
-  },
-  {
-    "chapter": "unit 1",
-    "question": "According to the document, why is it vital to clearly define a problem in the first stage of a Data Science project?",
-    "options": [
-      "To ensure data engineers have enough tasks to build stable systems.",
-      "To determine the measure of success and know when the project is complete.",
-      "To decide whether to use public-key or private-key encryption.",
-      "To secure funding from cross-functional stakeholders."
-    ],
-    "answer_index": 1,
-    "explanation": "Without a clearly defined problem, it can be hard to determine what your measure of success would be. Without a defined measure of success, you can never know when your project is complete or is good enough to be used in production."
-  }
-,
-  
-  {
-    "chapter": "unit 2",
-    "question": "According to the document, what is secondary data?",
-    "options": [
-      "Data collected directly from first-hand experience.",
-      "Data that has already been collected by someone else.",
-      "Data used exclusively for quantitative analysis.",
-      "Data that cannot be accessed via the Internet."
-    ],
-    "answer_index": 1,
-    "explanation": "Secondary data refers to data that has already been collected by someone else[cite: 380]. It is much more inexpensive and easier to collect than primary data[cite: 381]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which primary data collection method is similar to an interview but is conducted with a group of people who share a common trait?",
-    "options": [
-      "Observations",
-      "Surveys",
-      "Focus Groups",
-      "Oral Histories"
-    ],
-    "answer_index": 2,
-    "explanation": "A focus group is similar to an interview, but it is conducted with a group of people who all have something in common[cite: 373]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "During data preprocessing, what is the purpose of the data validation step?",
-    "options": [
-      "To split the data into a training set and a testing set to gauge model accuracy.",
-      "To identify existing datasets pertinent to the problem.",
-      "To synthesize statistically relevant data for missing values.",
-      "To combine salient variables and structure unstructured data."
-    ],
-    "answer_index": 0,
-    "explanation": "At the data validation stage, the data is split into two sets[cite: 423]. The first set is used to train a model, and the second set is the testing data used to gauge the accuracy and robustness of the resulting model[cite: 424, 425]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Why is a dataset generally split into a Training Set and a Test Set in machine learning?",
-    "options": [
-      "So the algorithm can learn from the training data to make predictions, and the test set can evaluate it.",
-      "To permanently store one half in a data warehouse and delete the other.",
-      "Because clustering algorithms cannot handle more than 30% of the data at once.",
-      "To satisfy data privacy regulations for secondary data."
-    ],
-    "answer_index": 0,
-    "explanation": "In any Machine Learning model, we split the data-set into a Training Set and a Test Set because it is the algorithm model that is going to learn from the data to make predictions[cite: 638, 642]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "When handling missing values for a feature with numeric data, which strategy is commonly applied instead of dropping the values entirely?",
-    "options": [
-      "Replacing the missing values with the attribute's mean, median, or mode.",
-      "Using a wavelet transform to fabricate new strings.",
-      "Executing a tight coupling ETL process.",
-      "Implementing a top-down discretization process."
-    ],
-    "answer_index": 0,
-    "explanation": "To handle missing values on a feature which has numeric data, one can calculate the mean, median, or mode of the feature and replace it with the missing values[cite: 532, 533]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which data cleaning method involves smoothing sorted data by dividing it into several segments of equal size?",
-    "options": [
-      "Regression",
-      "Clustering",
-      "Ignore the tuples",
-      "Binning method"
-    ],
-    "answer_index": 3,
-    "explanation": "In the binning method, the smoothing of sorted data is done using the values around it, and the data is then divided into several segments of equal size[cite: 691, 692, 693]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "In the \"tight coupling\" approach to data integration, how is data managed?",
-    "options": [
-      "It remains solely in the actual source databases.",
-      "It is combined from different sources into a single physical location through the ETL process.",
-      "It is analyzed using Principal Component Analysis before any integration.",
-      "It is processed via an interface that directly queries the original sources."
-    ],
-    "answer_index": 1,
-    "explanation": "In tight coupling, data is combined from different sources into a single physical location through the process of ETL - Extraction, Transformation, and Loading[cite: 748, 750]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which secondary data collection method offers authentic and verifiable data, though it may not always be readily available?",
-    "options": [
-      "Internet searches",
-      "Focus Groups",
-      "Government Archives",
-      "Oral Histories"
-    ],
-    "answer_index": 2,
-    "explanation": "There is lots of data available from government archives[cite: 391]. The most important advantage is that the data in government archives are authentic and verifiable; however, the challenge is that data is not always readily available[cite: 392, 393]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which of the following is a technique used for data reduction to transform raw data into a simpler form?",
-    "options": [
-      "Wavelet Transform",
-      "Principal Component Analysis",
-      "Histogram",
-      "Log-linear model"
-    ],
-    "answer_index": 1,
-    "explanation": "Data reduction uses techniques like principal component analysis to transform the raw data into a simpler form suitable for particular use cases[cite: 418]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "What is one of the largest areas to be considered when combining data sets from multiple places or scraping data?",
-    "options": [
-      "Filling in missing qualitative values.",
-      "Fixing structural errors like typos.",
-      "De-duplication of unwanted observations.",
-      "Generating dummy variables."
-    ],
-    "answer_index": 2,
-    "explanation": "When you combine data sets from multiple places or scrape data, there are opportunities to create duplicate data, making de-duplication one of the largest areas to be considered[cite: 659, 660]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "What is the purpose of a Dummy Variable in data preprocessing?",
-    "options": [
-      "To calculate the mean or median of a numeric column.",
-      "To take the value 0 or 1 to indicate the absence or presence of some categorical effect.",
-      "To integrate data from heterogeneous data sources into a global schema.",
-      "To split the dataset into 70% training and 30% testing sets."
-    ],
-    "answer_index": 1,
-    "explanation": "Dummy Variables is one that takes the value 0 or 1 to indicate the absence or presence of some categorical effect that may be expected to shift the outcome[cite: 609]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which object is explicitly used in the document to convert categorical data into a numerical format?",
-    "options": [
-      "LabelEncoder",
-      "StandardScaler",
-      "Data_Aggregator",
-      "Dummy_Mapper"
-    ],
-    "answer_index": 0,
-    "explanation": "The text states to use the LabelEncoder class, as it is an object that helps in transferring Categorical data into Numerical data[cite: 602, 603]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "What is the first step in key data preprocessing where data scientists collect statistics about data quality?",
-    "options": [
-      "Data cleansing",
-      "Data profiling",
-      "Data enrichment",
-      "Data transformation"
-    ],
-    "answer_index": 1,
-    "explanation": "Data profiling is the process of examining, analyzing and reviewing data to collect statistics about its quality, starting with a survey of existing data and its characteristics[cite: 413, 414]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which open-source library is used for data manipulation and analysis, providing high-performance data structures in Python?",
-    "options": [
-      "NumPy",
-      "Matplotlib",
-      "Pandas",
-      "Seaborn"
-    ],
-    "answer_index": 2,
-    "explanation": "Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language[cite: 509]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "How are data integration approaches formally defined as a triple?",
-    "options": [
-      "G = Grouping, S = Scaling, M = Mapping",
-      "G = Global schema, S = Heterogeneous source of schema, M = Mapping",
-      "G = Gathering, S = Sourcing, M = Merging",
-      "G = Global arrays, S = Structured data, M = Model"
-    ],
-    "answer_index": 1,
-    "explanation": "The data integration approaches are formally defined as triple <G, S, M> where G stands for global schema, S stands for heterogeneous source of schema, and M stands for mapping between queries[cite: 736, 737, 738, 739]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "What is the method used to limit the range of variables so that they can be compared on common grounds?",
-    "options": [
-      "Feature Scaling",
-      "Data Enrichment",
-      "Data Scrubbing",
-      "Denoising"
-    ],
-    "answer_index": 0,
-    "explanation": "Feature scaling is the method to limit the range of variables so that they can be compared on common grounds[cite: 646]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Structuring unstructured data or combining salient variables is part of which key step in data preprocessing?",
-    "options": [
-      "Data cleansing",
-      "Data reduction",
-      "Data profiling",
-      "Data transformation"
-    ],
-    "answer_index": 3,
-    "explanation": "Data transformation could include things like structuring unstructured data, combining salient variables when it makes sense or identifying important ranges to focus on[cite: 419, 420]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "In which primary data collection method do researchers evaluate the behaviour of different people in controlled and uncontrolled situations?",
-    "options": [
-      "Interviews",
-      "Observations",
-      "Questionnaires",
-      "Oral Histories"
-    ],
-    "answer_index": 1,
-    "explanation": "Observations can be used to evaluate the behaviour of different people in controlled (everyone knows they are being observed) and uncontrolled (no one knows they are being observed) situations[cite: 367, 368]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "What type of data cleaning error is characterized by strange naming conventions, typos, or incorrect capitalization like \"N/A\" vs \"Not Applicable\"?",
-    "options": [
-      "Duplicate observations",
-      "Unwanted outliers",
-      "Missing data",
-      "Structural errors"
-    ],
-    "answer_index": 3,
-    "explanation": "Structural errors are when you measure or transfer data and notice strange naming conventions, typos, or incorrect capitalization, such as finding \"N/A\" and \"Not Applicable\" in a sheet[cite: 662, 663]."
-  },
-  {
-    "chapter": "unit 2",
-    "question": "Which fundamental package for scientific computing with Python contains a powerful N-dimensional array object and tools for integrating C/C++ and FORTRAN code?",
-    "options": [
-      "NumPy",
-      "Pandas",
-      "Seaborn",
-      "Matplotlib"
-    ],
-    "answer_index": 0,
-    "explanation": "NumPy is the fundamental package for scientific computing with Python; it contains among other things a powerful N-dimensional array object and tools for integrating C/C++ and FORTRAN code[cite: 504, 505, 507]."
-  }
-
-  ],
     "IOT 244": [
       {
         "chapter": "Chapter 1",
