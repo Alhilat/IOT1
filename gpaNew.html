@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4114059083199494"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4114059083199494" crossorigin="anonymous"></script>
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKRX62LQV5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JKRX62LQV5');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JKRX62LQV5');
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -69,6 +68,21 @@
         }
 
         /* ====================
+           Ad Container Style 
+           ==================== */
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            width: 100%;
+            max-height: 110px;
+            overflow: hidden; /* Prevents layout breakage on mobile */
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed var(--border);
+            padding: 10px;
+        }
+
+        /* ====================
            2. Header
            ==================== */
         header {
@@ -100,9 +114,9 @@
             transition: 0.3s;
         }
 
-            .back-btn:hover {
-                color: var(--accent);
-            }
+        .back-btn:hover {
+            color: var(--accent);
+        }
 
         /* ====================
            3. Cards & Inputs
@@ -142,10 +156,10 @@
             background-color: var(--list-bg);
         }
 
-            input:focus, select:focus {
-                border-color: var(--accent);
-                box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
-            }
+        input:focus, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+        }
 
         .stats-grid {
             display: grid;
@@ -178,10 +192,10 @@
             transition: all 0.3s ease;
         }
 
-            .course-card.disabled {
-                opacity: 0.5;
-                border-style: dashed;
-            }
+        .course-card.disabled {
+            opacity: 0.5;
+            border-style: dashed;
+        }
 
         .card-header {
             display: flex;
@@ -200,10 +214,10 @@
             border-radius: 0 !important;
         }
 
-            .subject-input:focus {
-                box-shadow: none !important;
-                color: var(--accent) !important;
-            }
+        .subject-input:focus {
+            box-shadow: none !important;
+            color: var(--accent) !important;
+        }
 
         .card-body {
             display: grid;
@@ -239,11 +253,11 @@
             flex-shrink: 0;
         }
 
-            .toggle-switch input {
-                opacity: 0;
-                width: 0;
-                height: 0;
-            }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
 
         .slider {
             position: absolute;
@@ -257,25 +271,25 @@
             border-radius: 34px;
         }
 
-            .slider:before {
-                position: absolute;
-                content: "";
-                height: 18px;
-                width: 18px;
-                left: 3px;
-                bottom: 3px;
-                background-color: white;
-                transition: .4s;
-                border-radius: 50%;
-            }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
 
         input:checked + .slider {
             background-color: var(--accent);
         }
 
-            input:checked + .slider:before {
-                transform: translateX(22px);
-            }
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
 
         /* Repeated Course Styles */
         .old-grade-container {
@@ -303,16 +317,15 @@
             cursor: pointer;
         }
 
-            .radio-label input {
-                accent-color: var(--accent);
-            }
+        .radio-label input {
+            accent-color: var(--accent);
+        }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translateY(-5px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -337,16 +350,16 @@
             flex-wrap: wrap;
         }
 
-            .footer-nav a {
-                color: var(--text-secondary);
-                font-size: 0.9rem;
-                transition: 0.3s;
-                font-weight: 600;
-            }
+        .footer-nav a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: 0.3s;
+            font-weight: 600;
+        }
 
-                .footer-nav a:hover {
-                    color: var(--accent);
-                }
+        .footer-nav a:hover {
+            color: var(--accent);
+        }
 
         .social-links {
             display: flex;
@@ -355,26 +368,26 @@
             margin-bottom: 20px;
         }
 
-            .social-links a {
-                width: 40px;
-                height: 40px;
-                background: rgba(255,255,255,0.05);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--text-secondary);
-                transition: 0.3s;
-            }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: 0.3s;
+        }
 
-                .social-links a:hover {
-                    background: var(--accent);
-                    color: white;
-                    border-color: var(--accent);
-                    transform: translateY(-3px);
-                    box-shadow: 0 5px 15px rgba(6,182,212,0.3);
-                }
+        .social-links a:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(6,182,212,0.3);
+        }
 
         /* ====================
            6. Sticky Result Bar
@@ -391,7 +404,7 @@
             border: 1px solid var(--accent);
             box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
             border-radius: 16px;
-            padding: 15px 15px; /* Reduced side padding slightly */
+            padding: 15px 15px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -433,9 +446,8 @@
             margin-right: 10px;
         }
 
-        /* Specific styles for rating text */
         #resRate {
-            font-size: 1.1rem; /* Smaller font for text */
+            font-size: 1.1rem;
             color: #fff;
             white-space: nowrap;
         }
@@ -456,6 +468,18 @@
             <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
             <h1>حساب المعدل التراكمي</h1>
         </header>
+
+        <div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-4114059083199494"
+         data-ad-slot="6204261905"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
 
         <div class="glass-card">
             <h3 style="margin-bottom:15px; color:var(--text-primary); display:flex; align-items:center; gap:10px;">
@@ -480,6 +504,18 @@
 
         <div id="coursesList"></div>
 
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-4114059083199494"
+         data-ad-slot="6204261905"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
         <footer class="site-footer">
             <div class="footer-nav">
                 <a href="team.html">تواصل معنا</a>
@@ -492,7 +528,6 @@
     </div>
 
     <div class="sticky-result">
-
         <div class="res-item">
             <div class="res-label">المعدل المتوقع</div>
             <div class="res-value" id="resGPA">0.00</div>
@@ -606,6 +641,7 @@
                         </div>
                     </div>`;
             }
+
             document.getElementById('coursesList').innerHTML = html;
 
             for (let i = 0; i < TOTAL_COURSES; i++) {
@@ -645,13 +681,11 @@
             }
         }
 
-        // 3. New function to swap the dropdown content
         function updateOldOptions(i) {
             const oldSelect = document.getElementById(`old-${i}`);
             const radios = document.getElementsByName(`ws-${i}`);
             let isOldSystem = false;
 
-            // Check which radio is checked
             for (let r of radios) {
                 if (r.checked && r.value === 'old') {
                     isOldSystem = true;
@@ -659,13 +693,9 @@
                 }
             }
 
-            // Save the currently selected value (index) so we don't lose the user's selection
             const currentVal = oldSelect.value;
-
-            // Build the HTML, keeping the placeholder
             let html = '<option disabled value="-1">اختر العلامة السابقة</option>';
 
-            // Inject correct options
             if (isOldSystem) {
                 html += oldGradeOptions;
             } else {
@@ -674,7 +704,6 @@
 
             oldSelect.innerHTML = html;
 
-            // Restore the previous selection (if it was valid)
             if (currentVal !== "-1" && currentVal !== "") {
                 oldSelect.value = currentVal;
             } else {
@@ -718,7 +747,6 @@
                             }
                         }
 
-                        // Logic to use old weights for calculation
                         let oldPoints = isOldSystem ? oldWeights[oldGIndex] : newWeights[oldGIndex];
                         totalPoints = totalPoints - (h * oldPoints) + (h * gPoints);
                     } else {
@@ -740,7 +768,6 @@
 
             let result = (totalHours > 0) ? (totalPoints / totalHours) : 0;
 
-            // Cap at 4.00
             if (result > 4.00) result = 4.00;
             if (result < 0) result = 0;
 
@@ -760,6 +787,5 @@
 
         window.onload = init;
     </script>
-
 </body>
 </html>
