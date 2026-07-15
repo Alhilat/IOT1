@@ -19,20 +19,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    :root{
-      /* Updated Color Palette based on the image */
-      --bg-dark:#050710; /* Darker background from image */
-      --bg-medium:#0a0e1a;
-      --card-bg:#0d1b2a; /* Darker card background */
-      --card-hover:#131a2b;
-      --text-primary:#e8f0f8;
-      --text-secondary:#9ca3af;
-      --accent:#06b6d4; /* Cyan accent from image */
-      --accent-hover:#0891b2;
-      --border:rgba(255,255,255,0.08);
-      --shadow:0 10px 40px -10px rgba(0,0,0,0.5);
-      --glow: 0 0 20px rgba(6, 182, 212, 0.2);
-    }
+    :root {
+  --bg-dark: #050710; /* Remove 'var()' and the parentheses */
+  --bg-medium: #0a0e1a;
+  --card-bg: #0d1b2a; 
+  --card-hover: #131a2b;
+  --text-primary: #e8f0f8;
+  --text-secondary: #9ca3af;
+  --accent: #06b6d4; 
+  --accent-hover: #0891b2;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  --glow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
     
     * { box-sizing:border-box; margin:0; padding:0; outline: none; }
     
@@ -42,13 +41,10 @@
       color: var(--text-primary);
       min-height: 100vh;
       line-height: 1.6;
-      transition: font-size 0.3s ease; /* Smooth transition for font size change */
+      transition: font-size 0.3s ease; 
     }
 
-    /* Large Text Mode Class */
-    body.large-text {
-        font-size: 1.2rem;
-    }
+    body.large-text { font-size: 1.2rem; }
     body.large-text h1 { font-size: 3.5rem; }
     body.large-text .subtitle { font-size: 1.3rem; }
     body.large-text .nav-link, 
@@ -64,12 +60,7 @@
       padding: 40px 24px;
     }
     
-    /* --- HEADER SECTION --- */
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-    }
+    header { text-align: center; margin-bottom: 50px; position: relative; }
     
     h1 {
       font-size: 3rem;
@@ -97,7 +88,6 @@
       margin: 0 auto 30px;
     }
 
-    /* --- FLOATING NAV DOCK & TOOLS --- */
     .header-tools {
         display: flex;
         justify-content: center;
@@ -139,7 +129,6 @@
       box-shadow: var(--glow);
     }
 
-    /* Text Size Button */
     .text-size-btn {
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid var(--border);
@@ -162,18 +151,13 @@
         box-shadow: var(--glow);
     }
     
-    /* --- SEARCH BAR --- */
     .search-container {
       margin-bottom: 40px;
       display: flex;
       justify-content: center;
     }
 
-    .search-box {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-    }
+    .search-box { position: relative; width: 100%; max-width: 600px; }
 
     .search-box i {
       position: absolute;
@@ -204,7 +188,6 @@
       transform: translateY(-2px);
     }
     
-    /* --- CATEGORY PILLS --- */
     .categories-scroll {
       overflow-x: auto;
       padding-bottom: 10px;
@@ -215,11 +198,7 @@
     }
     .categories-scroll::-webkit-scrollbar { display: none; }
 
-    .categories-wrapper {
-      display: inline-flex;
-      gap: 10px;
-      padding: 0 10px;
-    }
+    .categories-wrapper { display: inline-flex; gap: 10px; padding: 0 10px; }
     
     .category-btn {
       padding: 10px 24px;
@@ -248,14 +227,12 @@
       box-shadow: var(--glow);
     }
     
-    /* --- BOOKS GRID --- */
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 28px;
     }
     
-    /* --- CARD DESIGN --- */
     .book-card {
       background: var(--card-bg);
       border-radius: 20px;
@@ -305,26 +282,22 @@
       align-items: center;
       gap: 6px;
     }
-    
-    /* Updated Description Styles */
     .book-description {
-      font-size: 13px;
-      color: #7b8595;
-      line-height: 1.6;
-      margin: 16px 0 8px 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
+  font-size: 13px;
+  color: #7b8595;
+  line-height: 1.6;
+  margin: 16px 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Added the leading dash here */
+  -webkit-box-orient: vertical; /* Added the leading dash here */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-    .book-description.expanded {
-        -webkit-line-clamp: unset;
-        display: block;
-    }
-
-    /* Read More Toggle Button */
+.book-description.expanded {
+  -webkit-line-clamp: unset;
+  display: block;
+}
     .read-more-btn {
         background: transparent;
         border: none;
@@ -343,7 +316,6 @@
         color: var(--text-primary);
     }
     
-    /* Full width action button */
     .action-btn {
       width: 100%;
       padding: 12px;
@@ -367,7 +339,6 @@
       color: white;
     }
 
-    /* --- STATES --- */
     .empty-state {
       text-align: center;
       padding: 80px 20px;
@@ -437,85 +408,73 @@
   </div>
 
   <script>
-const BIN_ID = '69cacbb936566621a8627d9e'; // Replace this with your JSONBin ID
-const API_KEY = '$2a$10$aevoF.CcdIuKdPw/XZPfNORtdkW5v3FLqx5FaepeHo1k2TGrQSPdy'; // Replace this with your API Key (delete if the bin is public)
+// --- SUPABASE CONFIGURATION ---
+// Replace these with your actual Supabase URL and Anon Key
+const SUPABASE_URL = 'https://fslfyoqhvbddyjeavcyi.supabase.co'; 
+const SUPABASE_ANON_KEY = 'sb_publishable_zyxGxnNtzEYD0kjrHq_Bzw_0StPo0WI';
 
-// Variables to manage the application's data state
-let rawData = {};        // Stores the original fetched data from the API
-let allBooks = [];       // Stores all books mapped into a single flat array
-let displayedBooks = []; // Stores the books currently visible on the screen
-let currentCategory = 'all'; // Tracks the currently selected category filter
+let allBooks = [];       
+let displayedBooks = []; 
+let currentCategory = 'all'; 
 
-// Select the text size toggle button and add a click event listener
 const textSizeBtn = document.getElementById('textSizeBtn');
 if (textSizeBtn) {
     textSizeBtn.addEventListener('click', () => {
-        // Toggles the 'large-text' CSS class on the body element to increase font size
         document.body.classList.toggle('large-text');
     });
 }
 
-// Main initialization function to fetch data from JSONBin
+// Fetch data directly from the Supabase REST API
 async function init() {
   try {
-    // Make an asynchronous GET request to the JSONBin API
-    const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/books?select=*`, {
       method: 'GET',
       headers: {
-        'X-Master-Key': API_KEY // Remove this header if your JSONBin is completely public
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        // Optional: 'Prefer': 'return=representation' 
       }
     });
 
-    // Check if the HTTP response is OK (status 200-299)
-    if (!response.ok) throw new Error("Failed to load data from JSONBin");
+    if (!response.ok) throw new Error("Failed to load data");
     
-    // Parse the JSON response body
+    // Supabase returns a flat array of objects directly
     const data = await response.json();
     
-    // JSONBin v3 stores your actual JSON data inside a 'record' object property
-    rawData = data.record; 
-    
-    // Process the raw data and set up user interactions
-    processData();
+    processData(data);
     setupEventListeners();
   } catch (error) {
     console.error(error);
-    // Display an error message on the screen if fetching fails
     const booksGrid = document.getElementById('booksGrid');
     if (booksGrid) {
         booksGrid.innerHTML = `
           <div class="empty-state">
             <i class="fas fa-exclamation-circle fa-3x" style="color:var(--text-secondary)"></i>
             <h3>Connection Error</h3>
-            <p>Please check your JSONBin ID and API Key.</p>
+            <p>Failed to connect </p>
           </div>
         `;
     }
   }
 }
 
-// Flattens the categorized JSON object into a single, manageable array of books
-function processData() {
-  allBooks = [];
-  // Loop through each category key and its corresponding array of books
-  for (const [category, books] of Object.entries(rawData)) {
-    if (Array.isArray(books)) {
-      books.forEach(book => {
-        book.category = category; // Assign the parent category name to each individual book object
-        allBooks.push(book);      // Add the book to our master array
-      });
-    }
-  }
-  // Display all books initially by applying the default 'all' filter
+function processData(data) {
+  // Since Supabase returns a flat array, we just assign it to allBooks.
+  // IMPORTANT: Ensure you have a 'category' column in your Supabase table.
+  // If a book lacks a category, we provide a fallback so the UI doesn't break.
+  allBooks = data.map(book => ({
+      ...book,
+      category: book.category || 'all' 
+  }));
+  
   filterByCategory(currentCategory);
 }
 
-// Generates and injects the HTML structure for the books into the grid container
 function renderBooks() {
   const booksGrid = document.getElementById('booksGrid');
-  if (!booksGrid) return; // Exit if the container doesn't exist in the DOM
+  if (!booksGrid) return; 
   
-  // Display a fallback message if there are no books to show (e.g., empty search results)
   if (displayedBooks.length === 0) {
     booksGrid.innerHTML = `
       <div class="empty-state">
@@ -527,7 +486,6 @@ function renderBooks() {
     return;
   }
 
-  // Map over the displayedBooks array to create HTML strings for each card, then join them
   booksGrid.innerHTML = displayedBooks.map((book, index) => `
     <div class="book-card" style="animation: fadeInUp 0.5s ease forwards; animation-delay: ${index * 0.05}s; opacity: 0; transform: translateY(20px);">
       
@@ -551,23 +509,19 @@ function renderBooks() {
   `).join('');
 }
 
-// Toggles the expansion of the book description text visually
 window.toggleDescription = function(elementId, btn) {
     const desc = document.getElementById(elementId);
     if (!desc) return;
     
-    // If the text is currently expanded, collapse it and change button text
     if (desc.classList.contains('expanded')) {
         desc.classList.remove('expanded');
-        btn.innerHTML = 'قراءة المزيد'; // "Read More" in Arabic
+        btn.innerHTML = 'قراءة المزيد'; 
     } else {
-        // If collapsed, expand it and change button text
         desc.classList.add('expanded');
-        btn.innerHTML = 'عرض أقل'; // "Show Less" in Arabic
+        btn.innerHTML = 'عرض أقل'; 
     }
 }
 
-// Dynamically inject CSS keyframes for the card fade-in animation to avoid cluttering the main HTML
 if (!document.getElementById('dynamic-styles')) {
     const styleSheet = document.createElement("style");
     styleSheet.id = 'dynamic-styles';
@@ -579,7 +533,6 @@ if (!document.getElementById('dynamic-styles')) {
     document.head.appendChild(styleSheet);
 }
 
-// Translates technical category keys into readable Arabic labels for the UI
 function getCategoryName(category) {
   const categories = {
     'iot': 'إنترنت الأشياء',
@@ -589,79 +542,63 @@ function getCategoryName(category) {
     'networking': 'الشبكات',
     'security': 'الأمان السيبراني'
   };
-  return categories[category] || category; // Fallback to the raw key if no translation exists
+  return categories[category] || category; 
 }
 
-// Filters the displayed books based on the selected category button
 function filterByCategory(category) {
   currentCategory = category;
   
-  // Loop through all category buttons to update their active visual state
   document.querySelectorAll('.category-btn').forEach(btn => {
     btn.classList.remove('active');
-    // Add the 'active' class only to the button that matches the clicked category
     if(btn.dataset.category === category) btn.classList.add('active');
   });
   
-  // Filter the main array based on the category
   if (category === 'all') {
-    displayedBooks = [...allBooks]; // Create a shallow copy of all books
+    displayedBooks = [...allBooks]; 
   } else {
     displayedBooks = allBooks.filter(book => book.category === category);
   }
   
-  // Re-render the UI with the newly filtered list
   renderBooks();
 }
 
-// Filters books based on a user's typed search query
 function searchBooks(query) {
-  const lowerQuery = query.toLowerCase(); // Convert query to lowercase for case-insensitive matching
+  const lowerQuery = query.toLowerCase(); 
   
-  // Keep only books where the title, author, or description contains the search string
   displayedBooks = allBooks.filter(book => 
-    book.title.toLowerCase().includes(lowerQuery) ||
-    book.author.toLowerCase().includes(lowerQuery) ||
-    book.description.toLowerCase().includes(lowerQuery)
+    (book.title && book.title.toLowerCase().includes(lowerQuery)) ||
+    (book.author && book.author.toLowerCase().includes(lowerQuery)) ||
+    (book.description && book.description.toLowerCase().includes(lowerQuery))
   );
   
-  // Automatically switch the active category button back to "All" when a search is active
   if (query.length > 0) {
       document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
       const allBtn = document.querySelector('[data-category="all"]');
       if (allBtn) allBtn.classList.add('active');
   }
 
-  // Re-render the UI with the search results
   renderBooks();
 }
 
-// Attaches necessary event listeners to interactive DOM elements
 function setupEventListeners() {
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
-      // Listen for every keystroke in the search bar
       searchInput.addEventListener('input', (e) => {
-        // If the search bar is cleared, reset to showing all books
         if (e.target.value.trim() === '') {
           filterByCategory('all');
         } else {
-          // Otherwise, perform the search
           searchBooks(e.target.value);
         }
       });
   }
 
-  // Attach a click event listener to every category filter button
   document.querySelectorAll('.category-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Filter the grid based on the 'data-category' attribute of the clicked button
       filterByCategory(btn.dataset.category);
     });
   });
 }
 
-// Kick off the script by running the init function once the HTML document is fully loaded
 document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>

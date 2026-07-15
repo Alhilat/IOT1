@@ -243,6 +243,12 @@
   </div>
 
   <script>
+    // --- SUPABASE CONFIGURATION ---
+    const SUPABASE_URL = 'https://fslfyoqhvbddyjeavcyi.supabase.co'; 
+    // IMPORTANT: Since this is a public page for students, paste your `anon` `public` key here. 
+    // DO NOT use the `service_role` key on this file!
+    const SUPABASE_ANON_KEY = 'sb_publishable_zyxGxnNtzEYD0kjrHq_Bzw_0StPo0WI';
+
     window.courseData = {};
     window.questionsByChapter = {};
     window.currentQuestions = [];
@@ -252,6 +258,7 @@
     let imageObserver = null;
 
     function escapeHtml(text) {
+      if (text === null || text === undefined) return '';
       return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'}[m]));
     }
     
@@ -266,21 +273,23 @@
         }, {});
     }
 
-    function initializeApp(data) {
+    function initializeApp(allQuestions) {
       const urlParams = new URLSearchParams(window.location.search);
       window.currentCourseCode = urlParams.get('code') || '';
       
-      document.getElementById('pageTitle').textContent = `Quizzes for ${window.currentCourseCode}`;
+      document.getElementById('pageTitle').textContent = window.currentCourseCode ? `Quizzes for ${window.currentCourseCode}` : 'All Quizzes';
       
-      const quizzesData = data.quizzes || {};
-      const courseQuestions = quizzesData[window.currentCourseCode] || [];
+      // Filter the Supabase data to only show questions matching the course code in the URL
+      const courseQuestions = window.currentCourseCode 
+        ? allQuestions.filter(q => q.course_name === window.currentCourseCode)
+        : allQuestions;
       
       if (!courseQuestions.length) {
           document.getElementById('chapterContainer').innerHTML = `
             <div class="empty-state">
               <div class="empty-icon">❓</div>
-              <h3>No Questions Available for This Course</h3>
-              <p>Questions will be added soon.</p>
+              <h3>No Questions Available</h3>
+              <p>Questions for this course will be added soon.</p>
             </div>
           `;
           return;
@@ -334,8 +343,10 @@
     function renderQuiz(questions) {
       const container = document.getElementById('quizContainer');
       
-      // Render logic
-      container.innerHTML = questions.map((q, index) => `
+      // Render logic (Supabase handles JSONB arrays natively, so q.options is already an array)
+      container.innerHTML = questions.map((q, index) => {
+        const optionsArray = Array.isArray(q.options) ? q.options : [];
+        return `
         <div class="question-card" id="question-${index}">
           
           ${q.image_base64 ? `
@@ -351,7 +362,7 @@
           
           <p class="question-text">${index + 1}. ${escapeHtml(q.question)}</p>
           <div class="options-grid">
-            ${q.options.map((opt, optIndex) => `
+            ${optionsArray.map((opt, optIndex) => `
               <div class="option" onclick="selectOption(this, ${index}, ${optIndex})">
                 ${escapeHtml(opt)}
               </div>
@@ -359,7 +370,7 @@
           </div>
           <div class="feedback" id="feedback-${index}"></div>
         </div>
-      `).join('');
+      `}).join('');
 
       // Initialize the lazy loader after rendering HTML
       setupLazyLoading();
@@ -367,19 +378,16 @@
 
     // --- LAZY LOADING LOGIC ---
     function setupLazyLoading() {
-        // Disconnect previous observer if exists
         if (imageObserver) {
             imageObserver.disconnect();
         }
 
-        // Create new observer
         imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     const index = img.dataset.index;
                     
-                    // Retrieve Base64 from memory only when needed
                     if (window.currentQuestions[index] && window.currentQuestions[index].image_base64) {
                         img.src = window.currentQuestions[index].image_base64;
                         
@@ -388,17 +396,14 @@
                             img.classList.remove('lazy-load');
                         };
                     }
-                    
-                    // Stop observing this image
                     observer.unobserve(img);
                 }
             });
         }, {
-            rootMargin: "200px 0px", // Start loading 200px before the image enters viewport
+            rootMargin: "200px 0px", 
             threshold: 0.01
         });
 
-        // Observe all images with class 'lazy-load'
         const lazyImages = document.querySelectorAll('.lazy-load');
         lazyImages.forEach(img => imageObserver.observe(img));
     }
@@ -420,6 +425,8 @@
     function checkAnswer(questionIndex) {
         const question = window.currentQuestions[questionIndex];
         const selectedOptionIndex = userAnswers[questionIndex];
+        // Ensure answer_index is treated as a number
+        const correctIndex = Number(question.answer_index); 
 
         const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
         const questionCard = document.getElementById(`question-${questionIndex}`);
@@ -427,35 +434,49 @@
         
         questionCard.classList.add('answered');
 
-        if (selectedOptionIndex === question.answer_index) {
+        if (selectedOptionIndex === correctIndex) {
             feedbackEl.textContent = 'Correct Answer!';
             feedbackEl.className = 'feedback correct';
-            options[selectedOptionIndex].classList.add('correct');
+            if (options[selectedOptionIndex]) options[selectedOptionIndex].classList.add('correct');
         } else {
             const explanation = question.explanation || 'No explanation provided.';
             feedbackEl.innerHTML = `<strong>Incorrect.</strong> ${escapeHtml(explanation)}`;
             feedbackEl.className = 'feedback incorrect';
-            if(selectedOptionIndex !== undefined) {
+            if(selectedOptionIndex !== undefined && options[selectedOptionIndex]) {
                options[selectedOptionIndex].classList.add('incorrect');
             }
-            options[question.answer_index].classList.add('correct');
+            if (options[correctIndex]) {
+                options[correctIndex].classList.add('correct');
+            }
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('quiz.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.json();
-        })
-        .then(data => {
-          window.courseData = data;
-          initializeApp(data);
-        })
-        .catch(error => {
-          console.error('Error loading quiz data:', error);
-          document.getElementById('chapterContainer').innerHTML = '<p style="color:red; text-align:center;">Failed to load quiz data.</p>';
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/quiz_q?select=*`, {
+          method: 'GET',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json'
+          }
         });
+        
+        if (!response.ok) throw new Error('Failed to load quiz data from Supabase');
+        
+        const data = await response.json();
+        initializeApp(data);
+        
+      } catch (error) {
+        console.error('Error loading quiz data:', error);
+        document.getElementById('chapterContainer').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">⚠️</div>
+            <h3>Connection Error</h3>
+            <p>Failed to connect to the database. Please check the API key.</p>
+          </div>
+        `;
+      }
     });
   </script>
 </body>

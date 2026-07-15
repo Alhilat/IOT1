@@ -1,4 +1,4 @@
-<!doctype html
+<!doctype html>
 <html lang="ar" dir="ltr">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKRX62LQV5"></script>
@@ -79,7 +79,6 @@
     h1{
       font-size:28px;
       font-weight:700;
-      /* --- 💡 UPDATED: Simpler title color for toggling 💡 --- */
       color: var(--text-primary);
     }
     body.light-mode h1 {
@@ -87,7 +86,7 @@
     }
     .subtitle{color:var(--text-secondary);font-size:14px;margin-top:6px}
 
-    /* --- 💡 NEW: Theme Toggle Button 💡 --- */
+    /* Theme Toggle Button */
     .theme-toggle {
       background: var(--input-bg);
       border: 1px solid var(--border);
@@ -111,6 +110,26 @@
     body.light-mode .theme-toggle .fa-sun { display: block; }
     body.light-mode .theme-toggle .fa-moon { display: none; }
 
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+    .back-home-btn:hover {
+      background: var(--accent);
+      color: var(--btn-active-text);
+      border-color: var(--accent);
+    }
     
     .header-toolbar {
       display: flex;
@@ -135,7 +154,6 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    /* --- 💡 UPDATED: LTR border 💡 --- */
     .view-toggle button:first-child {
       border-right: 1px solid var(--border); 
     }
@@ -148,7 +166,6 @@
       background: var(--accent);
     }
 
-    
     input[type=text]{
       padding:12px 16px;
       border-radius:10px;
@@ -218,7 +235,6 @@
       content:'';
       position:absolute;
       top:0;
-      /* --- 💡 UPDATED: LTR position 💡 --- */
       right:0; 
       left: 0;
       height:3px;
@@ -237,7 +253,6 @@
     .card-category {
       position: absolute;
       top: 12px;
-      /* --- 💡 UPDATED: LTR position 💡 --- */
       right: 12px;
       background: rgba(113, 113, 122, 0.2);
       color: var(--text-secondary);
@@ -512,20 +527,22 @@
       .theme-toggle {
         position: absolute;
         top: 20px;
-        /* --- 💡 UPDATED: LTR position 💡 --- */
         right: 20px; 
       }
       .header-content div:first-child {
-        padding-right: 50px; /* Avoid overlap */
+        padding-right: 50px;
       }
     }
   </style>
-
 
 </head>
 <body>
   <div class="container">
     <header>
+      <a href="index.html" class="back-home-btn">
+        <i class="fa-solid fa-house"></i>
+        العودة للرئيسية
+      </a>
       <div class="header-content">
         <div>
           <h1>IoT - إنترنت الأشياء</h1>
@@ -574,7 +591,6 @@
                 color: var(--text-secondary);
                 transition: 0.3s;" href="team.html">IoT Web Team </a>
         <br>
-       
       </footer>
     </main>
   </div>
@@ -605,8 +621,12 @@
     </div>
   </div>
 
-
   <script>
+    // --- SUPABASE CONFIGURATION ---
+    const SUPABASE_URL = 'https://fslfyoqhvbddyjeavcyi.supabase.co'; 
+    // IMPORTANT: Since this is a public page, paste your `anon` `public` key here.
+    const SUPABASE_ANON_KEY = 'sb_publishable_zyxGxnNtzEYD0kjrHq_Bzw_0StPo0WI';
+
     let courses = [];
     let courseLinks = {};
 
@@ -777,7 +797,6 @@
                     </a>
                 </div>
             `;
-            /* --- 💡 UPDATED: LTR styles 💡 --- */
             summaryHtml += `<ul id="modal-topics-list" style="padding-left: 20px; margin: 0; color: var(--text-secondary); dir: ltr; text-align: left; display: none;">`;
             topics.forEach(topic => {
                 summaryHtml += `<li style="margin-bottom: 6px;">${escapeHtml(topic)}</li>`;
@@ -851,16 +870,13 @@
 
     window.addEventListener('hashchange', handleHashChange);
 
-    // --- 💡 NEW: Theme Toggle Logic 💡 ---
     const themeToggle = document.getElementById('themeToggle');
-    // Check for saved theme in localStorage
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
     }
     
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
-      // Save preference
       if (document.body.classList.contains('light-mode')) {
         localStorage.setItem('theme', 'light');
       } else {
@@ -871,12 +887,40 @@
     // --- Initialization Logic ---
     async function initializeApp() {
         try {
-            const coursesResponse = await fetch('courses.json');
-            if (!coursesResponse.ok) {
-                throw new Error(`HTTP error! status: ${coursesResponse.status} (courses.json)`);
+            // التحقق مما إذا كان الكود يعمل في بيئة معاينة (Preview/Blob)
+            const isPreview = window.location.protocol.includes('blob') || window.location.protocol.includes('data') || window.location.href.includes('about:');
+            
+            if (isPreview) {
+                console.warn("تم اكتشاف بيئة معاينة. جاري استخدام بيانات تجريبية لأن المتصفح يمنع قراءة الملفات المحلية.");
+                // استخدام بيانات وهمية مؤقتة للمعاينة فقط لكي لا تتعطل الواجهة
+                courses = [
+                    {
+                        code: "IOT 451",
+                        name: "إنترنت الأشياء (مادة تجريبية)",
+                        desc: "هذه بيانات تجريبية لأن بيئة المعاينة تمنع قراءة ملف courses.json المحلي. ستظهر بياناتك الحقيقية بشكل طبيعي عند رفع الكود على السيرفر.",
+                        pra: "-",
+                        credit: 3,
+                        practical: 0,
+                        th_hours: 3
+                    },
+                    {
+                        code: "CS 122",
+                        name: "برمجة 2 (مادة تجريبية)",
+                        desc: "English Name: Programming 2. مثال آخر لتجربة التصميم والروابط.",
+                        pra: "CS 103",
+                        credit: 3,
+                        practical: 1,
+                        th_hours: 2
+                    }
+                ];
+            } else {
+                // الوضع الطبيعي (عند رفع الملفات على سيرفر حقيقي)
+                const coursesResponse = await fetch('courses.json');
+                if (!coursesResponse.ok) {
+                    throw new Error(`HTTP error! status: ${coursesResponse.status} (courses.json)`);
+                }
+                courses = await coursesResponse.json();
             }
-            courses = await coursesResponse.json();
-            console.log("Courses loaded successfully.");
 
             const courseCategories = {
               "AEL101": "متطلب جامعة اجباري", "AAL101": "متطلب جامعة اجباري", "CD 101": "متطلب جامعة اجباري", "IEC101": "متطلب جامعة اجباري", "AEL102": "متطلب جامعة اجباري", "NE101": "متطلب جامعة اجباري",
@@ -890,13 +934,27 @@
               c.category = courseCategories[c.code] || defaultCategory;
             });
 
-            const linksResponse = await fetch('course_links.json');
+            // Fetch course_links from Supabase dynamically
+            const linksResponse = await fetch(`${SUPABASE_URL}/rest/v1/course_links?select=*`, {
+                headers: {
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                }
+            });
+            
             if (!linksResponse.ok) {
-                console.warn(`Could not load course_links.json. Status: ${linksResponse.status}`);
+                console.warn(`Could not load links from Supabase. Status: ${linksResponse.status}`);
                 courseLinks = {};
             } else {
-                courseLinks = await linksResponse.json();
-                console.log("Course links loaded successfully.");
+                const data = await linksResponse.json();
+                courseLinks = {};
+                // Restructure the data back into the original JSON format { "IOT 322": [{ name, link }] }
+                data.forEach(item => {
+                    if (!courseLinks[item.course_code]) {
+                        courseLinks[item.course_code] = [];
+                    }
+                    courseLinks[item.course_code].push({ name: item.name, link: item.link });
+                });
             }
 
         } catch (error) {
