@@ -166,6 +166,7 @@
         font-weight: 600;
         margin-bottom: 20px;
         line-height: 1.5;
+        white-space: pre-wrap;
     }
 
     .options-grid {
@@ -246,7 +247,7 @@
     // --- SUPABASE CONFIGURATION ---
     const SUPABASE_URL = 'https://fslfyoqhvbddyjeavcyi.supabase.co'; 
     // IMPORTANT: Since this is a public page for students, paste your `anon` `public` key here. 
-    // DO NOT use the `service_role` key on this file!
+    // DO NOT use the `service_role` key on this file![cite: 1]
     const SUPABASE_ANON_KEY = 'sb_publishable_zyxGxnNtzEYD0kjrHq_Bzw_0StPo0WI';
 
     window.courseData = {};
@@ -273,16 +274,8 @@
         }, {});
     }
 
-    function initializeApp(allQuestions) {
-      const urlParams = new URLSearchParams(window.location.search);
-      window.currentCourseCode = urlParams.get('code') || '';
-      
+    function initializeApp(courseQuestions) {
       document.getElementById('pageTitle').textContent = window.currentCourseCode ? `Quizzes for ${window.currentCourseCode}` : 'All Quizzes';
-      
-      // Filter the Supabase data to only show questions matching the course code in the URL
-      const courseQuestions = window.currentCourseCode 
-        ? allQuestions.filter(q => q.course_name === window.currentCourseCode)
-        : allQuestions;
       
       if (!courseQuestions.length) {
           document.getElementById('chapterContainer').innerHTML = `
@@ -343,7 +336,7 @@
     function renderQuiz(questions) {
       const container = document.getElementById('quizContainer');
       
-      // Render logic (Supabase handles JSONB arrays natively, so q.options is already an array)
+      // Render logic (Supabase handles JSONB arrays natively, so q.options is already an array)[cite: 1]
       container.innerHTML = questions.map((q, index) => {
         const optionsArray = Array.isArray(q.options) ? q.options : [];
         return `
@@ -372,11 +365,11 @@
         </div>
       `}).join('');
 
-      // Initialize the lazy loader after rendering HTML
+      // Initialize the lazy loader after rendering HTML[cite: 1]
       setupLazyLoading();
     }
 
-    // --- LAZY LOADING LOGIC ---
+    // --- LAZY LOADING LOGIC ---[cite: 1]
     function setupLazyLoading() {
         if (imageObserver) {
             imageObserver.disconnect();
@@ -425,7 +418,7 @@
     function checkAnswer(questionIndex) {
         const question = window.currentQuestions[questionIndex];
         const selectedOptionIndex = userAnswers[questionIndex];
-        // Ensure answer_index is treated as a number
+        // Ensure answer_index is treated as a number[cite: 1]
         const correctIndex = Number(question.answer_index); 
 
         const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
@@ -452,8 +445,18 @@
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
+      // Extract the course code from the URL before fetching data
+      const urlParams = new URLSearchParams(window.location.search);
+      window.currentCourseCode = urlParams.get('code') || '';
+      
+      // Build the API URL to filter by course_name directly on the server
+      let fetchUrl = `${SUPABASE_URL}/rest/v1/quiz_q?select=*`;
+      if (window.currentCourseCode) {
+          fetchUrl += `&course_name=eq.${encodeURIComponent(window.currentCourseCode)}`;
+      }
+
       try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/quiz_q?select=*`, {
+        const response = await fetch(fetchUrl, {
           method: 'GET',
           headers: {
             'apikey': SUPABASE_ANON_KEY,
@@ -464,6 +467,7 @@
         
         if (!response.ok) throw new Error('Failed to load quiz data from Supabase');
         
+        // The data returned is now already filtered by the database
         const data = await response.json();
         initializeApp(data);
         
